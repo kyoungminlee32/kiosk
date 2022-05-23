@@ -1,0 +1,435 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>다통화 월복리 외화적립예금</title>
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<script type="text/javascript" src="../../../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../../../js/common_ui.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../../css/common.css" />
+<link rel="stylesheet" type="text/css" href="../../../../css/contents.css" />
+<link rel="stylesheet" type="text/css" href="../../../../nhbank/css/contents_market.css" />
+</head>
+<body>
+	<!--
+	<div class="product_new">
+		<strong class="detail-tit">상품특징</strong>
+		<div class="detail-desc">
+			<ul>
+				<li>하나의 계좌에 최대 10개 통화를 자유롭게 입금하면서 만기 약정이자는 월복리를 지급받을 수 있는 적립식 외화정기예금<br />
+				(특별우대금리 최대 0.25%P 지급, 환율우대 및 송금수수료 면제 등 혜택 부여)</li>
+			</ul>
+		</div>
+
+		<strong class="detail-tit">가입대상</strong>
+		<div class="detail-desc">
+			<ul><li>실명의 개인 및 법인</li></ul>
+		</div>
+
+		<strong class="detail-tit">가입금액</strong>
+		<div class="detail-desc">
+			<ul><li>최초 신규 입금액 미화 50불 상당액 이상</li></ul>
+		</div>
+
+		<strong class="detail-tit">가입통화</strong>
+		<div class="detail-desc">
+			<ul><li>USD, JPY, EUR, GBP, CAD, AUD, NZD, CHF, HKD, SGD</li></ul>
+		</div>
+
+		<strong class="detail-tit">예치기간</strong>
+		<div class="detail-desc">
+			<ul><li>3개월이상 36개월 이내 월단위</li></ul>
+		</div>
+
+		<strong class="detail-tit">이율</strong>
+		<div class="detail-desc">
+			<ul>
+				<li>이자는 월복리 계산
+					<ul>
+						<li>납입금별로 입금일로부터 만기일 전날까지 기간에 대해 입금 당일 고시되는 통화별 기간별 일반 외화정기예금 금리</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<strong class="detail-tit">분할인출이율</strong>
+		<div class="detail-desc">
+			<ul><li>중도해지 이율 적용</li></ul>
+		</div>
+
+		<strong class="detail-tit">중도해지이율</strong>
+		<div class="detail-desc">
+			<ul>
+				<li>이자는 단리계산
+					<ul>
+						<li>7일미만 : 무이자</li>
+						<li>1개월미만 : 약정이율의 2/10</li>
+						<li>3개월미만 : 약정이율의 3/10</li>
+						<li>6개월미만 : 약정이율의 5/10</li>
+						<li>6개월이상 : 예치당시 6개월 고시금리</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<strong class="detail-tit">만기후이율</strong>
+		<div class="detail-desc">
+			<ul>
+				<li>이자는 단리계산
+					<ul>
+						<li>해지 전일의 통화별 7일물 외화정기예금 금리의 3/10 적용</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<strong class="detail-tit">만기약정이율</strong>
+		<div class="detail-desc">
+			<ul>
+				<li>이자는 월복리 계산
+					<ul>
+						<li>납입금별로 입금일로부터 만기일 전날까지 기간에 대해 입금 당일 고시되는 통화별 기간별 일반 외화정기예금 금리</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<strong class="detail-tit">특징</strong>
+		<div class="detail-desc">
+			<ul>
+				<li>하나의 계좌에 최대 10개 통화를 만기내 자유롭게 예치 가능</li>
+				<li>만기이자는 월복리로 계산 지급</li>
+				<li>고객이 긴급자금 필요시 납입금 건별로 자유롭게 만기 전 인출가능(단, 중도해지금리 적용)</li>
+			</ul>
+		</div>
+
+		<strong class="detail-tit">우대서비스</strong>
+		<div class="detail-desc">
+			<ul>
+				<li>USD,JPY,EUR로 납입건에 대한 아래 특별우대금리 제공
+					<ul>
+						<li>1년이상 예치시 : 0.1%p, 2년이상 예치시 : 0.2%p</li>
+						<li>미화 50불 상당액 이상 자동이체시 자동이체 납입건에 0.05%p</li>
+					</ul>
+				</li>
+				<li>예금가입 개인고객 혜택(창구거래만 해당)
+					<ul>
+						<li>환전거래시 : 환율 50%우대</li>
+						<li>예금 해지(중도해지 포함) 금액을 해외송금(일반전신송금)시 당발송금수수료 면제
+							<ul>
+								<li>NH-ONE해외송금, 현지통화송금, NH특급송금, NH-WU자동송금 에는 적용되지 않음</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<strong class="detail-tit">기타사항</strong>
+		<div class="detail-desc">
+			<ul>
+				<li>만기전 자유롭게 납입금 건별로 분할인출 가능 (분할인출시 중도해지이율 적용)</li>
+				<li>추가적립시 적립대상기간의 해당 고시금리가 0%일 경우에는 이 계좌에 입금이 불가합니다.</li>
+				<li>원화대가로 외화예금을 신규하신 후 만기에 원화대로 찾아가실 때에는 환율변동으로 인하여 이익 또는 손실이 발생할 수 있습니다.</li>
+				<li class="mt20">준법감시인심의필 2016-251 (심의일:2016.02.29)<br />유효기간 : 2016.02.29 ~ 2018.01.31</li>
+			</ul>
+		</div>
+	</div>
+	-->
+	<div class="prodDetailWrap mt0">
+		<div class="boardWrap listToggle">
+			<ul class="boardList">
+				<li class="pd0">
+					<div class="toggleWrap">
+						<a href="javascript:;" class="toggleBtn more less" title="해당 글 상세 닫힘">
+							<strong class="boardListTit">상품안내</strong>
+						</a>
+						<div class="toggleCont faqConBox bdt" style="display:block;">
+							<div class="wrapTblDefault ty01">
+								<table cellpadding="0" cellspacing="0">
+									<caption>상품안내</caption>
+									<colgroup>
+										<col style="width:25%">
+										<col style="width:auto">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">상품특징</th>
+											<td>
+												하나의 계좌에 대해 최대 10개 통화를 자유롭게 입금하면서
+												만기약정이자는 월복리를 지급받을 수 있는 적립식 외화
+												정기예금<br/>
+												(특별우대금리 최대 0.25%P 지급, 환율우대 및 송금수수료 면제 등 혜택 부여)
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">가입대상</th>
+											<td>
+											실명의 개인 및 법인
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">가입금액</th>
+											<td>
+												최초 신규 입금액 미화 50불 상당액 이상
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">가입통화</th>
+											<td>
+												USD, JPY, EUR. GBP, CAD, AUD, NZD, CHF, HKD, SGD
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">예치기간</th>
+											<td>
+												3개월 이상 36개월 이내 월단위
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">특징</th>
+											<td>
+												<ul class="listDot">
+													<li>하나의 계좌에  최대 10개 통화를 만기내 자유롭게 예치 가능</li>
+													<li>만기이자는 월복리로 계산 지급</li>
+													<li>고객이 긴급자금 필요시 납입금 건별로 자유롭게 만기 전 인출가능(단, 중도해지금리 적용)</li>
+												</ul>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="toggleWrap">
+						<a href="javascript:;" class="toggleBtn more" title="해당 글 상세 닫힘">
+							<strong class="boardListTit">금리안내</strong>
+						</a>
+						<div class="toggleCont faqConBox bdt">
+							<div class="wrapTblDefault ty01">
+								<table cellpadding="0" cellspacing="0">
+									<caption>상품안내</caption>
+									<colgroup>
+										<col style="width:30%">
+										<col style="width:auto">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">이율</th>
+											<td>
+												<p class="pointColor">이자는 월복리 계산</p>
+												납입금별로 입금일로부터 만기일 전날까지 기간에 대해 입금 당일 고시되는 통화별 기간별 일반 외화 정기예금 금리
+
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">분할인출이율</th>
+											<td>
+												   중도해지 이율 적용
+
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">중도해지이율</th>
+											<td>이자는 단리계산</td>
+										</tr>
+										<tr>
+											<td scope="row" colspan="2" class="pd0">
+												<div class="wrapTblDefault">
+													<div class="tblHeader">
+														<h3 class="defSubTit mt0">우대금리 <span class="pointColor">최고 0.4%p 우대</span></h3>
+													</div>
+													<table cellpadding="0" cellspacing="0" class="tdCenter">
+														<caption>중도해지이율 정보</caption>
+														<colgroup>
+															<col style="width:auto">
+															<col style="width:50%">
+														</colgroup>
+														<thead>
+															<tr>
+																<th scope="col" class="ac">경과기간</th>
+																<th scope="col" class="ac">이율</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<th scope="row">7일 미만</th>
+																<td>무이자</td>
+															</tr>
+															<tr>
+																<th scope="row">1개월 미만</th>
+																<td>약정이율의 2/10</td>
+															</tr>
+															<tr>
+																<th scope="row">3개월 미만</th>
+																<td>약정이율의 3/10</td>
+															</tr>
+															<tr>
+																<th scope="row">6개월 미만</th>
+																<td>약정이율의 5/10</td>
+															</tr>
+															<tr>
+																<th scope="row">6개월 이상</th>
+																<td>예치 당시 6개월 고시금리</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</th>
+										</tr>
+										<tr>
+											<th scope="row">만기후이율</th>
+											<td>
+												<p class="pointColor">이자는 단리 계산</p>
+												해지 전일의 통화 별 7일물 외화정기예금 금리의 3/10적용
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">만기약정이율</th>
+											<td>
+											
+											<p class="pointColor">이자는 월복리 계산</p>
+											납입금별로 입금일로부터 만기일 전날까지 기간에 대해 입금 당시 고시되는 통화별 기간별 일반 외화 정기예금 금리
+
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" colspan="2">우대금리</th>
+										</tr>
+										<tr>
+											<td scope="row" colspan="2" class="pd0">
+												<div class="wrapTblDefault">
+													<div class="tblHeader">
+														<h3 class="defSubTit mt0"><span class="pointColor">최대0.25%p</span> USD, JPY, EUR로 납입 건에 대한 아래 특별우대금리 제공 </h3>
+													</div>
+													<table cellpadding="0" cellspacing="0" class="tdCenter">
+														<caption>우대금리 정보</caption>
+														<colgroup>
+															<col style="width:auto">
+															<col style="width:30%">
+														</colgroup>
+														<thead>
+															<tr>
+																<th scope="col" class="ac">우대금리조건</th>
+																<th scope="col" class="ac">금리(%p)</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<th scope="row"><span class="pointColor">1년</span> 이상 예치 시</th>
+																<td class="pointColor">0.20</td>
+															</tr>
+															<tr>
+																<th scope="row"><span class="pointColor">2년</span> 이상 예치 시</th>
+																<td class="pointColor">0.20</td>
+															</tr>
+															<tr>
+																<th scope="row">미화 50불 상당액 이상 자동이체시 자동이체 납입건</th>
+																<td class="pointColor">0.20</td>
+															</tr>
+														</tbody>
+													</table>
+													<ul class="listDot mt10">
+														<li><span>예금가입 개인고객 혜택(창구거래만 해당)<br/>
+														환전거래시 : 환율 50%우대</li>
+														<li>예금 해지(중도해지 포함)금액을 해외송금(일반전신송금)시 당발송금수수료 면제
+														NH-ONE해외송금, 현지통화송금, NH특급송금, NH-WU자동송금에는 적용되지 않음
+														</li>
+													</ul>
+												</div>
+											</td>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="toggleWrap">
+						<a href="javascript:;" class="toggleBtn more" title="해당 글 상세 닫힘">
+							<strong class="boardListTit">설명서/약관동의</strong>
+						</a>
+						<div class="toggleCont faqConBox bdt">
+							
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="toggleWrap">
+						<a href="javascript:;" class="toggleBtn more" title="해당 글 상세 닫힘">
+							<strong class="boardListTit">기타/유의사항</strong>
+						</a>
+						<div class="toggleCont faqConBox bdt">
+							<div class="wrapTblDefault ty01">
+								<table cellpadding="0" cellspacing="0">
+									<caption>기타/유의사항 정보</caption>
+									<colgroup>
+										<col style="width:25%">
+										<col style="width:auto">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">기타사항</th>
+											<td>
+												<ul class="listDot">
+													<li>만기전 자유롭게 납입금 건별로 분할인출 가능(분할인출시 중도해지이율 적용)</li>
+													<li>추가적립시 적립대상기간의 해당 고시금리가 0%일 경우에는 이 계좌에 입금이 불가합니다.</li>
+													<li>원화대가로 외화예금을 신규하신 후 만기에 원화대로 찾아가실 때에는 환율변동으로 인하여 이익 또는 손실이 발생할 수 있습니다.</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">유의사항</th>
+											<td>
+												<ul class="listDot">
+													<li>양도 및 담보제공 불가능</li>
+													<li>세금우대 및 생계형저축으로 가입 불가능</li>
+												</ul>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+		</div>
+	</div>
+	<script type="text/javascript">
+	/*
+	document.body.scrollIntoView(true);
+	parent.document.all.inner1.height = document.body.scrollHeight;
+	*/
+	
+	window.onload = function(){
+		var the_height = $('.prodDetailWrap').height();
+		window.parent.postMessage(the_height, '*');
+		/*
+		document.querySelectorAll('.toggleBtn').onclick = function(){
+			var the_height2 = $('.prodDetailWrap').height();
+			console.log(the_height2)
+			window.parent.postMessage(the_height2, '*');
+		}
+		*/
+		var that_length = $('.toggleBtn').length;
+		var last_length = $('li').eq(that_length).find('.toggleBtn').outerHeight();
+		console.log((that_length - 1) * 55 + last_length)
+		$('.toggleBtn').click(function(){
+			var that_height = $(this).siblings('.toggleCont').outerHeight();
+			if($(this).hasClass('less')){
+				window.parent.postMessage(that_length * 55 - 5, '*');
+			}
+			else{
+				window.parent.postMessage(that_height + (that_length - 1) * 55 + last_length, '*');
+			}
+		});
+	};
+	</script>
+</body>
+</html>

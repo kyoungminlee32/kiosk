@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="NH Bank" />
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="no-index,follow">
+<meta name="title" content="">
+<meta name="author" content="">
+<meta name="content" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>:::NH통합스마트뱅킹 || 조회:::</title>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/common_ui.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+			<a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+			<h1><a href="javascript:;">조회</a></h1>
+			<a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+			<a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+		</div>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div class="container">
+			<div class="tabLv0 tabLv1">
+				<a href="javascript:;" class="arrLft" style="display: none;"><span class="blind">이전</span></a>
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide" style="width:20%"><a href="javascript:;" class="active"><span>예금/신탁</span></a></li>
+					<li class="swiper-slide" style="width:20%"><a href="AI231000.html"><span>펀드</span></a></li>
+					<li class="swiper-slide" style="width:20%"><a href="AI241000.html"><span>대출</span></a></li>
+					<li class="swiper-slide" style="width:20%"><a href="AI251000.html"><span>외화예금</span></a></li>
+					<li class="swiper-slide" style="width:20%"><a href="AI261000.html"><span>전계좌</span></a></li>
+				</ul>
+				<a href="javascript:;" class="arrRgt" style="display: none;"><span class="blind">다음</span></a>
+			</div>
+
+			<div class="accountSelect">
+				<div class="selectArea">
+					<a href="javascript:;" title="계좌번호 선택">전체계좌</a><!--// 20180608 팝업열기 추가 및 class 삭제 -->
+					<a href="javascript:ShowHideClick('accountInput');" title="계좌번호">직접입력</a>
+				</div>
+				<div class="accountInput">
+					<!-- <input type="text" placeholder="계좌번호를 입력해주세요." title="계좌번호 입력"> -->
+					<span class="typeSrch">
+						<input type="text" placeholder="계좌번호를 입력해주세요." title="계좌번호 입력">
+						<a href="javascript:;" class="btnSrch"><span class="blind">검색</span></a>
+					</span>										
+				</div>				
+			</div>
+
+			<div class="totalWrap bankType">
+				<dl>
+					<dt>총 계좌</dt>
+					<dd><em>3</em> 개</dd>
+				</dl>
+				<dl>
+					<dt>총 금액</dt>
+					<dd class="pointColor"><em>22,280,000</em><span class="wUnit">원</span></dd>
+				</dl>
+			</div>
+
+			<div class="accountList">
+				<ul>
+					<li>
+						<div class="accTit">
+							<span class="accNumber">123-1234-1234-12</span>
+							<!-- 2018-08-17 마크업수정 -->
+							<div class="btnMoreWrap">
+								<a href="javascript:;" class="btnMore actsetBtn"><span class="blind">계좌더보기</span></a>
+								<div class="appendMenu">
+									<dl>
+										<dt><strong>계좌관리</strong></dt>
+										<dd>
+											<ul>
+												<li class="active"><a href="javascript:;">계좌정보</a></li>
+												<li><a href="javascript:;">계좌번호복사</a></li>
+												<li><a href="javascript:;">카카오톡 전송</a></li>
+												<li><a href="javascript:;">계좌별칭관리</a></li>
+											</ul>
+										</dd>
+										<dd>
+											<a href="javascript:;"  class="appendClose" title="창닫기">
+												<span class="blind">닫기</span>
+											</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<!-- //2018-08-17 마크업수정 -->
+						</div>
+							
+						<div class="accCont">
+							<div class="link">
+								<span class="accName">매직트리</span>
+								<span class="accNick">경조사 관리통장</span>
+								<div class="accInfo">
+									<span class="infoTit">최종거래일자</span>
+									<span class="accDate">2019/07/15</span>
+								</div>
+								<div class="accInfo">
+									<span class="infoTit">잔액</span>
+									<span class="amount"><strong class="pointColor"><em>12,700,000</em><span class="wUnit">원</span></strong></span>
+								</div>
+								<a href="javascript:;">해당 계좌 상세보기</a>
+							</div>
+						</div>
+
+						<div class="areaBodyBtnFull">
+							<div class="inner">
+								<ul>
+									<li><a href="AI212000.html" class="btnType02 kioskEffect" role="button">거래내역<span class="hand type01"></span></a></li>
+									<li><a href="../bt/AT321100.html" class="btnType01 kioskEffect" role="button">즉시이체<span class="hand type06"></span></a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="accTit">
+							<span class="accNumber">123-1234-1234-12</span>
+							<!-- 2018-08-17 마크업수정 -->
+							<div class="btnMoreWrap">
+								<a href="javascript:;" class="btnMore actsetBtn"><span class="blind">계좌더보기</span></a>
+								<div class="appendMenu">
+									<dl>
+										<dt><strong>계좌관리</strong></dt>
+										<dd>
+											<ul>
+												<li class="active"><a href="javascript:;">계좌정보</a></li>
+												<li><a href="javascript:;">계좌번호복사</a></li>
+												<li><a href="javascript:;">카카오톡 전송</a></li>
+												<li><a href="javascript:;">계좌별칭관리</a></li>
+											</ul>
+										</dd>
+										<dd>
+											<a href="javascript:;"  class="appendClose" title="창닫기">
+												<span class="blind">닫기</span>
+											</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<!-- //2018-08-17 마크업수정 -->
+						</div>
+					
+						<div class="accCont">
+							<div class="link">
+								<span class="accName">NH해봄적금</span>
+								<!-- <span class="accNick">계좌별칭</span> -->
+								<div class="accInfo">
+									<span class="infoTit">만기일</span>
+									<span class="accDate">2019/07/15</span>
+								</div>
+								<div class="accInfo">
+									<span class="infoTit">잔액</span>
+									<span class="amount"><strong class="pointColor"><em>5,330,000</em><span class="wUnit">원</span></strong></span>
+								</div>
+								<a href="javascript:;">해당 계좌 상세보기</a>
+							</div>
+						</div>
+						<div class="areaBodyBtnFull">
+							<div class="inner">
+								<ul>
+									<li><a href="javascript:;" class="btnType02">거래내역</a></li>
+									<li><a href="javascript:;" class="btnType01">입금</a></li>
+								</ul>
+								<div class="toggleBox"><!-- 2018.09.28 접근성 수정 클래스 변경-->
+									<div class="toggleInner"><!-- 2018.09.28 접근성 수정 클래스 변경-->
+										<ul>
+											<li><a href="javascript:;" class="btnType01">DIY상품명</a></li>
+											<li><a href="javascript:;" class="btnType01" >해지예상조회/해지</a></li>
+										</ul>
+									</div>
+									<div class="accListBtn">
+										<a href="javascript:;" class="toggleBtn1"><span class="blind">다른 기능 버튼보기 열고, 닫기</span></a></div><!-- 2018.09.28 접근성 수정 클래스 변경-->
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="accTit">
+							<span class="accNumber">123-1234-1234-12</span>
+							<!-- 2018-08-17 마크업수정 -->
+							<div class="btnMoreWrap">
+								<a href="javascript:;" class="btnMore actsetBtn"><span class="blind">계좌더보기</span></a>
+								<div class="appendMenu">
+									<dl>
+										<dt><strong>계좌관리</strong></dt>
+										<dd>
+											<ul>
+												<li class="active"><a href="javascript:;">계좌정보</a></li>
+												<li><a href="javascript:;">계좌번호복사</a></li>
+												<li><a href="javascript:;">카카오톡 전송</a></li>
+												<li><a href="javascript:;">계좌별칭관리</a></li>
+											</ul>
+										</dd>
+										<dd>
+											<a href="javascript:;"  class="appendClose" title="창닫기">
+												<span class="blind">닫기</span>
+											</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<!-- //2018-08-17 마크업수정 -->
+						</div>
+							
+						<div class="accCont">
+							<div class="link">
+								<span class="accName">청약저축</span>
+								<!-- <span class="accNick">계좌별칭</span> -->
+								<div class="accInfo">
+									<span class="infoTit">만기일</span>
+									<span class="accDate">2019/07/15</span>
+								</div>
+								<div class="accInfo">
+									<span class="infoTit">잔액</span>
+									<span class="amount"><strong class="pointColor"><em>4,250,000</em><span class="wUnit">원</span></strong></span>
+								</div>
+								<a href="javascript:;">해당 계좌 상세보기</a>
+							</div>
+						</div>
+
+						<div class="areaBodyBtnFull">
+							<div class="inner">
+								<ul>
+									<li><a href="javascript:;" class="btnType02">거래내역</a></li>
+									<li><a href="javascript:;" class="btnType01">입금</a></li>
+									<!-- 2018-07-17 통합스마트뱅킹 오나경 수정사항 : li 클래스 수정 -->
+									<li class="w40p"><a href="javascript:;" class="btnType01">해지예상조회/조회</a></li>
+									<!-- // 2018-07-17 통합스마트뱅킹 수정사항 end -->
+								</ul>
+							</div>
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+
+			<!-- 2018-09-06 통합스마트뱅킹 수정사항 : 출금계좌조회 버튼 추가 -->
+			<div class="areaBodyBtnFull">
+				<div class="inner">
+					<ul>
+						<li><a href="javascript:;">휴면계좌조회</a></li>
+						<li><a href="javascript:;">출금계좌조회</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- // 2018-09-06 통합스마트뱅킹 수정사항 end -->
+
+			<!-- 2018-09-20 통합스마트뱅킹 수정사항 : 배너영역 수정 -->
+			<div class="bannerBotWrap type01">
+				<p>NH의 베스트 상품부터 추천 상품까지<br /><strong>다양한 예금상품을 확인</strong>하세요.</p>
+				<div class="bannerBtn">
+					<a href="javascript:;" title="농협은행 바로가기" class="badge color1">농협은행</a>
+					<a href="javascript:;" title="농협은행 바로가기" class="badge color2">농·축협</a>
+				</div>
+			</div>
+			<!-- // 2018-09-20 통합스마트뱅킹 수정사항 end -->
+
+
+			<!-- 계좌선택 select 팝업 시작 -->
+			<div class="popWrap slidePopOption">
+				<div class="dim"></div> <!-- 팝업 dim 처리 -->
+			
+				<div class="popInner" tabindex="1">
+					<h1>계좌 선택</h1>
+					
+					<!-- 팝업컨텐츠 -->
+					<div class="popCont">
+						<div class="transfer">
+							<div class="accList">
+								<ul>
+									<!-- 2018-07-27 통합스마트뱅킹 수정사항 : 전체계좌 추가 -->
+									<li>
+										<a href="javascript:;" class="accSel" title="해당 계좌를 선택하고 창을 닫습니다.">
+											<span class="accName">전체계좌</span>
+										</a>
+									</li>
+									<!-- // 2018-07-27 통합스마트뱅킹 수정사항 end -->
+									<li class="active">
+										<a href="javascript:;" class="accSel" title="해당 계좌를 선택하고 창을 닫습니다.">
+											<!-- 2018-09-13 마크업수정 -->
+											<span class="accName">여기는 상품명 입력 영역</span>
+											<span class="accNumber"><strong>302-0799-91234-00</strong> <span class="accNick">(계좌별칭)</span></span>
+											<!-- //2018-09-13 마크업수정 -->
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;" class="accSel" title="해당 계좌를 선택하고 창을 닫습니다.">
+											<span class="accName">여기는 상품명 입력 영역</span>
+											<span class="accNumber"><strong>302-0799-91234-00</strong> <span class="accNick">(계좌별칭)</span></span>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;" class="accSel" title="해당 계좌를 선택하고 창을 닫습니다.">
+											<span class="accName">여기는 상품명 입력 영역</span>
+											<span class="accNumber"><strong>302-0799-91234-00</strong> <span class="accNick">(계좌별칭)</span></span>
+										</a>
+									</li>
+								</ul>
+							</div>
+
+							<!-- 2018-10-11 선택가능계좌 없을 경우 -->
+							<div class="topConfirmArea confirmMsg type04">
+								<p>선택 가능한 계좌가 없습니다.</p>
+							</div>
+							<!-- //2018-10-11 선택가능계좌 없을 경우 -->
+						</div>
+					</div>
+					<!-- 팝업컨텐츠 -->
+			
+					<!-- 팝업 버튼영역  -->
+					<div class="popBtnWrap">
+						<a href="javascript:;" onclick="popClose(this);return false;" class="popClose" title="해당 창을 닫습니다."><img src="../../images/common/btn_popClose.png" alt="닫기"></a>
+					</div>
+					<!-- // 팝업 버튼영역 -->
+				</div>
+			</div>
+			<!-- // 계좌선택 select 팝업 끝 -->
+        </div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div class="footer">
+			<ul class="footMenu">
+				<li><a href="../util/UC110000.html">홈</a></li>
+				<li><a href="../bw/UC490000.html">마이NH</a></li>
+				<li><a href="../util/talk.html">상담톡</a></li>
+				<li><a href="javascript:;">고객센터</a></li>
+				<li><a href="javascript:;">인증/보안</a></li>
+			</ul>
+			<!-- quick button -->
+			<!-- <div class="areaBtmQuick"> 
+				<span class="btnQuick"><a href="javascript:;">quick</a></span>
+				<span class="btnTop"><a href="javascript:;">Top</a></span>
+			</div> -->
+			<!-- //quick button -->
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

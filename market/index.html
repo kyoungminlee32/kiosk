@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NHBank 금융상품몰 퍼블리싱 산출물</title>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/common_guide.js"></script>
+<link type="text/css" rel="stylesheet" href="css/guide.css" />
+</head>
+<script>
+	dep1 = 1;
+	dep2 = "";
+	dep3 = "";
+</script>
+<body>
+	<!-- header -->
+	<div class="header">
+		<div class="headerTop">
+			<h1 class="logo"><a href="#"><img src="images/logo.png" alt="NHBank NH농협.App Gukde Managment System"></a></h1>
+			<!--<div class="logWrap">
+				<p class="user">홍길동(슈퍼관리자)님</p>
+				<a href="#" class="btnLogout">로그아웃</a>
+			</div> -->
+			<div class="rgt">
+				<p class="user">홍길동(슈퍼관리자)님</p>
+				<form name="select_project" class="selProject">
+					<select name="jump" class="year" onChange="showSub(this.options[this.selectedIndex].value);">
+						<option value="">연도 선택</option>
+						<option value="1">2019</option>
+						<option value="2">2018</option>
+					</select>
+					<select name="sub1" onchange="location.href=this.value" class="pjSelect" style="display:none">
+						<option value="">프로젝트 선택</option>
+						<option value="../../common/index.html">공통 가이드</option>
+						<option value="../../2019/mobilebranch/index.html">모바일브랜치</option>
+						<option value="../../2019/nhbank/index.html">NH농협 디지털금융고도화</option>				
+						<option value="../../2019/market_nhbank/index.html">NH농협 금융상품몰 고도화(농협은행)</option>
+						<option value="../../2019/market_sangho/index.html">NH농협 금융상품몰 고도화(농축협)</option>
+					</select>
+					<select name="sub2" onchange="location.href=this.value" class="pjSelect" style="display:none">
+						<option value="">프로젝트 선택</option>
+						<option value="../../2018/nhbank/index.html">통합스마트뱅킹</option>
+						<option value="../../2018/market_bank/index.html">금상몰(농협은행)</option>
+						<option value="../../2018/market_sangho/index.html">금상몰(농축협)</option>
+						<!-- <option value="../../2018/main.html">브라우저인증서</option>
+						<option value="../../2018/nhsmart/index.html">스마트고지서</option>					 -->
+					</select>
+				</form>
+				<button class="btnLogOut">로그아웃</button>
+			</div>
+		</div>
+		<div class="nav">
+			<div class="inner">
+				<ul>
+					<li><a href="javascript:;"><span>홈</span></a></li>
+					<li><a href="html/sub0201.html"><span>공통</span></a></li>
+					<li><a href="html/sub0301.html"><span>Html 코드</span></a></li>
+					<li><a href="html/sub0401.html"><span>JS코드</span></a></li>
+					<li><a href="html/sub0501.html"><span>CSS코드</span></a></li>
+					<li><a href="html/sub0601.html"><span>메뉴리스트</span></a></li>
+					<li><a href="html/sub0701.html"><span>모바일 접근성준수</span></a></li>
+					<li><a href="html/sub080101_01.html"><span>디자인 가이드</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //header -->
+
+	<!-- container -->
+	<div class="container">
+		<div class="mainWrap">
+			<div>
+				<h2>메뉴 리스트</h2>
+				<div>
+					<p class="descTxt">금융상품몰 각 메뉴별 퍼블리싱 샘플 화면을 확인할 수 있습니다.</p>
+					<ul class="listDot">
+						<li>공통</li>
+						<li>예금</li>
+						<li>대출</li>
+						<li>펀드</li>
+						<li>자산관리</li>
+						<li>etc</li>
+					</ul>
+					<a href="html/sub0601.html">바로가기</a>
+				</div>
+			</div>
+			<div>
+				<h2>디자인 가이드</h2>
+				<div>
+					<p class="descTxt">금융상품몰 각 메뉴 별 디자인 가이드를 확인할 수 있습니다.</p>
+					<ul class="listDot">
+						<li></li>
+					</ul>
+					<a href="html/sub080101_01.html">바로가기</a>
+				</div>
+			</div>
+			<div>
+				<h2>CSS 코드</h2>
+				<div>
+					<p class="descTxt">CSS 코드 사용 규칙 안내 페이지 입니다.</p>
+					<ul class="listDot">
+						<li>기본규칙 및 초기파일</li>
+					</ul>
+					<a href="html/sub0501.html">바로가기</a>
+				</div>
+			</div>
+			<div>
+				<h2>HTML 코드</h2>
+				<div>
+					<p class="descTxt">HTML 코드 기본 규칙, 주석 등 작성 안내 페이지 입니다.</p>
+					<ul class="listDot">
+						<li>기본규칙</li>
+						<li>초기파일</li>
+						<li>링크 가이드</li>
+						<li>샘플 가이드</li>
+					</ul>
+					<a href="html/sub0301.html">바로가기</a>
+				</div>
+			</div>
+			<div>
+				<h2>공통 가이드</h2>
+				<div>
+					<p class="descTxt">네이밍, 폰트 사용 등 기본 공통 규칙 안내 페이지 입니다.</p>
+					<ul class="listDot">
+						<li>네이밍 규칙</li>
+						<li>폰트 사용 규칙</li>
+						<li>파일 및 폴더 규칙</li>
+					</ul>
+					<a href="html/sub0201.html">바로가기</a>
+				</div>
+			</div>
+			<div>
+				<h2>모바일 접근성 준수 지침</h2>
+				<div>
+					<p class="descTxt"></p>
+					<ul class="listDot">
+						<li>마크업</li>
+						<li>대체 텍스트 제공 방식</li>
+						<li>보조기술 호환성</li>
+					</ul>
+					<a href="html/sub0701.html">바로가기</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //container -->
+
+	<!-- footer -->
+	<div class="footer">
+		<div class="inner">
+			<address>Copyright © NH Bank. All Right Reserved.</address>	
+			<span class="logoFoot"><img src="images/logo_foot.png" alt=""></span>
+		</div>
+	</div>
+	<!-- //footer -->
+</body>
+</html>

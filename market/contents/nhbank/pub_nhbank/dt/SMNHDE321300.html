@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-title" content="NH Bank">
+	<meta http-equiv="imagetoolbar" content="no">
+	<meta name="robots" content="no-index,follow">
+	<meta name="title" content="">
+	<meta name="author" content="">
+	<meta name="content" content="">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<title>:::NH통합스마트뱅킹:::</title>
+<script type="text/javascript" src="../../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../../js/common_ui.js"></script>
+<script type="text/javascript" src="../../js/common_market_ui.js"></script>
+<link type="text/css" rel="stylesheet" href="../../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../../css/contents.css" />
+<link type="text/css" rel="stylesheet" href="../../css/contents_market.css" />
+</head>
+
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+			<a href="../../../../../contents/pub/util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+			<h1><a href="javascript:;">예금</a></h1>
+			<a href="javascript:;" class="btnChat"><span class="blind">쳇봇</span></a>
+			<a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+		</div>
+		<!-- //header -->
+
+		<!-- container -->
+		<div class="container">
+			<h2 class="defTit marTit">NH직장인월복리적금</h2>
+			<!-- STEP -->
+			<div class="stepArea">
+				<p class="stepTit">설명서/약관동의</p>
+				<div class="stepInfo" role="img" aria-label="총 3단계중 2단계 입니다.">
+					<ul class="stepList">
+						<li class="off"><span>1</span></li>
+						<li class="active"><span>2</span></li>
+						<li><span>3</span></li>
+					</ul>
+				</div>
+			</div>
+		    <!--// STEP -->
+			<div class="termsWrap">
+				<div class="termsList">
+					<ul>
+						<li class="allCheck"> 
+								<div class="checkList">
+									<a href="javascript:;" onclick="fullLayerPop();return false;" title="">
+										<input type="checkbox" id="c1" name="">
+										<label for="c1">전체 유의사항 및 약관에 동의합니다.</label>
+									</a>
+								</div>
+						</li>
+						<li> 
+							<div class="checkList">
+								<input type="checkbox" id="c2" name="">
+								<label for="c2">기본약관</label>
+							</div>
+							<div class="termsCont"> 
+								<p class="termsStxt">예금거래기본약관, 적립식예금약관, 자동계좌이체약관, 인터넷연결서비스이용약관 </p>
+							</div> 
+						</li>
+						<li> 
+							<div class="checkList">
+									<a href="javascript:;" onclick="fullLayerPop();return false;" title="">
+									<input type="checkbox" id="c3" name="">
+									<label for="c3">상품특약</label>
+								</a>
+							</div>
+						</li>
+						<li> 
+							<div class="checkList">
+								<a href="javascript:;" onclick="fullLayerPop();return false;" title="">
+									<input type="checkbox" id="c4" name="">
+									<label for="c4">상품설명서</label>
+								</a>
+							</div>
+						</li>
+						<li>
+
+							<div class="checkList">
+								<a href="javascript:;" onclick="fullLayerPop();return false;" title="">
+									<input type="checkbox" id="c5" name="">
+									<label for="c5">개인(신용)정보 수집.이용.제공 동의 (상품서비스 안내 등) [선택]</label>
+								</a>
+							</div>
+						</li>
+						<li>
+							<div class="checkList">
+								<input type="checkbox" id="c6" name="">
+								<label for="c6">불법/탈법 차명거래금지 설명확인</label>
+							</div>
+							<div class="termsCont"> 
+								<p class="termsStxt">「금융실명거래 및 비밀보장에 관한 법률」제3조 제3항에 따라 누구든지 불법재산의 은닉, 자금세탁행위, 공중협박자금조달행위 및 강제집행의 면탈 그 밖의 탈법행위를 목적으로 타인의 실명으로 금융거래를 하여서는 아니 되며, 이를 위반 시 5년 이하의 징역 또는 5천만원 이하의 벌금에 처해질 수 있습니다.</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 2018-12-12 추가 -->
+			<div class="termsList mt20"> 
+				<ul> 
+					<li>
+						<div class="checkList">
+							<input type="checkbox" id="c21" name="">
+							<label for="c21">개인(신용)정보 수집·이용 ·제공 동의(상품서비스 안내 등) [선택]</label>
+						</div>
+						<div class="termsCont">
+							<div class="termsFrameWrap">
+								
+							</div>
+							<!-- 2018-12-12 추가 -->
+							<div class="bdt">
+								<ul>
+									<li>
+										<strong class="formTit fsz13">마케팅 동의채널</strong>
+										<div class="formArray array2">
+											<div class="checkList pl0">
+												<input type="checkbox" id="chk41" name="aa">
+												<label for="chk41">이메일</label>
+											</div>
+											<div class="checkList">
+												<input type="checkbox" id="chk42" name="bb" >
+												<label for="chk42">우편물</label>
+											</div>
+											<div class="checkList pl0">
+												<input type="checkbox" id="chk43" name="cc">
+												<label for="chk43">문자메시지</label>
+											</div>
+											<div class="checkList">
+												<input type="checkbox" id="chk44" name="dd">
+												<label for="chk44">전화</label>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- 2018-12-12 추가 -->
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 2018-12-12 추가 -->
+			<p class="pointColor mt10">상품안내/약관 및 주요 안내사항을 읽고 충분히 이해하여 이에 동의합니다.</p>
+			<div class="guideList">
+				<div class="tArea"><p class="guideTit">알아두세요</p></div>
+				<ul class="listDot">
+					<li>상품가입이 원활하게 완료되지 않으신 경우, 상품가입내역에서 처리결과를 반드시 확인하시기 바랍니다.</li>
+				</ul>
+			</div>
+			<!-- fixed button -->
+			<div class="areaBtnDefault">
+				<a href="javascript:;" class="btnPressDefault">동의하지 않음</a>
+				<a href="SMNHDE321400.html" class="btnPressPoint kioskEffect">동의함 <span class="hand type02"></span></a>
+				<!-- 비활성화시 disabled 추가 -->
+			</div>
+			<!-- //fixed button -->
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div class="footer">
+			<ul class="footMenu" style="display: block;">
+				<li><a href="../../../../../contents/pub/util/UC110000.html">홈</a></li>
+				<li><a href="../../../../../contents/pub/bw/UC490000.html">마이NH</a></li>
+				<li><a href="../../../../../contents/pub/util/talk.html">상담톡</a></li>
+				<li><a href="javascript:;">고객센터</a></li>
+				<li><a href="javascript:;">인증/보안</a></li>
+			</ul>
+			<!-- quick button -->
+			<div class="areaBtmQuick" style="bottom: 94px;"> 
+				<span class="btnQuick"><a href="javascript:;">quick</a></span>
+				<span class="btnTop" style="display: none; opacity: 0;"><a href="javascript:;">Top</a></span>
+			</div>
+			<!-- //quick button -->
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+
+</body>
+</html>

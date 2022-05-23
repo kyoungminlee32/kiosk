@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="NH Bank" />
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="no-index,follow">
+<meta name="title" content="">
+<meta name="author" content="">
+<meta name="content" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>:::NH통합스마트뱅킹 || 조회:::</title>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/common_ui.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+			<a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+			<h1><a href="javascript:;">외환계좌 거래내역</a></h1>
+			<a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+			<a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+		</div>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div class="container">
+			<div class="accountSelect">
+				<div class="selectArea">
+					<a href="javascript:;" onclick="slidePopOption();return false;">전체계좌</a>
+					<a href="javascript:ShowHideClick('accountInput');">직접입력</a>
+				</div>
+				<div class="accountInput">
+					<span class="typeSrch">
+						<input type="text" placeholder="계좌번호를 입력해주세요." title="계좌번호 입력">
+						<a href="javascript:;" class="btnSrch"><span class="blind">검색</span></a>
+					</span>
+				</div>
+			</div>
+
+			<div class="accountHeader">
+				<h2 class="accTit">외화보통예금(다통화)</h2>
+				<span class="accNick2">계좌별칭</span>
+				<div class="accPriceArea">
+					<span class="tit">잔액</span>
+					<span class="txt"> 
+						<span class="price">610,420</span><span class="wUnit">원</span>
+					</span>
+				</div>
+			</div>
+
+			<div class="areaBtnPrice">
+				<div class="inner">
+					<ul>
+						<li><a href="javascript:;" class="btnAddonPoint">당일</a></li>
+						<li><a href="javascript:;">3일</a></li>
+						<li><a href="javascript:;">1개월</a></li>
+						<li><a href="javascript:;">3개월</a></li>
+						<li><a href="javascript:;">6개월</a></li>
+						<li class="w60"><a href="javascript:;" class="btnAddon" onclick="bankSet();" title="새창으로 열림">보기옵션</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="srchInfo">
+				<ul>
+					<li>2018.07.04 ~ 2018.07.04</li>
+					<li>입/출금</li>
+					<li>최신거래순</li>
+				</ul>
+			</div>
+
+			<div class="srchResult">
+				<ul>
+					<li>
+						<div class="dateTit">2018.07.04 13:03:12</div>
+						<div class="resultDetail">
+							<span class="resultTit">출금인/출금기관명</span>
+							<span class="resultAmount pointColor2"><span class="resultState">출금</span> USD <em>1.00</em></span>
+							<span class="amntTotal">잔액 USD <em>64.00</em></span>
+						</div>
+					</li>
+					<li>
+						<div class="dateTit">2018.07.04 13:03:12</div>
+						<div class="resultDetail">
+							<span class="resultTit">출금인/출금기관명</span>
+							<span class="resultAmount pointColor"><span class="resultState">입금</span> JPY <em>1,000.00</em></span>
+							<span class="amntTotal">잔액 JPY <em>1,000.00</em></span>
+						</div>
+					</li>
+					<li>
+						<div class="dateTit">2018.07.04 13:03:12</div>
+						<div class="resultDetail">
+							<span class="resultTit">출금인/출금기관명</span>
+							<span class="resultAmount pointColor"><span class="resultState">입금</span> USD <em>1.00</em></span>
+							<span class="amntTotal">잔액 USD <em>64.00</em></span>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="listMoreBtn">
+				<a href="javascript:;" title="항목 더보기">더보기</a>
+			</div>
+
+			<!-- 거래내역이 없을 경우 -->
+			<div class="topConfirmArea confirmMsg type04">
+				<p>조회 된 거래 내역이 없습니다.</p>
+			</div>
+			<!-- // 거래내역이 없을 경우 -->
+
+			<div class="guideList">
+				<div class="tArea"><p class="guideTit">알아두세요</p></div>
+				<ul class="listDot">
+					<!-- 2018-10-25 통합스마트뱅킹 수정사항 : 문구 변경 -->
+					<li>상단의 잔액은 1개의 계좌에 여러 통화를 예치하는 외화예금인 경우에는 미화환산금액으로 표시합니다.</li>
+					<!-- // 2018-10-25 통합스마트뱅킹 수정사항 end -->
+				</ul>
+			</div>
+
+			<div class="areaBtnDefault">
+				<a href="javascript:;" class="btnPressDefault">계좌정보</a>
+				<a href="javascript:;" class="btnPressPoint">외화계좌이체</a> 
+			</div>
+
+			<!-- 조회조건설정 팝업 시작 -->
+			<div class="popWrap bankSetWrap popH02">   
+				<div class="dim"></div> <!-- 팝업 dim 처리 -->
+				<div class="dimCloseArea" onclick="popClose(this);return false;">터치 시 해당 창을 닫습니다.</div><!-- 2018-10-23 딤클릭영역 추가 -->
+				<div class="popInner">
+					<h1 class="bankPopTit al">조회설정</h1>
+					
+					<!-- 팝업컨텐츠 -->
+					<div class="popCont">
+						<div class="transfer">
+							<!-- 조회조건변경 시작 -->
+							<div class="">
+								<h2 class="defTit">조회기간</h2>
+								<div class="calendarForm">
+									<div class="cal">
+										<div class="inputList">
+											<input type="text" value="" title="조회 시작일" placeholder="시작일선택" readonly="readonly">
+											<a href="javascript:;" class="btnCalendar" title="날짜선택 새창열림"><span class="blind">날짜선택</span></a>
+										</div>
+									</div>
+									<span class="symbol">-</span>
+									<div class="cal">
+										<div class="inputList">
+											<input type="text" value="" title="조회 종료일" placeholder="종료일선택" readonly="readonly">
+											<a href="javascript:;" class="btnCalendar" title="날짜선택 새창열림"><span class="blind">날짜선택</span></a>
+										</div>
+									</div>
+								</div>
+								<div class="areaBtnPrice">
+									<div class="inner">
+										<ul>
+											<li><a href="javascript:;" class="btnAddonPoint">당일</a></li>
+											<li><a href="javascript:;">3일</a></li>
+											<li><a href="javascript:;">1개월</a></li>
+											<li><a href="javascript:;">3개월</a></li>
+											<li><a href="javascript:;">6개월</a></li>
+											<li><a href="javascript:;" class="btnAddon">초기화</a></li>
+										</ul>
+									</div>
+								</div>
+
+								<h2 class="defTit">입출금유형</h2>
+								<div class="optionSel">
+									<ul>
+										<li><a href="javascript:;">입/출금</a></li>
+										<li class="active"><a href="javascript:;">입금</a></li>
+										<li><a href="javascript:;" class="active">출금</a></li>
+									</ul>
+								</div>
+
+								<h2 class="defTit">정렬</h2>
+								<div class="optionSel">
+									<ul>
+										<li class="active"><a href="javascript:;">최근 거래순</a></li>
+										<li><a href="javascript:;" class="active">과거 거래순</a></li>
+									</ul>
+								</div>
+							</div>
+							<!-- // 조회조건변경 끝 -->
+						</div>
+					</div>
+					<!-- 팝업컨텐츠 -->
+
+					<!-- 팝업 버튼영역  -->
+					<div class="popBtnWrap">
+						<div class="popBtn">
+							<a href="javascript:;" class="confirmBtn">조회</a>
+						</div>
+						<a href="javascript:;" onclick="popClose(this);return false;" class="popClose" title="해당 창을 닫습니다."><img src="../../images/common/btn_popClose.png" alt="닫기"></a>
+					</div>
+					<!-- // 팝업 버튼영역 -->
+				</div>
+
+			</div>
+			<!-- // 조회조건설정 팝업 끝 -->
+        </div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div class="footer">
+			<ul class="footMenu">
+				<li><a href="../util/UC110000.html">홈</a></li>
+				<li><a href="../bw/UC490000.html">마이NH</a></li>
+				<li><a href="../util/talk.html">상담톡</a></li>
+				<li><a href="javascript:;">고객센터</a></li>
+				<li><a href="javascript:;">인증/보안</a></li>
+			</ul>
+			<!-- quick button -->
+			<!-- <div class="areaBtmQuick"> 
+				<span class="btnQuick"><a href="javascript:;">quick</a></span>
+				<span class="btnTop"><a href="javascript:;">Top</a></span>
+			</div> -->
+			<!-- //quick button -->
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

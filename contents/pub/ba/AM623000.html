@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="NH Bank" />
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="robots" content="no-index,follow">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="content" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>:::NH통합스마트뱅킹 || 모바일ATM:::</title>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../js/common_ui.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/common.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/swiper.min.css" />
+	<style type="text/css">
+		
+	</style>
+	<script type="text/javascript">
+
+		var AtmSwiper;
+
+		$(function(){
+			var $atmStepArea = $(".atmStepArea"),
+				  $bannerPrevBtn = $(".bannerPrevBtn"),
+				  $bannerNextBtn = $(".bannerNextBtn");
+				AtmSwiper = new Swiper(".atmInfoWRap",{
+				direction : 'horizontal',
+				//loop : "true"
+				on:{
+                    init:function(){
+                        $('.swiper-slide').attr('aria-hidden','true').attr('tabindex','0');
+                        $('.swiper-slide-active').attr('aria-hidden','false');
+                    }
+                },
+			});
+			AtmSwiper.on('slideChange',function(){
+				$atmStepArea.find("ul li").removeClass("active");
+				$atmStepArea.find("ul li").eq(AtmSwiper.activeIndex).addClass("active");
+			});
+			/*접근성 관련*/
+			AtmSwiper.on('slideChangeTransitionEnd',function(){
+				$(".swiper-slide").attr('aria-hidden', true);
+                $(".swiper-slide.swiper-slide-active").attr('aria-hidden', false).blur().focus();
+			});
+		});
+
+		function AtmSwipe(index){
+			AtmSwiper.slideTo(index);
+		};
+	</script>
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+			<a href="../util/UC110000.html" class="btnBack kioskEffect" role="button"><span>이전</span> <span class="hand type01"></span></a>
+			<h1><a href="javascript:;">ATM출금실행</a></h1>
+			<a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+			<a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+		</div>
+		<!-- //header -->
+
+		<!-- container -->
+		<div class="container">
+			<h2 class="defTit">CD/ATM 출금 인증번호</h2>
+			<div class="authWrap">
+				<div class="authNum2">
+					<span>1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>6</span>
+<!-- 					<p class="timeLimit2"> -->
+<!-- 						남은시간<span>2:29</span> -->
+<!-- 						<a href="javascript:;" class="btnTimeLimit">남은시간 재발급</a> -->
+<!-- 					</p> -->
+				</div>
+			</div>
+			<div class="authTime">
+				남은시간 <span>4 : 41</span>
+			</div>
+			<div class="authBtn mt15"><a href="javascript:;">인증번호 재발급</a></div>
+
+			<h2 class="defTit mb0">CD/ATM 출금 프로세스 안내</h2>
+			<div class="atmInfoWRap swiper-container">
+				<ol class="swiper-wrapper">
+					<li class="swiper-slide">
+						<p class="defTxt02 atmDefTxt mb10">1. 거래선택 시 <span class="pointColor">예금인출</span>을 누르세요.</p>
+						<img src="../../images/contents/img_atmInfo01.png" alt="ATM 화면에서 좌측 상단에 있는 예금인출 버튼을 확대한 이미지" />
+					</li>
+					<li class="swiper-slide">
+						<p class="atmDefTxt mb10">2. 원하시는 거래선택 시 <span class="pointColor">모바일출금</span>을 누르세요.</p>
+						<img src="../../images/contents/img_atmInfo02.png" alt="ATM 화면에서 우측 메뉴 중 상단에서 6번째 버튼 모바일 출금 버튼을 확대한 이미지" />
+					</li>
+					<li class="swiper-slide">
+						<p class="atmDefTxt mb10">3. 생년월일 6자리를 입력하세요.</p>
+						<img src="../../images/contents/img_atmInfo03.png" alt="ATM 화면에서 생년월일을 입력하는 화면. 좌측에는 입력화면이 있고 우측에는 숫자키패드가 있다." />
+					</li>
+					<li class="swiper-slide">
+						<p class="atmDefTxt mb10">4. 상단에 부여된 인증번호를 CD/ATM에 입력한 후 확인 버튼을 누르세요.</p>
+						<img src="../../images/contents/img_atmInfo04.png" alt="ATM 화면에서 인증번호 6자리를 입력하는 화면. 좌측에는 입력화면이 있고 우측에는 숫자키패드가 있다." />
+					</li>
+					<li class="swiper-slide">
+						<p class="atmDefTxt mb10">5. 출금계좌 번호를 확인하고 맞으면 확인 버튼을 누르세요.</p>
+						<img src="../../images/contents/img_atmInfo05.png" alt="ATM 화면에서 출금계좌번호를 입력하는 화면. 좌측에는 입력화면이 있고 우측에는 숫자키패드가 있다." />
+					</li>
+					<li class="swiper-slide">
+						<p class="atmDefTxt mb10">6. 찾으실 금액을 만원 단위로 입력한 후 확인을 누르세요.</p>
+						<img src="../../images/contents/img_atmInfo06.png" alt="ATM 화면에서 찾으실 금액을 입력하는 화면. 좌측에는 찾으실 금액 만원 단위로 입력화면이 있고 우측에는 숫자키패드가 있다." />
+					</li>
+					<li class="swiper-slide">
+						<p class="atmDefTxt mb10">7. 계좌의 비밀번호 4자리를 입력한 후 확인 버튼을 누르세요.</p>
+						<img src="../../images/contents/img_atmInfo07.png" alt="ATM 화면에서 계좌비밀번호를 입력하는 화면. 좌측에는 계좌 비밀번호 4자리를 입력하는 화면이 있고, 우측에는 숫자키패드가 있다." />
+					</li>
+				</ol>
+			</div>
+			<div class="atmStepArea stepArea2">
+				<ul class="stepList stepList2">
+					<li class="active">
+						<a href="javascript:AtmSwipe(0)">첫번째 배너이동</a>
+					</li>
+					<li>
+						<a href="javascript:AtmSwipe(1)">두번째 배너이동</a>
+					</li>
+					<li>
+						<a href="javascript:AtmSwipe(2)">세번째 배너이동</a>
+					</li>
+					<li>
+						<a href="javascript:AtmSwipe(3)">네번째 배너이동</a>
+					</li>
+					<li>
+						<a href="javascript:AtmSwipe(4)">다섯번째 배너이동</a>
+					</li>
+					<li>
+						<a href="javascript:AtmSwipe(5)">여섯번째 배너이동</a>
+					</li>
+					<li>
+						<a href="javascript:AtmSwipe(6)">일곱번째 배너이동</a>
+					</li>
+				</ul>
+			</div>
+			<div class="guideList">
+				<div class="tArea"><p class="guideTit">알아두세요</p></div>
+				<ul class="listDot">
+					<li>인증번호는 스마트폰에 수신 후 5분간 유효하며 인증번호 재 생성 시 기존 인증번호는 사용이 불가합니다.</li>
+					<li>자동화기기(CD,ATM)에서 모바일출금을 선택 후 생년월일과 상단의 인증번호를 입력하시면 예금지급이 가능 합니다.</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div class="footer">
+			<!-- quick button -->
+			<!-- <div class="areaBtmQuick">
+				<span class="btnQuick"><a href="javascript:;">quick</a></span>
+				<span class="btnTop"><a href="javascript:;">Top</a></span>
+			</div> -->
+			<!-- //quick button -->
+			<ul class="footMenu">
+				<li><a href="../util/UC110000.html">홈</a></li>
+				<li><a href="../bw/UC490000.html">마이NH</a></li>
+				<li><a href="../util/talk.html">상담톡</a></li>
+				<li><a href="javascript:;">고객센터</a></li>
+				<li><a href="javascript:;">인증/보안</a></li>
+			</ul>
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+
+	<script type="text/javascript" src="../../js/swiper.min.js"></script>
+</body>
+</html>

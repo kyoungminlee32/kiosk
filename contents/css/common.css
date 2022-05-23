@@ -1,0 +1,2238 @@
+@charset "utf-8";
+
+/* html {font-size:10px;} */
+html{zoom:260%;}
+html {position:relative;}
+html,body {font-family:"NotoKR","맑은 고딕","돋움",dotum,sans-serif;color:#111;font-weight:normal;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;-webkit-tap-highlight-color:transparent;-webkit-user-select: none;-webkit-text-size-adjust: none; }
+body {font-size: 14px;}
+body,div,dl,dd,ul,ol,h1,h2,h3,h4,h5,h6,form,fieldset,legend,button,p,pre,blockquote,menu,figure,input {margin:0;padding:0;}
+header,footer,section,article,aside,nav,hgroup,details,menu,figure,figcaption {display:block;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,select,input,textarea,p,blockquote,th,td,menu,button,a,span,strong,label,header,footer,section,article,aside,nav,hgroup,details,figure,figcaption {word-break:break-word;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-ms-box-sizing:border-box;} /* 여백을 포함한 사이즈 설정*/ 
+h1,h2,h3,h4,h5,h6,input,select,textarea,button,option {color:inherit;font-family:"NotoKR","맑은 고딕","돋움",dotum,sans-serif;font-size:13px;font-weight:normal;}
+pre,code,samp,kbd {font-family:inherit;} 
+h1,h2,h3,h4,h5,h6,strong,b,th {font-weight:bold;} 
+em,var,address {font-style:normal;} 
+ul,ol,li {list-style:none;} 
+
+legend,fieldset,button,img {border:0 none;} 
+input,select,textarea,button,label,strong,a,time {vertical-align:inherit;}
+input,select,textarea,button,option {font-family:inherit;font-weight:inherit;}
+input,select,textarea {appearance:none;-webkit-appearance:none;} 
+input[type="text"]::-webkit-search-cancel-button {appearance:none;-webkit-appearance:none;} 
+button,select,option {color:inherit;text-transform:none;} 
+textarea {resize:none;}
+caption,legend {text-indent:-5000px;font-size:0;line-height:0;width:0;height:0;overflow:hidden;} 
+table {table-layout:fixed;width:100%;border-collapse:collapse;border-spacing:0;} 
+button {background:none;text-align:left;cursor:pointer;overflow:visible;} 
+a {color: inherit}
+a {text-decoration:none !important} /* 2018-11-06 [윤지현] 이벤트상세 cms 영역 style 속성 상속되는 것 방지 */  /* 2018-11-19 [오나경] 예약클래스가 정상적으로 인식되지 않아 재수정 */
+*:focus {outline:1;}
+*:focus {-webkit-tap-highlight-color:rgba(0,0,0,0) !important;-webkit-focus-ring-color: transparent !important;outline:none;}/* 2018-11-06 [양미선] 안드로이드버전 포커스 숨김 처리 */
+
+@font-face {
+	font-family:'NotoKR';
+	font-style:normal;
+	src:	url('../fonts/NotoSansKR-Regular.eot');
+	src:	url('../fonts/NotoSansKR-Regular.eot?#iefix') format('embedded-opentype'),
+			local(※), 
+			url('../fonts/NotoSansKR-Regular.woff') format('woff');
+;}
+
+@font-face {
+	font-family:'NotoKR';
+	font-style:normal;
+	font-weight:bold;
+	src:	url('../fonts/NotoSansKR-Medium.eot');
+	src:	url('../fonts/NotoSansKR-Medium.eot?#iefix') format('embedded-opentype'),
+			local(※), 
+			url('../fonts/NotoSansKR-Medium.woff') format('woff');
+;}  
+
+/* fixed 기준 설정 */
+/*body{position:relative;}*/
+
+/**************************************************
+		important 정의 
+************************7**************************/
+.dib{display: inline-block !important;}
+.al {text-align: left !important}
+.ac {text-align: center !important}
+.ar {text-align: right !important}
+.blind {position: absolute !important; top:0 !important;width:1px !important;height:1px !important;font-size:1px !important;line-height:0 !important;color:transparent !important;opacity:0 !important;overflow: hidden !important;} /* 영역 숨김 정의 editby ys */ 
+
+.fontSiz11 {font-size:11px;}
+.f12 {font-size:12px !important;} /* 2018-10-15 [윤지현] 폰트사이즈 적용관련 css 추가 */
+.inpPwMin {font-size:10px; padding:0; text-align:center;}
+
+.pointColor {color:#3d9bff !important;} /* 입금(파랑) */
+.pointColor2 {color:#f44336 !important;} /* 출금(빨강) */
+.pointColor3 {color:#000 !important;} /* 검정 */
+.pointColor4 {color:#3b5997 !important;} /* 남색 */
+.pointColor5 {color:#f4670a !important;} /* 오렌지 계좌번호 *//*2018-11-15 [안형애] 접근성 명도대비 수정*/
+.pointColor6 {color:#046fd9 !important;} /* 하단알림용 두번째 강조컬러 */ /*2018-11-16 [안형애] 접근성 명도대비 수정*/
+.pointColor7 {color:#046fd9 !important;} /* 상단알림용 첫번째 강조컬러 퍼렁 */ /*2018-11-16 [안형애] 접근성 명도대비 수정*/
+.pointColor8 {color:#f4670a !important;} /* 상단알림용 두번째 강조컬러 오렌지 */
+
+.bdl {border-left: 1px solid #e5e5e5 !important}
+.bdr {border-right: 1px solid #e5e5e5 !important}
+.bdt {border-top: 1px solid #e5e5e5 !important}
+.bdb {border-bottom: 1px solid #e5e5e5 !important}
+.bdtNone {border-top: none !important}
+.bdbNone {border-bottom: none !important}
+.bdlNone {border-left: none !important}
+.bdrNone {border-right: none !important}
+.bdtPoint {border-top: 1px solid #999 !important}
+.bdbPoint {border-bottom: 1px solid #999 !important}
+
+.fl {float:left !important;}
+.fr {float:right !important;}
+.fn {float:none !important;}
+.cl {clear:both;}
+.clfix {overflow:hidden;}
+.block {display: block !important;}
+.blockTbl {display: table !important;}
+.none {display: none !important;}
+.inblock {display: inline-block !important;}
+.blockNone {display: none !important;}
+.underLine {text-decoration: underline !important}
+
+.mg0 {margin: 0 !important;}
+.mt0 {margin-top: 0 !important;}
+.mt5 {margin-top: 5px !important;}
+.mt7 {margin-top: 7px !important;}
+.mt10 {margin-top: 10px !important;}
+.mt15 {margin-top: 15px !important;}
+.mt20 {margin-top: 20px !important;}
+.mt25 {margin-top: 25px !important;}
+.mt30 {margin-top: 30px !important;}
+.mt35 {margin-top: 35px !important;}
+.mt41 {margin-top: 41px !important;}
+.mt40 {margin-top: 40px !important;}
+.mt45 {margin-top: 45px !important;}
+.mt50 {margin-top: 50px !important;}
+.mb0  {margin-bottom: 0 !important;}
+.mb5  {margin-bottom: 5px !important;}
+.mb10 {margin-bottom: 10px !important;}
+.mb15 {margin-bottom: 15px !important;}
+.mb20 {margin-bottom: 20px !important;}
+.mb25 {margin-bottom: 25px !important;}
+.mb30 {margin-bottom: 30px !important;}
+.mb35 {margin-bottom: 35px !important;}
+.mb40 {margin-bottom: 40px !important;}
+.mb45 {margin-bottom: 45px !important;}
+.mb50 {margin-bottom: 50px !important;}
+.mlr-17 {margin-left: -17px !important;margin-right: -17px !important;}
+.mlr17 {margin-left: 17px !important;margin-right: 17px !important;}
+.mt-5 {margin-top: -5px !important;}
+.ml5 {margin-left: 5px !important;}
+.ml10 {margin-left: 10px !important;}
+.pt0{padding-top:0 !important;}
+.pb0{padding-bottom:0 !important;}
+.pd0 {padding:0 !important}
+.pd10 {padding:0 10px;}
+.pd17 {padding: 0 17px;}
+.pt20 {padding-top:20px !important;}
+.mb0 {margin-bottom: 0px !important;}
+.pl0 {padding-left:0 !important;}
+.pl5 {padding-left:5px !important}
+.pl10 {padding-left:10px !important}
+.pr5 {padding-right:5px !important}
+.pr10 {padding-right:10px !important}
+.pr50 {padding-right:50px !important}
+.plr10 {padding:0 10px !important}
+.ptb10 {padding-top:10px !important;padding-bottom:10px !important}
+/* 2018-11-05 [윤지현] 켤쳐홀릭 iframe 여백관련 예약클래스 추가 */
+.pt50 {padding-top: 50px !important}
+.pb20 {padding-bottom: 20px !important}
+/* 2018-11-05 [윤지현] end */
+.pb50 {padding-bottom: 50px !important} /* 2018-11-09 [윤지현] 전계좌조회 하단 간격관련 예약클래스 추가*/
+
+.ls0 {letter-spacing:0px !important;} /* 2018-10-29 [안형애] 공통 : 글자 자간 초기화 예약클래스 추가 */
+.ls005 {letter-spacing:-0.5px !important;}
+.ls01 {letter-spacing:-1px !important;}
+.ls015 {letter-spacing:-1.5px !important;}
+.ls02 {letter-spacing:-2px !important;}
+
+.vam {vertical-align: middle !important}
+.va0 {vertical-align: 0 !important} /* 2018-10-25 [윤지현] 외환 > 환전수령점 전화번호 추가와 관련하여 예약클래스 추가 */
+
+.lh2 {line-height:2 !important}
+
+.w120 {width:120px !important;}
+.w100 {width:100px !important;}
+.w60 {width:60px !important;}
+.w30 {width:30px !important;}
+.w25p {width:25% !important}
+.w35p {width:35% !important}
+.w40p {width:40% !important}
+.w70p {width:70% !important;}
+.w30p {width:30% !important;}
+.w100p {width:100% !important}
+
+.fwB{font-weight:bold !important}
+.fwN{font-weight:normal !important}
+
+/**************************************************
+		z-index 정리
+	header : 100 -> 1100		
+	footer : 100 -> 1100
+	popWrap : 101 -> 1101
+	popWrap popInner :  -> 1201
+	areaBtnDefault : 1100 || 2018-11-27 [윤지현] z-index 가이드 추가
+	영업점지도 : 1005
+	전체메뉴 : 200 -> 1200
+	상담톡 : 101 -> 1200
+	나만의스마트뱅킹 미리보기 : 101 -> 1201
+	나만의스마트뱅킹 미리보기 내 previewPop : 1201
+**************************************************/
+
+/**************************************************
+		layout 정의 
+**************************************************/
+.fixControl .areaBtnDefault,.fixControl .footer {display:none !important;} /* 푸터, 픽스버튼 컨트롤 */
+.fixControl .header {position:absolute !important;}
+
+.header {position: fixed; top:0; left:0; width: 100%; height:50px; text-align: center; background: #fff; border-bottom: 1px solid #dedede; z-index:1100}
+.header h1 {padding: 0 40px; line-height: 50px; font-size:16px; color: #111; white-space:nowrap}
+.header h1 a {font-size: inherit; font-family:"NotoKR" !important;}  /* 2018-11-23 [윤지현] 폰트패밀리 강제 적용 */ /* 2018-11-07 [윤지현] 헤더영역 제목 폰트사이즈가 이벤트상세 cms 영역 style 속성 상속받는 것 방지 */
+.header h1 img {width:109px;}
+.header [class^="btn"] {height: 50px;}
+.header [class^="btn"] span {display: inline-block; padding-top: 28px; font-family:"NotoKR" !important; font-size:11px !important; color:#111 !important;width:inherit;height: inherit;} /* 2018-11-23 [윤지현] 폰트패밀리 강제 적용 */ /* 2018-11-06 [윤지현] 폰트색상, 사이즈 속성 강제적용(cms style이 적용되는 것 방지) */
+.header .btnBack {position: absolute; top:0; left: 0; width: 40px; background: url(../images/common/btn_back.png) no-repeat 50% 9px; background-size: 19px 17px;}
+.header .btnSearch{position: absolute; top:0; left: 0; width: 40px; background: url(../images/common/btn_search.png) no-repeat 50% 10px; background-size: 15px 15px;}
+.header .btnSearch.sub{position: absolute; top:0; left: auto; right:40px; width:25px}
+.header .btnAlim {position: absolute; top:0; right: 40px; width:30px;background:url(../images/common/ico_alim.png) no-repeat 50% 10px; background-size:15px 14px;}
+.header .btnAlim.active:after {position: absolute; top:10px; right:3px; content:'새로운 알림이 있음'; width:4px; height: 4px; background: url(../images/common/bul_alim_dot.png) no-repeat; background-size: cover;font-size: 1px;color: transparent;overflow:hidden;}
+.header .btnChat {display: none;position: absolute; top:0; right: 40px; width:30px;background:url(../images/common/btn_talk.png) no-repeat 50% 10px; background-size:16px 14px;}
+.header .btnNav {display:none;position: absolute; top:0; right: 0; width:40px;background:url(../images/common/btn_menu.png) no-repeat 50% 12px; background-size:15px 12px;}
+.header .btnVociceSrch {position: absolute; top:0; width:45px; left:40px; background:url('../images/main/ico_voice.png') no-repeat 50% 10px; background-size:13.5px 16.5px;letter-spacing:-0.5px} /* 2018-12-10 [윤지현] header 음성검색 호환성 대응 너비값 수정 */
+
+.container {max-height: 100%;padding: 50px 17px 150px;} /* 2018-11-14 [윤지현] 컨텐츠 내 버튼과 위치 겹침으로 패딩조정 */ /* 2018-10-23 [오병직] top버튼 노출을 위한 하단 패딩 재조정 */
+
+/* 2018-11-02 [윤지현] 푸터 클릭영역 30% 축소 및 color, text-decoration 수정 */
+.footer {position: fixed; bottom: 0; width: 100%; z-index:1100;left:0;}
+.footMenu {display: block; position:relative; width: 100%; height:50px; background: #fff; border-top: 1px solid #dedede; z-index:10;}
+.footMenu li {position: relative;width: 20%;height: 100%;font-size:12px;color: #111;text-align: center;float:left;padding-top: 16px;}
+.footMenu li a, .footMenu li a:active, .footMenu li a:link, .footMenu li a:visited {display: block;height:100%;padding: 12px 0 0; position: relative; font-family:"NotoKR" !important; line-height:initial !important; color:#111 !important;text-decoration:none !important;}  /* 2018-11-23 [윤지현] 폰트패밀리 강제 적용 */
+.footMenu li:before {display:block;content:'';width:21px;height:18px;margin: 0 auto;background: url(../images/common/spr_foot_menu.png) no-repeat;background-size: 21px 108px;position: absolute;top: 6px;left: 50%;margin-left: -10px;}
+.footMenu li.myico:before{background: url(../images/common/ico_menuMy.png) no-repeat center top;background-size: 19px 18px;}
+.footMenu li.noLogin:before{background-position: 0 -90px !important;}
+.footMenu li.noLogin.open a{color:#0370d9;}
+.footMenu li.noLogin.open a:before{background:url(../images/common/noLogin_open.png) no-repeat; background-size:21px 18px; background-position: 0 0px !important;}
+.footMenu li:nth-child(1):before {background-position: 0 0;}
+.footMenu li:nth-child(2):before {background-position: 0 -18px;}
+.footMenu li:nth-child(3):before {background-position: 0 -36px;}
+.footMenu li:nth-child(4):before {background-position: 0 -54px;}
+.footMenu li:nth-child(5):before {background-position: 0 -72px;}
+/* 2018-11-02 [윤지현] end */
+
+.areaBtmQuick {text-align: right;position: absolute;right:0;bottom:98px}
+.areaBtmQuick .btnTop {display:inline-block; padding: 0 16px 0 0;}
+.areaBtmQuick .btnTop a {float: right; display: block; width:47px; height: 48px;  background: url(../images/common/btn_gotop.png) no-repeat; background-size:cover; color:transparent; overflow:hidden;} /* 2018-11-28 [윤지현] 접근성대응 텍스트 히든처리 수정 */
+
+/* 2018-11-26 [오병직] 메인 상단 탑 버튼 추가로 인한 스타일 적용 */
+.mainAreaBtmQuick {position: absolute;right:0;bottom:98px}
+.mainAreaBtmQuick .mainBtnTop {display:inline-block; padding: 0 16px 0 0;}
+.mainAreaBtmQuick .mainBtnTop a {float: right; display: block; width:47px; height: 48px;  background: url(../images/common/btn_gotop.png) no-repeat; background-size:cover;  text-indent:-9999px; overflow:hidden;}
+/* 2018-11-26 [오병직] end */
+
+.openAcc{display:none; position:absolute; left:0; bottom:60px; width:100%; padding:0 10px; z-index:11;}
+.openAcc:before{content:""; display:block; position:absolute; width:6px; height:4px; bottom:-4px; left:9.5%; background:url(../images/common/open_acc_arrow.png) no-repeat; background-size:6px 4px;}
+.openAcc ul{display:table; table-layout:fixed; width:100%; height:52px; background:#fff; border-radius:3px;}
+.openAcc.twoDepth:before {left:29.5%;} /* 2018-10-23 [오나경] 공통>통합검색 : 상품상세검색 영역 2depth의 아이콘 이미지 위치값 변경 */
+/* 2018-10-26 [박창섭] 푸터 > 계좌개설 팝업 버튼 추가 및 영역 확장 */
+.openAcc > ul > li{display:table-cell; position:relative; width:50%; padding:15px; font-size:13px; font-weight:bold; vertical-align:middle;}
+.openAcc > ul > li:after{content:""; display:block; position:absolute; right:15px; top:15px; width:21px; height:18px; background:url(../images/common/open_acc02.png) no-repeat; background-size:21px 18px;}
+.openAcc > ul > li:first-child:before{content:""; display:block; position:absolute; right:0; top:50%; width:1px; height:84px; background:#dedede; margin-top:-42px;}
+.openAcc > ul > li:first-child:after{width:18px; background:url(../images/common/open_acc01.png) no-repeat; background-size:18px 18px;}
+.openAcc > ul > li ul{width:100%;}
+.openAcc > ul > li ul li{width:100%; margin-top:12px;}
+.openAcc > ul > li ul li a{display:block; font-weight:normal; font-size:12px;}
+.openAcc > ul > li ul li a:before{content:""; display:inline-block; width:4px; height:8px; margin-right:5px; background:url(../images/contents/ico_more.png) no-repeat; background-size:4px 7px;}
+.openAcc .openAccClose{position:absolute; top:-30px; right:15px; color:#fff; font-size:13px; font-weight:bold;}
+.openAcc .openAccClose:after{content:""; display:inline-block; vertical-align:middle; width:20px; height:20px; margin-top:-2px; margin-left:8px; background:url(../images/common/open_acc_close.png) no-repeat; background-size:20px 20px;}
+.footer .accDim{display: none;position:fixed;width:100%;height:100%;background:#000;opacity:0.7;top:0;left:0;z-index:10 !important;}
+/* 2018-10-26 [박창섭] end */
+
+/**************************************************
+		컨텐츠별 간격 정의 
+**************************************************/
+* + .infoTxtForm {margin-top: 5px;}
+* + .areaBtnPrice {margin-top: 10px;}
+
+[class^="wrapTbl"] table + table,
+[class^="wrapTbl"] + [class^="wrapTbl"] {margin-top: 15px;} /* 테이블 wrap 내에 table 2개 이상 존재시 */
+[class^="wrapTbl"] .boxHeaderBlue,
+.topConfirmArea + .areaBodyBtnFull,
+.formWrap li .areaBodyBtnSelect{margin-top: 0;}
+
+* + .areaBodyBtnFull,
+* + .guideList,
+* + .areaPopBtnFull, 
+* + .areaBodyBtnIcon, 
+.stepArea + [class^="wrapTbl"],
+.stepArea + .imgWrap,
+[class^="tabL"] + [class^="wrapTbl"],
+[class^="wrapTbl"] + .totalWrap,
+[class^="wrapTbl"] + .selDetailList,
+[class^="wrapTbl"] table + .tblHeader,
+.guideListTop + [class^="wrapTbl"],
+.areaBodyBtnFull + .selDetailList,
+.areaBodyBtnFull + .guideListTop,
+.areaBodyBtnFull + .productWrap,
+.formWrap + .selDetailList,
+.totalWrap + [class^="wrapTbl"],
+.container > [class^="wrapTbl"]:first-child,
+.popCont > [class^="wrapTbl"]:first-child {margin-top: 20px;}
+
+.imgWrap + [class^="wrapTbl"] {margin-top: 10px;}
+
+.defTit + .areaBodyBtnSelect,
+.defTit + .termsWrap,
+.defSubTit + .areaBg,
+.areaBg > .formWrap,
+.formTit + .areaBtnType02,
+.defTit + .guideList,
+.defTit + .certificateWrap,
+.defSubTit + .areaBodyBtnSelect,
+.defSubTit + .defTxt {margin-top: 0;}
+
+.defTit + .formWrap,.defSubTit + .formWrap {margin-top: 0;}
+.defTit + #dataForm .formWrap,.defSubTit + .formWrap {margin-top: 0;} /* 2018-10-18 [오병직] 지방세납부내역조회 라디오버튼 상하 여백 margin-top 추가  */
+
+* + .defTxt {margin-top: 15px;}
+.defTit + .defTxt {margin-top: 0 !important;} 
+.defTxt + .defTxt {margin-top: 10px;}
+.defTxt + .listDot {margin-top: 7px;}
+
+[class^="tabL"] + .productWrap {margin-top: -1px;}
+
+/**************************************************
+        tab 정의
+ **************************************************/
+.tabLv0{overflow:hidden;}
+.tabLv0.n2 ul li {width: 50%}
+.tabLv0.n3 ul li {width: 33.3333%}
+.tabLv0.n4 ul li {width: 25%}
+.tabLv0.n5 ul li {width: 20%}
+
+.tabLv1,.tabLv2 {margin: 0 -17px !important;}
+.tabLv1 ul {display:-webkit-box;display:-webkit-flex; display: flex; padding:0; width: 100%; table-layout: fixed;overflow: hidden; }
+.tabLv1 li {position: relative; -webkit-flex:none; text-align: center;border-bottom: 1px solid #dedede;}
+.tabLv1 li a {display: inline-block;margin-bottom: -1px; font-size: 14px; line-height: 1.3;text-decoration: none; box-sizing:border-box;letter-spacing:-1px;}
+.tabLv1 li a span {display:-webkit-box;display:-webkit-flex;display: flex; -webkit-flex-direction: column; flex-direction: column; -webkit-justify-content: center; justify-content: center;height: 44px;font-weight: bold;}
+.tabLv1 li a.active span {position: relative;color:#4885df;}
+.tabLv1 li a.active span:after {position: absolute; bottom:0; left:-10px; content:'선택됨'; width: 100%; height:2px; padding: 0 10px 0; background: #4885e0; z-index:2; color:transparent;}
+.tabLv1.flick {position: relative;}
+.tabLv1.flick [class^="arr"] {position: absolute; top: 0; z-index:2; width: 20px; height: 44px;}
+.tabLv1.flick .arrLft {left: 0;}
+.tabLv1.flick .arrLft:after {position: absolute; top: 50%; left:50%; margin: -5px 0 0 -5px; content:''; border-right: 5px solid #ccc; border-top: 5px solid transparent; border-bottom: 5px solid transparent }
+.tabLv1.flick .arrRgt {right: 0}
+.tabLv1.flick .arrRgt:after {position: absolute; top: 50%; right:50%; margin: -5px -5px 0 0; content:''; border-left: 5px solid #ccc; border-top: 5px solid transparent; border-bottom: 5px solid transparent }
+.tabLv2 ul {display:-webkit-flex; display: flex; padding:0; width: 100%;}
+.tabLv2 li {position: relative;text-align: center; }
+.tabLv2 li a {display:-webkit-flex; display: flex; -webkit-flex-direction: column; flex-direction: column; -webkit-justify-content: center; justify-content: center; height: 40px; text-decoration: none; color: #666; background: #e6e6e6; box-sizing:border-box;}
+.tabLv2 li:first-child a {border-left: none}
+.tabLv2 li a.active {color: #4285f4;}
+.tabLv2.flick{position: relative}
+.tabLv2.flick [class^="arr"] {position: absolute; top: 0; z-index:2; width: 20px; height: 40px;}
+.tabLv2.flick .arrLft {left: 0;}
+.tabLv2.flick .arrLft:after {position: absolute; top: 50%; left:50%; margin: -5px 0 0 -5px; content:''; border-right: 5px solid #999999; border-top: 5px solid transparent; border-bottom: 5px solid transparent }
+.tabLv2.flick .arrRgt {right: 0}
+.tabLv2.flick .arrRgt:after {position: absolute; top: 50%; right:50%; margin: -5px -5px 0 0; content:''; border-left: 5px solid #999999; border-top: 5px solid transparent; border-bottom: 5px solid transparent }
+.tabLv1.line2 li a span, .tabLv2.line2 li a {height: 62px}
+
+.tabInner ul {display: -webkit-flex; display: flex; padding:0; width: 100%; margin:15px 0 13px;}
+.tabInner li {position: relative; /*flex:1;*/ text-align: center; }
+.tabInner li a {display: -webkit-flex; display: flex; -webkit-flex-direction: column; flex-direction: column; -webkit-justify-content:center; justify-content:center; height: 30px; text-decoration: none; color: #666; box-sizing:border-box; border-right:1px solid #dedede; border-top:1px solid #dedede; border-bottom:1px solid #dedede;}
+.tabInner li:first-child a {border-left: 1px solid #dedede;}
+.tabInner li:first-child a.active {border-right: none;}
+.tabInner li a.active {color: #fff; background:#6a7688; border:1px solid #6a7688}
+
+.arrLft.swiper-button-disabled{display:none}
+.arrRgt.swiper-button-disabled{display:none}
+.tabStrong{position:absolute;overflow: hidden !important;width: 1px;height: 1px;opacity: 0;font-size: 1px;top:0;}  /* 2018-11-01 [오나경] 접근성 - position 값 누락으로 인해 수정 */
+
+/**************************************************
+	table 정의 
+**************************************************/
+[class*="tblHea"] {}
+[class*="tblHea"]:after {display:  block; content:''; clear: both;;}
+[class*="tblHea"] .unit {float: right; margin-top: -20px; font-size:11px; color: #999;}
+[class*="tblHea"] [class^="btn"] {position: relative; float: right; margin-top: -40px; height: 30px; line-height: 28px; font-size:13px; color: #111; font-weight: bold;}
+[class*="tblHea"] .badgeDefault {position: relative; float: right; margin-top: -31px;}
+[class^="wrapTbl"] table {width: 100%; border-top: 2px solid #808080}
+[class^="wrapTbl"] th {font-weight: normal; text-align: left; background: #f8f8f8;}
+[class^="wrapTbl"] td {text-align: left;background-color:#fff;}
+[class^="wrapTbl"] th.sub {font-weight: normal; color: #666; background: none;}
+[class^="wrapTbl"] th,[class^="wrapTbl"] td {padding: 11px 10px; font-size:13px; border-bottom: 1px solid #dedede; border-left:1px solid #dedede}
+[class^="wrapTbl"] th:first-child,[class^="wrapTbl"] td:first-child {border-left: none}
+[class^="wrapTbl"] th.al{text-align: left !important;}
+[class^="wrapTbl"] tbody td {padding: 11px 10px;}
+[class^="wrapTbl"] th a.btnAddon {margin-top:3px; padding:0 6px}
+[class^="wrapTbl"] td > .formWrap {margin-top:0}
+
+/* 테이블 정렬 important */
+.thLeft th {text-align:left !important;}
+.thCenter th {text-align:center !important;}
+.thright th {text-align:right !important;}
+.tdLeft td {text-align:left !important;}
+.tdCenter td {text-align:center !important;}
+.tdRight td {text-align:right !important;}
+
+tr.active td,.active th {color:#3d9bff !important; background: #f3faff !important;}
+tr.active td.pointColor5 {color:#f68b1f !important;}
+
+[class^="wrapTbl"] .btnFuncTip {margin-top:-5px;background-position:center center;}
+
+/**************************************************
+	title 정의 
+**************************************************/
+.defTit {position:relative;margin: 20px 0 10px; font-size:15px; color: #3b5997;} 
+.defTit2 {position:relative;margin: 20px 0 15px; font-size:15px;}
+.defTit2 + .defTit {margin-top:15px;}
+.defSubTit {position:relative;margin: 12px 0 5px; font-size:14px; color: #111;}
+.prodTit {display: block; margin-bottom: 7px; font-size:14px;}
+.defDotTit {margin-top: 5px; padding-left: 8px; font-size:13px; color:#111; background: url(../images/common/ico_listdot2.png) no-repeat 0 9px; background-size: 3px 3px;}
+.defDotTit2 {margin-top: 5px; padding-left: 8px; font-size:12px; color:#666; background: url(../images/common/ico_listdot.png) no-repeat 0 9px; background-size: 3px 3px;}
+.tblTit {font-size:14px; color: #111;}
+.termsTit {font-size:14px; color: #333;}
+.formTit {position: relative; display:block; margin:15px 0 7px; overflow: hidden;}
+.formTit .unit {display:inline-block; margin-left: 8px; font-weight: normal; font-size:12px; color: #666;}
+.formTit.tail{display: inline-block;}
+.formTit.tail:after {content: ""; padding: 0 20px 0 0; background: url(../images/common/ico_bell.png) no-repeat 5px 3px; background-size: 14px 14px;}
+
+.defTit + .stepArea {border-top: 1px solid #dedede;}
+.defTit .btnAcc {position:absolute;right:0;top:0;width:100%;height:22px;background: url(../images/common/ico_arr2_down.png) no-repeat right 10px center; background-size: 16px 9px;text-indent:-9999px;overflow:hidden;}
+.defTit .btnAcc.active {background: url(../images/common/ico_arr2_up.png) no-repeat right 10px center; background-size: 16px 9px;}
+.defSubTit .btnAcc {position:absolute;right:0;top:0;width:36px;height:22px;background: url(../images/common/ico_arr2_down.png) no-repeat center center; background-size: 16px 9px;text-indent:-9999px;overflow:hidden;}
+.defSubTit .btnAcc.active {background: url(../images/common/ico_arr2_up.png) no-repeat center center; background-size: 16px 9px;}
+
+/**************************************************
+	title header 정의 
+**************************************************/
+.isBtnHaeder {margin:15px -17px 0; padding: 0 17px 8px;}
+.isBtnHaeder:after {display: block; content:''; clear: both;}
+.isBtnHaeder .secTit, .isBtnHaeder .defTit {display: inline-block; margin-top: 5px;}
+.isBtnHaeder .defTit  {margin:0;margin-top:1px;}
+.isBtnHaeder .secTit + .areaBtnMulti, .isBtnHaeder .defTit + .areaBtnMulti {float: right;}
+
+/* text 정의 */
+.defTxt {line-height: 18px;}
+.defTxt02{font-size:13px;color:#666;text-indent:-14px;padding-left:14px}
+.defTxt03{font-size:12px;color:#ababab;text-align:center}
+.defTxt04{font-size:13px;color:#666;}
+.defTxtGry {color: #666;}
+.wUnit {display: inline-block !important; color:#111 !important; font-weight: normal !important;}
+
+p.infoTxt {position: relative; margin-top: 7px; padding-left: 20px; font-size:12px; color: #666;}
+p.infoTxt:before {position: absolute; top: 2px; left: 0; content:''; width: 14px; height: 14px; background: url(../images/common/ico_exclamation.png) no-repeat; background-size: cover; vertical-align: middle;}
+p.infoTxt.inBtn:before {top: 5px;}
+p.infoTxt.inBtn a{margin-left: 5px;}
+ul.infoTxt {margin-top: 7px;}
+ul.infoTxt li {position: relative; margin-top: 3px; padding-left: 20px; font-size:12px; color: #666;}
+ul.infoTxt li:before {position: absolute; top: 2px; left: 0; content:''; width: 14px; height: 14px; background: url(../images/common/ico_exclamation.png) no-repeat; background-size: cover; vertical-align: middle;}
+p.infoTxt2 {position: relative; margin-top: 7px; padding-left: 20px; font-size:11px; color: #f4670a;}/*2018-11-15 [안형애] 접근성 명도대비 수정 */
+p.infoTxt2:before {position: absolute; top: 2px; left: 0; content:''; width: 14px; height: 14px; background: url(../images/common/ico_exclamation2.png) no-repeat; background-size: cover; vertical-align: middle;}
+p.infoTxt3 {position: relative; margin-top: 7px; padding-left: 20px; font-size:12px; color: #666;}
+p.infoTxt3:before {position: absolute; top: 3px; left: 0; content:''; width: 14px; height: 14px; background: url(../images/common/img_ck_off.png) no-repeat; background-size: cover; vertical-align: middle;}
+p.infoTxt3.active {color: #3d9bff;}
+p.infoTxt3.active:before {width: 14px; height: 14px; background: url(../images/common/img_ck_on.png) no-repeat; background-size: cover;}
+
+.infoTxtCaution {position: relative; margin: 7px 0 10px; padding-left: 20px; font-size:12px; color: #f44743;}
+.infoTxtCaution:before {position: absolute; top: 2px; left: 0; content:''; width: 14px; height: 14px; background: url(../images/common/ico_caution.png) no-repeat; background-size: cover; vertical-align: middle;}
+
+.cricleNum1 {position: relative; top: -2px; display: inline-block; width: 17px; height: 17px; margin-left: 5px; font-size:11px; font-weight: bold; color: #fff; background: #3d9bff; border-radius: 9px; text-align: center; vertical-align: middle;}
+
+.currentTime {margin-top:15px;text-align:right;}
+.currentTime p {display:inline-block;padding-left:20px;background:url('../images/common/ico_time.png') no-repeat 0 3px;background-size:14px 14px;color:#666;font-size:12px;}
+
+/**************************************************
+	bullet 정의 
+**************************************************/
+.bulUpper {display:inline-block; margin: 0 3px; color: #fff; border-bottom: 8px solid #f44336; border-left: 5px solid transparent; border-right: 5px solid transparent; vertical-align: middle;}
+.bulLower {display:inline-block; margin: 0 3px; color: #fff; border-top: 8px solid #3d9bff; border-left: 5px solid transparent; border-right: 5px solid transparent; vertical-align: middle;}
+.bulLower.red {border-top: 8px solid #f44336; border-left: 5px solid transparent;}
+
+/**************************************************
+	btns 정의 
+**************************************************/
+[class^="btn"] {display:inline-block; text-align: center;}
+[class^="btn"].disabled {background: #999; color: #fff; border:none}
+[class^="btn"].disabled:after {display: block; width:1px; height:1px; content:'버튼을 실행할 수 없습니다.'; color:transparent; opacity:0; font-size:1px; text-indent:-9999px}
+
+/* press button */
+[class*="btnPress"] {height: 44px; line-height: 44px; font-size:15px;}
+.btnPressDefault {color: #fff; background: #6a7688;}
+.btnPressPoint {color: #fff; background: #046fd9;}
+.btnShare {width: 40px; background: #666 url(../images/common/ico_share.png) no-repeat center center; background-size: 17px 18px;}
+.btnCopyUrl {width: 40px; background: #666 url(../images/common/ico_copyUrl.png) no-repeat center center; background-size: 17px 20px;}
+.btnPressError {color: #fff; background: #f44336;}
+.btnPressError:before {display: inline-block; content:''; width: 16px; height: 16px; margin-right: 8px; vertical-align: -2px; background:url(../images/common/ico_press_error.png) no-repeat; background-size: cover;}
+
+/* in body button */
+[class^="btnBody"] {min-width: 52px; height: 30px; line-height: 30px; padding: 0 15px; font-size:12px; color: #fff; border-radius: 2px;}
+[class^="btnBody"] .icoChk {display: inline-block; width: 12px; height: 9px; margin-right: 6px; background: url(../images/common/ico_chk.png) no-repeat; background-size: 12px 18px;}
+[class^="btnBody"].disabled .icoChk {background-position: 0 -9px;}
+[class*="BodyDefault"] {background: #999;}
+[class*="dyDefaultS"] {height: 17px; line-height: 17px;;}
+[class*="tnFunc"] {display: inline-block; width: 30px; height: 30px; background: url(../images/common/spr_btn_function.png) no-repeat; background-size: 278px 56px;}
+.btnBodyDefault {width: 100%; height: 40px; line-height: 40px; border: none; font-weight: bold; background: #6a7688;}
+.btnBodyDefault + .btnBodyDefault {margin-top: 6px;}
+.btnBodyPoint {background: #4285f4;}
+.btnBodyPoint .icoChk {background-position: 0 0;}
+.btnBodyPoint2 {background: #6a7688; border: none !important;}
+.btnBodyRadius {min-width: 65px; height: 30px; line-height: 30px; font-size:12px; color: #333; border: 1px solid #ccc; border-radius: 15px;}
+.btnFuncDown {background-position: 0 0;}
+.btnFuncChnage {background-position: -36px 0;}
+.btnFuncToggle {width: 60px; background-position: -76px 0;}
+.btnFuncToggle.active {background-position: -142px 0;}
+.btnFuncPlus {background-position: -212px 0;}
+.btnFuncMinus {background-position: -248px 0;}
+.btnFuncTip {width: 16px; height: 16px; background-position: 0 -40px;}
+.btnFuncTip {width: 20px; height: 20px; margin:0 0 -2px 3px;background:url('../images/common/ico_question.png') no-repeat left bottom;background-size:14px 14px;}
+.btnFuncTip2 {width: 20px; height: 20px; margin:0 0 -2px 3px;background:url('../images/common/ico_question.png') no-repeat left bottom;background-size:14px 14px;}
+.btnAddon {display:inline-block; height: 24px; padding: 0 9px; line-height: 22px; font-size:11px; color: #111; text-align: center; vertical-align: middle; border-radius: 2px; letter-spacing: -0.05em; border: 1px solid #ccc; background: #fff;}
+.btnAddon.btnbgBlue{background-color:#4885e0;color:#fff;border:1px solid #4885e0;}
+.btnAddon.btnbgGray{background-color:#6a7688;color:#fff;border:1px solid #6a7688;}
+.btnAddonPoint {display:inline-block; height: 24px; padding: 0 9px; line-height: 22px; font-size:11px; color: #fff; text-align: center; vertical-align: middle; border-radius: 2px; letter-spacing: -0.05em; background: #4285f4;}
+.btnSrch {display: inline-block; width:16px; height: 16px; background: url(../images/common/ico_find.png) no-repeat; background-size: 16px 16px;}
+.btnBodyLine {display: inline-block; width: 100%; height: 40px; padding: 0 3px; line-height: 38px; font-size:14px; color: #111; text-align: center; vertical-align: middle; border-radius: 2px; border: 1px solid #999;background:#fff} /* 2018-11-07 [윤지현] 폰트사이즈 수정 */
+.btnBodyLine.isArr:after {display: inline-block; width:6px; height:10px; margin-left:5px; content:''; background: url(../images/common/ico_link_arrow.png) no-repeat; background-size:cover}
+
+.areaBtnDefault {position: fixed; bottom:50px; left:0; overflow:hidden; width: 100% !important;display:table;table-layout:fixed;z-index:1100} /* 2018-11-27 [윤지현] 하단 process 버튼에 z-index 추가*/
+.areaBtnDefault [class^="btn"] {display: table-cell; font-weight: bold; white-space:nowrap; font-family:"NotoKR" !important;} /* 2018-11-23 [윤지현] 폰트패밀리 강제 적용 */
+.areaBtnDefault [class^="btnPre"]:first-child {width: 50%}
+.areaBtnDefault [class^="btnPre"] {width: 100%}
+.areaBtnDefault [class^="btnPre"] + [class^="btnPre"] {width:50%}
+.areaBtnDefault .btnShare {height: 44px;min-width: 40px;width:14%;} 
+.areaBtnDefault .btnShare + [class^="btnPre"] {width:45%;}  /* 2018-11-16 [오나경] 잘못 기재된 부분이 있어 수정 */
+.areaBtnDefault .btnShare + [class^="btnPre"]:last-child {width:88%}
+.areaBtnDefault .btnShare + [class^="btnPre"] + [class^="btn"] {width:45%;}
+.areaBtnDefault.shareNone .btnShare {display:none}
+.areaBtnDefault.shareNone .btnShare + [class^="btnPre"] {width: 50%}
+.areaBtnDefault.shareNone .btnShare + [class^="btnPre"]:last-child {width: 100%}
+.areaBtnDefault.shareNone .btnShare + [class^="btnPre"] + [class^="btn"] {width: 50%}
+
+.areaBtnDefault .btnCart + [class^="btnPre"] {width: calc(50% - 20px)}
+.areaBtnDefault .btnCart + [class^="btnPre"]:last-child {width: calc(100% - 40px)}
+.areaBtnDefault .btnCart + [class^="btnPre"] + [class^="btn"] {width: calc(50% - 20px)}
+
+.areaBtnDefault .btnCopyUrl + .btnHeart {width: calc(40% - 40px)}
+.areaBtnDefault .btnCopyUrl + [class^="btnPre"]:last-child {width: calc(100% - 70px)}
+.areaBtnDefault .btnCopyUrl + [class^="btnPre"] + [class^="btn"] {width: 60%}
+
+.areaBtnDefault .btnHeart {width: 20% !important}
+
+/* 조회버튼 */
+.btnInquiry {display: block; height: 40px; line-height: 40px; text-align: center; color: #fff; background: #4285f4; border-radius: 2px}
+
+/* add on 버튼폼 */ 
+.areaBtnMulti {overflow:hidden;} 
+.areaBtnMulti .inner {margin:0 -1px;} 
+.areaBtnMulti .inner li {display:inline-block; padding:0 2px;} 
+.areaBtnMulti .inner li [class*="btnForm"] {width:100%;} 
+
+/* add on 버튼 금액 선택 */
+.areaBtnPrice {overflow:hidden;} 
+.areaBtnPrice .inner {margin:0 -1px;} 
+.areaBtnPrice .inner ul {display:table; table-layout:fixed; width:100%;} 
+.areaBtnPrice .inner li {display:table-cell; padding:0 2px;} 
+.areaBtnPrice .inner li [class*="btnForm"] {width:100%;} 
+.areaBtnPrice .inner li a {display:inline-block; width: 100%; height: 30px; padding: 0 3px; line-height: 30px; font-size:12px; color: #fff; text-align: center; vertical-align: middle; border-radius: 2px; background: #6a7688;}
+.areaBtnPrice .inner li a.btnWhite{background:#fff;color:#111;border-radius: 1px; border: 1px solid #ccc;}
+.areaBtnPrice .inner li a.btnAddon {height: 30px; padding: 0 3px; line-height: 28px; font-size:12px; color: #000; text-align: center; vertical-align: middle; border-radius: 1px; border: 1px solid #ccc; background: #fff;}
+.areaBtnPrice .inner li a.btnAddonPoint {color: #fff; border-radius: 2px; background: #4285f4; border: none;position: relative;}/*2018-10-29 [양미선] 접근성 blind 처리시 포커스가 top:0로 이동 방지를 위해 position:relative 추가*/
+.areaBtnPrice .inner li a.btnAddonPoint:after, .tabInner ul a.active:after, .pagingWrap ul>li>a.active:after{content: '선택됨';width:1px;height:1px ;font-size:1px ;line-height:0 ;color:transparent ;opacity:0 ;overflow: hidden ;position: absolute; top:0}
+.areaBtnPrice * + .inner {margin-top:6px;} 
+
+/* inbody full 버튼 */
+.areaBodyBtnFull {overflow:hidden;} 
+.areaBodyBtnFull .inner {margin:0 -2px;} 
+.areaBodyBtnFull .inner ul{display:table; table-layout:fixed; width:100%;} 
+.areaBodyBtnFull .inner ul + ul {margin-top:5px;}
+.areaBodyBtnFull .inner li {display:table-cell; padding:0 2px;} 
+.areaBodyBtnFull .inner li a {display:inline-block; width: 100%; height: 40px; padding: 0 3px; background-color:#fff; line-height: 38px; text-align: center; vertical-align: middle; border-radius: 2px; border: 1px solid #999;}
+.areaBodyBtnFull .inner li a.btnType01 { height: 30px; padding: 0 10px; line-height: 28px; font-size:12px; color: #fff; text-align: center; vertical-align: middle; border-radius: 2px; background: #6a7688 ;border:1px solid #6a7688;letter-spacing:-1px;}
+.areaBodyBtnFull .inner li a.btnType02 { height: 30px; padding: 0 10px; line-height: 28px; font-size:12px; color: #111; text-align: center; vertical-align: middle; border-radius: 2px; border:1px solid #999; background: #fff;}
+.areaBodyBtnFull .inner li a.active {background: #6a7688; color: #fff;}
+.areaBodyBtnFull .inner li a.disabled {background-color:#f8f8f8;border:1px solid #dedede;color:#666;}
+.areaBodyBtnFull .btnBodyLine {display: block;}
+.areaBodyBtnFull .btnBodyLine.disabled {background-color:#f8f8f8;border:1px solid #dedede;color:#666;cursor:no-drop;}
+.areaBodyBtnFull button.btnBodyLine:disabled {background-color:#f8f8f8;border:1px solid #dedede;color:#666;cursor:no-drop;}
+.areaBodyBtnFull .btnBodyLine.btnType01, .areaBodyBtnFull .btnBodyLine.btnType02 {border:0;}
+.areaBodyBtnFull .btnBodyLine + .inner {margin-top: 5px;}
+.areaBodyBtnFull .inner + .btnBodyLine {margin-top: 5px;}
+.areaBodyBtnFull .btnType01, .areaBodyBtnFull .btnType02 {width:100%;}
+.areaBodyBtnFull p.infoTxt {display: inline-block;}
+
+/* inbody full select 버튼 */
+.areaBodyBtnSelect {width:100%; margin-top: 20px;overflow:hidden;} 
+.areaBodyBtnSelect a {float: left; width: 50%; line-height: 34px; color: #111; text-align: center; border: 1px solid #999; background: #fff;}
+.areaBodyBtnSelect a:first-child {border-radius: 2px 0 0 2px;}
+.areaBodyBtnSelect a:last-child {margin-left: -1px; border-radius: 0 2px 2px 0;}
+.areaBodyBtnSelect a.active{position: relative; color: #fff; border: 1px solid #4885e0; background: #4885e0;}/* 2018-11-16 [양미선] blind 포커스 top으로 이동 방지*/
+.areaBodyBtnSelect a.active:after{content:'선택됨';display:block;font-size: 1px;color:transparent;position: absolute;top: 0;left: 0;overflow: hidden;width: 1px;height: 1px;line-height: 1px;}/* 2018-11-27 [안형애] 접근성 선택됨 두번 읽음 수정 *//* 2018-11-28 [양미선] 접근성 선택됨 다시 추가 */
+
+/* input 옆 btn */
+.btnInput01 {display:inline-block;height: 40px;padding: 0 9px;line-height: 38px;font-size:13px;color: #111;text-align: center;vertical-align: middle;border-radius: 2px;letter-spacing: -0.05em;border: 1px solid #4885e0;background:#4885e0;color:#fff;}
+.btnInput02 {display:inline-block;height: 40px;padding: 0 9px;line-height: 38px;font-size:13px;color: #111;text-align: center;vertical-align: middle;border-radius: 2px;letter-spacing: -0.05em;border: 1px solid #999;background: #fff;}
+.btnInput03 {display:inline-block;height: 40px;padding: 0 9px;line-height: 38px;font-size:13px;color: #111;text-align: center;vertical-align: middle;border-radius: 2px;letter-spacing: -0.05em;border: 1px solid #6a7688;background: #6a7688;color:#fff;}
+
+/* 팝업내 인바디 버튼 */
+.areaPopBtnFull .inner {margin: 0 -3px}
+.areaPopBtnFull ul {display:table;width:100%;table-layout:fixed;}
+.areaPopBtnFull ul li {display:table-cell;vertical-align:middle;padding:0 3px;}
+.areaPopBtnFull ul li a {display:block;height:40px;padding:0 3px;line-height:40px;border-radius:2px}
+
+/* 추가 변경 삭제 버튼 */
+.areaBtnType01 {width:100%; margin-top:10px;}
+.areaBtnType01 ul {display:table; width:100%; table-layout:fixed;}
+.areaBtnType01 ul li {display:table-cell; width:33.33333%; padding-right:6px; vertical-align:middle;}
+.areaBtnType01 ul li:last-child{padding-right:0;}
+.areaBtnType01 ul li a, .areaBtnType01 ul li button {width:100%;}
+
+.areaBtnType02 {width:100%; margin-top:10px;}
+.areaBtnType02 ul {display:table; width:100%;}
+.areaBtnType02 ul li {display:table-cell; padding-right:6px; vertical-align:middle;}
+.areaBtnType02 ul li:last-child{width:20%; padding-right:0;}
+.areaBtnType02 ul li a {width:100%;}
+.areaBtnType02 a.btnType01,.areaBtnType02 a.btnType01 {padding: 0;}
+
+a.btnType01{display:inline-block; height: 30px; padding: 0 12px; line-height: 28px; font-size:12px; color: #fff; text-align: center; vertical-align: middle; border-radius: 2px; background: #6a7688;}
+a.btnType02{display:inline-block; height: 30px; padding: 0 12px; line-height: 28px; font-size:12px; color: #111; text-align: center; vertical-align: middle; border-radius: 2px; border:1px solid #999; background: #fff;}
+a.btnType03{display:inline-block; height: 30px; padding: 0 12px; line-height: 28px; font-size:12px; color: #fff; text-align: center; vertical-align: middle; border-radius: 2px; border:1px solid #4885e0; background: #046FD9;}/* 2018-10-24 [오병직] 공통버튼 Type03 컬러색상 변경 */
+
+.toggleBtn.btnType02{width:100%;}
+.toggleBtn.btnType02:after {display:inline-block;content:'';width:12px;height:7px;margin-left:7px;background:url('../images/common/ico_arr_down.png') no-repeat 0 0;background-size:11px 7px;}
+.toggleBtn.btnType02.active:after {background-image:url('../images/common/ico_arr_up.png')}
+
+button.btnType01{display:inline-block; height: 30px; padding: 0 12px; line-height: 28px; font-size:12px; color: #fff; text-align: center; vertical-align: middle; border-radius: 2px; background: #6a7688;}
+button.btnType02{display:inline-block; height: 30px; padding: 0 12px; line-height: 28px; font-size:12px; color: #111; text-align: center; vertical-align: middle; border-radius: 2px; border:1px solid #999; background: #fff;}
+button.btnType03{display:inline-block; height: 30px; padding: 0 12px; line-height: 28px; font-size:12px; color: #fff; text-align: center; vertical-align: middle; border-radius: 2px; border:1px solid #4885e0; background: #4885e0;}
+
+button.btnType01:disabled, button.btnType02:disabled, button.btnType03:disabled{background-color:#f8f8f8;border:1px solid #dedede;color:#666;}
+
+.btnBodyTerms {background: #4285f4}
+.btnBodyTerms.disabled {background: #6a7688}
+
+/* 2018-11-16 [양미선] 보안 키패드*/
+.inputList .formTit + .btnTransparent {top: 27px;}
+.btnTransparent{position: absolute;top: 0;left: 0;background-color:transparent;width: 100%;min-height:40px;height:auto;max-height:44px;z-index: 44;}
+.inputFix{position: relative;display: inline-block;}
+
+/* 2018-11-16 [양미선] 보안 키패드 end*/
+
+a.btn-transparent{background: transparent;background-image: none;color:transparent;opacity:0 !important;font-size:1px;line-height: 1px;overflow:hidden;}/*2018-11-21 [양미선] 스와이프 투명 버튼 추가*/
+
+
+/**************************************************
+	list 정의 
+**************************************************/
+.listDash li {position: relative; padding-left: 10px; color:#666;}
+.listDash li:before {position:absolute; top:0; left:0; content:'-'; }
+.listStar li:before {display: inline-block; content:'*'; margin-right:3px; vertical-align: middle;}
+.listDot > li {margin-top: 5px; padding-left: 8px; font-size:13px; color:#666; background: url(../images/common/ico_listdot.png) no-repeat 0 9px; background-size: 2px 2px;}
+.listDot > li:first-child {margin-top: 0 !important;}
+.listDot > li > .wrapTblDefault {margin-left:-8px;}
+.listDot > ul > li {margin-top: 5px; padding-left: 8px; font-size:13px; color:#666; background: url(../images/common/ico_listdot.png) no-repeat 0 9px; background-size: 2px 2px;}
+.listDot > ul > li:first-child {margin-top: 0 !important;}
+.listDot > ul > .wrapTblDefault {margin-left:-8px;}
+.listDot.f12 li{font-size:12px;}
+.listDot li.bgNone {background:none;padding-left:0;}
+.listDash li.bgNone:before {display:none;padding-left:0;}
+
+.lineList li {border-top: 1px solid #e5e5e5;}
+.lineList li .radioList {padding:11px 16px;}
+.boxGray {background-color:#f8f8f8;padding:12px 16px;}
+.boxGray input {background:none;}
+
+.guideList .tArea + .listNum {margin-top:7px;}
+.listNum > li {list-style-type:decimal; position:relative; color:#666; margin-left:14px;font-size:12px;}
+
+.stepListWrap {margin-top:20px;}
+.stepListWrap ol {}
+.stepListWrap ol > li {margin-top:15px;}
+.stepListWrap ol > li:first-child {margin-top:0px;}
+.stepListWrap ol > li .stepNum {position:relative;display:inline-block;width:25px;height:25px;margin-right:7px;background-color:#75a2e4;border-radius:100px;color:#fff;text-align:center;line-height:25px;font-size:12px;}
+.stepListWrap ol > li:last-child .stepNum {line-height:25px;}
+.stepListWrap ol > li:last-child .stepNum:after {display:none;}
+.stepListWrap ol > li > ul, .stepListWrap ol > li > p {margin-left:35px;}
+.stepListWrap .stepListTxt {display:block;margin-left:35px;margin-top:-23px;}
+.stepListWrap.type02 ol > li .stepNum {line-height:22px; background-color:#fff; border:1px solid #dedede; color:#666666;}
+.stepListWrap.type02 ol > li .stepNum:after {display:none;}
+
+/**************************************************
+	carlendar 콤포넌트 정의 
+**************************************************/
+.calenderArea {margin: 0 -17px -17px;}
+.calenderArea .yearItem {position:relative; background: #f8f8f8;}
+.calenderArea .yearItem > span, .calenderArea .yearItem > a {height:50px;vertical-align:top;display:inline-block;}
+.calenderArea .yearItem > span {width:100%;font-size:16px;line-height: 50px;text-align:center;font-weight:bold}
+.calenderArea .yearItem > a {width:40px;}
+.calenderArea .yearItem > a.yearLft {position:absolute;left:50%;top:0;margin-left:-70px;background: url(../images/common/calendar_arr_lft.png) no-repeat center center; background-size: 8px 13px;text-indent: -9999px;overflow: hidden;}
+.calenderArea .yearItem > a.yearRht {position:absolute;right:50%;top:0;margin-right:-70px;background: url(../images/common/calendar_arr_rht.png) no-repeat center center; background-size: 8px 13px;text-indent: -9999px;overflow: hidden;}
+.calenderArea .monthItem {position:relative;height:100%;background-color:#f3faff;border-top:1px solid #ccc;box-sizing:border-box;}
+.calenderArea .monthItem > span, .calenderArea .monthItem > a {height:100%;vertical-align:middle;display:inline-block;}
+.calenderArea .monthItem > span {width:100%;line-height: 50px;text-align:center;font-size:16px;color:#4285f4;font-weight:bold}
+.calenderArea .monthItem > a {width:40px;}
+.calenderArea .monthItem > a.monthLft {position:absolute;left:50%;top:0;margin-left:-60px;background: url(../images/common/calendar_arr_lft.png) no-repeat center center; background-size: 8px 13px;text-indent: -9999px;overflow: hidden;}
+.calenderArea .monthItem > a.monthRht {position:absolute;right:50%;top:0;margin-right:-60px;background: url(../images/common/calendar_arr_rht.png) no-repeat center center; background-size: 8px 13px;text-indent: -9999px;overflow: hidden;}
+.calenderArea .weekItem {width:100%;display:table; background: #fff;}
+.calenderArea .weekItem > span{height:44px;color:#666;font-size:14px;text-align:center;line-height:44px;display:table-cell;}
+.calenderArea .dateItem { background: #fff; padding-bottom: 10px;}
+.calenderArea .dateItem:after {display:  block; content:''; clear: both;}
+.calenderArea .dateItem .date {float:left;width:14%;height:100%;min-height:34px;border-radius: 4px; color: #333;text-align:center;line-height:34px;display:block;} /* 2018-11-13 [윤지현] 디스플레이 폰트사이즈 조정에 따른 틀어짐 수정 */
+.saturday{color:#4d8cf5 !important}
+.holiday{color:#f44743 !important}
+.calenderArea .dateItem span.date {height:34px;color:#999;cursor:default;}
+.calenderArea .dateItem .date:nth-child(7n) {width:15%;}
+.calenderArea .dateItem .date:nth-child(7n+1) {width:15%;clear:left;} /* 2018-11-13 [윤지현] 디스플레이 폰트사이즈 조정에 따른 틀어짐 수정 */
+.calenderArea .dateItem .bgNone {color:#999;cursor:default;}
+.calenderArea .dateItem .date.bgNone:active {background-color:#fff;color:#999;}
+.calenderArea .dateItem a.date:active, .calenderArea .dateItem a.date.active{background:url(../images/common/ico_calPoint.png) no-repeat center;color:#fff;background-size:34px 34px;font-weight:bold}
+.saturday.active {color:#fff!important}
+.calenderArea .yearItem > a.btnType01{height: 30px;top: 10px;left: 10px;position: absolute;width:auto}
+.calPopWrap .popInner .popCont{overflow:hidden}
+.calPopWrap.popWrap.centerLayer .popInner{max-height:100% !important;transform:translate(-50%, -50%);}
+.calPopWrap.popWrap.centerLayer .popInner .popCont{max-height:100% !important}
+
+/**************************************************
+	날짜선택 콤포넌트 정의 
+**************************************************/
+.yearSet{position:relative;width:100%;height:200px;background-image: url(../images/common/img_gra.png); background-repeat: repeat-x; background-position:left top; background-size: 100% 40px;display:block;background: #fff;}
+.yearSet .yearsetLft, .yearSet .yearsetRht, .yearSet .yearsetDay  {float: left;width:50%;height:200px;color:#666;font-size:15px;overflow:auto;}
+.yearSet a {line-height:40px; color: #333;display:block; text-align: center;}
+.yearSet .yearsetRht span:after {content:'월';}
+.yearSet .yearsetLft span:after {content:'년';}
+.yearSet .active  {color:#4285f4;font-size:15px;}
+.yearSet .yearsetLft {border-right:1px solid #e5e5e5;}
+
+/* 일자 선택 */
+.yearSet.dayPicSet .yearsetLft, .yearSet.dayPicSet .yearsetRht, .yearSet.dayPicSet .yearsetDay {float: left;width:33.3%;width:calc(100% / 3);height:200px;overflow:auto;}
+.dayPicSet .yearsetDay span:after {content:'일';}
+.dayPicSet .yearsetRht {border-right:1px solid #e5e5e5;}
+
+/**************************************************
+	상하단 알림박스 정의 
+**************************************************/
+.guideList {padding: 15px; background: #f8f8f8; border-radius: 2px;}
+.guideList .tArea {background-color:#f8f8f8; }
+.guideTit {padding:0 0 0 20px; color: #333;font-weight: bold; background: url(../images/common/ico_bell.png) no-repeat 0 50%; background-size: 14px 14px; font-size:13px;}
+.guideList .tArea + .listDot {margin-top: 7px;}
+.guideList .listDot > li {margin-top: 7px; font-size:12px;}
+.guideList .listDot > li .btnAddon {position:relative;top:-2px;line-height:21px;}  /* 2018-11-13 [오나경] 공통 - 가이드리스트 내에서 버튼 정렬 스타일 재정의 */
+.guideList .guideTopTit {color:#333;font-size:12px;}
+
+.guideListTop {margin: 0 -17px; padding: 17px; background-color:#f3faff;}
+.guideTopTit {margin-bottom:7px;color:#3b5997;font-size:13px;font-weight:bold;}
+.guideTopTit .ico01 {padding-left:20px;background: url(../images/common/btn_talk1.png) no-repeat left 4px; background-size: 14px 13px;}
+.listDot + .guideTopTit {margin-top:15px;}
+.guideList .listDot > li,.guideListTop .listDot > li {margin-top: 7px; font-size:12.5px;}
+.guideListTop .listDot.f12 > li {font-size:12px;}
+
+.guideList.guideType2 {border:1px solid #dedede;}
+.guideList.guideType2 .guideTit {color:#3b5997; background: url(../images/common/ico_guide2.png) no-repeat 0 50%; background-size: 14px 13px;}
+
+/**************************************************
+	약관 정의 
+**************************************************/
+.termsWrap {margin-top: 15px;}
+.termsCont {width: 100%;padding:10px 0 5px;border-top: 1px solid #e5e5e5;background: #f8f8f8;}
+.termsCont .termsStxt {padding:10px 10px 5px;font-size:13px;}
+.termsCont .termsStxt2 {padding:0 10px 5px;font-size:13px;color: #666;}
+.termsCont .infoTxt {margin: 5px 10px 0;}
+.termsCont .termsStxt:first-child {padding-top:0;}
+.termsCont .termsTxtList {padding:0 10px;}
+.termsCont .listNum {padding:0 10px;}
+.termsCont .termsTxtList > li {padding:0 0 5px 8px;background: url(../images/common/ico_listdot.png) no-repeat 0 8px;background-size: 2px 2px;font-size:12px;color: #666;}
+.termsCont .termsTxtList li:last-child {padding-bottom:5px;}
+.termsList > ul > li {position: relative; border: 1px solid #e5e5e5;border-top:0;}
+.termsList > ul > li:first-child {border-top: 1px solid #e5e5e5;}
+.termsList > ul > li.allCheck {border: none; border-bottom:1px solid #e5e5e5}
+.termsList > ul > li.allCheck .checkList {padding-left: 0; padding-right: 0;}
+.termsList > ul > li .checkList {position: relative; margin-top: 0; padding: 11px 10px;background:#fff}
+.termsList > ul > li.isBtn label {max-width:100%}
+.termsList > ul > li.isBtn input + label {max-width:85%;}
+.centerLayer .termsList > ul > li.isBtn input + label {max-width:82%;}
+.termsList > ul > li.isBtn .checkList {position: relative; margin-top: 0; padding: 11px 85px 11px 10px;}
+.termsList > ul > li.isBtn input[type='radio'] + label {margin-top:-2px;}
+.termsList > ul > li label, .termsList > ul > li span.label {position: relative; display: inline-block; font-size:13px; color: #333;box-sizing: border-box;}
+.termsList > ul > li .btnBodyTerms {position: absolute; top: 50%; right: 10px; width:67px; padding:0; margin-top: -15px; background: #4285f4;}
+.termsList > ul > li .btnBodyTerms.diabled {background: #6a7688; cursor:no-drop;}
+.termsList > ul > li .btnBodyTerms.disabled {background: #6a7688;}
+.termsLabelWrap span{display:block !important;}
+.termsWrap input[type="checkbox"] + label .pointColor {display: inline;}	/* 2018-10-17 [김서희] 텍스트 떨어지는 문제로 display 변경 */
+
+.popTemrsTitBlack {margin: 20px 0 7px; font-size:14px; color: #111;font-weight:bold;}
+.popTemrsTit {margin: 20px 0 7px; font-size:14px; color: #3b5997;}
+h3.popTemrsTit {margin: 20px 0 7px; font-size:14px; color: #111;}
+h3.popTemrsTit + .popTermsTxt {margin-top: -5px}
+h3.popTemrsTit + .popTermsOlList {margin-top: -5px}
+.popTermsTxt {margin: 7px 0 0;}
+.popTemrsSubTit {margin: 20px 0 7px 12px; font-size:13px;}
+.popTermsSubTxt {margin: 7px 0 0 12px; font-size:12px; color: #666;}
+.popTermsSubListDash {margin: 7px 0 0 20px;}
+.popTermsSubListDash li:first-child {padding-top:0;}
+.popTermsSubListDash li {padding-top:5px;color: #666;text-indent:-8px;}
+.popTermsSubList {margin: 7px 0 0 28px;}
+.popTermsSubList li:first-child {padding-top:0;}
+.popTermsSubList li {padding-top:5px;color: #666;text-indent:-15px;}
+.popTermsOlList > li:first-child {padding-top:0;}
+.popTermsOlList > li {padding:5px 0 0 0;}
+.popTermsList dt {font-weight:bold;display:block;}
+.popTermsList dd {display:block;}
+.popTermsTxt + .popTermsList {margin-top: 3px;}
+.imgCk {width:10px;height:10px;margin:0 5px;border:1px solid #111;display:inline-block;}
+.font16 {font-size:16px;} /* 2018-10-24 [안형애] 공인인증서발급/재발급> yessign약관동의 폰트 강조 추가*/
+
+/**************************************************
+	step 정의 
+**************************************************/
+.stepArea {display:-webkit-box;display:-webkit-flex;display: flex; -webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between; -webkit-flex-direction: row; flex-direction: row; margin: 0 -17px; padding: 9px 17px; border-bottom: 1px solid #dedede;}
+.stepArea .stepTit {-webkit-flex:1; flex:1; padding-right: 15px; font-size:15px;color:#111}
+.stepArea .stepInfo {-webkit-flex:none; flex:none; display:-webkit-box;display:-webkit-flex; display:flex; -webkit-box-align:center;align-items:center}
+.stepArea .stepInfo .stepList:after {display:  block; content:''; clear: both;}
+.stepArea .stepInfo .stepList li {float:left;padding-left:5px;}
+.stepArea .stepInfo .stepList li:first-child {padding-left:0;}
+.stepArea .stepInfo .stepList li > span {width:22px;height:22px;background-color:#fff;border:1px solid #dedede;border-radius:50%;font-size:12px;color: #666;text-align:center;display:inline-block;}
+.stepArea .stepInfo .stepList li.active > span {background-color:#4885e0;border:1px solid #4885e0;color:#fff;}
+.stepArea .stepInfo .stepList li.off > span {background-color:#6a7688;border:1px solid #6a7688;color:#fff;}
+.stepArea2 .stepList {text-align:center;}
+.stepArea2 .stepList li {width:20px;height:4px;margin:0 4px;background-color:#e5e5e5;border-radius:20px;display:inline-block;}
+.stepArea2 .stepList2 li {width:10px;height:10px;margin:0 4px;background-color:#e5e5e5;border-radius:20px;display:inline-block;}
+.stepArea2 .stepList li.active {background-color:#4285f4;}
+.stepArea2 .stepList li.off {background-color:#bdbdbd;}
+
+.stepArea3 {text-align:center; background:#f3faff;padding-bottom:4px;}
+.stepArea3 .stepList {text-align:center;display:inline;vertical-align:middle;}
+.stepArea3 .stepList li {width:7px; height:7px; margin:0 2px;background-color:#e5e5e5;border-radius:20px;display:inline-block;}
+.stepArea3 .stepList li.active {background-color:#4285f4;}
+.stepArea3 .stepList li.off {background-color:#bdbdbd;}
+.stepArea3 .stepList a{display:block;width:100%;height:100%}
+
+.stepArea4 .stepList{text-align:center;}
+.stepArea4 .stepList a,.stepArea4 .stepList li, .stepList .swiper-pagination-bullet {width:8px; height:8px; display:inline-block; margin:0 3px; border-radius:100%; display:inline-block; border:1px solid #666666; background:none;opacity:1;}/*2018-11-09 [안형애] 고객센터 이용안내 블릿 수정*/
+.stepArea4 .stepList a.active, .stepArea4 .stepList li.active, .stepList .swiper-pagination-bullet-active {background:#666666;}/*2018-11-09 [안형애] 고객센터 이용안내 블릿 수정*/
+
+/**************************************************
+ popup 정의 
+ **************************************************/
+/* popup 기본*/ 
+.popWrap {display:none;position: fixed;top:0px;left:0;width:100%;height:100%;z-index:1101;/*-webkit-overflow-scrolling:touch;*/}
+.popWrap .popInner {position:absolute;bottom:0px;left:0px;width:100%;z-index:1202;} /* 2018-10-18 [오나경] 고정 아이콘 위치 오류로 임시 주석처리 */
+.popWrap .popInner h1 {height:45px;padding:0 35px 0 15px;background-color:#fff;border-bottom:1px solid #ccc;font-size:15px;color:#333;line-height:45px;text-align:left;}
+.popWrap .popInner h1.ac {padding:0 35px;}
+.popWrap .popInner h1 img {max-width:109px;}
+.popWrap.slidePopOption .popInner, .popWrap.slidePopConfirm .popInner, .popWrap.bankSetWrap .popInner {height:0;} 
+.popInner .popCont { background-color:#fff;color:#111;z-index:1202;overflow-y:scroll;-webkit-overflow-scrolling:touch;}  /* 2018-10-18 [오나경] 팝업 스크롤 처리 방식 변경 */  /* 2018-11-06 [오나경] 팝업 스크롤 터치 방식 스타일 추가 */
+.popInner .popCont.pd17 {overflow-y:scroll;background-color:#fff;-webkit-overflow-scrolling:touch;} /* 2018-11-06 [오나경] 팝업 스크롤 터치 방식 스타일 추가 */
+.dim {position:fixed;width:100%;height:100%;background:#000;opacity:0.7;top:0;left:0;}
+.dimCloseArea {position:absolute;width:100%;height:100%;background:#fff;opacity:0;top:0;left:0;z-index:1199;} /* 2018-10-19 [오나경] closeDim 의 스타일 변경 */
+.slidePopOption .dim {z-index:1200}
+.popWrap.slidePopOption .dim, .popWrap.slidePopConfirm .dim, .footer .dim {display:none;}
+
+.popCont .selectList {}
+.popCont .selectList li {padding:0px 15px;border-top:1px solid #e5e5e5;}
+.popCont .selectList li:first-child {border-top:0;}
+.popCont .selectList li.active {background-color:#e9f5ff;}
+.popCont .selectList li.active a, .popWrap .popInner .popCont .selectList li.active label {background:url('../images/common/ico_select_active.png') no-repeat 100% 50%;background-size:15px 10px;color:#4885df;font-weight:bold;}/* 2018-11-14 [양미선] 접근성 선택팝업 활성화 텍스트 컬러 명도대비 수정 */
+.popCont .selectList li a, .popWrap .popInner .popCont .selectList li label {display:block;padding:12px 25px 12px 0;font-size:14px;}
+.popCont .selectList li a.btnReset {display: none; padding: 0;}
+.popCont .selectList li a .accNick {display: inline-block;font-size: 14px; color: #111 !important;}
+.popCont .multiSel input[type='checkbox'] {position:static;width:1px;height:1px;opacity:0;}
+.popCont .confirmMsg {padding:85px 17px 35px 17px;text-align:center;font-size:14px !important; font-family: "NotoKR" !important;}/* 2018-12-10 [윤지현] font-size, font-family 강제처리 */
+.popCont .confirmMsg.type01 {background:url('../images/common/bg_confirm01.png') no-repeat 50% 30px;background-size:40px 40px;} /* 긍정형 */
+.popCont .confirmMsg.type02 {background:url('../images/common/bg_confirm02.png') no-repeat 50% 30px;background-size:40px 40px;} /* 부정형 */
+.popCont .confirmMsg.type03 {padding:30px 0px 25px;}
+.popCont .confirmMsg.type05 {padding:30px 0px 25px;}
+.popCont .confirmMsg.type06 {padding:30px 0px;background: none;}
+/* 2018-10-17 [양미선] 앱업데이트 알림 신규 추가 */
+.popCont .confirmMsg.etctype{background: url('../images/common/bg_etctype.png') no-repeat 50% 30px;background-size: 50px 56px;padding-bottom:22px;}
+.popCont .confirmMsg.etctype1{background: url('../images/common/bg_etctype1.png') no-repeat 50% 30px;background-size: 50px 50px;padding-bottom:15px;}
+.popCont .confirmMsg.etctype p{line-height: 1.3;}
+.popCont .confirmMsg.etctype .fz12 ,.popCont .confirmMsg.etctype1 .fz12{font-size:12px;margin-top: 10px;}
+.popCont .confirmMsg.etctype .fz11 , .popCont .confirmMsg.etctype1 .fz11{font-size:11px;margin-top: 15px;}
+.popCont .confirmMsg.etctype .fz11 .inTxt , .popCont .confirmMsg.etctype1 .fz11 .inTxt{color:#666;}
+.popInner .appIco{display:inline-block;padding-left:25px;background:url('../images/common/ico_noti.png') no-repeat 0 center;background-size:17px 18px;}
+/* 2018-10-17 [양미선] 앱업데이트 알림 신규 추가 end */
+
+/* 2018-11-02 [윤지현] 슬라이드 컨펌형 팝업 좌우 간격 추가 */
+.popWrap.slidePopConfirm .popCont .confirmMsg.type03 {padding:30px 17px 25px;}
+.popWrap.slidePopConfirm .popCont .confirmMsg.type05 {padding:30px 17px 25px;}
+/* 2018-11-02 [윤지현] end */
+
+.popCont .imgViewer {margin-top:17px;}
+.popCont .imgViewer img {max-width:100%;}
+.popBtnWrap .popClose {position:absolute;top:0px;right:0;width:40px;height:45px;text-align: center;}
+.popBtnWrap .popClose img {position: absolute; top:50%; left:50%; width:14px;height:13px; margin: -7px 0 0 -7px;}
+/* .popBtnWrap .popBtn {display:table;width:100%;height:44px;} */
+.popBtnWrap .popBtn {position:fixed;bottom:0;width:100%;display:table;width:100%;height:44px;}
+.popBtnWrap .popBtn > a, .popBtnWrap .popBtn > a:hover, .popBtnWrap .popBtn > a:active, .popBtnWrap .popBtn > a:link {display:table-cell;width:50%;vertical-align:middle;background-color:#6a7688;color:#fff;text-align:center;font-size:15px !important;font-weight: bold; text-decoration:none !important; font-family: "NotoKR" !important;} /* 2018-12-10 [윤지현] font-size, font-family 강제처리 */ /* 2018-11-02 [윤지현] text-decoration 수정*/
+.popBtnWrap .popBtn > a.btnPressDefault {background-color:#6a7688;color:#fff;}
+.popBtnWrap .popBtn > a.confirmBtn {background-color:#046fd9;}
+
+/* 2018-10-26 [오나경] 공통 : 동의 전용 약관 팝업 스타일 신규 추가 */
+/* 2018-11-01 [윤지현] 공통 : 동의 전용 약관 팝업 스타일 재 주석처리 */
+/* .popWrap.fullLayerPop {background-color:#fff;}
+.popWrap.fullLayerPop .popInner.agreePop .popCont > div {padding-bottom:50px;}
+.popWrap.fullLayerPop .popInner.agreePop .popBtnWrap .popBtn {position:absolute;bottom:0px;left:0;height:88px;padding:0 17px 44px;background-color:#fff;z-index:1203;} */
+/* 2018-11-01 [윤지현] 공통 end */ 
+/* 2018-10-26 [오나경] 공통 end */
+
+.bottomEtc{position:relative;background:#fff;border-top: 1px solid #dedede;}
+.bottomEtc > div{padding:15px 17px;}
+.bottomEtc .btnAddonPoint{position: absolute;top: 12px;right: 17px;line-height:30px;height: 30px;padding:0 18px;font-size: 12px;}
+.bottomEtc .checkList label{font-size: 12px;}
+
+.popBtnWrap .popBtn > a.btnHeart{width:20%; background:#444c63;position: relative;}/*2018-11-13 [양미선] 고객센터>새소식>좋아요 버튼 포커스 수정*/
+a.btnHeart.active{background:#0066b3 !important;position: relative;}/*2018-11-12 [양미선] 이벤트 상세페이지:접근성 선택됨 추가*/
+a.btnHeart.active:after{content: '선택됨';display: inline-block;width: 1px;height: 1px;font-size: 1px;color: transparent;position: absolute;top: 0;left: 0;}/*2018-11-12 [양미선] 이벤트 상세페이지:접근성 선택됨 추가*/
+a.btnHeart em{font-family: "NotoKR" !important; padding-left:19px; background:url(../images/common/ico_heart.png) no-repeat left center; background-size:13px 12px;} /* 2018-11-23 [윤지현] 폰트패밀리 강제 적용 */
+
+/* popup 센터 */
+.popWrap.centerLayer {}
+.popWrap.centerLayer .popInner {left:15px; right:15px;overflow: hidden; border-radius:3px;width:auto;bottom:auto;}
+.popWrap.centerLayer .popInner .popCont {padding:0 17px 17px}
+.popWrap.centerLayer .popInner .popCont h1 {margin:0 -17px;}
+.popWrap.centerLayer .guideList {margin:15px 0 0;}
+.popWrap.centerLayer #logoutConfirmDiv.popInner {height:300px !important;}
+
+/* 뷰3 대응 */
+@media screen and (min-width:480px) {
+	.popWrap.centerLayer #logoutConfirmDiv.popInner {height:325px !important;}
+}
+/* 태블릿 대응 */
+@media screen and (min-width:768px) {
+	.popWrap.centerLayer #logoutConfirmDiv.popInner {height:350px !important;}
+}
+
+/* popup Full Size */
+.popWrap.fullLayerPop {overflow:hidden;}
+.popWrap.fullLayerPop .popInner {position:absolute;height:100%;bottom:auto;top:0;}
+.popWrap.fullLayerPop .popInner h1 {height:auto;padding:10px 35px 11px 15px;text-align:left;line-height:1.2;width:100%;position:absolute;top:0px;left:0;z-index:99999;}
+.popWrap.fullLayerPop .popInner .popCont {padding: 39px 17px 60px;overflow-y:auto;height:100%;}
+.popWrap.fullLayerPop .popInner .popBtnWrap .popClose {position:absolute;top:0;right:0;width:40px;height:40px;z-index:999999;}
+.popWrap.fullLayerPop .popWrap.slidePopOption {bottom:0;top:auto;}
+.popWrap.fullLayerPop .popWrap.slidePopOption .popInner {bottom:-4px;top:auto;height:0;}
+.popWrap.fullLayerPop .popWrap.slidePopOption .popCont {padding:0;}
+
+/* popup pdfLayerPop */
+.popWrap.pdfLayerPop {overflow:hidden;}
+.popWrap.pdfLayerPop .popInner {height:100%;bottom:auto;top:0;}
+.popWrap.pdfLayerPop .popInner h1 {height:auto;padding:10px 35px 11px 15px;text-align:left;line-height:1.2;}
+.popWrap.pdfLayerPop .popInner .popCont {height: 100%;padding: 0 17px 17px;overflow-y:auto;}
+.popWrap.pdfLayerPop .popInner .popBtnWrap .popClose {position:absolute;top:12px;right:15px;width:14px;height:13px;}
+
+/* 툴팁 기본 */
+.popWrap.toolTipBase {position:absolute;}
+.popWrap.toolTipBase .popInner {left:15px;right:15px;overflow:hidden;width:90%;width:auto;background-color:#fff;border-radius:3px;bottom:auto;}
+.popWrap.toolTipBase .popInner h1 {border-bottom:1px solid #dedede;text-align:left;}
+.popWrap.toolTipBase .popInner .popCont {padding:0 15px 15px;font-size:13px;}
+
+.popCont .popWrap.toolTipBase .popInner,
+.popCont .popWrap.toolTipBase .popInner .popCont {height:initial !important}
+
+/* 툴팁내에서 요소 스타일 재정의*/
+.popWrap.toolTipBase .popCont .listDot, .popWrap.toolTipBase .popCont .defTxt {margin-top:13px;}
+.popWrap.centerLayer .selectList {margin:0 -17px -17px}
+
+.popWrap.fullLayerPop.pdfWrap .popInner .popCont {padding:10px 10px;}
+
+/* 업무별 팝업 사이즈 재정의 */
+#NSCN0009P .popInner .popCont {height:350px;}
+
+/**************************************************
+	form 정의
+**************************************************/
+.formWrap {margin-top: 20px;}
+.formWrap > ul > li {margin-top: 10px;}
+.formWrap > ul > li:first-child {margin-top: 0px;}
+.formWrap > ul > li:first-child .formTit {margin-top: 0px;}
+.formWrap > ul > li > .formTit + * ~ *, .formWrap > ul > li .inputList + * {margin-top: 5px;}
+.formWrap > ul > li > .formTit + * ~ .toolTipBase {margin-top: 0 !important;}
+.formWrap > ul > li > .formTit + * ~ .areaBtnPrice {margin-top: 10px;}
+.formWrap > ul > li.alignCol {display: table; width: 100%; table-layout:fixed; margin-top: 12px;}
+.formWrap > ul > li.alignCol .formTit,.formWrap > ul > li.alignCol .inpTxt {display: table-cell; width: 100%}
+.formWrap > ul > li.alignCol .formTit {width: 85px; margin: 0}
+.formWrap > ul > li.alignCol strong.formTit{width:125px}
+.formWrap > ul > li:after{display: block;content: "";clear: both;}
+.divingLine {margin-top: 20px !important; border-top: 1px solid #dedede;}
+.divingLine2 {margin-bottom: 20px !important;border-bottom: 1px solid #dedede;}
+.divingLine3 {border-top: 1px solid #dedede;}
+.formTit.divingLine3 {margin-top:20px;padding-top:15px;} /* 2018-10-24 [오나경] form 요소의 구분선 스타일 추가 */
+.formWrap > ul > li.alignCol.divingLine {padding-top: 20px}
+.formWrap > ul > li.alignCol.divingLine2, .defTit + .divingLine2 {padding-bottom: 20px}
+
+.bgWrap {margin: 0 -17px;background-color:#f8f8f8;}
+.bgWrap .formWrap {margin-top:0;padding:10px 17px 15px;}
+
+/* input 정의 */
+input[type=text]::-ms-clear {display: none}
+input {width: 100%;height:40px;padding: 10px 0 10px 5px;box-sizing: border-box;border: 0;line-height:20px;background:#fff;border: 1px solid #dedede;font-size:14px;border-radius:2px}
+input:focus{outline-style:none;box-shadow:none;border:0}
+input:focus{border:1px solid #4285f4;caret-color:#4285f4;}
+input[type="text"]:read-only{background: #f8f8f8; color: #666}
+input[type="text"]:read-only:focus {/* border: 1px solid #dedede; */}
+input[type="text"]:read-only.sKey {background: none;}
+input[type="password"]:read-only{background: #f8f8f8; color: #666}
+input[type="password"]:read-only.sKey {background: #fff;}
+input[type="tel"]:read-only, input[type="tel"]:disabled {background: #f8f8f8; color: #666}  /* 2018-10-24 [오나경] 공통 : input type tel이 disabled 처리되었을 경우 스타일 추가 */
+input[type="tel"]:read-only.sKey {background: none;}
+input[type="text"]:disabled{background: #f8f8f8; color: #666; opacity:1}
+input[type="tel"]:disabled {opacity:1} /* 2018-10-31 [윤지현] input disabled ios기본속성 리셋 추가 */
+input[type="text"]:disabled.sKey {background: none;}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {font-size:14px; color: #ababab;text-align:left;}/*2018-10-29 [안형애] 기본 왼쪽정렬 수정(외환 금액관련 수정) */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder{font-size:14px; color: #ababab;text-align:left;}/*2018-10-29 [안형애] 기본 왼쪽정렬 수정(외환 금액관련 수정) */
+input::-moz-placeholder,
+textarea::-moz-placeholder{font-size:14px; color: #ababab;text-align:left;}/*2018-10-29 [안형애] 기본 왼쪽정렬 수정(외환 금액관련 수정) */
+input::-moz-placeholder,
+textarea::-moz-placeholder{font-size:14px; color: #ababab;text-align:left;}/*2018-10-29 [안형애] 기본 왼쪽정렬 수정(외환 금액관련 수정) */
+
+.placeShow input:focus::-webkit-input-placeholder,
+.placeShow textarea:focus::-webkit-input-placeholder {color:#999; }
+.placeShow input:focus:-moz-placeholder,
+.placeShow textarea:focus:-moz-placeholder {color:#999; }
+.placeShow input:focus::-moz-placeholder,
+.placeShow textarea:focus::-moz-placeholder {color:#999; }
+.placeShow input:focus:-ms-input-placeholder,
+.placeShow textarea:focus:-ms-input-placeholder {color:#999; }
+.boxText{font-size:1px;color:transparent;}
+.inputError label{color:#f44336 !important;}
+.inputError input{border:1px solid #f44336 !important}
+.inputError input:focus{border-bottom:2px solid #f44336;caret-color:#f44336}
+.inputList{position:relative;}
+.inputList input[type="text"],.inputList input[type="password"],.inputList input[type="tel"] {padding-right: 36px;}
+.btnReset{overflow:hidden;display:none;position:absolute;right: 0;top: 0;width: 36px;height: 40px;font-size:1px;color:transparent;background:url(../images/common/btn_input_close.png) no-repeat;background-size:15px;background-position: 50% 50%;}/*2018-10-18 [윤지현] 인풋리셋버튼 사이즈 재변경*//*2018-10-17 [윤지현] 인풋리셋버튼 사이즈 변경*/
+.radioBtmTxt{margin-left:27px;margin-top:5px;font-size:12px;color:#666}
+.errorText{color:#f44336;}
+.inputList .unit {position: absolute; right: 32px; top: 0; height: 40px; line-height: 21px; padding: 10px 0; font-size: 14px;}
+.tooltipTxt {font-size:12px; color: #666;}
+.tooltipTxt .btnFuncTip {margin: 0 0 -3px 0;}
+
+/* select 정의 */
+select{display:none}
+.stList a{display:block;height:40px;padding-left:5px;padding-right:30px;line-height:38px;position:relative;border:1px solid #dedede; background: #fff;white-space: nowrap;}
+.selectValue{font-size:13px;display:block;line-height:38px;overflow: hidden;}
+.selectTitle{font-size:13px;display:block;line-height:40px;overflow: hidden;}
+.selectBtn{position:absolute;bottom:0;right:0;width:30px;height:38px;background:url(../images/common/select_arrow.png) center no-repeat;background-size:11px 7px;text-indent:-9999px }
+.stList{position:relative; overflow:hidden}
+.selectDivision_5_5 li:first-child{padding-left:0;padding-right:5px}
+.selectDivision_5_5 li{width:50%;float:left;padding-left:5px}
+.selectDivision_5_5:after{content:"";display:block;clear:both}
+.selectDivision_3_7 li:first-child{width:30%;padding-right:5px;padding-left:0}
+.selectDivision_3_7 li{width:70%;float:left;padding-left:5px}
+.selectDivision_3_7:after{content:"";display:block;clear:both}
+.selectDivision_4_6 li:first-child{width:40%;padding-right:5px;padding-left:0}
+.selectDivision_4_6 li{width:60%;float:left;padding-left:5px}
+.selectDivision_4_6:after{content:"";display:block;clear:both}
+.stList .selectReadOnly{background:#f8f8f8}
+.stList .selectReadOnly .selectBtn{background:url(../images/common/select_arrow_disabled.png) center no-repeat;background-size:11px 7px }
+.stList .selectDisabled{background:#f8f8f8;color:#ababab}
+.stList .selectDisabled .selectTitle{color:#999}
+.stList .selectDisabled .selectBtn{background:url(../images/common/select_arrow_disabled.png) center no-repeat;background-size:11px 7px }
+.selectLabel{position: absolute;top: -19px;left: 0;font-size:12px;color: #666;transition: all 0.5s;}
+.stList{position:relative; overflow:hidden}
+/* 2018-10-22 [윤지현] 고객센터>자주묻는질문 선택카테고리 한줄배열 관련 신규 */
+.selectDivisionFlex {overflow: hidden;}
+.selectDivisionFlex .inner {margin: 0 -2px;}
+.selectDivisionFlex ul {display:table; width: 100%; table-layout:fixed}
+.selectDivisionFlex li {display:table-cell;padding:0 2px}
+/* 2018-10-22 [윤지현] end */
+
+/* textarea 정의 */
+textarea:focus{outline-style:none;box-shadow:none;border:0;border:1px solid #4285f4}
+textarea {display:block; width: 100%;min-height: 120px;padding: 10px 5px;box-sizing: border-box;border:0;border:1px solid #dedede;line-height: 20px;white-space:normal;font-size:13px}
+.textArea {display:block; width: 100%;min-height: 120px;padding: 10px 5px;box-sizing: border-box;border:0;border:1px solid #dedede;line-height: 20px;white-space:normal;font-size:13px}
+textarea[readonly="readonly"]{border:1px solid #e5e5e5;background-color:#f2f2f2}
+textarea[readonly="readonly"]:focus{border-color: #e5e5e5 !important;}
+.formWrap textarea:focus{border-color: #4285f4;caret-color:#4285f4}
+.formWrap .areaList{position:relative}
+.formWrap .areaList label{display:block}
+
+/* checkbox, radio 정의 */
+input[type="radio"],input[type="checkbox"] {overflow:hidden;width:21px; height: 21px;margin:0;padding:0;border:0; vertical-align:middle; background-repeat:no-repeat;background-size:cover;-webkit-appearance:none;}
+input[type="radio"] + label,input[type="checkbox"] + label {display: inline-block; width:90%; width:calc(100% - 40px); width:-webkit-calc(100% - 40px); /* max-width: 88%; */ margin-left:4px;vertical-align:middle;/*width:auto*/text-align:left}
+input[type="radio"] + label,input[type="checkbox"] + label[for="slidePopup"]{max-width:88%}
+input[type="radio"] {background-image: url(../images/common/radio_sheet.png);}
+input[type="checkbox"] {background-image: url(../images/common/check_sheet.png);}
+input[type="radio"]:checked,input[type="checkbox"]:checked {background-position-x: -21px;}
+input[type="radio"][readonly="readonly"],input[type="checkbox"][readonly="readonly"],
+input[type="radio"][disabled="disabled"],input[type="checkbox"][disabled="disabled"] {background-position-x: -42px;}
+input[type="checkbox"]:checked[disabled="disabled"] {background-position-x: -63px;}
+input[type="radio"] + label span,input[type="checkbox"] + label span {display: none;}
+input[type="radio"] + label .pointColor,input[type="checkbox"] + label .pointColor {display: inline-block;letter-spacing:-0.5px;}
+input[type="radio"] + label.tail:after{content: ""; padding: 0 20px 0 0; color: #333; background: url(../images/common/ico_bell.png) no-repeat 5px 2px; background-size: 14px 14px;}
+.radioList,.checkList {margin-top: 15px;}
+.radioLine,.checkLine{display:inline;margin-right:10px}
+.radioList:first-child{margin-top:0}
+/* 예외 처리 */
+.divingLine2 input[type="radio"] + label, .divingLine2 input[type="checkbox"] + label {width:90%; width:calc(100% - 30px); width:-webkit-calc(100% - 30px);}
+
+/* input 정렬 */
+.inputB01, .inputB02, .inputB {position: relative;display:table-cell;vertical-align:middle;}/*2018-11-16 [양미선] 보안키패드 안드로이드 8.0이상 대응 수정*/
+.inputBoth01 {display:table;width:100%;}
+.inputBoth01 .inputB02 {text-align:right;max-width:110px;padding-left:6px;}
+.inputBoth01 .inputB02 .btnInput01, .inputBoth01 .inputB02 .btnInput02, .inputBoth01 .inputB02 .btnInput03 {padding:0px 3px;width:100%;}
+.inputBoth01 .stList a {white-space:normal;}
+.inputBoth01 .selectValue {height:100%;}
+.inputBoth02 {display:table;width:100%;table-layout:fixed;}
+.inputBoth03 {display:table;width:100%;}
+.inputBoth04 {display:table;width:100%;}
+.btnInput01.clock {padding-left: 20px !important;background:#6a7688 url(../images/common/ico_clock2.png) no-repeat 15px center; background-size: 14px 14px;border: 1px solid #6a7688;letter-spacing: 0;}
+
+.inputDash {display:table-cell;padding:0 6px;vertical-align:middle;}
+.inputDot {display:table-cell;padding:0 6px;vertical-align:bottom;}
+.inputTxt {display:table-cell;width:47px;padding:0 15px 0 6px;vertical-align:middle;letter-spacing:-1px;font-size:13px;}
+.inputTxt2 {display:table-cell; padding:0 4px; vertical-align:middle; letter-spacing: -1px;}
+.inputTxt3 {display:table-cell;width: 45px; padding:0 4px 10px; vertical-align:bottom;}
+.inputTxt4 {display:table-cell;width: 60px; padding:0 4px 10px; vertical-align:bottom;}
+.inputTxt5 {display:table-cell;width: 32px; padding:0 0 10px; vertical-align:bottom;}
+.idNumStar {position:relative;top:7px;left:3px;display:inline-block;width:100%;font-size:25px;letter-spacing:3px;}
+.inputBtn01 {display:table-cell;width:60px;text-align:right}
+.inputBtn02 {display:table-cell;width:70px;text-align:right}
+.inputBtn03 {display:table-cell;width:80px;text-align:right}
+.inputBtn04 {display:table-cell;width:100px;text-align:right}
+.inputBtn01 > a, .inputBtn02 > a, .inputBtn03 > a, .inputBtn04 > a {width:100%;}
+
+.div2_8 .inputB01 {width:20%;}
+.div2_8 .inputB02 {width:80%}
+.div3_7 .inputB01 {width:30%;}
+.div3_7 .inputB02 {width:70%}
+.div4_6 .inputB01 {width:40%;}
+.div4_6 .inputB02 {width:60%}
+.div5_5 .inputB01 {width:50%;}
+.div5_5 .inputB02 {width:50%}
+.div6_4 .inputB01 {width:60%;}
+.div6_4 .inputB02 {width:40%}
+.div7_3 .inputB01 {width:70%;}
+.div7_3 .inputB02 {width:30%}
+.div8_2 .inputB01 {width:80%;}
+.div8_2 .inputB02 {width:20%}
+.div25p .inputB {width:21.4%}
+.div25p .inputDash {width:4.8%}
+
+/* 연락처 정렬 */
+.telWrap {display:table;width:100%;}
+.telWrap .telSel {display:table-cell;width:29%;vertical-align:middle;}
+.telWrap .inputDash {width:20px; text-align: center;}
+
+/* 이메일 정렬 */
+.emailWrap .email {display:table;width:100%;}
+.emailWrap .inputB01 {width:50%;}
+.emailWrap .inputB02 {width:50%;}
+.emailWrap .inputDash {width:20px;}
+.emailWrap .stList {margin-top:6px;}
+
+/* 카드번호 정렬 */
+.cardNum, .cardDash {display:table-cell;vertical-align:middle;text-align:center;}
+.cardNum input[type='text'], .cardNum input[type='tel'] {padding-left:0;text-align:center;}
+.cardDash {width:12px}
+
+/* 체크박스 정렬 */
+.formArray {overflow:hidden;margin-top:-5px;}
+.formArray .checkList, .formArray .radioList {float:left;width:50%;margin-top:5px;}
+.formArray.array3 .checkList, .formArray.array3 .radioList {width:33.333%;width:calc(100% / 3);}
+.formArray.array4 .checkList, .formArray.array4 .radioList {width:25%;}
+
+/* 날짜,시간 pick 폼 */
+.cal .inputList input[type="text"] {padding-right: 36px;}
+.cal .inputList input[type="text"].calDisabled {color: #ababab;}
+.cal .inputList .btnCalendar {position: absolute; top:0; right:0; width: 100%; height: 40px; background: url(../images/common/ico_cal.png) no-repeat 93% 50%; background: url(../images/common/ico_cal.png) no-repeat right 10px top 50%; background-size: 16px 18px;}
+.cal .inputList .btnTime {position: absolute; top:0; right:0; width: 100%; height: 40px; background: url(../images/common/ico_clock.png) no-repeat 93% 50%; background: url(../images/common/ico_clock.png) no-repeat right 10px top 50%; background-size: 16px 18px;}
+
+.calendarForm {display: table; width:100%;}
+.calendarForm > * {display: table-cell}
+.calendarForm > .cal {width: 50%}
+.calendarForm .inputList {position: relative; width: 100%}
+.calendarForm .symbol {padding: 0 6px; text-align: center; vertical-align: middle;}
+
+/* 주민등록번호 입력 폼 */
+.residentForm:after {display: block; content:''; clear: both;}
+.residentForm .inputList {width: 45.5%; float:left;}
+.residentForm .symbol {float:left; width: 9%; line-height: 40px; text-align: center; vertical-align: middle;}
+
+/* select + 버튼 폼 */
+.selectBtnForm {position: relative; padding-right: 86px;}
+.selectBtnForm .btnAddon {position: absolute; bottom: 0; right: 0; width: 80px; height: 40px; line-height: 40px; font-size:13px; font-weight: bold; color: #fff; border: none; background: #4885e0;}
+
+.accountInput{display:none}
+.insertAccount{display:none}
+
+.acc_inquiry_wrap{position: relative;}
+.acc_inquiry_wrap .btnAddon2{display: block;height: 40px;margin-top: 5px;line-height: 40px;font-size:13px;font-weight: bold;color: #fff;border: none;background: #4885e0;border-radius: 3px}
+.acc_inquiry_wrap .selectBtnForm{padding-right: 0;}
+.acc_inquiry_wrap .selectBtnForm {position: relative;overflow: hidden;}
+.acc_inquiry_wrap .selectBtnForm .selAcc{display: table-cell;max-width: 100%;height: 38px;padding-left: 5px;padding-right: 30px;line-height: 38px;position: relative;border: 1px solid #dedede;background: #fff;white-space: nowrap;}
+.acc_inquiry_wrap .selectBtnForm .inputBoth01 .selectValue {height: 100%;}
+.acc_inquiry_wrap .selectBtnForm .btn_acc_inquiry{display: inline-block;padding: 0px 3px;width: 100%;height: 40px;padding: 0 9px;line-height: 40px;font-size:13px;color: #111;text-align: center;vertical-align: middle; border-radius: 2px;letter-spacing: -0.05em;background: #4885e0;color: #fff;}
+
+/* 폼 내 금액 조회 폼 */
+.infoTxtForm {position: relative; height: 30px; line-height: 30px; padding-right: 86px;}
+.infoTxtForm .btnAddonPoint {position: absolute; bottom: 0; right: 0; width: 80px; height: 30px; line-height: 30px; font-size:13px; color: #fff; font-weight: bold; background: #6a7688;}
+
+.infoTxtPrice:after {display: block; content:''; clear: both;}
+.infoTxtPrice .infoTxt {float: left; margin-top: 0; padding-left: 0;}
+.infoTxtPrice .infoTxt:before {background-image: none}
+.infoTxtPrice .priceTxt {float: right; font-size:12px; color: #3d9bff;}
+
+/* 수익률 계산 폼 */
+.rateCalcForm {display: -webkit-flex; display: flex; -webkit-box-align:center; align-items:center;}
+.rateCalcForm > * {-webkit-flex: none; flex: none; margin-left: 6px;}
+.rateCalcForm > *:first-child {width:21px; margin-left: 0;}
+.rateCalcForm > *:nth-child(2) {width:35%;}
+.rateCalcForm > *:nth-child(3) {-webkit-flex:1; flex:1}
+.rateCalcForm > *:nth-child(4) {-webkit-flex:1; flex:1}
+.rateCalcForm  .unit {-webkit-flex:none; flex:none;width: 16px; margin-left: 0; line-height: 40px; text-align: right;}
+
+/* 오른쪽 단위 고정 폼 */
+.unitFixForm {display: -webkit-flex; display: flex; -webkit-box-pack:justify; -webkit-justify-content: space-between; justify-content: space-between}
+.unitFixForm > * {-webkit-flex: 1; flex: 1;}
+.unitFixForm .inputBoth03 {display: block; width: auto}
+.unitFixForm  .unit {-webkit-flex:none; flex:none; width: 18px; margin-left: 0; line-height: 40px; text-align: right;}
+
+/* input + unit */
+.unitInp {}
+.unitInp .inputList, .unitInp .stList {float: left; width: 89%}
+.unitInp .inputList2 {float: left;width: 80%}
+.unitInp .stList2 {width: 100%}
+.unitInp .unit {float: left; width: 11%; line-height: 40px; color: #111; text-align: right;}
+.unitInp .inputList2 + .unit{width: 20%}
+
+/* input + unit multi 폼 */
+.multiForm:after {display: block; content:''; clear: both;}
+.multiForm .unitInp {float: left; width: 46.6%}
+.multiForm .unitInp:last-child {float: right;}
+.multiForm .unitInp2 {float: left; width: 50%}
+.multiForm .unitInp2 .stList {float: left; width: 85%}
+.multiForm .unitInp2 .unit {float: left;width: 15%; line-height: 40px; padding-right: 5px; color: #111; text-align: right;}
+
+.multiForm .unitInp3 {float: right; width: 50%}
+.multiForm .unitInp3 .stList {float: left; width: 80%}
+.multiForm .unitInp3 .unit {float: left;width: 20%; padding-right: 5px; line-height: 40px; color: #111; text-align: right;}
+
+.multiForm .unitInp4 {float: left; width: 50%}
+.multiForm .unitInp4 .stList {float: left; width: 75%}
+.multiForm .unitInp4 .unit {float: left;width: 25%; padding-right: 5px; line-height: 40px; color: #111; text-align: right;}
+
+/* input multi - padding 재정의 */
+.inputBoth01 input[type='text'], .inputBoth01 input[type='tel'], .inputBoth01 input[type='password'],
+.inputBoth02 input[type='text'], .inputBoth02 input[type='tel'], .inputBoth02 input[type='password'], 
+.inputBoth03 input[type='text'], .inputBoth03 input[type='tel'], .inputBoth03 input[type='password'],
+.inputBoth04 input[type='text'], .inputBoth04 input[type='tel'], .inputBoth04 input[type='password'],
+.telWrap input[type='text'], .telWrap input[type='tel'], .telWrap input[type='password'],
+.emailWrap input[type='text'], .emailWrap input[type='tel'], .emailWrap input[type='password'],
+.cardNum input[type='text'], .cardNum input[type='tel'], .cardNum input[type='password'],
+.cal input[type='text'], .cal input[type='tel'], .cal input[type='password'],
+.residentForm input[type='text'], .residentForm input[type='tel'], .residentForm input[type='password'],
+.rateCalcForm input[type='text'], .rateCalcForm input[type='tel'], .rateCalcForm input[type='password'],
+.unitFixForm input[type='text'], .unitFixForm input[type='tel'], .unitFixForm input[type='password'],
+.unitInp input[type='text'], .unitInp input[type='tel'], .unitInp input[type='password'],
+.selectDivision_4_6 input[type='text'],.selectDivision_4_6 input[type='tel'],.selectDivision_4_6 input[type='password'],
+.selectDivision_3_7 input[type='text'],.selectDivision_3_7 input[type='tel'],.selectDivision_3_7 input[type='password'],
+.selectDivision_5_5 input[type='text'],.selectDivision_5_5 input[type='tel'],.selectDivision_5_5 input[type='password']{padding-right:0 !important;}
+
+/* input multi - 리셋버튼 삭제 */
+.inputBoth01 input[type='text'] + a.btnReset, .inputBoth01 input[type='tel'] + a.btnReset, .inputBoth01 input[type='password'] + a.btnReset,
+.inputBoth02 input[type='text'] + a.btnReset, .inputBoth02 input[type='tel'] + a.btnReset, .inputBoth02 input[type='password'] + a.btnReset, 
+.inputBoth03 input[type='text'] + a.btnReset, .inputBoth03 input[type='tel'] + a.btnReset, .inputBoth03 input[type='password'] + a.btnReset,
+.inputBoth04 input[type='text'] + a.btnReset, .inputBoth04 input[type='tel'] + a.btnReset, .inputBoth04 input[type='password'] + a.btnReset,
+.telWrap input[type='text'] + a.btnReset, .telWrap input[type='tel'] + a.btnReset, .telWrap input[type='password'] + a.btnReset,
+.emailWrap input[type='text'] + a.btnReset, .emailWrap input[type='tel'] + a.btnReset, .emailWrap input[type='password'] + a.btnReset,
+.cardNum input[type='text'] + a.btnReset, .cardNum input[type='tel'] + a.btnReset, .cardNum input[type='password'] + a.btnReset,
+.cal input[type='text'] + a.btnReset, .cal input[type='tel'] + a.btnReset, .cal input[type='password'] + a.btnReset,
+.residentForm input[type='text'] + a.btnReset, .residentForm input[type='tel'] + a.btnReset, .residentForm input[type='password'] + a.btnReset,
+.rateCalcForm input[type='text'] + a.btnReset, .rateCalcForm input[type='tel'] + a.btnReset, .rateCalcForm input[type='password'] + a.btnReset,
+.unitFixForm input[type='text'] + a.btnReset, .unitFixForm input[type='tel'] + a.btnReset, .unitFixForm input[type='password'] + a.btnReset,
+.unitInp input[type='text'] + a.btnReset, .unitInp input[type='tel'] + a.btnReset, .unitInp input[type='password'] + a.btnReset,
+#selectCheck input[type="tel"]:read-only + .unit + a.btnReset {display:none !important;} /* 2018-11-05 [윤지현] 수표조회에서 권종 input에 reset버튼 삭제 */
+
+/* input 리셋버튼 추가 important */
+.addReset input[type="text"],.addReset input[type="tel"],.addReset input[type="password"] {padding-right: 36px !important}
+
+.inputBoth01.addReset input[type='text'], .inputBoth01.addReset input[type='text'], .inputBoth01.addReset input[type='text'],
+.inputBoth02.addReset input[type='text'], .inputBoth02.addReset input[type='text'], .inputBoth02.addReset input[type='text'], 
+.inputBoth03.addReset input[type='text'], .inputBoth03.addReset input[type='text'], .inputBoth03.addReset input[type='text'],
+.inputBoth04.addReset input[type='text'], .inputBoth04.addReset input[type='text'], .inputBoth04.addReset input[type='text'],
+.telWrap.addReset input[type='text'], .telWrap.addReset input[type='text'], .telWrap.addReset input[type='text'],
+.emailWrap.addReset input[type='text'], .emailWrap.addReset input[type='text'], .emailWrap.addReset input[type='text'],
+.cardNum.addReset input[type='text'], .cardNum.addReset input[type='text'], .cardNum.addReset input[type='text'],
+.cal.addReset input[type='text'], .cal.addReset input[type='text'], .cal.addReset input[type='text'],
+.residentForm.addReset input[type='text'], .residentForm.addReset input[type='text'], .residentForm.addReset input[type='text'],
+.rateCalcForm.addReset input[type='text'], .rateCalcForm.addReset input[type='text'], .rateCalcForm.addReset input[type='text'],
+.unitFixForm.addReset input[type='text'], .unitFixForm.addReset input[type='text'], .unitFixForm.addReset input[type='text'],
+.unitInp.addReset input[type='text'], .unitInp.addReset input[type='text'], .unitInp.addReset input[type='text'],
+.selectDivision_4_6.addReset input[type='text'],.selectDivision_4_6.addReset input[type='tel'],.selectDivision_4_6 input[type='password'],
+.selectDivision_3_7.addReset input[type='text'],.selectDivision_3_7.addReset input[type='tel'],.selectDivision_3_7 input[type='password'],
+.selectDivision_5_5.addReset input[type='text'],.selectDivision_5_5.addReset input[type='tel'],.selectDivision_5_5 input[type='password']{padding-right:36px !important;}
+
+/* 통신사 선택 */
+.mobileSelct:after {display: block; content:''; clear: both;}
+.mobileSelct li {float: left; width:49%;}
+.mobileSelct li:nth-child(even) {margin-left: 2%;}
+.mobileSelct li:nth-child(1),.mobileSelct li:nth-child(2) {margin-bottom: 6px;}
+.boxChkList li {margin-bottom: 6px;}
+.boxChkList li:last-child {margin-bottom:0;}
+.boxChk {position: relative;width:100%;display:block;}/*2018-11-26 [안형애] 공통 통신사선택 radio 접근성 초첨 수정*/
+.boxChk input[type="checkbox"] {position: absolute;top: 0;clip: rect(0,0,0,0);}
+.boxChk input[type="radio"] {position: absolute;top: 0;clip: rect(0,0,0,0);width: 100%;height: 100%;}/*2018-11-26 [안형애] 공통 통신사선택 radio 접근성 초첨 수정*/
+.boxChk label {position: relative; display: block !important; height: 30px; padding-left:10px;  line-height: 28px; font-size:12px; width: 100% !important;max-width:100% !important; margin-left: 0 !important; border: 1px solid #999; border-radius: 2px}
+.boxChk label:after {position: absolute; top:50%; right:5px; width: 14px; margin-top:-5px; height: 10px; content:''; background: url('../images/common/ico_select_gray.png') no-repeat 100% 50%; background-size: 14px 10px;}
+.loginChkBox input + label:before {content:'미사용';display:block;}
+.loginChkBox input:checked + label:before {content:'사용';display:block;}
+.boxChk input:checked + label {background: #4285f4; border: 1px solid #4285f4; color: #fff;}
+.boxChk input:checked + label:after {background-image: url('../images/common/ico_select_active_w.png')}
+
+/**************************************************
+	toggle 정의
+**************************************************/
+/*2018-11-09 [안형애] 스위치 접근성 수정*/
+.switch {position: relative;display: inline-block;width:30px;height:10px;margin-top: 4px;}
+.switch input {display:inline-block;width: 100%;height: 100%;opacity: 0;font-size:1px;line-height:1px;}
+.switch .slider {position: absolute;cursor: pointer;top: 0;left: 0;right: 0;bottom: 0;background-color:#999;-webkit-transition: .4s;transition: .4s;}
+.switch .slider:after {position: absolute;content: '';height:17px;width:17px;left:-8px;top:-4px;background-color:#fff;-webkit-transition: .4s;transition: .4s;border:1px solid #e5e5e5;color:transparent;font-size: 1px;line-height: 1px;}
+.switch input:checked + .slider:after{top:-4px;background-color:#4285f4;border:0;vertical-align:middle; }
+.switch input:checked + .slider {background-color: #c4daff;}
+.switch input:focus + .slider {height:10px;box-shadow: 0 0 1px #4285f4;position: absolute;display: inline-block;vertical-align:middle;}/*2018-10-29 [양미선] 접근성 blind 처리시 포커스가 top:0로 이동 방지를 위해 position:relative 추가*/
+.switch input:checked + .slider:after {content:''; -webkit-transform: translateX(26px);transform: translateX(26px);}
+/*2018-11-09 [안형애] 스위치 접근성 수정*/
+
+/* Rounded sliders */
+.switch .slider.round {border-radius: 34px;}
+.switch .slider.round:after {border-radius: 50%;}
+
+/**************************************************
+	상세/상품 내 컨텐츠
+**************************************************/
+.accountSelect {margin: 0 -17px;}
+.accountSelect .selectArea:after {display: block; content:''; clear: both;}
+.accountSelect .selectArea a {position: relative; float: left; width: 32%; height: 44px; padding: 0 0 0 17px; line-height: 44px; font-size:13px; color: #fff; font-weight: bold; background-image: url(../images/common/ico_arr_more_w.png);background-repeat:no-repeat;background-position:90% 50%;background-position:right 17px top 50%; background-size: 11px 11px;}
+.accountSelect .selectArea a.active{background-image: url(../images/common/ico_arr_more_m.png);background-repeat:no-repeat;background-position:90% 50%;background-position:right 17px top 50%; background-size: 11px 11px;} /* 2018-10-18 [오병직] 공통 계좌 직접입력 버튼 - 아이콘 처리  */
+.accountSelect .selectArea a:after {position: absolute; top: 0; left: 0; content:''; width: 1px; height: 100%; background: #fff; opacity: .2;}
+.accountSelect .selectArea a:first-child {width: 68%;background-image: none;background-color:#4885e0;background-image: url('../images/common/ico_arr_down_w.png');background-size:11px 7px;}
+.accountSelect .selectArea a.arrowNone{background-image:none}
+.accountSelect .selectArea a:first-child + a,.accountSelect .selectArea a:first-child + * ~ a {background-color:#6a7688;}
+.accountSelect .selectArea a.noBg {background-image: none;}
+.accountSelect .selectArea .badgeDefault {display: inline-block;margin-left:10px;padding:0 6px;border:1px solid #fff;background:#4885e0;color:#fff}
+
+.accountInput {height: 44px; padding: 0 17px; background: #f8f8f8; border-bottom: 1px solid #dedede;}
+.accountInput .typeSrch {position: relative; display: block;}
+.accountInput .btnSrch {position: absolute; top:0; right:0; width:30px; height:44px; margin-right: -7px; background-position: 50% 50%;}
+.accountInput .typeSrch {padding: 0 30px 0 0;}
+.accountInput input[type="text"],.accountInput input[type="tel"] {height: 44px;line-height: 22px;border: none;background: none;}
+.accountInput input::-webkit-input-placeholder{color: #ababab;}
+.accountInput input:focus {border-bottom: none;}
+.accountInput input:-ms-input-placeholder,
+.accountInput textarea:-ms-input-placeholder {font-size:14px; color: #666;}
+.accountInput input::-webkit-input-placeholder,
+.accountInput textarea::-webkit-input-placeholder{font-size:14px; color: #666;}
+
+/* 상품리스트 */
+.productWrap {margin: 0 -17px}
+.productWrap.bdt {border-top: 1px solid #dedede !important;}
+.productList > li {border-bottom: 1px solid #dedede;} 
+.productList li .txt {font-size:13px;}
+.productList li .txt + .txt {margin-top: 2px;}
+.productList li a.link {position:relative;display: block; padding: 15px 42px 15px 17px; background: url(../images/common/ico_list_link.png) no-repeat 95% 50%; background: url(../images/common/ico_list_link.png) no-repeat right 17px top 50%; background-size: 9px 16px;}
+.productList li a.block.link {padding:0 42px 0 0; background-position:0 50%; background-position:right 0 top 50%;}
+.productList li a.link.noBg {padding: 15px 17px; background: none}
+.productList li div.link {position:relative;display: block; padding: 15px 17px; }
+.productList li.active {background: #f3faff;}
+.productList .productHeader {border-bottom: 1px solid #dedede; background: #f3faff;}
+.nicknameList .productHeader{border-bottom:0}
+.productList .productHeader .badgeDefault {float:right;}
+.productList .productHeader a .badgeDefault {position:absolute;right:40px;top:50%;float:right;margin-top:-11px;}
+.productList .productHeader div.link .badgeDefault {position:absolute;right:17px;top:50%;float:right;margin-top:-11px;}
+.productList .exchangeView {margin-top:12px}
+.productList .wrapTblDefault [class$="Tit"] {margin-top: 0; color:#3b5997}
+.productList.linkCon .link .detailList{padding:0;}
+
+/* 게시판 리스트 */
+.boardWrap {margin:0 -17px}
+.boardList > li {border-bottom: 1px solid #dedede;} 
+.boardList li .link {position:relative;display: block; padding: 13px 42px 13px 17px; background: url(../images/common/ico_list_link.png) no-repeat 94% 50%; background: url(../images/common/ico_list_link.png) no-repeat right 17px top 50%; background-size: 9px 16px;}
+.boardListTit {color:#111;}
+.boardListTit.new:after{content:"새글"; display:inline-block; margin-left:3px; background:url(../images/common/ico_board_new.png) no-repeat 0 5px; background:url(../images/common/ico_board_new.png) no-repeat right top 5px; background-size:11px 11px; text-indent:-9999px;}
+.boardListTit+.date {font-size:12px; color:#999; margin-top:4px;}
+.boardList li.active {background: #f3faff;}
+
+.boardHeatBox{display:inline; padding:0px 4px; border:1px solid #999;margin-left:6px; border-radius:2px; box-sizing:border-box;}
+.boardHeart{font-size:12px; color:#4885e0; overflow:hidden;}
+.boardHeart:before{content:"좋아요 개수"; display:inline-block; width:13px; padding-right:2px; background:url(../images/common/ico_list_heart.png) no-repeat left 50%; background-size:12px 11px; text-indent:-9999px;}
+
+.boardWrap.faqToggle .boardList li a.active {background-color:#f8f8f8;}
+
+/* 게시판 페이징 */
+.pagingWrap{padding:20px 0; text-align:center;}
+.pagingWrap ul{margin:0 auto;}
+.pagingWrap ul>li{display:inline-block;margin-left:4px; line-height:24px; height:24px;}
+.pagingWrap ul>li:first-child{margin-left:0;}
+.pagingWrap ul>li>a{position:relative;display:inline-block; width:24px; height:24px; border:1px solid #dedede; vertical-align: middle;}/*2018-11-19 [안형애] 새소식 페이징 포커스 접근성 수정*/
+.pagingWrap ul>li>a.active{border:0;color:#fff;background:#4885e0;position: relative;}/*2018-11-19 [양미선] 접근성 position top으로 방지*/
+
+.pagingWrap .arrow.first{background:url(../images/common/ico_paging_first.png) no-repeat center center; background-size:7px 10px;}
+.pagingWrap .arrow.prev{background:url(../images/common/ico_paging_prev.png) no-repeat center center; background-size:5px 10px;}
+.pagingWrap .arrow.next{background:url(../images/common/ico_paging_next.png) no-repeat center center; background-size:5px 10px;}
+.pagingWrap .arrow.last{background:url(../images/common/ico_paging_last.png) no-repeat center center; background-size:7px 10px;}
+
+.boardWrap .boardDetailTit{padding: 17px 17px;background:#f8f8f8;overflow:hidden;}
+.boardWrap img{width:100%;}
+.boardDetailTit .tit{display:inline-block; font-size:14px;color:#111; margin-bottom:2px;font-family: "NotoKR" !important;} /* 2018-11-23 [윤지현] 폰트패밀리 강제 적용 */
+.boardDetailTit .tit.new:after{display:inline-block; content:'새글'; text-indent:-9999px; vertical-align:-5px; margin-left:5px; width:11px; height:11px; background:url('../images/common/ico_board_new.png') no-repeat; background-size:100% 100%;}
+.boardDetailTit .dateTime{font-size:11px; color:#666;font-family: "NotoKR" !important;} /* 2018-11-23 [윤지현] 폰트패밀리 강제 적용 */
+.boardDetailCon{padding:20px 20px;font-size:13px;color:#111;}
+.boardDetailCon .boardBgCon{display:table; width:100%; height:101px; background:url(../images/contents/couponBgCenter.jpg) repeat-x; background-size:1px 101px;}
+.boardDetailCon .boardBgCon:before{content:""; display:table-cell; width:62px; height:100%; left:0; top:0; background:url(../images/contents/couponBgBefore.jpg) no-repeat; background-size:62px 101px;}
+.boardDetailCon .boardBgCon:after{content:""; display:table-cell; width:7px; height:100%; right:0; top:0; background:url(../images/contents/couponBgAfter.jpg) no-repeat; background-size:7px 101px;}
+.boardDetailCon .boardBgCon dl{display:table-cell; text-align:center; vertical-align:middle;}
+.boardDetailCon .boardBgCon dl dd{margin-top:2px; font-weight:bold; color:#f68b1f;}
+
+.navCtrl{color:#111; border:1px solid #dedede; margin:20px 0;}
+.navCtrl .prevBox,.navCtrl .nextBox{overflow:hidden;font-size:14px !important;}  /* 2018-11-08 [오나경] CMS 영역과 충돌되는 부분이 있어 폰트사이즈 재정의 */
+.navCtrl .nextBox{border-bottom:1px solid #dedede;}
+.navCtrl>div>span{display:inline-block;padding:13px 0; border-right:1px solid #dedede; background:#f8f8f8;float:left;width:20%;text-align:center; font-family: "NotoKR" !important;} /* 2018-11-23 [윤지현] 폰트패밀리 강제 적용 */
+.navCtrl>div>a{display:inline-block;padding:13px 10px; text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;float:left; width:80%; font-family: "NotoKR" !important;} /* 2018-11-23 [윤지현] 폰트패밀리 강제 적용 */
+
+.boardWrap .navCtrl {margin:20px 17px;}
+
+/* badge 스타일 */
+.badge {display: inline-block; min-width: 43px; height: 22px; line-height: 20px; margin-right: 9px; padding: 0 10px; font-size:12px; color: #3d9bff; text-align: center; border: 1px solid #3d9bff; border-radius: 2px; background: #fff;}
+.badge.color1 {border-color: #3b5997; color: #3b5997;} /* 블루 */
+.badge.color2 {border-color: #419e04; color: #419e04;} /* 그린 */
+.badge.color3 {border-color: #3b5997; color: #3b5997;} /* 남색 */
+.badge.color4 {border-color: #f44743; color: #f44743;} /* 주황 */
+.badge.color5 {border-color: #999999; color: #666666;} /* 회색 */
+
+/* 금액 타입 */
+.priceTxt:after {display: block; content:''; clear: both;}
+.priceTxt .tit {float:left; margin: 5px 10px 0 0; font-size:12px; vertical-align: middle;}
+.priceTxt .num {float:left; font-size:18px; vertical-align: middle;}
+.priceTxt .unit {float:left; margin: 5px 0 0 4px; font-size:12px; vertical-align: middle;}
+
+.countTxt {display: inline-block; margin-top: 5px; font-size:12px; color: #666;}
+.countTxt em {color: #333;}
+
+/* 계좌/상품 해더 */
+.defaulTitHeader {padding: 13px 16px; border: 1px solid #999;}
+.defaulTitHeader:after {display: block; content:''; clear: both;}
+.defaulTitHeader .prodTit {font-size:13px; margin-bottom: 0;}
+.defaulTitHeader .priceTxt {float: right;}
+.defaulTitHeader .titArea:after {display: block; content:''; clear: both;}
+.defaulTitHeader .titArea .prodTit {float: left;}
+.defaulTitHeader .titArea .countTxt {float: right; margin-top: 1px;}
+.defaulTitHeader .titArea + .countTxt {display: block;}
+
+/* fomlist 중 닫림,열림 박스 */
+.areaBg {margin-top: 20px; background: #f8f8f8; border: 1px  solid #dedede; border-radius: 2px}
+.areaBg h3 {height:39px; line-height:39px; margin: 0; font-size:14px; color:#111; padding-left:32px; background: url(../images/common/ico_pen.png) 10px 13px no-repeat; background-size: 13px 13px;}
+.areaBg h3 .btnAcc {top: 9px;}
+.areaBg .toggleCont {padding:15px;border-top: 1px solid #dedede;}
+
+/**************************************************
+	confirm 박스 정의
+**************************************************/
+.confirmMsg {padding:85px 0 30px;text-align:center;}
+.confirmMsg.type01 {background:url('../images/common/bg_confirm01.png') no-repeat 50% 30px;background-size:40px 40px;} /* 긍정형 */
+.confirmMsg.type02 {background:url('../images/common/bg_confirm02.png') no-repeat 50% 30px;background-size:40px 40px;} /* 부정형 */
+.confirmMsg.type03 {padding:30px 30px;} /* 이미지 없는 것*/
+.confirmMsg.type04 {background:url('../images/common/bg_confirm03.png') no-repeat 50% 30px;background-size:40px 40px;} /* caution ! */
+.confirmMsg.type05 {padding:30px 20px}  /* 이미지 없이 padding 값 작은 것 */
+.confirmMsg.type06 {background:url('../images/common/bg_confirm04.png') no-repeat 50% 30px;background-size:40px 40px;} /* 의문형 */
+.confirmMsg.type07 {background:url('../images/common/bg_confirm05.png') no-repeat 50% 30px;background-size:40px 40px;} /* 이벤트당첨 */
+
+.confirmMsg2{padding:75px 0 20px;text-align:center;}
+.confirmMsg.type08, .confirmMsg2.type08 {background:url('../images/common/bg_confirm06.png') no-repeat 50% 30px;background-size:40px 40px;} /* 사람모형 */
+
+.confirmMsg .confirmDummy {display:inline-block;width:40px;height:40px;background-color:#4285f4;border-radius:20px;}
+.confirmMsg3{padding: 150px 0 30px;}
+.confirmMsg3.type09 {background:url('../images/common/loan_completion.jpg') no-repeat 50% 30px;background-size: 99px;} 
+
+.topConfirmArea {font-size:17px; color: #111;}
+.topConfirmArea .subTxt {margin-top: 5px; font-size:14px; color: #666;}
+.topConfirmArea + .guideList {margin-top:0;}
+.topConfirmArea + .defTit {margin-top: 0;}
+.topConfirmArea + .wrapTblDefault .defTit {margin-top: 0;}
+.wrapTblDefault table + .defTit {margin-top: 0;}
+.confirmMsg .guideList {text-align: left; margin-top: 15px;}
+
+/* 조회조건변경 */
+.dateSet {padding:25px 18px;}
+.dateSet .defTit:first-child {margin-top:0;}
+.transfer .optionSel {}
+.transfer .optionSel ul {display:table;table-layout:fixed;width:100%;}
+.transfer .optionSel ul li {display:table-cell;height:35px;border:1px solid #dedede;border-left:0;vertical-align:middle;}
+.transfer .optionSel ul li:first-child {border-left:1px solid #dedede;border-radius:3px 0 0 3px;}
+.transfer .optionSel ul li:last-child {border-radius:0 3px 3px 0;}
+.transfer .optionSel ul li a {display:block;text-align:center;}
+.transfer .optionSel ul li.active {background-color:#4885e0;border-color:#4885e0;position: relative;} /* 2018-11-09 [오병직] 해당라인 코딩 오타관련 부분 삭제 *//*2018-10-29 [양미선] 접근성 blind 처리시 포커스가 top:0로 이동 방지를 위해 position:relative 추가*/
+.transfer .optionSel ul li.active:after{content:'선택됨';color:transparent;opacity: 0;position: absolute;overflow: hidden;font-size: 1px;width: 1px;height: 1px;top:0;}  /* 2018-11-01 [오나경] 접근성 - position 값 누락으로 인해 수정 */
+.transfer .optionSel ul li.active a {color:#fff;}
+
+/* 선택 + 상세보기 리스트 */
+.detailList {padding:11px 17px 12px;}
+.detailList li {display:table;width:100%;margin-bottom:5px;}
+.detailList li:last-child {margin-bottom:0;}
+.detailList li > span,.detailList li > strong {display:table-cell;vertical-align:middle;text-align:right;}
+.detailList li > .tit {min-width:100px;vertical-align:top;text-align:left;}
+.detailList .wrapTblDefault {margin-top: 0;}
+.detailList li.divingLine {margin-top: 15px !important; padding-top: 15px;}
+.stepArea + .selDetailList {margin-top:-1px;}
+
+/* 상세보기 리스트 내에 토글 영역 구분될 때 */
+.detailList + .toggleWrap .detailList{margin-top:-7px; padding-top:0;}
+
+.selDetailList {margin:0 -17px;}
+.selDetailList > ul > li {border-bottom:1px solid #dedede;} 
+.selDetailList > ul > li:first-child {border-top:1px solid #dedede;} 
+.selDetailList > ul > li.active{background: #f3faff;}
+.selDetailList > ul > li > a {display:block;margin-right:17px;padding-right:10px;background:url('../images/common/ico_big_blackarrow.png') no-repeat right center;background-size:8px 15px;}
+.selDetailList .listTit {position:relative;padding:10px 25px 11px 17px;background-color:#f8f8f8;color:#111;font-size:13px;}
+.selDetailList > .listTit {border-top:1px solid #dedede;}
+.selDetailList .listTit a {display:inline-block;position:absolute;top:50%;right:0px;width:50px;height:40px;margin-top:-20px;background:url('../images/common/ico_list_link.png') no-repeat 55% 50%;background-size:9px 15px;text-indent:-9999px}
+.selDetailList .listTit a.btnType02 {top: 50%; right: 17px; width:auto; height: 30px; margin-top: -15px; background-image: none; background-color: #fff; text-indent:0}
+.selDetailList .listTit a.btnType02.btnDel {right:70px}
+.selDetailList .areaBodyBtnFull, .productList .areaBodyBtnFull {margin-top: 0; padding: 0 17px 15px}
+.selDetailList .areaBodyBtnFull .btnBodyLine, .productList .areaBodyBtnFull .btnBodyLine {height: 30px; line-height: 28px;}
+.selDetailList .areaBodyBtnFull .inner li a, .productList .areaBodyBtnFull .inner li a {height: 30px; line-height: 28px;}
+.guideListTop .areaBodyBtnFull .inner li a {margin-top:5px;height: 24px; line-height: 22px;font-size:11px;}
+.guideListTop .areaBodyBtnFull .inner li a.h40 {height:40px; line-height: 40px; font-size: 14px;}
+.selDetailList li > .wrapTblDefault + .areaBodyBtnFull {margin-top: 15px;}
+.selDetailList li > .wrapTblDefault {margin-top: 15px;}
+
+/* total */
+.totalWrap {margin:0 -17px;padding:11px 17px 12px;background-color:#4885e0;color:#fff;}
+.totalWrap dl, .totalWrap .dl {display:table;width:100%;margin-top:5px;}
+.totalWrap dl:first-child, .totalWrap .dl:first-child {margin-top:0;}
+.totalWrap dl dt, .totalWrap dl dd, .totalWrap .dl .dt {display:table-cell;vertical-align:middle;}
+.totalWrap dl dt {min-width:130px;}
+.totalWrap dl dd {text-align:right;}
+.totalWrap dl dd em {font-size: 16px;}
+.totalWrap h2 {color:#fff;font-size:14px;}
+.totalWrap.bankType {background-color:#f3faff;}
+.totalWrap.bankType dl dt, .totalWrap.bankType dl dd {color:#111;}
+.totalWrap.bankType dl dt strong {color:#111;font-weight:bold;font-size:15px;vertical-align:baseline;}
+.totalWrap.bankType dl dd.pointColor em {font-size: 20px;}
+.totalWrap.bankType + .totalWrap {margin-top:20px;}
+
+/* 더보기 */
+.listMoreBtn {margin-top:20px;border:1px solid #999999;border-radius:2px;}
+.listMoreBtn a {display:block;height:40px;line-height:40px;text-align:center;}
+.listMoreBtn a:after {display:inline-block;content:'';width:12px;height:8px;margin-left:7px;background:url('../images/common/ico_arr_down.png') no-repeat 0 0;background-size:11px 7px;}
+.listMoreBtn a.active:after {background-image:url('../images/common/ico_arr_up.png');}
+.listMoreBtn + .totalWrap {margin-top:20px;}
+.areaBodyBtnFull .inner li.listMoreBtn {border:0;border-radius:0;}
+
+/**************************************************
+	각종 box 스타일
+**************************************************/
+.boxHeaderBlue {margin-top: 20px; padding: 15px 10px; background: #f3faff; border-top: 1px solid #999; border-bottom: 1px solid #dedede}
+.boxHeaderBlue + table {border-top: none !important}
+
+/**************************************************
+	etc
+**************************************************/
+/* 이미지영역 */
+.imgWrap {text-align: center;}
+.imgWrap img {display: block; width: 100%}
+
+/* 토글 컨텐츠 */
+.exchangeView {}
+.exchangeView .toggleBtn {display: inline-block; width: 100%; height: 30px; padding: 0 3px; line-height: 28px; font-weight: bold; text-align: center; vertical-align: middle; border-radius: 2px; border: 1px solid #999; background: #fff;}
+.exchangeView .toggleBtn:after {display:inline-block;content:'';width:12px;height:7px;margin-left:7px;background:url('../images/common/ico_arr_down.png') no-repeat 0 0;background-size:11px 7px;}
+.exchangeView .toggleBtn.active:after {background-image:url('../images/common/ico_arr_up.png')}
+.exchangeView .toggleCont {display:none; background: #f8f8f8;}
+.exchangeView .toggleCont > .guideList {border:1px solid #999; border-top:0; border-radius: 0 0 2px 2px;}
+.exchangeView .toggleBtn.active + .toggleCont {display: block;}
+.toggleNone {display:none;}
+
+/* 공유하기 */
+.snsWrap {padding:20px 0 13px;}
+.snsWrap ul {text-align:center;}
+.snsWrap ul li {display:inline-block;margin: 0 15px;}
+.snsWrap ul li a {display:block;min-width:50px;padding-top:45px;background-position:top center;background-repeat:no-repeat;background-size:40px 40px;text-align:center;}
+.snsWrap ul li.sns01 a {background-image:url('../images/common/ico_sms.png');}
+.snsWrap ul li.sns02 a {background-image:url('../images/common/ico_kakao.png');}
+.snsWrap ul li.sns03 a {background-image:url('../images/common/ico_mail.png');}
+
+/* 아이콘 리스트 팝업 */
+.IconList{margin:0 -17px}
+.IconList li{padding:15px 0;display:table;line-height:25px;border-bottom:1px solid #dedede;width:100%;padding-left:17px}
+.IconList li:before{content:"";display:table-cell;width:25px;height:25px;background-size:25px 25px;background-repeat:no-repeat;padding-right:10px;background-position-y:center}
+.IconList li:nth-child(1):before{background-image: url(../images/common/country_01.png);}
+.IconList li:nth-child(2):before{background-image: url(../images/common/country_02.png);}
+.IconList li:nth-child(3):before{background-image: url(../images/common/country_03.png);}
+.IconList li:nth-child(4):before{background-image: url(../images/common/country_04.png);}
+.IconList li:nth-child(5):before{background-image: url(../images/common/country_05.png);}
+.IconList li:nth-child(6):before{background-image: url(../images/common/country_06.png);}
+.IconList li:nth-child(7):before{background-image: url(../images/common/country_07.png);}
+.IconList li:nth-child(8):before{background-image: url(../images/common/country_08.png);}
+.IconList li:nth-child(9):before{background-image: url(../images/common/country_09.png);}
+.IconList li:nth-child(10):before{background-image:url(../images/common/country_10.png);}
+.IconList li:nth-child(11):before{background-image:url(../images/common/country_11.png);}
+.IconList li:nth-child(12):before{background-image:url(../images/common/country_12.png);}
+.IconList li:nth-child(13):before{background-image:url(../images/common/country_13.png);}
+.IconList li:nth-child(14):before{background-image:url(../images/common/country_14.png);}
+.IconList li:nth-child(15):before{background-image:url(../images/common/country_15.png);}
+.IconList li:nth-child(16):before{background-image:url(../images/common/country_16.png);}
+.IconList li:nth-child(17):before{background-image:url(../images/common/country_17.png);}
+.IconListBtn{margin:0 -17px -17px;padding-top:40px;}
+
+.bankIconList tbody tr{line-height:25px;width:100%;padding-left:17px}
+.bankIconList tbody tr td{}
+.bankIconList tbody tr td:first-child:before{content:"";display:inline-block;vertical-align:middle;width:25px;height:25px;background-size:25px 25px;background-repeat:no-repeat;padding-right:10px;background-position-y:center}
+.bankIconList tbody tr:nth-child(1) td:first-child:before{background-image: url(../images/common/bankIcon_01.png);}
+.bankIconList tbody tr:nth-child(2) td:first-child:before{background-image: url(../images/common/bankIcon_02.png);}
+.bankIconList tbody tr:nth-child(3) td:first-child:before{background-image: url(../images/common/bankIcon_03.png);}
+.bankIconList tbody tr:nth-child(4) td:first-child:before{background-image: url(../images/common/bankIcon_04.png);}
+.bankIconList tbody tr:nth-child(5) td:first-child:before{background-image: url(../images/common/bankIcon_05.png);}
+.bankIconList tbody tr:nth-child(6) td:first-child:before{background-image: url(../images/common/bankIcon_06.png);}
+.bankIconList tbody tr:nth-child(7) td:first-child:before{background-image: url(../images/common/bankIcon_07.png);}
+.bankIconList tbody tr:nth-child(8) td:first-child:before{background-image: url(../images/common/bankIcon_08.png);}
+.bankIconList tbody tr:nth-child(9) td:first-child:before{background-image: url(../images/common/bankIcon_09.png);}
+
+.bankPopBtn{padding:15px 15px 0;margin-top:0}
+
+/*분할인출 회차 선택*/
+.accordianWrap {margin:15px -17px;}
+.accordianMu > li:first-child{border-top:1px solid #dedede;}
+.accordianMu > li{border-bottom:1px solid #dedede;}
+.accordianTit {padding:15px 17px;}
+.accordianTit:after{content:"";display:block;clear:both}
+.accordianTit .acdLft {float:left;margin-top:0;}
+.accordianTit .acdRht {float:right;vertical-align:middle;}
+.accordianTit .acdRht .acNum {color:#3d9bff;font-weight: bold;}
+.accordianCont {border-top:1px solid #dedede;display:none;}
+.accordianCont .listDot {padding-top:7px;}
+.accordianCont .areaBodyBtnFull{}
+.accordianList {padding:9px 0;}
+.accordianList li {padding:2px 17px;}
+.accordianList li:after{content:"";display:block;clear:both}
+.accordianList li .acdTxt {float:left}
+.accordianList li .acdInfo {float:right;}
+.accordianLb span{margin-right:10px;display:inline-block !important;}
+.accordianLb01 {color:#666;font-size:12px;}
+.badgeDefault {height:22px;padding:0 10px;line-height:20px;background: #fff;border: 1px solid #3d9bff;border-radius: 2px;color:#3d9bff;font-size:12px;text-align: center;vertical-align: middle;display:inline-block;}
+.badgeDefault.red {border: 1px solid #f44743;color:#f44743;}
+.badgeDefault.grey {border: 1px solid #666;color:#666;}
+.btnAcc {width:30px;height:22px;background: url(../images/common/ico_arr2_down.png) no-repeat right center; background: url(../images/common/ico_arr2_down.png) no-repeat right 5px center; background-size: 16px 9px;text-indent:-9999px;overflow:hidden;}
+.btnAcc.active {background: url(../images/common/ico_arr2_up.png) no-repeat right center; background: url(../images/common/ico_arr2_up.png) no-repeat right 5px center; background-size: 16px 9px;}
+.popWrap .popInner .popCont input[type='checkbox'].accordianCk {position:relative;width: 21px;height: 21px;opacity: 1;}
+
+/* 국가선택 */
+.nationList {margin-top:10px;}
+.nationList li {margin-bottom: 6px}
+.nationList li a{display:block; padding:16px 70px 16px 57px; border:1px solid #dedede;}
+.nationList li a p{line-height:1.7;}
+.nationList .nVietnam {background:url(../images/contents/ico_vietnam.png) no-repeat 17px center, url(../images/contents/ico_agribank.png) no-repeat 93% center; background:url(../images/contents/ico_vietnam.png) no-repeat left 17px center, url(../images/contents/ico_agribank.png) no-repeat right 17px center; background-size:25px 25px, 50px 35px;}
+.nationList .nPhilippines {background:url(../images/contents/ico_philippines.png) no-repeat 17px center, url(../images/contents/ico_metrobank.png) no-repeat 93% center; background:url(../images/contents/ico_philippines.png) no-repeat left 17px center, url(../images/contents/ico_metrobank.png) no-repeat right 17px center; background-size:25px 25px, 50px 35px;}
+
+.fundAccountInfo{position:relative;width:100%;border-radius:2px;background:#e6f8f7}
+.fundAccountInfo .fundInfoImg{width:99px;height:120px;background:url(../images/contents/img_fund.png) no-repeat;background-size:cover;position:absolute;right:17px;bottom:-10px;text-indent:-9999px}
+.fundAccountInfo .fundInfoImg02{width:86px;height:83px;background:url(../images/contents/img_banner02.png) no-repeat;background-size:cover;position:absolute;right:17px;bottom:22px;text-indent:-9999px}
+.fundAccountInfo .infoTitle{font-size:14px;padding: 30px 30px 0 28px}
+.fundAccountInfo .fundInfoBtn{margin-left:28px;margin-top:8px;padding-bottom:10px}
+.fundAccountInfo .fundInfoBtn a{height: 30px;line-height:28px;font-weight: bold;padding:0 22px 0 14px;}
+.fundAccountInfo .fundInfoBtn .color1{background: url(../images/contents/icon_fund_arrow01.png) no-repeat 90% 50%; background: url(../images/contents/icon_fund_arrow01.png) no-repeat right 10px top 50%;background-size: 6px 8px}
+.fundAccountInfo .fundInfoBtn .color2{background: url(../images/contents/icon_fund_arrow02.png) no-repeat 90% 50%; background: url(../images/contents/icon_fund_arrow02.png) no-repeat right 10px top 50%;background-size: 6px 8px}
+.fundAccountInfo .fundInfoBtn a:first-child{margin-right:1px}
+
+/* 하단 CMS 관리 배너 */
+.bannerBotWrap {width:100%;border-radius:2px;margin-top:20px;padding:16px 19px 19px 19px;}
+.bannerBotWrap + .bannerBotWrap {margin-top:10px;}
+.bannerBotWrap.type01 {background:#e8f4fc url('../images/contents/img_fund.png') no-repeat 95% 95%;background-size:75px 85px;}
+.bannerBotWrap.type02 {background:#e6f8f7 url('../images/contents/img_banner02.png') no-repeat 95% 60%;background-size:68px 72px;}
+.bannerBotWrap p {font-size:14px;letter-spacing:-0.5px;line-height:1.3;}
+.bannerBotWrap.type01 p strong {color:#4885e0;}
+.bannerBotWrap.type02 p strong {color:#019370;}
+.bannerBotWrap .bannerBtn {margin-top:8px;}
+.bannerBotWrap .bannerBtn a {height: 30px;line-height:28px;font-weight: bold;padding:0 22px 0 14px;margin-right:2px;}
+.bannerBotWrap .bannerBtn .color1 {background: url(../images/contents/icon_fund_arrow01.png) no-repeat right 10px top 50%;background-size: 6px 8px}
+.bannerBotWrap .bannerBtn .color2 {background: url(../images/contents/icon_fund_arrow02.png) no-repeat right 10px top 50%;background-size: 6px 8px}
+
+.defTit>.checkList{min-width:93px;float:right;margin-top:-3px;color:#111;font-weight:normal;font-size:13px; text-align:right;}
+.defTit>.btnType02{float:right;margin-top:-5px;}
+.defSubTit>.btnType02{float:right;margin-top:-5px;}
+
+/* 아이디 찾기 */
+.idFind {display:table;width:100%;margin-top:5px; text-align: right;}
+.idFind .infoTxt:before {display: none;}
+.idFind .infoTxt, .idFind .btnType01 {display:inline-block; margin-left:9px; }
+.idFind .btnAddon {width:80px;}
+.idFind p.infoTxt:before {top:5px;}
+
+/* 중간 가이드 toggle */
+.guideToggle {margin:20px -17px 0;border-top:1px solid #dedede;border-bottom:1px solid #dedede;}
+.guideToggle dt {padding:12px 17px;background-color:#f3faff;}
+.guideToggle dt a {background:url('') no-repeat 0 0;}
+.guideToggle .toggleCont {display:none;}
+
+/* 아코디언 메뉴 */
+.accordionMenu {margin: 0 -17px}
+.accordionMenu .dep2,
+.accordionMenu .dep3 {display: none;}
+.accordionMenu .dep1 > li > a {display: block;padding: 13px 40px 13px 17px;font-weight: bold;border-bottom: 1px solid #dedede;background:url(../images/common/ico_arr2_down.png) 94% 50% no-repeat;background:url(../images/common/ico_arr2_down.png) right 17px top 50% no-repeat;background-size: 16px 9px;-webkit-background-size: 16px 9px;font-size:16px;}
+.accordionMenu .dep1 > li > a.active {color: #3b5997;background: #f3faff url(../images/common/ico_arr2_up.png) 94% 50% no-repeat; background: #f3faff url(../images/common/ico_arr2_up.png) right 17px top 50% no-repeat;-webkit-background-size: 16px 9px;}
+.accordionMenu .dep1 > li > a.link:after {display: none;}
+.accordionMenu .dep1 > li > a.link {background:url(../images/common/ico_list_link.png) 94% 50% no-repeat; background:url(../images/common/ico_list_link.png) right 17px top 50% no-repeat;-webkit-background-size: 9px 16px !important;}
+.accordionMenu .dep2 > li > a {position: relative;display: block;padding: 10px 40px 10px 26px;color: #666;border-bottom: 1px solid #dedede;background:url(../images/common/ico_list_link.png) 94% 50% no-repeat;background:url(../images/common/ico_list_link.png) right 17px top 50% no-repeat;-webkit-background-size: 9px 16px;font-weight:  bold;}
+.accordionMenu .dep2 > li > a.more {background:url(../images/common/ico_plus.png) 94% 50% no-repeat;background:url(../images/common/ico_plus.png) right 17px top 50% no-repeat; -webkit-background-size: 15px 15px;}
+.accordionMenu .dep2 > li > a.more.active {background: url(../images/common/ico_minus.png) 94% 50% no-repeat;background: url(../images/common/ico_minus.png) right 17px top 50% no-repeat;-webkit-background-size: 15px 1px;}
+.accordionMenu .dep3 > li > a {position: relative; display: block;padding: 10px 40px 10px 26px;color: #666;border-bottom: 1px solid #dedede;background:url(../images/common/ico_list_link.png) 94% 50% no-repeat #f8f8f8;background:url(../images/common/ico_list_link.png) right 17px top 50% no-repeat #f8f8f8;-webkit-background-size: 6px 13px;font-size:13px;}
+.accordionMenu .dep2 > li > a:after {position: absolute; top:50%; left:17px; content:'항목 열기'; width:3px; height:3px; margin-top: -2px; background: url(../images/common/bul_dot.png) no-repeat; -webkit-background-size: cover; text-indent:-9999px}
+
+/*info*/
+.infoWrap {margin:0 -17px;padding:17px;background-color:#f8f8f8;}
+.infoWrap .infoTit {font-size:14px;font-weight:bold;}
+.infoWrap .infoTitS {padding-top:15px;border-top: 1px solid #dedede;margin-bottom:5px;font-size:12px;}
+.infoWrap .infoTit strong {color:#3d9bff;}
+.infoWrap .infoText{margin-top:5px;font-size:12px;}
+.infoWrap > ol > li {margin-top:20px;}
+.infoWrap > ol > li:first-child {margin-top:0;}
+.listLine {margin-top:10px;padding-left:10px;border-left:2px solid #dedede;}
+.listLine li {margin-top:8px;color:#666;font-size:11px;line-height:11px;}
+.listLine li:first-child {margin-top:0;}
+.infoTit +.listDot {margin-top: 5px;}
+
+/*보안카드입력*/
+.scCardWrap:after {display:  block; content:''; clear: both;}
+.scCardWrap li {float:left;width:49%;padding:15px;background-color:#f3faff;text-align:center;}
+.scCardWrap li:first-child {margin-right:2%;}
+.scCardTit {color:#666;}
+.scCardTit strong {color:#3d9bff;}
+.scCardNum {padding-top:10px;}
+.scCardNum input {width: 70px;font-size:240%;box-sizing:content-box;color: #046fd9;padding:0 0 0px 0;letter-spacing:5px; text-align: center;-webkit-text-security:circle;font-family:Tahoma;}
+.scCardNum span {width:35px;height:30px;padding-top:3px;font-size:24px;line-height:50px;vertical-align: top;display: inline-block;}
+
+/* 푸터 배너 영역 */
+.footBanArea {text-align: center;}
+.footBanArea a {display: block; margin: 0 auto;}
+.footBanArea img {display: block; margin: 0 auto; max-width:100%;}
+
+/**************************************************
+	공통/유틸
+**************************************************/
+.logoutWrap {margin-bottom:20px;padding-top:65px;background:url('../images/common/ico_logout.png') no-repeat center 8px;background-size:50px 50px;font-size:14px;text-align:center;}
+.logoutWrap + .guideList p{letter-spacing:-0.6px}
+.logoutWrap2 {margin:20px 0 5px;font-size:14px;text-align:center;}
+.logoutBanner img, .logoutBanner2 img, .logoutBanner3 img{max-width:100%;vertical-align:middle;}
+.logoutBanner, .logoutBanner2 {text-align:center;}
+.logoutBanner2 {margin-top:20px;}
+.timeCount {margin-top:10px;text-align:center;}
+.timeCount strong {color:#3d9bff;font-size:25px;letter-spacing:2px;}
+
+.logoutWrap3{margin-top:17px;font-size:16px;text-align:center;font-weight:bold;}
+.logoutBanner3 {margin-top:13px; text-align: center;}
+.logoutBanner3 a {display: block; max-width:512px; margin:0 auto} /* 2018-11-20 [윤지현] 로그아웃 이벤트 베너영역 링크영역 추가 */
+
+.securityArea {height:150px; margin-top: 20px; line-height:150px; background:#eee; text-align:center; font-size:16px;}
+
+.loading {position: fixed; top:50%; left:50%; width:40px; height:40px; margin: -20px 0 0 -20px; }
+/* 2018-10-18 / 2018-10-19 [윤지현] 저사양폰 대응을 위해 -webkit- 추가 */
+.loading img {width: 100%; height: 100%;}
+.loadingInn {display: inline-block;width:40px; height:40px; border:4px solid #9dccf3;border-radius:50%;border-top-color:#3d9bff;-webkit-animation:spin 500ms linear infinite;animation:spin 500ms linear infinite;}
+.loading .txt {position: absolute; top:50%; left:50%; width:21px; height:8px; margin: -4px 0 0 -10px; background: url(../images/common/loading_txt.png); background-size:cover }
+@keyframes spin {
+	100% {-webkit-transform:rotate(360deg);transform:rotate(360deg);}
+}
+@-webkit-keyframes spin {
+	100% {-webkit-transform:rotate(360deg);transform:rotate(360deg);}
+}
+/* 2018-10-18 / 2018-10-19 [윤지현]  수정 끝 */
+
+/* 앱업데이트 */
+html.w100p, html.w100p body, html.w100p .wrapper,html.w100p .appUpdate {height:100%;}
+.appUpdate .errorTxt{display: block;text-align:center;font-size:17px; font-weight: normal;}
+.appUpdate .errorTxt em {display: block; color: #f44743;font-size:20px;font-weight: bold;}
+.appUpdate .errorTxt:before{content:"";display:block;background:url(../images/common/img_app_update.png) no-repeat;background-size:73px 73px;width:73px;height:73px;margin:0 auto 8px auto}
+.appUpdate .errorCont{text-align:center;font-size:15px;margin-top:10px}
+.appUpdate .errorCont > p {color: #333; font-size:13px;}
+.appUpdate .errorCont .errorInfo {width: 255px; margin: 25px auto 0; padding: 15px 20px; border-top: 1px solid #dedede; border-bottom: 1px solid #dedede;}
+.appUpdate .errorCont .errorInfo dl {overflow: hidden; margin: 2px 0 0;}
+.appUpdate .errorCont .errorInfo dt {float: left; margin-right: 5px; font-size:12px; color: #666;}
+.appUpdate .errorCont .errorInfo dd {float: left; font-size:12px;}
+.appUpdate .errorCont .errorInfo dl:last-child dt {letter-spacing: -0.5px;}
+.appUpdate .errorTop{height:auto; min-height:100%;margin-bottom: -195px; padding-bottom: 220px;display:table;width:100%;height:100%}/* 2018-10-15 [윤지현] 저사용폰 대응 높이값 추가 */
+.appUpdate .errorTop .errorTopCont {display:table-cell;vertical-align:middle;background:#f3faff;}
+.appUpdate .errorBottom{display:table;width:100%}
+.appUpdate .errorBottom .errorBottomCont{display:table-cell;vertical-align:bottom}
+.appUpdate .defTxt{text-align:center}
+.appUpdate .NhTelLink{text-align:center;padding:15px 17px 20px 17px}
+.appUpdate .NhTelLink a{display:block;text-decoration: none;}
+.appUpdate .NhTelLink .NhTel{width:100%;border:1px solid #dedede;padding:12px 0;font-size:13px;line-height:21px}/* 2018-10-15 [윤지현] 기획요청에 따른 수정 */
+/* .appUpdate .NhTelLink .NhTel a{border:1px solid #dedede;padding:12px 0;font-size:12px;line-height:21px} 2018-10-15 [윤지현] 기획요청에 따른 삭제 */
+.appUpdate .NhTelLink .NhTel a strong{font-size:14px}
+/* .appUpdate .NhTelLink .NhTel:first-child a{border-right:0} 2018-10-15 [윤지현] 기획요청에 따른 삭제 */
+.appUpdate .NhTelLink:after{content:"";display:block;clear:both}
+
+/**************************************************
+	조회/이체 공통
+**************************************************/
+/* 계좌명 + 계좌번호 박스 */
+.accInfoTit {margin:0 -17px;padding:16px 17px 17px;background-color:#f3faff;}
+.accInfoTit dt {font-size:14px;font-weight:bold;}
+.accInfoTit dd {color:#f68b1f;}
+.accInfoTit + .wrapTblDefault {margin-top:20px;}
+.guideListTop + .accInfoTit, .guideListTop + .totalWrap.bankType {margin-top:20px;border-top:1px solid #999}
+
+.displayTable{display:table;width:100%}
+.displayTableCell{display:table-cell;vertical-align: middle;}
+
+/* 탭 */
+.tabContWrap .tabCont {display: none;}
+.tabContWrap .tabCont:first-child {display: block;}
+
+/**************************************************
+	보안매체 공통 풀팝업
+**************************************************/
+.cmScWrap {margin-top: 20px; padding: 13px 15px 15px; background: #f3faff; border: 1px solid #d0edff;text-align: center;} /* 2018-10-26 [오나경] 공통 > 보안매체 입력 영역의 여백값 조정 */
+.cmScWrap h2.defTit {margin-top: 0; margin-bottom: 5px; font-size:16px; color: #046fd9; text-align: center;}
+.cmScWrap h3.defTit {margin-top: 0; margin-bottom: 5px; font-size:16px; color: #046fd9; text-align: center;}
+.cmScWrap + .cmScWrap {margin-top: 0; border-top: 1px solid #dedede;}
+/* 보안카드 */
+.cmCardWrap {max-width:300px; margin: 0 auto; text-align: center;}
+.cmCardWrap li {display:table; width:100%; table-layout:fixed;}
+.cmCardWrap .scCardTit {display:table-cell; width:45%; color: #111; font-size:14px; position: relative; top:-4px}
+.cmCardWrap .scCardTit strong {color: #111;}
+.cmCardWrap .scCardNum {display:table-cell; padding-top: 10px;}
+.cmCardWrap .scCardNum input {font-size:240%;box-sizing:content-box;color: #046fd9;padding:0 0 0px 0;letter-spacing:5px; text-align: center;-webkit-text-security:circle;font-family:Tahoma;}
+.cmCardWrap .scCardNum span {color: #111; padding-top: 0; letter-spacing: 5px;}
+.cmCardWrap.serialNum {text-align: center;}
+.cmCardWrap.serialNum .scCardNum {display: inline-block;}
+.cmCardWrap.serialNum .scCardNum input {width:100px;font-size:240%;box-sizing:content-box;color: #046fd9;padding:0;letter-spacing:5px; text-align: center;-webkit-text-security:circle;font-family:Tahoma;}
+.cmCardWrap.serialNum .scCardNum span {width:15px;}
+
+.scImgWrap {margin-top: 20px; padding: 25px 0; border:1px solid #dedede; text-align: center;}
+.scImgWrap img {width:60%}
+
+/* 스마트 OTP,OTP,모바일OTP */
+.cmOtpWrap {background:#f3faff; text-align:center;}
+.cmOtpWrap .scOtpIcon {margin-top:11px;}
+.cmOtpWrap .scOtpIcon img{width:35px;}
+.cmOtpWrap .scOtpIcon.smartOtp img{width:80%; max-width:210px;}
+.cmOtpWrap .scOtpIcon .img02{width:20px;}
+.cmOtpWrap .scOtpTxt {margin-top:8px;color: #111;font-size: 13px;}
+.cmOtpWrap .scOtpTxt .scOtpPoint {display:inline-block; height:20px; margin:15px auto 0; padding:0 10px; font-size: 12px; line-height: 20px; color: #fff; background:#3d9bff; border-radius:10px;}
+.cmOtpWrap .scOtpInput {margin-top:20px;font-size:initial;} 
+.cmOtpWrap .scOtpInput input[type="password"] {font-size:240%;box-sizing:content-box;color: #046fd9;padding:0 0 0px 0;letter-spacing:5px; text-align: center;-webkit-text-security:circle;font-family:Tahoma;}
+.cmOtpWrap .noCardImg {display: inline-block; width:210px; height:132px; border: 1px solid #111; text-align: center; line-height: 132px; border-radius: 3px; background: #fff;}
+
+/* 매체확인 */
+.cmScBtn.areaBodyBtnFull {margin-top:15px;}  /* 2018-10-26 [오나경] 공통>보안매체 : 입력영역과 버튼영역 사이의 여백 조정 */
+.cmScBtn.areaBodyBtnFull .inner li a {font-weight: bold;}
+.cmScBtn.areaBodyBtnFull .inner li a.btnBodyColor {font-size: 14px; background: #6a7688; border:none}
+.cmScBtn.areaBodyBtnFull .inner li a.btnBodyColor.active {background: #046fd9;}
+
+/* 전자서명 메시지 */
+.signWrap {margin:30px -17px -17px;padding:20px;background-color:#f6f6f6;text-align:center;}
+.selDetailList + .signWrap {margin-top:0;}
+.cmOtpWrap .timeLimit2 {margin-top: 10px; color: #666;}
+.cmOtpWrap .btnTimeLimit{display:inline-block;width:23px;height:23px;margin:-3px 0 0 0px;background:url("../images/contents/btn_re_time_black.png") no-repeat center center; background-size:12px 14px; vertical-align:middle;}
+
+/**************************************************
+	one page tab cont
+**************************************************/
+.tabSwitchCont > div {display: none;}
+.tabSwitchCont > div:first-child{display:block}
+
+/* 주계좌설정 */
+.mainAccountSet {}
+.mainAccountSet input[type='checkbox'] {position: absolute; top:50%; left:17px; width: 21px; height: 21px; margin: -10px 0 0 0; opacity:1}
+.mainAccountSet .productList li {padding: 15px 60px 15px 60px;}
+.mainAccountSet .productList li .accNum {margin-bottom: 3px;}
+.mainAccountSet .productList li .btnMainAcc {position: absolute; top: 50%; left: 17px; width: 30px; height: 30px; margin-top: -15px; background: url(../images/contents/bul_heart.png) no-repeat; background-position: 0 -30px; background-size: cover;  overflow: hidden;}
+.mainAccountSet .productList li .btnMainAcc.active {background-position: 0 0;}/* 2018-10-29 [양미선] 접근성 blind 처리시 포커스가 top:0로 이동 방지를 위해 position:relative 추가 재수정*/
+.mainAccountSet .productList li .btnMainAcc.active span:after {content:'주계좌로 선택됨';font-size:1px; opacity:0; color: transparent;position: absolute;top:0;}
+.mainAccountSet .productList li .accNum.active:before {background-position: 0 0;}
+.mainAccountSet .productList li .accNum .category:after {display: inline-block; content:''; width:1px; height:10px; margin: 0 3px 0 7px; background: #dedede;}
+.mainAccountSet .productList li .accName .accNick {display: inline-block; margin-left: 2px; color:#666 !important; font-weight: normal; }
+.mainAccountSet .productList li .accPrice {margin-top: 10px; text-align: right;}
+.mainAccountSet .productList li .btnDrag {position: absolute; right:17px; top:50%; width:21px; height:19px; margin-top: -9px;background: url(../images/contents/bul_drag.png) no-repeat 50% 50%; background-size: 21px 8px; text-indent:-9999px}
+.mainAccountSet .productList li.active {position: relative; background: #fff; box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.4); z-index:2}
+
+/**************************************************
+		전체메뉴 
+**************************************************/
+.mainMenuWrap {position:fixed;top:0;left:0;bottom:0;width:100%;background-color:#fff;z-index:1200;}
+.mainMenuWrap h1 {height:40px;line-height:38px;border-bottom:1px solid #eaeaea;font-size:16px !important;font-weight:bold !important;text-align:center;font-family: "NotoKR" !important;}/* 2018-12-10 [윤지현] font-size, font-weight, font-family 강제적용 */
+.mainMenuWrap h1 a {font-size:16px !important;font-weight:bold !important;font-family: "NotoKR" !important;}/* 2018-12-10 [윤지현] font-size, font-weight, font-family 강제적용 */
+.mainMenuWrap .menuClose {position:absolute;top:0;right:0; width:40px;height:40px}
+.mainMenuWrap .menuClose a {position: absolute;top:0;left:0;display: block; width: 100%; height:100%; padding-top: 11px; text-align: center;}
+.mainMenuWrap .menuClose img {width:14px;height:13px;}
+.mainMenuWrap .usedService {width:50px;}
+.mainMenuWrap .dep3 .usedService {width:50px;margin-right:-25px;}
+
+.mainMenuDefault {padding:15px;border-bottom:1px solid #eaeaea;}
+.mainMenuDefault .menuAll {display:inline-block;height:30px;line-height:30px;padding-left:35px;background:url('../images/common/ico_menuAll.png') no-repeat 0 50%;background-size:30px 30px;font-size:13px !important;color:#111 !important;font-weight:bold;font-family: "NotoKR" !important;} /* 2018-12-10 [윤지현] font-family 강제적용 */ /* 2018-11-06 [윤지현] 폰트색상, 사이즈 속성 강제적용(cms style이 적용되는 것 방지) */
+.mainMenuDefault .menuAll.active {background-image:url('../images/common/ico_menuAll_on.png');color:#4885e0}
+.mainMenuDefault .menuAll:after{content:'열기';color:transparent;font-size:1px;position: absolute;top:0;}  /* 2018-11-06 [양미선] 접근성 -  열림 -> 열기로 텍스트 수정 */
+.mainMenuDefault .menuAll.active:after{content:'닫힘';color:transparent;font-size:1px;position: absolute;top:0}  /* 2018-11-06 [양미선] 접근성 - 닫기-> 닫힘으로 텍스트 수정 */
+.mainMenuDefault ul {overflow:hidden;float:right;width:auto;margin-top:2px;}
+.mainMenuDefault ul li {float:left;margin-left:14px;text-align:right;}
+.mainMenuDefault ul li a {display:inline-block;width:25px;height:36px;font-size:11px !important;color:#111 !important;padding-top:20px;letter-spacing:-1px;text-align:center;font-family: "NotoKR" !important;} /* 2018-12-10 [윤지현] font-family 강제적용 */ /* 2018-11-06 [윤지현] 폰트색상, 사이즈 속성 강제적용(cms style이 적용되는 것 방지) */
+.mainMenuDefault li.myPage a, .mainMenuDefault li.menuSrch a, .mainMenuDefault li.loginOut a {}
+.mainMenuDefault li.myPage {width:25px;}
+.mainMenuDefault li.myPage a {background:url('../images/common/ico_menuMy.png') no-repeat center top;background-size:19px 18.5px;}
+.mainMenuDefault li.myPage a.acitve {background-image:url('../images/common/ico_menuMy_on.png');}
+.mainMenuDefault li.menuSrch {width:31px;}
+.mainMenuDefault li.menuSrch a {background:url('../images/common/ico_menuSrch.png') no-repeat center top;background-size:17px 17px;}
+.mainMenuDefault li.menuSrch a.active {background-image:url('../images/common/ico_menuSrch_on.png');}
+.mainMenuDefault li.loginOut {width:40px;}
+.mainMenuDefault li.loginOut a {width:40px;padding:20px 0px 0;background:url('../images/common/ico_menuOut.png') no-repeat center top;background-size:16px 16px;letter-spacing:-2px;}
+.mainMenuDefault li.loginOut a.active {background-image:url('../images/common/ico_menuOut_on.png');}
+.mainMenuDefault li.login {width:40px;}
+.mainMenuDefault li.login a {width:45px;padding:20px 0px 0;background:url('../images/common/ico_menuIn.png') no-repeat center top;background-size:16px 16px;}
+.mainMenuDefault li.login a.active {background-image:url('../images/common/ico_menuIn_on.png');}
+
+.mainMenuTop {padding:20px 0 18px;background-color:#f8f8f8;border-bottom:1px solid #dedede;}
+.mainMenuTop ul {display:table;width:100%;table-layout:fixed;}
+.mainMenuTop li {display:table-cell;background:url('../images/common/bg_menuBar.png') no-repeat 0 50%;background-size:1px 11px;vertical-align:middle;text-align:center;}
+.mainMenuTop li:first-child {background:none;}
+.mainMenuTop li a {display:block;padding-top:25px;font-size:12px !important; color:#111 !important;font-family: "NotoKR" !important;} /* 2018-12-10 [윤지현] font-family 강제적용 */ /* 2018-11-06 [윤지현] 폰트색상, 사이즈 속성 강제적용(cms style이 적용되는 것 방지) */
+.mainMenuTop li a.active {color:#4885e0 !important;font-weight:bold;} /* 2018-11-06 [윤지현] 폰트색상, 사이즈 속성 강제적용(cms style이 적용되는 것 방지) */
+.mainMenuTop li.menuTop01 a {background:url('../images/common/ico_menuTop01.png') no-repeat 50% 0;background-size:22.5px 19.5px;}
+.mainMenuTop li.menuTop01 a.active {background-image:url('../images/common/ico_menuTop01_on.png');}
+.mainMenuTop li.menuTop02 a {background:url('../images/common/ico_menuTop02.png') no-repeat 50% 0;background-size:18.5px 18px;}
+.mainMenuTop li.menuTop02 a.active {background-image:url('../images/common/ico_menuTop02_on.png');}
+.mainMenuTop li.menuTop03 a {background:url('../images/common/ico_menuTop03.png') no-repeat 50% 0;background-size:18.5px 18px;}
+.mainMenuTop li.menuTop03 a.active {background-image:url('../images/common/ico_menuTop03_on.png');}
+.mainMenuTop li.menuTop04 a {background:url('../images/common/ico_menuTop04.png') no-repeat 50% 0;background-size:19.5px 19px;}
+.mainMenuTop li.menuTop04 a.active {background-image:url('../images/common/ico_menuTop04_on.png');}
+.mainMenuTop li.menuTop05 a {background:url('../images/common/ico_menuTop05.png') no-repeat 50% 0;background-size:18px 20px;}
+.mainMenuTop li.menuTop05 a.active {background-image:url('../images/common/ico_menuTop05_on.png');}
+
+.mainMenuCont {display:none;position: absolute;top:184px;left:0;bottom:0;right:0;}
+.mainMenuCont.type01 {display:block;}
+.mainMenuCont:after {display:block;clear:both;content:'';}
+.menuDepth01, .menuDepth02 {overflow-y:auto;position: absolute;top:0;left:0;bottom:0;right:0}
+
+.menuDepth01 {float:left;width:110px;padding:18px 10px 19px 16px;border-right:1px solid #dedede;}
+.menuDepth01 ul {}
+.menuDepth01 ul li {margin-top:21px;}
+.menuDepth01 ul li:first-child {margin-top:0;}
+.menuDepth01 ul li a {display:block;font-size:13px !important;color:#111 !important;letter-spacing:-1px;line-height:1.2;font-family: "NotoKR" !important;} /* 2018-12-10 [윤지현] font-family 강제적용 */ /* 2018-11-06 [윤지현] 폰트색상, 사이즈 속성 강제적용(cms style이 적용되는 것 방지) */
+.menuDepth01 ul li a.active {color:#4885e0 !important; font-weight: bold;position: relative;} /* 2018-11-06 [윤지현] 폰트색상 강제적용(cms style이 적용되는 것 방지) *//*2018-10-29 [양미선] 접근성 blind 처리시 포커스가 top:0로 이동 방지를 위해 position:relative 추가*/
+/*.menuDepth01 ul li a.active:after{content:'선택됨';color:transparent;opacity: 0;position: absolute;width: 1px;height: 1px;overflow: hidden;font-size: 1px;top:0} 2018-11-07 [양미선] 전체메뉴:메뉴선택시 선택됨 - 스크립트로 처리 */
+.menuDepth02 {left:110px;padding-bottom:20px;}
+.menuDepth02 h3 {height:50px;padding:0 20px;line-height:50px;font-size:16px !important; font-family: "NotoKR" !important;} /* 2018-12-10 [윤지현] font-size, font-family 강제적용*/
+.menuDepth02 > div > ul {}
+.menuDepth02 > div > ul > li {border-top:1px solid #dedede;}
+.menuDepth02 > div > ul > li > a {padding:11px 10px 12px 20px;font-size: 14px !important;color: #111 !important;font-family: "NotoKR" !important;} /* 2018-12-10 [윤지현] font-family 강제적용 */ /* 2018-11-06 [윤지현] 폰트색상, 사이즈 속성 강제적용(cms style이 적용되는 것 방지) */
+.menuDepth02 > div > ul > li > ul {margin-right:-20px;border-top:1px solid #dedede;}
+.menuDepth02 > div > ul > li.depth {padding-right:20px;}
+.menuDepth02 > div > ul > li.depth > a {font-size:14px !important;color:#111 !important;background:url('../images/common/ico_menuPlus.png') no-repeat 100% 50%;background-size:12px 12px;} /* 2018-11-06 [윤지현] 폰트색상, 사이즈 속성 강제적용(cms style이 적용되는 것 방지) */
+.menuDepth02 > div > ul > li.depth > a.active {background:url('../images/common/ico_menuMinus.png') no-repeat 100% 50%;background-size:12px 2px;color:#4885e0 !important;font-weight:bold;} /* 2018-11-06 [윤지현] 폰트색상 강제적용(cms style이 적용되는 것 방지) */
+.menuDepth02 > div > ul > li.depth ul {display:none;padding:16px 10px 18px 20px;background-color:#f7fbff;}
+.menuDepth02 > div > ul > li.depth ul > li {margin-top:13px;padding-left:8px;background:url('../images/common/ico_listdot.png') no-repeat 0 50%;background-size:3px 3px;}
+.menuDepth02 > div > ul > li.depth ul > li:first-child {margin-top:0;}
+.menuDepth02 > div > ul > li.depth ul > li > a {color:#333 !important; font-size:14px !important;font-family: "NotoKR" !important;} /* 2018-12-10 [윤지현] font-family 강제적용 */ /* 2018-11-06 [윤지현] 폰트색상, 사이즈 속성 강제적용(cms style이 적용되는 것 방지) */
+.menuDepth02 > div > ul > li.depth:last-child ul {border-bottom:1px solid #dedede;}
+.menuDepth02 ul li a {display:block;}
+
+.menuDepth02 [class^="menu1"], .menuDepth02 [class^="menu2"] {display:none;}
+.menuDepth02 .menu1-01 {display:block;}
+.menuDepth02 .menu2-01 {display:block;}
+
+.mainMenuCont .menuTab {height:100%;}
+
+.mainMenuCont .menuTab01-1, .mainMenuCont .menuTab01-2, .mainMenuCont .menuTab02-2 {display:none;}
+
+/* 큰글뱅킹 글씨 크기 변경 */
+/* 2018-11-19 [윤지현] 전체메뉴 큰글이체 메뉴 폰트사이즈 크게 적용 */
+.menuDepth02 > div.menu1-04 > ul > li > a {font-size:16px !important;font-family: "NotoKR" !important;} /* 2018-12-10 [윤지현] font-family 강제적용 */
+.menuDepth02 > div.menu1-04 > ul > li.depth ul > li > a {font-size:16px !important;font-family: "NotoKR" !important;} /* 2018-12-10 [윤지현] font-family 강제적용 */
+/* 2018-11-19 [윤지현] end */
+.mainAllMenu > .accordionMenu .dep3.big li a {font-size:14px}
+
+/* 상품몰 tab */
+.mallTab {background-color:#f3faff;border-bottom:1px solid #dedede;}
+.mallTab ul {display:table;width:100%;}
+.mallTab ul li {display:table-cell;width:50%;vertical-align:middle;background:url('../images/common/bg_menuBar.png') no-repeat 0 50%;background-size:1px 15px;}
+.mallTab ul li:first-child {background:none;}
+.mallTab ul li a {display:block;text-align:center;height:44px;line-height:44px;color:#111 !important;font-size: 14px !important;} /* 2018-11-06 [윤지현] 폰트색상, 사이즈 속성 강제적용(cms style이 적용되는 것 방지) */
+.mallTab ul li a.active {color:#4885e0 !important;font-weight:bold; } /* 2018-11-06 [윤지현] 폰트색상 강제적용(cms style이 적용되는 것 방지) */
+.mallTab ul li a.active:before{content:'선택됨';display:block;font-size: 1px;line-height:1px;color:transparent;position: absolute;top: 0;left: 0;overflow: hidden;}/*2018-11-06 [양미선] 전체메뉴 >인증/보안> 메뉴 활성화시 선택됨 읽기 추가*/
+.mallTab ul li a.active span {border-bottom:2px solid #4885e0;}
+.mallTab ul li a span {display:inline-block;height:44px;padding:0 7px;}
+
+/* 상품몰 gate */
+.gateLogout {padding-top:135px;background:url('../images/common/bg_mallGate.png') no-repeat 50% 70px;background-size:102px 53px;}
+.gateLogout p {font-size:13px;text-align:center;}
+.gateSel {margin-top:27px;text-align:center;}
+.gateSel a {position:relative;display:inline-block;width:124px;height:88px;padding:11px 15px;text-align:left;}
+.gateSel a span:first-child {display:block;font-weight:bold;font-size:13px;}
+.gateSel a span:last-child {padding-right:10px;font-size:12px;}
+.gateSel .gate01 {margin-right:10px;background-color:#4885e0}
+.gateSel .gate01:after {position:absolute;bottom:15px;right:15px;display:inline-block;content:'';width:20px;height:20px;background:url('../images/common/bg_gate01.png') no-repeat 100% 100%;background-size:20px 20px;}
+.gateSel .gate01 span:first-child {color:#fff;}
+.gateSel .gate01 span:last-child {background:url('../images/common/ico_gateLink01.png') no-repeat 100% 50%;background-size:5px 9px;color:#c3d4f3;}
+.gateSel .gate02 {background-color:#76ae0a}
+.gateSel .gate02:after {position:absolute;bottom:15px;right:15px;display:inline-block;content:'';width:23px;height:23px;background:url('../images/common/bg_gate02.png') no-repeat 100% 100%;background-size:23px 23px;}
+.gateSel .gate02 span:first-child {color:#fff;}
+.gateSel .gate02 span:last-child {background:url('../images/common/ico_gateLink02.png') no-repeat 100% 50%;background-size:5px 9px;color:#cfe1b9;}
+
+.gateLogin {height:100%;}
+.gateLogin:after {content:'';display:block;clear:both;}
+
+.menuMain {padding-top:120px;border-top:1px solid #dedede;text-align:center;}
+.menuMain .subTxt {color:#4885e0;font-size:12px;}
+.menuMain .mainTxt {margin-top:2px;font-size:15px;}
+.menuMain .link {margin-top:20px;text-align:center;}
+.menuMain .link a {padding-right:20px;background:url('../images/common/btn_loginLink.png') no-repeat 100% 60%;background-size:16px 16px;color:#666;}
+
+.type02 .menuMain {background:url('../images/common/bg_mallMain.png') no-repeat 50% 44px;background-size:102.5px 58px;}
+.type03 .menuMain {background:url('../images/common/bg_loungeMain.png') no-repeat 50% 44px;background-size:102.5px 70px;}
+.type04 .menuMain {background:url('../images/common/bg_csMain.png') no-repeat 50% 44px;background-size:102.5px 65.5px;}
+.type05 .menuMain {background:url('../images/common/bg_authMain.png') no-repeat 50% 44px;background-size:106px 58.5px;}
+
+/* 메뉴타입별 스타일 변경 */
+.type02 .menuDepth01 {padding:16px 9px 17px 13px}
+.type02 .gateLogin .menuDepth01, .type02 .gateLogin .menuDepth02 {overflow-y:auto;top:44px}
+.type05 .menuDepth01, .type05 .menuDepth02 {overflow-y:auto;top:44px}
+
+/* 전체메뉴 펼침 스타일 */
+.mainAllMenu{overflow:auto;position: absolute;top:101px;left:0;bottom:0;right:0}
+.mainAllMenu >  .accordionMenu  {margin:0}
+.mainAllMenu >  .accordionMenu  > .dep1 > li:nth-child(1) > a:before{content:"";display:inline-block;background:url(../images/common/ico_menuTop01.png) no-repeat; background-size:22.5px 19.5px;width:22.5px;height:19.5px;position:relative;top:3px;margin-right:8px}
+.mainAllMenu >  .accordionMenu  > .dep1 > li:nth-child(2) > a:before{content:"";display:inline-block;background:url(../images/common/ico_menuTop02.png) no-repeat; background-size:18.5px 18px;width:18.5px;height:18px;position:relative;top:4px;margin-right:8px}
+.mainAllMenu >  .accordionMenu  > .dep1 > li:nth-child(3) > a:before{content:"";display:inline-block;background:url(../images/common/ico_menuTop03.png) no-repeat; background-size:18.5px 18px;width:18.5px;height:18px;position:relative;top:4px;margin-right:8px}
+.mainAllMenu >  .accordionMenu  > .dep1 > li:nth-child(4) > a:before{content:"";display:inline-block;background:url(../images/common/ico_menuTop04.png) no-repeat; background-size:19.5px 19px;width:19.5px;height:19px;position:relative;top:4px;margin-right:8px}
+.mainAllMenu >  .accordionMenu  > .dep1 > li:nth-child(5) > a:before{content:"";display:inline-block;background:url(../images/common/ico_menuTop05.png) no-repeat; background-size:18px 20px;width:18px;height:20px;position:relative;top:4px;margin-right:8px}
+.mainAllMenu > .accordionMenu .dep1 > li > a {color:#111;display: block;padding: 13px 40px 13px 17px;font-weight: bold;border-bottom: 1px solid #dedede;background:#f8f8f8 url(../images/common/ico_arr4_down.png) 94% 50% no-repeat;background:#f8f8f8 url(../images/common/ico_arr4_down.png) right 17px top 50% no-repeat;background-size: 16px 9px;font-size:16px !important;font-family: "NotoKR" !important;} /* 2018-12-10 [윤지현] font-size, font-family 강제적용 */
+.mainAllMenu > .accordionMenu .dep1 > li > a.active {color:#111;background:#f8f8f8 url(../images/common/ico_arr4_up.png) 94% 50% no-repeat;background:#f8f8f8 url(../images/common/ico_arr4_up.png) right 17px top 50% no-repeat;background-size: 16px 9px}
+.mainAllMenu > .accordionMenu .dep2 > li > a:after{display:none}
+.mainAllMenu > .accordionMenu .dep2 > li > a{font-size:14px;color:#111;padding: 12px 40px 12px 20px;background: url(../images/common/ico_list_link.png) 94% 50% no-repeat;background: url(../images/common/ico_list_link.png) right 19px top 50% no-repeat;background-size: 9px 16px}
+.mainAllMenu > .accordionMenu .dep2 > li > a.more{font-size:14px !important;color:#111;background: url(../images/common/ico_arr2_down.png) 94% 50% no-repeat;background: url(../images/common/ico_arr2_down.png) right 17px top 50% no-repeat;background-size: 15px 9px;padding: 12px 40px 12px 20px;font-family: "NotoKR" !important;} /* 2018-12-10 [윤지현] font-family 강제적용 */
+.mainAllMenu > .accordionMenu .dep2 > li > a.more.active{background: url(../images/common/ico_arr2_up.png) 94% 50% no-repeat;background: url(../images/common/ico_arr2_up.png) right 17px top 50% no-repeat;background-size: 15px 9px}
+.mainAllMenu > .accordionMenu .dep3 > li > a{font-size:14px !important;font-weight:normal;color:#111;border-bottom:0;padding: 12px 40px 12px 20px;background:none;background-color:#fff;font-family: "NotoKR" !important;} /* 2018-12-10 [윤지현] font-size, font-family 강제적용 */
+.mainAllMenu > .accordionMenu .dep3 > li > a.more{background: url(../images/common/ico_menuPlus.png) 94% 50% no-repeat;background: url(../images/common/ico_menuPlus.png) right 19px top 50% no-repeat;background-size: 12px 12px;background-color:#fff}
+.mainAllMenu > .accordionMenu .dep3 > li > a.active{font-weight:bold;color:#4885e0;}
+.mainAllMenu > .accordionMenu .dep3 > li > a.more.active {background: url(../images/common/ico_menuMinus.png) 94% 50% no-repeat #f7fbff;background: url(../images/common/ico_menuMinus.png) right 19px top 50% no-repeat #f7fbff;background-size:12px 2px}
+.mainAllMenu > .accordionMenu .dep3 > li{border-bottom:1px solid #eaeaea;background: #f7fbff;}
+.mainAllMenu > .accordionMenu .dep4 {margin:0 20px;border-top: 1px solid #eaeaea;padding:12px 0;display:none;background:#f7fbff}
+.mainAllMenu > .accordionMenu .dep4 > li{color: #666; font-size: 13px;background: url(../images/common/ico_listdot.png) no-repeat 0 9px;background-size: 2px 2px;margin-top:15px}
+.mainAllMenu > .accordionMenu .dep4 > li:first-child{margin-top:0}
+.mainAllMenu > .accordionMenu .dep4 > li > a{padding-left:6px;color:#333;font-size:13px;font-family: "NotoKR" !important;} /* 2018-12-10 [윤지현] font-size, font-family 강제적용 */
+.mainAllMenu.accordionMenu {overflow: visible;position: static;top: auto;left: auto;bottom: auto;right: auto;}
+
+.menuAllTitle{font-size:16px;background:#4885e0;color:#fff;padding:12px 0 12px 20px}
+
+/* 2018-10-25 [오나경] 전체메뉴>상품몰>농협은행, 농축협 구분을 위한 스타일 적용 */
+.mainAllMenu > .accordionMenu .dep2 > li.menuAllTitle01 {background-color:#4885e0;}
+.mainAllMenu > .accordionMenu .dep2 > li.menuAllTitle02 {background-color:#76ae0a;}
+.mainAllMenu > .accordionMenu .dep2 > li.menuAllTitle01 > a.more {font-size:16px;color:#fff;background:#4885e0 url(../images/common/ico_menuPlus2.png) 94% 50% no-repeat;background:#4885e0 url(../images/common/ico_menuPlus2.png) right 17px top 50% no-repeat;background-size:12px 12px;padding: 12px 40px 12px 20px;font-family: "NotoKR" !important;} /* 2018-12-10 [윤지현] font-family 강제적용 */
+.mainAllMenu > .accordionMenu .dep2 > li.menuAllTitle02 > a.more {font-size:16px;color:#fff;background:#76ae0a url(../images/common/ico_menuPlus2.png) 94% 50% no-repeat;background:#76ae0a url(../images/common/ico_menuPlus2.png) right 17px top 50% no-repeat;background-size:12px 12px;padding: 12px 40px 12px 20px;font-family: "NotoKR" !important;} /* 2018-12-10 [윤지현] font-family 강제적용 */
+.mainAllMenu > .accordionMenu .dep2 > li.menuAllTitle01 > a.more.active {background:#4885e0 url(../images/common/ico_menuMinus2.png) 94% 50% no-repeat;background:#4885e0 url(../images/common/ico_menuMinus2.png) right 17px top 50% no-repeat;background-size:12px 2px;}
+.mainAllMenu > .accordionMenu .dep2 > li.menuAllTitle02 > a.more.active {background:#76ae0a url(../images/common/ico_menuMinus2.png) 94% 50% no-repeat;background:#76ae0a url(../images/common/ico_menuMinus2.png) right 17px top 50% no-repeat;background-size:12px 2px;}
+
+.mainAllMenu > .accordionMenu .mallDivision {display:none;background-color:#fff;}
+.mainAllMenu > .accordionMenu .mallDivision > li {border-bottom:1px solid #dedede;}
+.mainAllMenu > .accordionMenu .mallDivision > li > a {display:block;font-size:14px !important;color:#111;padding: 12px 40px 12px 20px;background: url(../images/common/ico_list_link.png) 94% 50% no-repeat;background: url(../images/common/ico_list_link.png) right 19px top 50% no-repeat;background-size: 9px 16px;font-weight:bold !important;font-family: "NotoKR" !important;} /* 2018-12-10 [윤지현] font-size, font-weight, font-family 강제적용 */
+.mainAllMenu > .accordionMenu .mallDivision > li > a.more {background: url(../images/common/ico_arr2_down.png) 94% 50% no-repeat;background: url(../images/common/ico_arr2_down.png) right 17px top 50% no-repeat;background-size: 15px 9px;padding: 12px 40px 12px 20px}
+.mainAllMenu > .accordionMenu .mallDivision > li > a.more.active {color:#111;background:#f8f8f8 url(../images/common/ico_arr4_up.png) 94% 50% no-repeat;background:#f8f8f8 url(../images/common/ico_arr4_up.png) right 17px top 50% no-repeat;background-size: 16px 9px}
+.mainAllMenu > .accordionMenu .mallDivision .dep3 > li {border-bottom:0;border-top:1px solid #dedede;}
+/* 2018-10-25 [오나경] end */
+
+.mainAllMenu .menuSearchBox{background:#f8f8f8;padding:12px 20px 15px 20px;position:relative;border-bottom:1px solid #dedede}
+.mainAllMenu .menuSearchBox .btnSearchClose{position:absolute;top:12px;right:20px;color:#666666;background:url(../images/common/ico_menuClose.png) 100% 50% no-repeat;background:url(../images/common/ico_menuClose.png) right 0 top 50% no-repeat;background-size:10px 10px;padding-right:15px}
+.mainAllMenu .menuSearchBox .inputList{margin-top:8px}
+.mainAllMenu .menuSearchBox .btnSearch {position: absolute;top: 0;right: 0;width: 40px;height: 40px;background: url(../images/common/btn_search.png) no-repeat 50% 50%;background: url(../images/common/btn_search.png) no-repeat right 10px top 50%;background-size: 16px 16px}
+
+.menuSearchWrap{display:table;width:100%;}
+.menuSearchWrap .menuSearchCont01:before{content:"";display:block;background:url(../images/common/ico_menuSearch.png) center no-repeat;background-size:116px 52px;width:116px;height:52px;margin:0 auto;margin-bottom:20px}
+.menuSearchWrap .menuSearchCont01{display:table-cell;vertical-align:middle;text-align:center}
+.menuSearchWrap .menuSearchCont01{display:block}
+.menuSearchWrap .menuSearchCont02 > h3{background:#f7fbff;padding:12px 20px}
+
+.menuSearchContList{padding:0 20px}
+.menuSearchContList > li{color: #666;background: url(../images/common/ico_listdot.png) no-repeat 0 22px;background-size: 2px 2px;border-bottom:1px solid #dedede}
+.menuSearchContList > li > a{display:block;padding:13px 9px}
+.menuSearchContList > li span{color:#111}
+.menuSearchContList > li span:first-child:before{display:none}
+.menuSearchWrap .menuSearchCont01{display:none;padding-top: 50px;vertical-align:middle;text-align:center;}
+.menuSearchWrap .menuSearchCont02{display:block;position: absolute;top:95px;bottom:0;left:0;right:0;overflow: auto;}
+
+/* 간편뱅킹 */
+.simplePopWrap {/*position:fixed;top:0;left:0;*/width:100%;height:100%;background-color:#fff;z-index:101;}  /* 2018-11-12 [오나경] 간편뱅킹 전자서명 팝업 : 스크롤이 이상하게 되는 이슈가 있어 일부 코드 주석 처리 */
+.simplePopWrap .simplePopHead {height:50px;border-bottom:1px solid #ccc;line-height:50px;text-align:center;}
+.simplePopWrap .simplePopHead h1 {font-size:15px;}
+.simplePopWrap .appDownBox {margin:40px 10px 20px;}  /* 2018-12-10 [오나경] 공인인증서 암호 입력 풀팝업 : 여백 수정 */
+.simplePopWrap .popClose {position:absolute;top:17px;right:15px;width:14px;height:13px;}
+.simplePopWrap .popClose img {max-width:100%;}
+.simplePopWrap .idLogin {margin:0 10px;} /* 2018-12-10 [오나경] 공인인증서 암호 입력 풀팝업 : 여백 수정 */
+.simplePopWrap .areaBodyBtnFull {margin:20px 10px 0;}  /* 2018-12-10 [오나경] 공인인증서 암호 입력 풀팝업 : 여백 수정 */
+
+.popNoticeWrap{min-height:180px;display:table;width:100%;padding-top:17px}
+.popNoticeWrap .popNoticeCont{display:table-cell;vertical-align:middle;text-align:center}
+/*2018-11-12 [안형애] 팝업 하단 라인 보더 생기는 부분 수정 */
+/* 2018-11-13 [윤지현] 정기공지팝업 하단 버튼 보더 재수정*/
+.popNoticeBtnWrap {/* padding:0 12px; */background-color:#fff;border-top:1px solid #dedede;}
+.popNoticeBtnWrap .popBtn{padding:0 12px;border-top:none;}
+/* 2018-11-13 [윤지현] end*/
+/*2018-11-12 [안형애] 팝업 하단 라인 보더 생기는 부분 수정 */
+/*2018-11-12 [안형애] 팝업 하단 라인 보더 생기는 부분 수정 */
+
+.popNoticeBtnWrap label {color:#111;}
+.popNoticeBtnWrap .checkList{margin-top:10px}
+
+/* 2018-11-07 [오나경] 해당 라인의 불필요한 css 삭제 */
+
+/* 하단 CMS 관리 배너 */
+.bannerBotWrap {width:100%;border-radius:2px;margin-top:20px;padding:16px 19px 19px 19px;}
+.bannerBotWrap + .bannerBotWrap {margin-top:10px;}
+.bannerBotWrap.type01 {background:#e8f4fc url('../images/contents/img_fund.png') no-repeat 95% 95%;background-size:75px 85px;}
+.bannerBotWrap.type02 {background:#e6f8f7 url('../images/contents/img_banner02.png') no-repeat 95% 60%;background-size:68px 72px;}
+.bannerBotWrap p {font-size:14px;letter-spacing:-0.5px;line-height:1.3;}
+.bannerBotWrap.type01 p strong {color:#4885e0;}
+.bannerBotWrap.type02 p strong {color:#019370;}
+.bannerBotWrap .bannerBtn {margin-top:8px;}
+.bannerBotWrap .bannerBtn a {height: 30px;line-height:28px;font-weight: bold;padding:0 22px 0 14px;margin-right:2px;}
+.bannerBotWrap .bannerBtn .color1 {background: url(../images/contents/icon_fund_arrow01.png) no-repeat right 10px top 50%;background-size: 6px 8px}
+.bannerBotWrap .bannerBtn .color2 {background: url(../images/contents/icon_fund_arrow02.png) no-repeat right 10px top 50%;background-size: 6px 8px}
+
+/* 약관 CMS 관리영역 */
+.popWrap.fullLayerPop .popInner .agreeWrap {overflow:hidden;padding:10px 17px;}
+.popWrap.fullLayerPop .popInner .agreeWrap .agreeCont {overflow-y:auto;height:100%;padding:0 15px 15px;border:1px solid #dedede;}
+
+/* 진행중 로딩 팝업 */
+.nowLoading {padding:50px 0 30px;text-align:center;}
+.nowLoading img {width:40px}
+.nowLoading p {margin-top:15px;}
+
+@media screen and (max-width:320px) and (max-height:455px) {
+	html {font-size:8px;}
+	/* 2018-10-22 [오나경] 와인폰 해상도에서의 폰트 사이즈 재정의 */
+	body, * {font-size: 11px !important;letter-spacing:-1px;}
+	.mainMenuDefault li a {font-size:8px !important;}
+	/* 2018-10-22 [오나경] end */
+}
+
+/* 2018-10-23 [윤지현] 웹뷰 로딩 splash 디바이스별 대응 추가 */
+@media screen and (min-width:375px) and (min-height:812px) {
+	.idxSplash {background-size: contain !important;}
+}
+@media screen and (min-width:360px) and (max-height:811px) {
+	.idxSplash {background-size: 100% 100% !important;}
+}
+@media screen and (min-width:768px){
+	.idxSplash {background-size: 100% 100% !important;}
+}
+/* 2018-10-23 [윤지현] end */
+
+/* 금액 input 에 개발과 충돌로 인해 px 고정 */
+#hiddenTextWidth {font-size:14px !important;}
+
+/* CMS 영역 처리 */
+#iscroll {height:auto !important;}
+.btm img {max-width:100% !important;width:100% !important;}
+
+.idxSplash {background: url(../images/common/img_splash.png) no-repeat 50% 0; background-size: cover;} /* 2018-10-23 [윤지현] bg 배치위치 관련 수정 */ /* 2018-10-22 [윤지현] 웹뷰 index페이지 splash 이미지 추가 */
+
+/* 상품상세 공통 */
+.container .prodDetailWrap {margin:30px -17px 0 -17px; border-bottom:1px solid #eaeaea;}
+.container .popCont .prodDetailWrap {margin-top:20px;}
+.prodDetailWrap {margin-top:30px; font-size:12px;}
+.prodDetailWrap .pointColor, .prodListWrap .pointColor {color:#0370d9 !important;}
+.prodDetailWrap .boardWrap {margin:0;}
+.prodDetailWrap .boardWrap .boardList > li {padding:0; border-bottom:5px solid #f3f3f3; border-top:0;}
+.prodDetailWrap .boardWrap .boardList > li:last-child {border-bottom: 1px solid #dedede;}
+.prodDetailWrap .boardWrap .boardList li a.toggleBtn {padding:15px 42px 15px 25px; font-size:14px;}
+.prodDetailWrap .wrapTblDefault.ty01 > table {border:0;}
+.prodDetailWrap .wrapTblDefault.ty01 > table > thead > tr > th {border:0; vertical-align:top; color:#333;}
+.prodDetailWrap .wrapTblDefault.ty01 > table > tbody > tr > th {padding-top:10px; padding-bottom:7px; padding-left:0; background-color:transparent;  border:0; vertical-align:top; color:#000;}
+.prodDetailWrap .wrapTblDefault.ty01 > table > tbody > tr > td {padding-top:10px; padding-bottom:7px; border:0; background-color:transparent; font-size:12px; vertical-align:top; color:#808080;}
+.prodDetailWrap .toggleWrap .faqConBox {background-color:#fafafa; padding:20px 25px;}
+.prodDetailWrap .toggleWrap .faqConBox .prodDlList:nth-of-type(1) {margin-top:0;}
+.prodDetailWrap .toggleWrap .faqConBox > .wrapTblDefault:first-child {margin-top:-5px;}
+.prodDetailWrap .wrapTblDefault table th {}
+.prodDetailWrap .wrapTblDefault table th, .prodDetailWrap .wrapTblDefault table td {color:#000; line-height:18px;}
+.prodDetailWrap .guideList2 {margin:20px -25px -20px; padding:17px 15px 17px 25px; background-color:#f0f0f0;}
+.prodDetailWrap .listDot > li {margin-top:3px; font-size:12px;}
+.prodDetailWrap .defSubTit {font-size:13px; color:#111; font-weight:400;}
+.prodDetailWrap [class^="wrapTbl"] table {border-top:1px solid #808080;}
+.prodDetailWrap + .comBggraybox {margin:0 -17px; padding:10px 25px; border-bottom:1px solid #eaeaea;}
+.prodDetailWrap .iframeWrap {height:auto; border:0; border-top:1px solid #dedede;}
+.prodDetailWrap .iframeWrap iframe {width:100%; border:0;}
+
+.kdicWrap {padding:15px 25px 20px;}
+.kdicArea {padding-top:52px; background:url('../images/common/bg_kdic.png') no-repeat 0 0; background-size:65px 42px;}
+.kdicArea p {color:#666; font-size:12px;}
+.kdicWrap .defTit {margin-top:15px; margin-bottom:5px; font-size:13px; color:#111; font-weight:400;}
+
+.prodDetailWrap .toggleWrap > .boardListTit {display:block; padding:15px 25px;}
+.prodDetailWrap .toggleWrap > .boardListTit + .toggleCont {display:block !important;}
+.prodDlList {margin-top:15px;}
+.prodDlList dt {font-size:13px; color:#000;}
+.prodDlList dd {margin-top:5px; font-size:12px;}
+ 
+/* 2018-10-29 [윤지현] 외환>외화예금 외화금액 입력시 오른쪽정렬 추가 */
+.inputBoth03 input[type='text'].ar.pr5 {padding-right: 5px !important;}
+.inputBoth03 input[type='tel'].ar.pr5 {padding-right: 5px !important;} 
+/* 2018-10-29 [윤지현] end */
+
+/* 2018-10-31 [윤지현] 통합메인 정기공지팝업 레이아웃수정 추가 */
+/* 2018-11-13 [윤지현] 정기공지팝업 하단에 하루보지않지/닫기버튼 배치 수정 */
+.popWrap.centerLayer .popInner.popInnerNotice {overflow:hidden}
+.popInnerNotice .popCont {/* min-height:100px; */padding:0 !important; border-radius: 3px 3px 0 0}
+.popInnerNotice .notiTit {position: absolute; top:0; left:0; width: 100%; padding:11px 17px; text-align:left;border-bottom: 1px solid #dedede; background: #fff; border-radius:3px 3px 0 0;z-index:2}
+.popInnerNotice .popNoticeWrap {padding-top: 0;}
+.popInnerNotice .popNoticeWrap .oneImg img {display: block; width:100%;}
+.popInnerNotice .popNoticeWrap .oneImg .overbox {position: absolute !important; top:0 !important;width:1px !important;height:1px !important;font-size:1px !important;line-height:0 !important;color:transparent !important;opacity:0 !important;overflow: hidden !important;}
+
+.popInnerNotice .iscroll_wrap {max-height:350px;overflow:scroll}
+.popInnerNotice .iscroll_wrap .content {padding: 55px 17px 17px; text-align:left;} /* 2018-12-10 [윤지현] 정기공지팝업 상단 패딩값 조정 */
+
+.popInnerNotice .popBtnWrap {display:table; width: 100%; table-layout:fixed; height:50px;}
+.popInnerNotice .popBtnWrap .popBtn {display:table-cell;width:50%;height:100%;padding: 0;}
+.popInnerNotice .popBtnWrap .popBtn .checkList {position:relative;background:#fff;margin-top: 0;border-right: 1px solid #dedede;}
+.popInnerNotice .popBtnWrap .popBtn .checkList input[type="checkbox"] {position:absolute;top:0;left:0;width:1px;height:1px;opacity:0}
+.popInnerNotice .popBtnWrap .popBtn .checkList input[type="checkbox"] + label {display:block;width:100%;height:100%;margin-left:0;text-align:center;line-height:50px}
+.popInnerNotice .popBtnWrap a.openAccClose {display:table-cell;width:50%;height:50px;vertical-align:middle;background-color:#fff;color:#111;font-size: 14px;font-weight: normal;text-align:center;} 
+.popInnerNotice .popBtnWrap a.openAccClose:hover, 
+.popInnerNotice .popBtnWrap a.openAccClose:active, 
+.popInnerNotice .popBtnWrap a.openAccClose:link {text-decoration:none !important;} 
+.popInnerNotice .popBtnWrap a.openAccClose:after{display: none;}
+/* 2018-11-13 [윤지현] end */
+/* 2018-10-31 [윤지현] end */
+
+/*2018-10-31 [양미선] 음성검색은 서브 페이지에서도 사용하므로 main.css에서 옮겨옴*/
+/* 음성검색 */
+.voiceWrap{text-align:center;}
+.voiceWrap .voiceTit{margin-top:90px; font-size:21px;}
+.voiceWrap .voiceTit p{font-size:15px; color:#4885e0; margin-top:9px;}
+.voiceWrap .voiceBtnArea{position:relative; width:150px; height:150px; margin:0 auto; margin-top:30px;}
+.voiceWrap .voiceBtnArea:after{content:""; display:inline-block; height:100%; vertical-align:middle;}
+.voiceWrap .voiceBtnArea .actionCercleBg{display:inline-block; vertical-align:middle; width:150px; height:150px;}
+.voiceWrap .voiceBtnArea .actionCercleBg:before{content:""; display:inline-block; vertical-align:middle; width:65px; height:65px; border-radius:100%; background:#4885e0; opacity:0.7; animation-name:actionCercle; animation-duration:1.2s; animation-iteration-count:infinite;}
+.voiceWrap .voiceBtnArea .actionCercleBg:after{content:""; display:inline-block; vertical-align:middle; height:100%;}
+.voiceWrap .voiceBtnArea .actionCercle{position:absolute; top:0; left:0; display:inline-block; vertical-align:middle; width:150px; height:150px;}
+.voiceWrap .voiceBtnArea .actionCercle:before{content:""; display:inline-block; vertical-align:middle; width:60px; height:60px; border-radius:100%; background:#4885e0; opacity:0.2; animation-name:actionCercle; animation-duration:1.2s; animation-iteration-count:infinite; animation-delay: 0.4s;}
+.voiceWrap .voiceBtnArea .actionCercle:after{content:""; display:inline-block; vertical-align:middle; height:100%;}
+.voiceWrap .voiceBtnArea .actionBtn{position:absolute; top:50%; left:50%; margin-top:-30px; margin-left:-30px; width:60px; height:60px; border-radius:100%; background:#4885e0; box-shadow:0px 0px 30px 2px #0370d9 }
+.voiceWrap .voiceBtnArea .actionBtn ul{display:block; height:100%;}
+.voiceWrap .voiceBtnArea .actionBtn ul:before{content:""; display:inline-block; height:100%; vertical-align:middle;}
+.voiceWrap .voiceBtnArea .actionBtn ul li{display:inline-block; vertical-align:middle; width:4px; height:4px; margin:0 3px; background:#ffec00; border-radius:100%; animation-name:actionDot; animation-duration:1.2s; animation-iteration-count:infinite;}
+.voiceWrap .voiceBtnArea .actionBtn ul li:nth-child(1){animation-delay: 0s;}
+.voiceWrap .voiceBtnArea .actionBtn ul li:nth-child(2){animation-delay: 0.4s;}
+.voiceWrap .voiceBtnArea .actionBtn ul li:nth-child(3){animation-delay: 0.8s;}
+.voiceWrap .voiceBtnArea .actionBtn a{display:block; height:100%; font-size:0; text-indent:-9999px; background:url('../images/contents/micIcon.png') no-repeat center center; background-size:22px 27px;}
+.voiceWrap .voiceTxt{margin-top:40px; font-size:16px; color:#0370d9;}
+.voiceWrap .voiceTxt .voiceFalse{font-size:13px; color:#666666;}
+.voiceWrap .otherSearchBtn{display:inline-block; margin-top:50px;}
+.voiceWrap .otherSearchBtn a{display:block; width:140px; height:33px; line-height:31px; border:1px solid #999999; border-radius:50px;}
+.voiceWrap .otherSearchBtn a:before{content:""; display:inline-block; width:20px; height:14px; margin-bottom:-2px; margin-right:3px; background:url('../images/contents/keyboardSearch.png') no-repeat; background-size:20px 14px;}
+
+.voiceWrap.searchFalse .voiceBtnArea{background:#f8f8f8; border-radius:100%;}
+.voiceWrap.searchFalse .voiceBtnArea .actionCercleBg:before{display:none;}
+.voiceWrap.searchFalse .voiceBtnArea .actionCercle:before{animation-play-state:paused; width:130px; height:130px; opacity:0.1;}
+@keyframes actionCercle{
+	from{transform:scale(1);}
+	to{transform:scale(2.5);opacity:0;}
+}
+@keyframes actionDot{
+	0%{transform:scale(1);}
+	50%{transform:scale(1.8);}
+	100%{transform:scale(1);}
+}
+/*2018-10-31 [양미선] end */

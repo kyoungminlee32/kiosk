@@ -1,0 +1,80 @@
+
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="NH Bank" />
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="robots" content="no-index,follow">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="content" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>:::NH통합스마트뱅킹 퍼블리싱 || 이체:::</title>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+	<script>
+		$(function() {
+			$("#btn01").click(function() {
+				$(".accCopyView").fadeOut('fast', function() {
+					$(".accNumPopy").fadeIn();
+					$(".nhBtn02 .type02").addClass("hand");
+				});
+			});
+		});
+	</script>
+    
+    <link type="text/css" rel="stylesheet" href="../../css/common.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+	<style>
+		html {zoom:1;}
+		.kakao {width:1080px;height:1920px;background:url('../../images/kiosk/bg_kakao.png') no-repeat 0 0;background-size:100% 100%;}
+		.kakao .head {position:relative;width:100%;height:247px;padding-top:72px;line-height:180px;}
+		.kakao .head h1 {font-size:48px;text-align:center;}
+		.kakao .head a {display:inline-block;position:absolute;top:95px;right:55px;width:64px;height:54px;}
+		.kakao .cont {height:calc(100% - 247px - 146px);}
+		.kakao .kakaoTextArea {height:146px;background-color:#fff;display:table;width:100%;overflow:hidden;}
+		.kakao .kakaoTextArea .nhBtn01, .kakao .kakaoTextArea .text, .kakao .kakaoTextArea .nhBtn02 {display:table-cell;vertical-align:middle;}
+		.kakao .kakaoTextArea .nhBtn01 {width:121px;text-align:center;}
+		.kakao .kakaoTextArea .nhBtn02 {width:146px;}
+		.kakao .kakaoTextArea img {vertical-align:middle;}
+		.kakao .kakaoTextArea .text {font-size:34px;padding-left:20px;}
+		.accCopyView {display:none;position:absolute;bottom:100px;left:50%;width:40%;height:130px;line-height:120px;background:#6a7688;text-align:center;color:#fff;font-size:34px;transform: translateX(-50%);z-index:99999}
+		.accCopyView a {vertical-align:middle;}
+		.accCopyView a:first-child:after {content:'';display:inline-block;width:3px;height:30px;background-color:#979ba0;padding-top:2px;vertical-align:middle;margin-left:30px;margin-right:20px;}
+	</style>
+</head>
+<body>
+<!-- 시연용 데스크탑 모드 -->
+<div class="kakao">
+	<div class="head">
+		<h1>계좌번호복사</h1>
+		<a href="UC110000.html"><img src="../../images/kiosk/btn_exit.png" alt="메인으로 돌아가기" /></a>
+	</div>
+
+	<!-- 컨텐츠 영역 -->
+	<div class="cont">
+
+	</div>
+	<!-- // 컨텐츠 영역 -->
+
+	<div class="kakaoTextArea">
+		<a href="javascript:;" class="nhBtn01"><img src="../../images/kiosk/btn_kakao01.png" alt=""></a>
+		<div class="text"><p class="accNumPopy" style="display:none;">123-123456-12-111</p></div>
+		<a href="UC110000.html" class="nhBtn02 kioskEffect"><img src="../../images/kiosk/btn_kakao02.png" alt=""> <span class="type02"></span></a>
+	</div>
+
+	<div class="accCopyView" style="display: block;">
+		<a href="javascript:;" class="kioskEffect" id="btn01">붙여넣기 <span class="hand type02" style="margin-left:-100px;'"></span></a>
+		<a href="javascript:;">클립보드</a>
+	</div>
+</div>
+<!-- // 시연용 데스크탑 모드 -->
+<script type="text/javascript" src="../../js/common_ui.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="NH Bank" />
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="robots" content="no-index,follow">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="content" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>:::NH통합스마트뱅킹 || 마이페이지:::</title>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../js/common_ui.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/common.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header -->
+    <div class="header">
+        <a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+        <h1><a href="javascript:;">내 등급 올리기</a></h1>
+        <a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+        <a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+    </div>
+    <!-- //header -->
+
+    <!-- container -->
+	<div class="container">
+        <div class="hanaroCheckWrap">
+            <div class="hanaroUser">
+                <p class="usertyeInfo"><strong class="pointColor3">김농협 고객님은</strong> 현재 <strong class="stickGreen greenPoint">그린</strong> 고객입니다.</p><!-- 클래스명[ 일반:stickHope hopePoint, 블루:stickBlue bluePoint, 그린:stickGreen greenPoint, 로얄:stickRed redPoint, 골드:stickGold goldPoint, 탑클래스 :stickPurple purplePoint ] --><!--2018.10.10 텍스트 수정-->
+                <p class="infoTxt redbullet">고객님의 점수는 현재 <strong class="pointColor3">2,500</strong>점이며 로얄등급까지 <strong class="pointColor2">500점</strong> 남았습니다.</p>
+                <div class="ar mt10"> <!-- 2018-09-05 클래스수정 -->
+                    <a href="#" role="button" class="btnAddon arrBul">내 등급 올리기</a>
+                </div>
+            </div>
+            <div class="fullBox boxGray">
+                <ul class="listFlex hanaUserInfo">
+                    <li><span>일반</span></li>
+                    <li><span>블루</span></li>
+                    <li class="active"><span>그린</span></li>
+                    <li><span>로얄</span></li>
+                    <li><span>골드</span></li>
+                    <li class="active"><span>탑클래스</span></li>
+                </ul>
+                <div class="areaBodyBtnFull mt15">
+                    <a href="javascript:;" class="btnBodyLine">하나로가족고객안내</a>
+                </div>
+            </div>
+            <h3 class="defTit"><strong class="greenPoint">하나로그린</strong> <strong>수수료우대 항목</strong></h3><!-- 블루 고객 : bluePoint , 로얄고객 : goldPoint -->
+            <p class="infoTxt userIco">고객님의 <strong class="pointColor3">5월</strong>중 수수료 면제 받으신 금액은 총 <strong class="pointColor2">12,000</strong> 원 입니다.</p>
+            <div class="ar mt10"> <!-- 2018-09-05 클래스수정 -->
+                <a href="#" role="button" class="btnAddon arrBul">자세히 보기</a>
+            </div>
+            <div class="benefitBox">
+                <!--2018.10.10 추가 -->
+                <p class="beneicon">
+                    ( <span class="fst">수수료 우대,</span>
+                    <span class="lst">수수료 미우대</span> )
+                </p>
+                <ul class="dflex">
+                    <li class="on"><span>인터넷/스마트/<br>텔레뱅킹이체</span></li>
+                    <li><span>CD∙ATM출금</span></li>
+                    <li><span>CD∙ATM이체</span></li>
+                    <li><span>납부자자동이체</span></li>
+                    <li class="on"><span>창구타행송금</span></li>
+                    <li class="on"><span>현금카드발급</span></li>
+                    <li><span>제증명서발급</span></li>
+                    <li class="on"><span>통장증서재발행</span></li>
+                    <li><span>타행 정액<br>자기앞수표 지급</span></li>
+                    <li><span>자기앞수표<br>자금화</span></li>
+                </ul>
+            </div>
+            <!--2018.10.10 수정-->
+            <ul class="listDot">
+                <li>제증명서 발급 수수료 월 10회 면제</li>
+                <li>통장·증서 재발행 월 10회 면제</li>
+                <!--로얄고객 -->
+                <li>창구타행송금 20%감면</li>
+                <li>타행 정액 자기앞수표 지급 50%감면</li>
+                <li>자기앞수표 자금화 50%감면</li>
+                <!--블루고객 -->
+                <li>제증명서 발급 수수료 월 5회 면제</li>
+                <li>통장·증서 재발행 월 5회 면제</li>
+            </ul>
+            <div class="blueTxtBox">
+                <p>고객님의 거래실적에 따라 하나로가족 고객이 되시면 농협이 제공하는 우대서비스를 받으실 수 있습니다.</p>
+            </div>
+            
+			<!-- 2018-07-26 마크업추가 -->
+			<div class="wrapTblDefault">
+				<div class="tblHeader">
+					<h2 class="defTit">하나로가족 고객 등급</h2>
+				</div>				
+				<table cellpadding="0" cellspacing="0">
+					<caption>하나로가족 고객 등급 정보</caption>
+					<colgroup>
+						<col style="width:33%">
+						<col style="width:auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">전분기</th>
+							<td>하나로그린</td>
+						</tr>
+						<tr>
+							<th scope="row">금분기</th>
+							<td>하나로그린</td>
+						</tr>
+						<tr>
+							<th scope="row">우대서비스 적용등급</th>
+							<td>하나로그린</td>
+						</tr>
+						<tr>
+							<th scope="row">우대연장여부</th>
+							<td>부</td>
+						</tr>
+						<tr>
+							<th scope="row">우대서비스기간</th>
+							<td></td>
+						</tr>
+						<tr>
+							<th scope="row">주거래점</th>
+							<td>at센터지점</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //2018-07-26 마크업추가 -->
+			
+			<h3 class="defTit mt15">분기별 점수 및 <strong class="pointColor3">등급이력</strong></h3>
+            <div class="fullBox boxBlue">
+                <div class="innerBox btd">
+                    <ul class="graphTerm dflex">
+                        <!-- <li>
+                            <dl class="graphType">
+                                <dt>‘17.3분기</dt>
+                                <dd>
+                                    <div class="graphBar">
+                                        <div class="scoreH green" style="height:40%;">
+                                            <span>그린<strong class="greenPoint">1,300점</strong></span>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>-->
+                        <li>
+                            <dl class="graphType">
+                                <dt>‘17.3분기</dt>
+                                <dd>
+                                    <div class="graphBar">
+                                        <div class="scoreH gold" style="height:100%;">
+                                            <span>로얄<strong class="goldPoint">1,300점</strong></span>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li> 
+                        <!-- <li>
+                            <dl class="graphType">
+                                <dt>‘17.3분기</dt>
+                                <dd>
+                                    <div class="graphBar">
+                                        <div class="scoreH purple" style="height:80%">
+                                            <span>탑클래스<strong class="purplePoint">1,300점</strong></span>
+                                      </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li> -->
+                        <li><!-- 블루 -->
+                            <dl class="graphType">
+                                <dt>‘17.3분기</dt>
+                                <dd>
+                                    <div class="graphBar">
+                                        <div class="scoreH blue" style="height:100%;">
+                                            <span>블루<strong class="bluePoint">2,300점</strong></span>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li><!-- 로얄 -->
+                            <dl class="graphType">
+                                <dt>‘17.5분기</dt>
+                                <dd>
+                                    <div class="graphBar">
+                                        <div class="scoreH royal" style="height:70%;">
+                                            <span>로얄<strong class="redPoint">2,300점</strong></span>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li><!-- 일반 -->
+                            <dl class="graphType">
+                                <dt>‘17.3분기</dt>
+                                <dd>
+                                    <div class="graphBar">
+                                        <div class="scoreH gray" style="height:20%;">
+                                            <span>일반<strong class="hopePoint">2,300점</strong></span>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="infoTxt">금분기 등급이 전분기 등급보다 하향된 경우 우대서비스 연장고객으로 분류됩니다.</p>
+        </div>
+	</div>
+	<!-- //container -->
+
+    <!-- footer -->
+    <div class="footer">
+        <!-- quick button -->
+        <!-- <div class="areaBtmQuick">
+            <span class="btnQuick"><a href="javascript:;">quick</a></span>
+            <span class="btnTop"><a href="javascript:;">Top</a></span>
+        </div> -->
+        <!-- //quick button -->
+        <ul class="footMenu">
+            <li><a href="../util/UC110000.html">홈</a></li>
+			<li><a href="../bw/UC490000.html">마이NH</a></li>
+			<li><a href="../util/talk.html">상담톡</a></li>
+            <li><a href="javascript:;">고객센터</a></li>
+            <li><a href="javascript:;">인증/보안</a></li>
+        </ul>
+    </div>
+    <!-- //footer -->
+</div>
+<!-- //wrapper -->
+</body>
+</html>

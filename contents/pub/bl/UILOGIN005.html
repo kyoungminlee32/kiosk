@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="NH Bank" />
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="robots" content="no-index,follow">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="content" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>:::NH통합스마트뱅킹 퍼블리싱 || 로그인:::</title>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../js/common_ui.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/common.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/swiper.min.css" />
+
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header -->
+    <div class="header">
+        <a href="javascript:;" class="btnBack" role="button"><span>이전</span></a>
+		<!-- 2018-07-17 통합스마트뱅킹 수정사항 : 타이틀 수정 -->
+        <h1><a href="javascript:;">간편비밀번호 로그인</a></h1>
+		<!-- // 2018-07-17 통합스마트뱅킹 수정사항 end -->
+        <a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+        <a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+    </div>
+    <!-- //header -->
+
+    <!-- container -->
+	<div class="container">
+		<script>
+			$(document).ready(function() {
+				if ($(".bannerFix").length > 0) {
+					$("html").addClass("w100p"); }
+			});
+		</script>
+
+		<!-- 로그인 -->
+		<div class="loginWrap bannerFix">
+			<!-- 2018-10-13 통합스마트뱅킹 수정사항 : 텍스트 수정 -->
+			<p class="loginMsg">간편비밀번호 <strong>6자리 입력</strong></p> <!-- 2018-12-13 type03 클래스삭제 -->
+			<!-- // 2018-10-13 통합스마트뱅킹 수정사항 end -->
+			
+			<!-- 간편뱅킹 -->
+			<div class="simpleWrap">
+				<div class="simpleNum">
+					<a href="../util/UC110000.html" title="터치 시 간편비밀번호 입력 키패드 열림" class="kioskEffect">
+						<span class="active">비밀번호 1자리</span>
+						<span class="active">비밀번호 2자리</span>
+						<span class="active">비밀번호 3자리</span>
+						<span>비밀번호 4자리</span>
+						<span>비밀번호 5자리</span>
+						<span>비밀번호 6자리</span>
+						<em class="hand type04"></em>
+					</a>
+				</div>
+			</div>
+			<!-- // 간편뱅킹 end -->
+
+			<!-- 간편뱅킹 관련 메뉴 -->
+			<div class="loginM">
+				<ul>
+					<li><a href="javascript:;">간편뱅킹 (재)등록</a></li>
+					<li><a href="javascript:;">간편뱅킹 해지</a></li>
+				</ul>
+			</div>
+			<!-- // 간편뱅킹 관련 메뉴 end -->
+
+			<!-- 다른방식으로 로그인 -->
+			<div class="loginWay">
+				<a href="javascript:;">인증서 로그인</a>
+				<a href="UILOGIN010.html" class="kioskEffect">
+					다른방식 로그인
+					<span class="hand type01"></span>
+				</a>
+			</div>
+			<!-- // 다른방식으로 로그인 end -->
+
+			<div class="overlay is-open"></div>
+
+		</div>
+		<!-- // 로그인 -->
+
+		<!-- 2018.10.13 : 마크업수정 (오병직) -->
+		<div class="loginBot">
+			<a href="javascript:;" class="loginNoticePrev">이전</a>
+			<div class="loginNotice swiper-container">
+				<ul class="noticeWrap swiper-wrapper">
+					<li class="swiper-slide">
+						<span class="noticeTit">공지</span>
+						<p><a href="javascript:;">1.금융정보원 인증업무 일시중단 안내입니다. 글이 길 경우 말줄임 표시를 합니다. </a></p>
+						<span class="noitceNew">new</span>		
+					</li>
+					<li class="swiper-slide">
+						<span class="noticeTit">공지</span>
+						<p><a href="javascript:;">2.금융정보원 인증업무 일시중단 안내입니다. 글이 길 경우 말줄임 표시를 합니다. </a></p>
+						<span class="noitceNew">new</span>		
+					</li>
+					<li class="swiper-slide">
+						<span class="noticeTit">공지</span>
+						<p><a href="javascript:;">3.금융정보원 인증업무 일시중단 안내입니다. 글이 길 경우 말줄임 표시를 합니다. </a></p>
+					</li>
+					<li class="swiper-slide">
+						<p><a href="javascript:;">4.금융정보원 인증업무 일시중단 안내입니다. 글이 길 경우 말줄임 표시를 합니다. </a></p>
+						<span class="noitceNew">new</span>		
+					</li>
+				</ul>
+			</div>
+			<a href="javascript:;" class="loginNoticeNext">다음</a>
+			<div class="loginNoticeBtn">
+				<a href="javascript:;" class="loginNoticePlay">재생</a>
+				<a href="javascript:;" class="loginNoticePause">일시정지</a>
+			</div>
+		</div>
+		<!-- // 2018.10.13 : 마크업수정 (오병직) -->
+		
+		<!-- 간편비밀번호 로그인 관련 팝업 -->
+		<div class="popWrap centerLayer">
+			<div class="dim"></div>
+			<div class="popInner">
+				
+				<h1 class="ac"><img src="../images/common/popTitle.gif" alt="NH스마트뱅킹"></h1>
+				<div class="popCont">
+					<!-- CASE1) 등록된 간편비밀번호가 없을 경우 -->
+					<!-- <div class="confirmMsg type02">
+						<p>등록된 간편비밀번호가 없습니다.</p>
+						<p>간편뱅킹 서비스 (재)등록을 진행하시겠습니까?</p>
+						<p class="mt10"><strong class="pointColor">아직 농협 고객이 아니시면<br /> 비대면계좌개설을 통해 이용하실 수 있습니다.</strong></p>
+					</div> -->
+					<!-- // CASE1) 등록된 간편비밀번호가 없을 경우 end -->
+
+					<!-- CASE2) 데이터 마이그레이션 알림 -->
+					<!-- <div class="confirmMsg type01">
+						<p>접속하신 스마트폰에<br /> 스마트인증앱이 설치되어 있고, <br />지문인증을 이용해오신 고객의 경우<br /> 통합스마트뱅킹에서 지문인증 로그인을<br /> 정상적으로 이용하실 수 있도록<br /> <strong>데이터 마이그레이션 작업이 1회 진행</strong>됩니다.</p>
+						<p class="mt10">아래의 확인 버튼을 터치해 주세요.</p>
+					</div> -->
+					<!-- // CASE2) 데이터 마이그레이션 알림 end -->
+
+					<!-- CASE3) 인증실패 1 -->
+					<!-- <div class="confirmMsg type02">
+						<p>인증에 실패하였습니다.(1회)</p>
+						<p class="mt5">5회 오류 시 재등록이 필요합니다.</p>
+					</div> -->
+					<!-- // CASE3) 등록된 간편비밀번호가 없을 경우 end -->
+
+					<!-- CASE4) 인증실패 2 -->
+					<!-- <div class="confirmMsg type02">
+						<p>인증에 실패하였습니다.</p>
+						<p class="mt5">누적실패 5회가 되어<br /> 간편뱅킹 사용이 정지되었습니다.</p>
+						<p class="mt5">스마트폰에서 재등록하여 사용 가능합니다.</p>
+					</div> -->
+					<!-- CASE4) 인증실패 2 -->
+
+					<!-- CASE5) 인증실패 3 -->
+					<div class="confirmMsg type02">
+						<p>죄송합니다.</p>
+						<p class="mt5">고객님은 간편비밀번호 5회 오류로<br /> 서비스 이용이 불가하오니, 간편뱅킹 서비스를<br /> (재)등록 후 이용하시기 바랍니다.</p>
+					</div>
+					<!-- CASE5) 인증실패 3 -->
+
+				</div>
+		
+				<div class="popBtnWrap">
+					<!-- 버튼 관련 개발참고사항 : 취소 버튼이 없어야 하는 경우, 그냥 삭제하시면 됩니다. -->
+					<div class="popBtn">
+						<a href="javascript:;" onclick="popClose(this);return false;">취소</a>
+						<a href="javascript:;" class="confirmBtn">확인</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // 간편비밀번호 로그인 관련 팝업 end -->
+	</div>
+	<!-- //container -->
+
+    <!-- footer -->
+    <div class="footer">
+        <!-- quick button -->
+        <!-- <div class="areaBtmQuick">
+            <span class="btnQuick"><a href="javascript:;">quick</a></span>
+            <span class="btnTop"><a href="javascript:;">Top</a></span>
+        </div> -->
+        <!-- //quick button -->
+        <ul class="footMenu">
+            <li><a href="../util/UC110000.html">홈</a></li>
+			<li><a href="../bw/UC490000.html">마이NH</a></li>
+			<li><a href="../util/talk.html">상담톡</a></li>
+            <li><a href="javascript:;">고객센터</a></li>
+            <li><a href="javascript:;">인증/보안</a></li>
+        </ul>
+    </div>
+    <!-- //footer -->
+
+	<!-- 2018.10.13 : 스와이프 js 링크 및 스크립트 추가 (오병직) -->
+	<script type="text/javascript" src="../../js/swiper.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var swiper1 = new Swiper('.swiper-container' , {
+				loop:true,
+				autoplay: { delay:3000,disableOnInteraction:false}
+			});
+
+			$(".swiper-container").on("touchend",function(){
+				SwiperStop();
+			});
+
+			$(".loginNoticePrev").off('click').on("click",function(){
+				swiper1.slidePrev();
+				SwiperStop();
+			});
+
+			$(".loginNoticeNext").off('click').on("click",function(){
+				swiper1.slideNext();
+				SwiperStop();
+			});
+
+			$(".loginNoticePlay").off("click").on("click",function(){
+				SwiperPlay();
+			});
+
+			$(".loginNoticePause").off("click").on("click",function(){
+				SwiperStop();
+			});
+
+			// 스와이프 자동시작
+			function SwiperPlay(){
+				swiper1.autoplay.start();
+				$(".loginNoticePause").css("display","block")
+				$(".loginNoticePlay").hide();
+			}
+
+			// 스와이프 자동정지
+			function SwiperStop(){
+				swiper1.autoplay.stop();
+				$(".loginNoticePause").hide();
+				$(".loginNoticePlay").css("display","block");
+			}
+		});
+	</script>
+	<!-- // 2018.10.13 : 스크립트 추가 (오병직) -->
+</div>
+<!-- //wrapper -->
+</body>
+</html>

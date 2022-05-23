@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="NH Bank" />
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="no-index,follow">
+<meta name="title" content="">
+<meta name="author" content="">
+<meta name="content" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>:::NH통합스마트뱅킹 || 통합메인 || 나의 메뉴 설정:::</title>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/common_ui.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+<link type="text/css" rel="stylesheet" href="../../css/main.css" />
+
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+			<a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+			<h1><a href="javascript:;">메인</a></h1>
+			<a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+			<a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+		</div>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div class="container">
+			
+			<div class="guideListTop">
+				<ul class="listDot">
+					<li>최대 7개 까지 설정 가능합니다.<a href="javascript:;" role="button" class="basicBackBtn" title="기본메뉴로 가기">기본메뉴</a></li><!--2018.10.04 수정-->
+				</ul>
+			</div>
+			<div class="myMenuList">
+				<ul>
+					<li><a href="javascript:;" class="active" role="button">조회</a></li> <!-- drag and drop 시 active 추가 -->
+					<li><a href="javascript:;" role="button">전계좌조회</a></li>
+					<li><a href="javascript:;" role="button">간편뱅킹</a></li>
+					<li><a href="javascript:;" role="button">즉시이체</a></li>
+					<li><a href="javascript:;" role="button">다계좌이체</a></li>
+					<li><a href="javascript:;" role="button">ATM출금</a></li>
+					<li><a href="javascript:;" role="button">모바일OTP</a></li>
+				</ul>
+			</div>
+			<h2 class="bgTit">조회/빠른설정</h2>
+			<div class="myMenuSelect">
+				<div class="inner">
+					<ul>
+						<li><a href="javascript:;" class="active" role="button">조회<em class="clickOrder">1</em></a></li> <!-- 2018-08-13 숫자표시 마크업 추가(이하 동일). 선택시 active 추가 -->
+						<li><a href="javascript:;" role="button">예금/신탁</a></li>
+						<li><a href="javascript:;" role="button">펀드계좌<br />조회</a></li>
+						<li><a href="javascript:;" role="button">대출계좌<br />조회</a></li>
+						<li><a href="javascript:;" role="button">외화계좌<br />조회</a></li>
+						<li><a href="javascript:;" role="button" class="active">전계좌<br />조회<em class="clickOrder">2</em></a></li>
+						<li><a href="javascript:;" role="button">큰글거래<br />내역조회</a></li>
+						<li><a href="javascript:;" role="button">자기앞<br />수표조회</a></li>
+						<li><a href="javascript:;" role="button">퀵로그인</a></li>
+						<li><a href="javascript:;" role="button" class="active">간편뱅킹<em class="clickOrder">3</em></a></li>
+						<li><a href="javascript:;" role="button">자주사용<br />하는계좌<br />관리</a></li>
+					</ul>
+				</div>
+			</div>
+					
+			<h2 class="bgTit">이체/납부</h2>
+			<div class="myMenuSelect">
+				<div class="inner">
+					<ul>
+						<li><a href="javascript:;" class="active" role="button">즉시이체<em class="clickOrder">4</em></a></li>
+						<li><a href="javascript:;" role="button"  >큰글이체</a></li>
+						<li><a href="javascript:;" role="button"  class="active">다계좌<br />이체<em class="clickOrder">5</em></a></li>
+						<li><a href="javascript:;" role="button" >예약이체</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="areaBtnDefault">
+				<a href="javascript:;" class="btnPressDefault" role="button">취소</a>
+				<a href="UC110000.html" class="btnPressPoint kioskEffect" role="button">확인 <span class="hand type02"></span></a> <!-- 비활성화시 disabled 추가 -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div class="footer">
+			<ul class="footMenu">
+				<li><a href="../util/UC110000.html">홈</a></li>
+				<li><a href="../bw/UC490000.html">마이NH</a></li>
+				<li><a href="../util/talk.html">상담톡</a></li>
+				<li><a href="javascript:;">고객센터</a></li>
+				<li><a href="javascript:;">인증/보안</a></li>
+			</ul>
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="NH Bank" />
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="no-index,follow">
+<meta name="title" content="">
+<meta name="author" content="">
+<meta name="content" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>:::NH통합스마트뱅킹 || 음성검색:::</title>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/common_ui.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+<link type="text/css" rel="stylesheet" href="../../css/main.css" />
+<script>
+	$(document).ready(function() {
+		fullLayerPop();
+		$(".actionBtn").click(function() {
+			$('.voiceTxt').fadeIn('fast');
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+			<a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+			<h1><a href="javascript:;">앱인증</a></h1>
+			<a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+			<a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+		</div>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div class="container">
+			<div class="popWrap fullLayerPop">
+				<div class="popInner">
+					<h1>음성검색</h1>
+
+
+					<div class="popCont">
+						<div class="voiceWrap">
+							<div class="voiceTit">
+								찾고자 하는 검색어를<br/>말씀하세요.
+							</div>
+							<div class="voiceBtnArea">
+								<div class="actionCercleBg"></div>
+								<div class="actionCercle"></div>
+								<div class="actionBtn">
+									<ul>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+								</div>
+							</div>
+							<div class="voiceTxt" style="display:none">
+								<a href="UC340000.html" class="kioskEffect">"<span>비밀번호 변경</span>"<span class="hand type01"></span></a>
+							</div>
+						</div>
+					</div>
+					<div class="popBtnWrap">
+						<a href="UC110000.html" class="popClose kioskEffect" title="해당 창을 닫습니다."><img src="../../images/common/btn_popClose.png" alt="닫기"><span class="hand type01"></span></a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div class="footer">
+			<!-- quick button -->
+			<!-- <div class="areaBtmQuick"> 
+				<span class="btnQuick"><a href="javascript:;">quick</a></span>
+				<span class="btnTop"><a href="javascript:;">Top</a></span>
+			</div> -->
+			<!-- //quick button -->
+		
+			<ul class="footMenu">
+				<li><a href="../util/UC110000.html">홈</a></li>
+				<li><a href="../bw/UC490000.html">마이NH</a></li>
+				<li><a href="../util/talk.html">상담톡</a></li>
+				<li><a href="javascript:;">고객센터</a></li>
+				<li><a href="javascript:;">인증/보안</a></li>
+			</ul>
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+
+<script>
+	/*
+	setTimeout(function(){
+		$('.voiceTxt').css('display','block')
+	}, 1500)	
+	*/
+	
+</script>
+</body>
+</html>

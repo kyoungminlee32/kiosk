@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="NH Bank" />
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="robots" content="no-index,follow">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="content" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>:::NH통합스마트뱅킹 || 모바일ATM:::</title>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../js/common_ui.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/common.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header -->
+    <div class="header">
+		<a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+		<h1><a href="javascript:;">ATM출금실행</a></h1>
+		<a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+		<a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+	</div>
+    <!-- //header -->
+
+    <!-- container -->
+	<div class="container">
+
+		<div class="accountSelect">
+			<div class="selectArea">
+				<a href="javascript:slidePopOption();">등록계좌</a>
+				<a href="javascript:ShowHideClick('accountInput');">직접입력</a>
+			</div>
+			<div class="accountInput">
+				<span class="typeSrch">
+					<input type="text" placeholder="계좌번호를 입력해주세요." title="계좌번호 입력">
+					<a href="javascript:;" class="btnSrch"><span class="blind">검색</span></a>
+				</span>
+			</div>
+		</div>
+
+		<div class="productWrap AtmWrap">
+			<ul class="productList">
+				<li>
+					<div class="productHeader">
+						<a href="AM623000.html" class="link kioskEffect">
+							<strong class="prodTit"><span class="pointColor5">123-123456-1234-112</span></strong>
+							<h2 class="txt">매직트리</h2>
+							<span class="hand type05"></span>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="productHeader">
+						<a href="javascript:;" class="link">
+							<strong class="prodTit"><span class="pointColor5">123-654987-8520-123</span></strong>
+							<h2 class="txt">샐러리맨 우대통장</h2>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="productHeader">
+						<a href="javascript:;" class="link">
+							<strong class="prodTit"><span class="pointColor5">321-456789-7410-321</span></strong>
+							<h2 class="txt">NH20 해봄통장</h2>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="areaBodyBtnFull">
+			<a href="javascript:;" class="btnBodyLine" role="button">ATM출금계좌등록</a>		
+		</div>
+
+		<div class="guideList">
+			<div class="tArea"><p class="guideTit">알아두세요</p></div>
+			<ul class="listDot">
+				<li>ATM에서 출금할 계좌를 선택하시고 생성된 인증번호를 농협 자동화기기의 모바일출금 메뉴에 입력하시면 출금 거래를 하실 수 있습니다.</li>
+				<li>출금한도는 등록계좌별 1일 30만원 입니다.</li>
+<!-- 				<li>출금계좌 등록은 <span class="pointColor6">[ATM출금 관리]</span>에서 등록해주세요.</li> -->
+			</ul>
+		</div>
+
+
+	<!-- 팝업시작 : select 하는 팝업인 경우 slidePopOption 클래스 및 함수 사용 -->
+		<div class="popWrap slidePopOption">
+			<div class="dim"></div> <!-- 팝업 dim 처리 -->
+
+			<div class="popInner">
+				<h1>계좌선택</h1>
+				
+				<!-- 팝업컨텐츠 -->
+				<div class="popCont">
+					<ul class="selectList">
+						<li class="active"><a href="javascript:;">등록계좌번호</a></li>
+						<li><a href="javascript:;">데이터2 </a></li>
+						<li><a href="javascript:;">데이터3 </a></li>
+						<li><a href="javascript:;">데이터4 </a></li>
+						<li><a href="javascript:;">데이터5 </a></li>
+						<li><a href="javascript:;">데이터6 </a></li>
+						<li><a href="javascript:;">데이터7 </a></li>
+						<li><a href="javascript:;">데이터8 </a></li>
+						<li><a href="javascript:;">데이터9 </a></li>
+						<li><a href="javascript:;">데이터10 마지막</a></li>
+					</ul>
+				</div>
+				<!-- 팝업컨텐츠 -->
+
+				<!-- 팝업 버튼영역  -->
+				<div class="popBtnWrap">
+					<div class="popBtn">
+						<a href="javascript:;" onclick="popClose(this);return false;">취소</a>
+						<a href="javascript:;" class="confirmBtn">확인</a>
+					</div>
+					<a href="javascript:;" onclick="popClose(this);return false;" class="popClose" title="해당 창을 닫습니다."><img src="../../images/common/btn_popClose.png" alt="닫기" /></a>
+				</div>
+			<!-- // 팝업 버튼영역 -->
+			</div>
+		</div>
+	<!-- // 팝업 끝 -->
+
+
+	</div>
+	<!-- //container -->
+
+    <!-- footer -->
+    <div class="footer">
+        <!-- quick button -->
+        <!-- <div class="areaBtmQuick">
+            <span class="btnQuick"><a href="javascript:;">quick</a></span>
+            <span class="btnTop"><a href="javascript:;">Top</a></span>
+        </div> -->
+        <!-- //quick button -->
+        <ul class="footMenu">
+            <li><a href="../util/UC110000.html">홈</a></li>
+            <li><a href="../bw/UC490000.html">마이NH</a></li>
+            <li><a href="../util/talk.html">상담톡</a></li>
+            <li><a href="javascript:;">고객센터</a></li>
+            <li><a href="javascript:;">인증/보안</a></li>
+        </ul>
+    </div>
+    <!-- //footer -->
+</div>
+<!-- //wrapper -->
+</body>
+</html>

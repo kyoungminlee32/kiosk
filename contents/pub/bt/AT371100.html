@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="NH Bank" />
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="robots" content="no-index,follow">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="content" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>:::NH통합스마트뱅킹 || 이체:::</title>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../js/common_ui.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/common.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+	<script>
+		$(document).ready(function(){
+			//popCenter();
+		});
+	</script>
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header -->
+    <div class="header">
+        <a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+        <h1><a href="javascript:;">이체결과조회</a></h1>
+        <a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+        <a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+    </div>
+    <!-- //header -->
+
+    <!-- container -->
+	<div class="container">
+        <h2 class="defTit">즉시이체 처리결과</h2>
+
+		<div class="accountSelect mt20">
+	        <div class="selectArea">
+	            <a href="javascript:;">전체계좌</a>
+	            <a href="javascript:ShowHideClick('accountInput');">직접입력</a>
+	        </div>
+	        <div class="accountInput">
+	            <!-- <input type="text" placeholder="계좌번호를 입력해주세요." title="계좌번호 입력"> -->
+	            <span class="typeSrch">
+	                <input type="text" placeholder="계좌번호를 입력해주세요." title="계좌번호 입력">
+	                <a href="javascript:;" class="btnSrch" onclick="popCenter(); return false;"><span class="blind">검색</span></a>
+	            </span>										
+	        </div>				
+	    </div>
+	    
+	    <div class="srchInfo">
+			<ul>
+				<li>2018/05/25 ~ 2018/05/28</li>
+				<li>최근거래순</li>
+			</ul>
+		</div>
+		
+	    <div class="areaBtnPrice mt10">
+            <div class="inner">
+                <ul>
+                    <li><a href="javascript:;" class="btnAddonPoint">당일</a></li>
+                    <li><a href="javascript:;">3일</a></li>
+                    <li><a href="javascript:;">1개월</a></li>
+                    <li><a href="javascript:;">3개월</a></li>
+                    <li><a href="javascript:;">6개월</a></li>
+                    <li class="w60"><a href="javascript:;" class="btnAddon" onclick="bankSet();">보기옵션</a></li><!-- 공통팝업 사용 -->
+                </ul>
+            </div>
+        </div>
+        
+	    <div class="selDetailList mt10">
+            <ul>
+                <li>
+                    <div class="listTit">
+                         2018/05/28 09:8:23
+                    </div>
+
+					<!-- 2018-09-05 : 리스트 수정 -->
+					<ul class="detailList">
+						<!-- 2018-09-10 : 리스트 내용 변경 -->
+						<li>
+							<span class="tit">받는 분</span>
+							<span>홍길동</span>
+						</li>
+						<li>
+							<span class="tit">입금은행</span>
+							<strong class="pointColor5">국민 03580204221036</strong>
+						</li>
+						<!-- //2018-09-10 : 리스트 내용 변경 -->
+						<li>
+							<span class="tit">이체금액</span>
+							<span><strong class="pointColor"><em>100,000</em><span class="wUnit">원</span></strong></span>
+						</li>
+						<li>
+							<span class="tit">송금수수료</span>
+							<span><strong class="pointColor"><em>0</em><span class="wUnit">원</span></strong></span>
+						</li>
+						<li>
+							<span class="tit">CMS수수료</span>
+							<span><strong class="pointColor"><em>0</em><span class="wUnit">원</span></strong></span><!-- 2018-09-28 : 수정 -->
+						</li>
+						<li>
+							<span class="tit">처리결과</span>
+							<strong class="pointColor">정상</strong>
+							<!-- <strong class="pointColor2">실패</strong> -->
+						</li>
+					</ul>
+					<div class="toggleBox"><!--2018.10.04 접근성 수정 클래스명 변경-->
+						<div class="toggleInner"><!--2018.10.04 접근성 수정 클래스명 변경-->
+							<ul class="detailList">
+								<li class="divingLine">
+									<span class="tit">출금계좌</span>
+									<span>계좌번호</span>
+								</li>
+								<li>
+									<span class="tit">보내는 분</span>
+									<span></span>
+								</li>
+								<li>
+									<span class="tit">이체메모</span>
+									<span></span>
+								</li>
+								<li>
+									<span class="tit">받는 계좌에 표기</span>
+									<span>보냅니다.</span>
+								</li>
+								<li>
+									<span class="tit">내 계좌에 표기</span>
+									<span>표기</span>
+								</li>
+								<li>
+									<span class="tit">CMS거래처코드</span>
+									<span></span>
+								</li>
+							</ul>
+							<div class="snsWrap mt10">
+								<ul>
+									<li class="sns02"><a href="javascript:;">카카오톡</a></li>
+									<li class="sns01"><a href="javascript:;">SMS</a></li>
+									<li class="sns03"><a href="javascript:;">e-mail</a></li>
+								</ul>
+							</div>
+							<div class="areaBodyBtnFull">
+								<a href="javascript:;" class="btnBodyLine">동일내역으로 이체</a>
+							</div>
+						</div>
+						<div class="areaBodyBtnFull">
+							<div class="accListBtn mt0" id="">
+								<a href="javascript:;" class="toggleBtnetc"><span class="blind">다른 기능 버튼보기 열고, 닫기</span></a><!--2018.10.04 접근성 수정 클래스명 변경-->
+							</div>
+						</div>
+					</div>
+					<!-- //2018-09-05 : 리스트 수정 -->
+                </li>
+				<!-- 반복영역 -->
+                <li>
+                    <div class="listTit">
+                         2018/05/28 09:8:23
+                    </div>
+					<!-- 2018-09-05 : 리스트 수정 -->
+					<ul class="detailList">
+						<!-- 2018-09-10 : 리스트 내용 변경 -->
+						<li>
+							<span class="tit">받는 분</span>
+							<span>홍길동</span>
+						</li>
+						<li>
+							<span class="tit">입금은행</span>
+							<strong class="pointColor5">국민 03580204221036</strong>
+						</li>
+						<!-- //2018-09-10 : 리스트 내용 변경 -->
+						<li>
+							<span class="tit">이체금액</span>
+							<span><strong class="pointColor"><em>100,000</em><span class="wUnit">원</span></strong></span>
+						</li>
+						<li>
+							<span class="tit">송금수수료</span>
+							<span><strong class="pointColor"><em>0</em><span class="wUnit">원</span></strong></span>
+						</li>
+						<li>
+							<span class="tit">CMS수수료</span>
+							<span><strong class="pointColor"><em>0</em><span class="wUnit">원</span></strong></span><!-- 2018-09-28 : 수정 -->
+						</li>
+						<li>
+							<span class="tit">처리결과</span>
+							<strong class="pointColor">정상</strong>
+							<!-- <strong class="pointColor2">실패</strong> -->
+						</li>
+					</ul>
+					<div class="toggleBox1"><!--2018.10.04 접근성 수정 클래스명 변경-->
+						<div class="toggleInner"><!--2018.10.04 접근성 수정 클래스명 변경-->
+							<ul class="detailList">
+								<li class="divingLine">
+									<span class="tit">출금계좌</span>
+									<span>계좌번호</span>
+								</li>
+								<li>
+									<span class="tit">보내는 분</span>
+									<span></span>
+								</li>
+								<li>
+									<span class="tit">이체메모</span>
+									<span></span>
+								</li>
+								<li>
+									<span class="tit">받는 계좌에 표기</span>
+									<span>보냅니다.</span>
+								</li>
+								<li>
+									<span class="tit">내 계좌에 표기</span>
+									<span>표기</span>
+								</li>
+								<li>
+									<span class="tit">CMS거래처코드</span>
+									<span></span>
+								</li>
+							</ul>
+							<div class="snsWrap mt10">
+								<ul>
+									<li class="sns02"><a href="javascript:;">카카오톡</a></li>
+									<li class="sns01"><a href="javascript:;">SMS</a></li>
+									<li class="sns03"><a href="javascript:;">e-mail</a></li>
+								</ul>
+							</div>
+							<div class="areaBodyBtnFull">
+								<a href="javascript:;" class="btnBodyLine">동일내역으로 이체</a>
+							</div>
+						</div>
+						<div class="areaBodyBtnFull">
+							<div class="accListBtn mt0"><a href="javascript:;" class="toggleBtnetc"><span class="blind">다른 기능 버튼보기 열고, 닫기</span></a></div><!--2018.10.04 접근성 수정 버튼명 수정-->
+						</div>
+					</div>
+					<!-- //2018-09-05 : 리스트 수정 -->
+                </li>
+				<!-- //반복영역 -->
+            </ul>
+        </div>
+
+		<div class="listMoreBtn">
+			<a href="javascript:;" title="항목 더보기">더보기</a>
+		</div>
+		
+		<!-- 팝업시작 : 계좌번호 유효성 체크 -->
+		<div class="popWrap centerLayer">
+			<div class="dim"></div>
+			<div class="popInner">
+				
+				<h1 class="ac"><img src="../../images/common/popTitle.png" alt="NH 스마트뱅킹"></h1>
+				<div class="popCont">
+					<div class="confirmMsg type02">
+						<p>입력하신 계좌번호가 없습니다.<br/>계좌번호를 다시 확인 후 입력해 주시기 바랍니다.</p>
+					</div>
+				</div>
+
+				<div class="popBtnWrap">
+					<div class="popBtn">
+						<a href="javascript:;" class="confirmBtn" onclick="popClose(this);return false;">확인</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // 팝업 끝 -->
+
+	</div>
+	<!-- //container -->
+
+    <!-- footer -->
+    <div class="footer">
+        <!-- quick button -->
+        <!-- <div class="areaBtmQuick">
+            <span class="btnQuick"><a href="javascript:;">quick</a></span>
+            <span class="btnTop"><a href="javascript:;">Top</a></span>
+        </div> -->
+        <!-- //quick button -->
+        <ul class="footMenu">
+            <li><a href="../util/UC110000.html">홈</a></li>
+			<li><a href="../bw/UC490000.html">마이NH</a></li>
+			<li><a href="../util/talk.html">상담톡</a></li>
+            <li><a href="javascript:;">고객센터</a></li>
+            <li><a href="javascript:;">인증/보안</a></li>
+        </ul>
+    </div>
+    <!-- //footer -->
+</div>
+<!-- //wrapper -->
+</body>
+</html>

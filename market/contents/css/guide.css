@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+#contents {background:#fff; padding: 5px;}
+
+table.mlist {width:100%; border-collapse:collapse; border-right:1px #ccc solid;  margin:0; padding:0;}
+table.mlist thead th {background:#c4c4c4; padding:5px 0; text-align:center; color:#fff; border:1px #fff solid;}
+table.mlist thead th.first {border:none;}
+table.mlist tbody th {padding:5px 0 5px 0px; font-size:11px; color:#666; text-align:center; border-bottom:1px #eaeaea solid; vertical-align:middle; text-align:center;}
+table.mlist th.hover, table.mlist td.hover, table.mlist tr.hover {background:#f9f9f9;}
+table.mlist td {padding:5px; font-size:11px; color:#333; text-align:left; border-left:1px #ccc solid; border-bottom:1px #ccc solid; vertical-align:middle;}
+table.mlist td.alC {text-align:center;}
+table.mlist td .fn {margin:0 5px;white-space: nowrap}
+table.mlist tr.page_handle td {background:#333333; color:#fff;}
+table.mlist .itemtit01 {padding:5px 0 5px 10px; text-align:left; font-size:12px; color:#f1592a; border-left:1px #eaeaea solid;}
+table.mlist .itemtit02 {padding:5px 0 5px 10px; text-align:left; font-size:12px; color:#000; font-weight:bold;}
+table.mlist .itemtit03 {padding:5px 0 5px 10px; text-align:left; font-size:12px; color:#333;}
+table.mlist .itemtit04 {padding:5px 0 5px 10px;font-size:11px; color:#666;} 
+table.mlist .itemtit05 {padding:5px 0 5px 10px;font-size:11px; color:#999;}
+table.mlist .borB {background:#333; height:1px; padding:0 !important;}
+a.btn_go {display:inline-block; background:#aaaaaa; padding:3px 10px 2px; border:1px #9b9b9b solid; font-family:dotum; font-size:11px; color:#fff; text-transform:uppercase; line-height:15px; letter-spacing:-1px; 
+word-wrap:normal;}
+.btn_top {position:fixed; bottom:78px; right:5px;}
+
+#footer {background:#f9f9f9; margin-top:50px; padding:7px 0; border-top:1px #ddd solid; font-size:10px; color:#999; text-align:center;}
+
+#Gwrap {width:100%; padding-top:23px; min-height:200px; height:auto !important; height:200px;}
+#Gwrap .contentsW {position:relative; width:951px; margin:0 auto;}
+
+.contentsW {width:100%;}
+.contentsW2 {width:1200px; margin:0 auto;}
+
+#contentsF {padding: 0 17px}
+
+h2.guide{position:relative; display:block; height:21px; margin:20px 0; font-size:16px; font-weight:bold; color:#0066b3}
+h2.guide:before {display: inline-block; content:'■'; margin-right: 5px; font-size: 17px;}
+h2.guideG {margin-bottom:5px;}
+h3.guide{position:relative; /* margin:15px 0 0 5px; */margin:0 -17px 7px; padding:10px 17px; color:#0066b3; font-size:14px; font-weight:bold; background:#eee;border-bottom:1px solid #dedede; border-top:1px solid #dedede}
+
+.guideTxt {position: relative; padding: 0 0 5px 15px}
+.guideTxt:before{position: absolute; top: 0; left:0; content:'ㆍ'; font-weight: bold; }
+
+/* common css */
+.mt20 {margin-top:20px;}
+.clear {clear:both;}
+xmp {max-height:250px; padding:10px 20px 20px; margin:10px 0; background:#333; color: #fff; word-wrap: break-all; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; 
+word-break:break-all; display:block; overflow-x:hidden; overflow-y:auto;}
+
+ul.Gbox, .Gbox {margin:20px 2px 0 0;  padding:20px; border:1px solid #cbcbcb; background:#f9f9f9;}
+.Gbox li { zoom:1; padding-top:2px; min-height:17px;}
+.Gbox li span {display:inline-block; margin-right:10px; min-width:180px; *width:auto !important; *width:180px;}
+.Gbox li.g {margin-top:15px;}
+.Gbox ul {margin:7px 0 20px 10px; border-bottom:1px solid #efefef;}
+.Gbox li li {border-top:1px solid #efefef;}
+
+.layB {zoom:1; overflow:hidden; margin-bottom:40px;}
+.layB .layoutW {float:left; width:200px;}
+.layB xmp {float:right; width:580px;}
+
+.layout  * {color:#fff;}
+.layout {width:280px; height:140px; color:#fff; text-align:center; line-height:21px;}
+.layout .gnbW {height:20px; background:#666;}
+.layout .gnb {height:20px; width:80%; margin:0 auto; background:#232323;}
+
+.layout .con {width:100%; height:100px;background:#c0c0c0;}
+.layout .contents {width:80%; height:100px; margin:0 auto; background:#1b7fdc;}
+.layout .contents .left {float:left; width:20%; height:100px; background:red;}
+.layout .contents .con {float:right; width:80%;  text-align:center;}
+.layout .contentsT1 {width:80%; height:30px; margin:0 auto; background:#1b7fdc;}
+.layout .contentsT2 {width:80%; height:30px; margin:20px auto 0; background:#1b7fdc;}
+
+
+.layout .footerW {width:100%; background:#a995b1;}
+.layout .footer {width:80%; height:20px; margin:0 auto; background:#321476;}
+
+.col_wrap {overflow:hidden;}
+.col_wrap .col_l {float:left; width:49%;}
+.col_wrap .col_r {float:right; width:49%;}
+.folder_txt {overflow:hidden; clear:both; font-size:16px;}
+.folder_txt dt,
+.folder_txt dd {float:left; padding:5px 0;}
+.folder_txt dt {width:20%; font-weight:bold;}
+.folder_txt dd {width:80%; color:#666;}
+
+li {list-style:none;}
+
+hr {display: block; padding: 3px 0; border: none}
+
+

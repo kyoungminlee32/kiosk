@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="NH Bank" />
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="robots" content="no-index,follow">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="content" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>:::NH통합스마트뱅킹 퍼블리싱 || 이체:::</title>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../js/common_ui.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/common.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+    <script>
+        $(document).ready(function() {
+            bankSet();
+        });
+    </script>
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header -->
+    <div class="header">
+        <a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+        <h1><a href="javascript:;">즉시이체</a></h1>
+        <a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+        <a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+    </div>
+    <!-- //header -->
+
+    <!-- container -->
+	<div class="container">
+        <!-- 팝업시작 : 이체정보확인 팝업 -->
+        <div class="popWrap bankSetWrap popH02">
+            <div class="dim"></div> <!-- 팝업 dim 처리 -->
+            <div class="popInner">
+                <h1 class="bankPopTit">이체정보 확인</h1><!-- 2018-09-04 : 텍스트 수정 -->
+                <!-- 팝업컨텐츠 -->
+                <div class="popCont">
+                    <div class="transfer">
+						<script>
+							$(document).ready(function() {
+								iconScroll();
+							});
+						</script>
+						<!-- 2018-09-04 : 리스트 내용 변경 -->
+                        <ul class="detailList">
+							<!-- 2018-09-10 : 리스트 내용 변경 -->
+							<li>
+								<span class="tit">받는 분</span>
+								<span>홍길동</span>
+							</li>
+							<li>
+								<span class="tit">입금은행</span>
+								<strong class="pointColor5">국민 03580204221036</strong>
+							</li>
+							<!-- //2018-09-10 : 리스트 내용 변경 -->
+                            <li>
+                                <span class="tit">이체금액</span>
+                                <strong class="pointColor"><em>1,000,000</em><span class="wUnit">원</span></strong>
+                            </li>
+                            <li>
+                                <span class="tit">수수료</span>
+                                <strong class="pointColor"><em>0</em><span class="wUnit">원</span></strong>
+                            </li>
+                            <li class="divingLine">
+                                <span class="tit">출금계좌</span>
+                                <span>343-056902-01-101</span>
+                            </li>
+                            <li>
+                                <span class="tit">보내는 분</span>
+                                <span>홍길동</span>
+                            </li>
+                            <li>
+                                <span class="tit">받는 계좌에 표기</span>
+                                <span>받았습니다.</span>
+                            </li>
+                            <li>
+                                <span class="tit">내 계좌에 표기</span>
+                                <span>보냈습니다.</span>
+                            </li>
+                            <li>
+                                <span class="tit">이체메모</span>
+                                <span>메모</span>
+                            </li>
+                        </ul>    
+						<!-- //2018-09-04 : 리스트 내용 변경 -->
+
+						<!-- 2018-08-01 추가 -->
+						<!-- <h2 class="defTit">CMS 정보입력</h2>
+						<div class="formWrap">
+							<ul>
+								<li class="alignCol">
+									<strong class="formTit">거래처코드</strong>
+									<div class="inputList">                    
+										<input type="text" title="거래처코드 입력" placeholder="거래처코드를 입력하세요">
+										<a href="javascript:" title="Reset" class="btnReset">Reset</a>
+									</div>
+								</li>
+								<li class="alignCol">
+									<strong class="formTit">부서코드</strong>
+									<div class="inputList">                    
+										<input type="text" title="부서코드 입력" placeholder="부서코드를 입력하세요">
+										<a href="javascript:" title="Reset" class="btnReset">Reset</a>
+									</div>
+								</li>
+								<li class="alignCol">
+									<strong class="formTit">물품코드</strong>
+									<div class="inputList">                    
+										<input type="text" title="물품코드 입력" placeholder="물품코드를 입력하세요">
+										<a href="javascript:" title="Reset" class="btnReset">Reset</a>
+									</div>
+								</li>
+							</ul>
+						</div> -->
+						<!-- //2018-08-01 추가 -->
+						
+						<!-- 2018-10-12 : 버튼 타입, 텍스트 변경 -->
+                        <div class="areaBodyBtnFull">
+							<div class="inner">
+								<ul>
+									<li><a href="javascript:;" role="button">NH point 입금</a></li>
+									<li><a href="javascript:;" role="button">이체 추가</a></li>
+								</ul>
+							</div>
+                        </div>
+						<!-- //2018-10-12 : 버튼 타입, 텍스트 변경 -->
+						
+						<div class="signWrap mb20">
+							<p><strong class="pointColor">간편뱅킹 고객은<br /> 인증서 및 보안매체 입력이 생략됩니다.</strong></p>
+						</div>
+						
+						<!-- 2018-07-18 간편빙킹 초과 고객의 경우 추가 -->
+						<div class="signWrap mb20">
+							<p><strong class="pointColor">간편뱅킹 고객은 일 이체한도 500만원 초과시에는<br />추가인증+보안매체 입력(사기예방서비스는 본인이 가입한 경우에 한함)을 하시면 이체 가능합니다.</strong></p>
+						</div>
+						<!-- //2018-07-18 간편빙킹 초과 고객의 경우 추가 -->
+						
+						<!-- 2018-09-20 간편빙킹 초과 고객의 당행 본인계좌 입금 경우 추가 -->
+						<div class="signWrap mb20">
+							<p>당행 본인 명의 계좌로 이체중이십니다.<br /><strong class="pointColor">보안매체(보안카드, OTP 등) 없이</strong> 거래가 진행됩니다.</p>
+						</div>
+						<!-- //2018-09-20 간편빙킹 초과 고객의 당행 본인계좌 입금 경우 추가 -->
+						
+						<!-- 2018-10-12 : 지문인증 로그인  고객 거래 시-->
+						<div class="signWrap mb20">
+							<p>고객님은 지문인증 거래 고객입니다.<br /><strong class="pointColor">[이체] 선택 시 인증서 입력이 생략</strong>됩니다</p>
+						</div>
+						<!-- //2018-10-12 : 지문인증 로그인  고객 거래 시-->
+						
+						<!-- 2018-10-12 : 공인인증 로그인  고객 거래 시-->
+						<div class="signWrap mb20">
+							<p>고객님은 공인인증 거래 고객입니다.<br /><strong class="pointColor">[이체] 선택 시 인증서 입력이 생략</strong>됩니다.</p>
+						</div>
+						<!-- //2018-10-12 : 공인인증 로그인  고객 거래 시-->
+						
+						<!-- 2018-10-12 : 공인인증 로그인  고객이 당행 본인계좌 거래 시-->
+						<div class="signWrap mb20">
+							<p>고객님은 공인인증 거래 고객입니다.<br />당행 본인 명의 계좌로 이체 시<br /><strong class="pointColor">인증서 및 보안매체 입력이 생략됩니다.</strong></p>
+						</div>
+						<!-- //2018-10-12 : 공인인증 로그인  고객이 당행 본인계좌 거래 시-->
+						
+						<!-- 2018-10-12 : 지문인증 로그인  고객이 당행 본인계좌 거래 시-->
+						<div class="signWrap mb20">
+							<p>고객님은 지문인증 거래 고객입니다.<br />당행 본인 명의 계좌로 이체 시<br /><strong class="pointColor">인증서 및 보안매체 입력이 생략됩니다.</strong></p>
+						</div>
+						<!-- //2018-10-12 : 지문인증 로그인  고객이 당행 본인계좌 거래 시-->
+						
+						<!-- 2018-09-04 : 안내 메시지 추가 -->
+						<div class="guideList">
+							<div class="tArea"><p class="guideTit">서비스 이용안내</p></div>
+							<ul class="listDot">
+								<li>이체 후에는 취소가 <strong class="pointColor6">불가하오니 착오송금 예방을 위해 이체 정보를 다시 한번 확인</strong> 하시기 바랍니다.</li>
+								<li>가상계좌는 본인의 계좌가 아니며 입금 시 이용기관 계좌로 입금됩니다.(증권사 등 일부금융기관 제외)</li>
+							</ul>
+						</div>
+						<!-- //2018-09-04 : 안내 메시지 추가 -->
+                    </div>
+					
+					<span class="iconScroll"><img src="../../images/common/ico_scrollguide.png" alt="스크롤가이드 이미지"></span>
+                </div>
+                <!-- 팝업컨텐츠 -->
+                <!-- 팝업 버튼영역  -->
+                <div class="popBtnWrap">
+                    <div class="popBtn">
+                        <a href="javascript:;">취소</a>
+                        <a href="javascript:;" class="confirmBtn">이체</a>
+                    </div>
+                    <a href="javascript:;" onclick="popClose(this);return false;" class="popClose" title="해당 창을 닫습니다."><img src="../../images/common/btn_popClose.png" alt="닫기"></a>
+                </div>
+                <!-- // 팝업 버튼영역 -->
+            </div>
+        </div>
+	</div>
+	<!-- //container -->
+
+    <!-- footer -->
+    <div class="footer">
+        <!-- quick button -->
+        <!-- <div class="areaBtmQuick">
+            <span class="btnQuick"><a href="javascript:;">quick</a></span>
+            <span class="btnTop"><a href="javascript:;">Top</a></span>
+        </div> -->
+        <!-- //quick button -->
+        <ul class="footMenu">
+            <li><a href="../util/UC110000.html">홈</a></li>
+			<li><a href="../bw/UC490000.html">마이NH</a></li>
+			<li><a href="../util/talk.html">상담톡</a></li>
+            <li><a href="javascript:;">고객센터</a></li>
+            <li><a href="javascript:;">인증/보안</a></li>
+        </ul>
+    </div>
+    <!-- //footer -->
+</div>
+<!-- //wrapper -->
+</body>
+</html>

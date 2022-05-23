@@ -1,0 +1,51 @@
+
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="NH Bank" />
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="robots" content="no-index,follow">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="content" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>:::NH통합스마트뱅킹 퍼블리싱 || 이체:::</title>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+	<script>
+		$(function() {
+			setTimeout(function() {
+				$(location).attr('href', "../bl/UILOGIN005.html");
+			}, 2000);
+		});
+	</script>
+    
+    <link type="text/css" rel="stylesheet" href="../../css/common.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+	<style>
+		html {zoom:1;}
+		.loading {width:150px;height:150px;margin:-75px 0 0 -75px;}
+		.loadingInn {width:150px;height:150px;border-width:8px;}
+		.loading .txt {width:62px;height:26px;background-size:62px 26px;margin:-13px 0 0 -31px}
+	</style>
+</head>
+<body>
+<!-- 시연용 데스크탑 모드 -->
+<div class="desktopMode">
+	<img src="../../images/kiosk/img_splash.png" alt="" />
+</div>
+<div class="loading">
+	<!-- <img src="../../images/common/loading.gif" alt="로딩중입니다." /> -->
+	<div class="txt"></div>
+	<div class="loadingInn"></div>
+</div>
+<!-- // 시연용 데스크탑 모드 -->
+<script type="text/javascript" src="../../js/common_ui.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="NH Bank" />
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="no-index,follow">
+<meta name="title" content="">
+<meta name="author" content="">
+<meta name="content" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>:::NH통합스마트뱅킹 || 고객센터:::</title>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/common_ui.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+
+<script type="text/javascript" src="../../js/swiper.min.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/swiper.min.css" />
+<!-- 2018-08-22 추가 -->
+<script>
+	$(document).ready(function(){
+        fullLayerPop();
+		var rollTicker;
+
+		var swiper = new Swiper('.swiper-container.myProductSwipe', {   // 2018-08-22 클래스추가
+			slidesPerView:'auto',
+			slidesPerView: 3, 
+			slidesPerGroup: 3, //2018-0830 추가
+			spaceBetween: 10,
+			//speed: 300,
+			//loop: true,
+			//autoplay: true,
+			pagination:{
+				el: '.swiper-pagination',
+				clickable:true,
+			},
+			/*접근성*/
+			on:{
+				init:function(swiper){
+					$('.swiper-slide').attr('aria-hidden','true');
+					$('.swiper-slide-active').attr('aria-hidden','false');
+				}
+			},
+		});
+		
+		$('.toggleCont').css('display','none');
+
+		var swiper1 = new Swiper('.swiper-container.myBannerSwipe' , {
+            loop:true,
+			pagination:{
+                el:'.swiper-pagination',
+                clickable:true,
+            },
+        });
+
+
+		function setTicker(){
+			rollTicker = setInterval(function(){
+				var newItem = $('.ticker').find('li').eq(0).clone().removeClass('showList');
+				newItem.insertAfter($('.ticker > li:last-child'));
+				var newItem2 = $('.ticker').find('li').eq(1).addClass('showList').html();
+				$('.showList').html(newItem2)
+				$('.ticker').find('li').eq(1).remove();
+			 },3000)
+		}
+		setTicker();
+
+		$('.smartTalkMore').off('click').on('click',function(){
+			$(this).toggleClass('active');
+			$('.smartTalkContList').toggleClass('active');
+			var smartDisplay = $(".smartTalkContList").css("display");
+			if(smartDisplay == "block"){
+				clearInterval(rollTicker);
+				$('.smartTalk .controlBtnWrap a.btnPause').removeClass("btnPause").addClass("btnPlay").css("display","block").text("재생");
+			} else {
+				clearInterval(rollTicker);
+				setTicker();
+				$('.smartTalk .controlBtnWrap .btnPlay').removeClass("btnPlay").addClass("btnPause").css("display","block").text("일시정지");
+			}
+		});
+		
+		$(".smartTalk .controlBtnWrap > a").off("click").on("click",function(){
+			var thisClass = $(this).attr('class');
+			if(thisClass == "btnPause"){
+				$(this).removeClass("btnPause").addClass("btnPlay").css("display","block").text("재생");
+				clearInterval(rollTicker);
+			}else{
+				$(this).removeClass("btnPlay").addClass("btnPause").css("display","block").text("일시정지");
+				clearInterval(rollTicker);
+				setTicker();
+			}
+		});
+	});	
+</script>
+<!-- //2018-08-22 추가 -->
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+			<a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+			<h1><a href="javascript:;">MY NH</a></h1>
+			<a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+			<a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+		</div>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div class="container">
+			<div class="popWrap fullLayerPop">
+				<div class="popInner">
+					<h1 class="ac">MY NH</h1>
+					
+					<!-- 컨텐츠 영역 -->
+					<div class="popCont">
+						
+						<div class="myMainSet">
+							<!-- 설정 -->
+							<div class="myTopWrap">
+								<div class="myTop">
+									<div class="myRecentTimes">최근접속<span> 2018.07.17 15:23:55</span></div>
+									<div class="mySetItem">
+										<a href="javascript:;" class="user" role="button">내정보변경</a>
+										<a href="javascript:;" class="set" role="button">설정</a>
+									</div>
+								</div>
+								
+								<div class="myInfo">
+									<!-- 2018-08-22 마크업추가 농축협의 경우만 노출 -->
+									<!-- <div class="myBranch">
+										<strong>의왕농협 포일점</strong>
+									</div> -->
+									<!-- //2018-08-22 마크업추가 농축협의 경우만 노출 -->
+
+									<div class="myImg liLine3"> <!-- 2018-08-17 클래스 추가. 선택된 라인값에 따라 1~7로 추가. css 참조 -->
+										<!-- <img src="../../images/contents/my_testimg.jpg" alt="나의 이미지"/> -->
+										<a href="javascript:;">
+											<img src="../../images/contents/img_my_man.png" alt=""> <!-- 2018-08-30 빈이미지 추가 -->
+										</a>
+									</div>
+									<div class="myInfoWrap">
+										<p class="myName"><span>세젤예김푸름이</span><br/>님의 스마트뱅킹</p>
+										<p class="myMemo">한줄메모를 남겨주세요.</p>
+									</div>
+								</div>
+								
+							</div>
+							<!--// 설정 -->
+							
+							<!-- 등급 -->
+							<div class="myRankorder">
+								<div class="myAll">
+									<a href="javascript:;" role="button">
+										<span class="myRankTit">나의 자산 <span class="myAllNum">(계좌 <strong>15</strong>건)</span></span>
+										<!-- <span class="majorAccoutBtn">잔액보기</span> --> <!-- 2018-08-30 마크업추가 -->
+										<span class="myAllBadge">총 잔액</span>
+										<span class="myAccountSum"><span>11,550,000,000</span><span class="unit">원</span></span>
+										<span class="myMore">자세히보기</span><!--// 2018-10-23 마크업추가 -->
+									</a>
+								</div>
+								<div class="myRankItem">
+									<p class="myRankTit">하나로가족등급</p><!--// 2018-08-21 텍스트  변경 -->
+									
+									<!-- 2018-11-20 마크업수정 -->
+									<ul>
+										<li class="bank01">
+											<a href="javascript:;" role="button">
+												<p>농협은행</p>
+											</a>
+										</li>
+										<li class="bank02">
+											<a href="javascript:;" role="button">
+												<p>농&middot;축협</p>
+											</a>
+										</li>
+									</ul>
+									<!-- //2018-11-20 마크업수정 -->
+
+									<!-- <ul>
+										<li>
+											<a href="javascript:;" role="button">
+												<div class="myItemWrap">
+													<div class="bankBadge blue">농협은행</div>// color값: 농협은행(blue), 농축협(green), red
+													<div class="rankBadge normal">// 상태값: 일반(normal) ,B(blue), G(green), R(royal), G(gold), T(topclass)
+														<span class="rankIco"></span> <span class="rankTxt"></span>
+													</div>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:;" role="button">
+												<div class="myItemWrap">
+													<div class="bankBadge green">농&middot;축협</div>
+													<div class="rankBadge royal"><span class="rankIco"></span> <span class="rankTxt"></span></div>
+												</div>
+											</a>
+										</li>
+									</ul> -->
+								</div>
+								<!-- 2018-11-13 인내문구 추가 -->
+								<!-- <div style="float:left;width:100%;padding:10px 17px 0 30px;font-size:11px;text-indent: -8px;">* 하나로가족등급 : 상세페이지와 등급이 다르게 나오는 현상은 현재 IT팀에서 확인중입니다.</div> -->
+								<!--// 2018-11-13 인내문구 추가 -->
+							</div>
+							<!--// 등급 -->
+							
+						</div>
+						
+						<!-- 스마트 Talk 리스트 롤링 영역 -->
+						<div class="smartTalk">
+							<strong class="tit">스마트Talk</strong>
+							<div class="talkCont">
+								<ul class="ticker">
+									<li class="showList">
+										<a href="javascript:;" class="dflex">
+											<p class="txt"><span class="noitceNew">new</span>1 이자지급일 이자지급일이자지급일이자지급일이자지급일</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;" class="dflex">
+											<p class="txt"><span class="noitceNew">new</span>2 하나로가족등급 안내</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;" class="dflex">
+											<p class="txt">3 만기도래상품만기도래상품만기도래상품안내</p>
+										</a>
+									</li>
+								</ul>
+								<a href="javascript:;" title="스마트톡 더보기" role="button" class="smartTalkMore">더보기</a><!-- 2018-10-13 텍스트수정 -->							
+							</div>
+							<span class="controlBtnWrap">
+								<a href="javascript:;" class="btnPause">일시정지</a>
+							</span>
+						</div>
+						<!-- // 스마트 Talk 리스트 롤링 영역 -->
+						
+						<!-- 스마트 Talk 리스트 순서 고정 영역 -->
+						<div class="smartTalkContList">
+							<ul>
+								<li>
+									<a href="javascript:;">
+										<p class="txt"><span class="noitceNew">new</span>1 이자지급일 이자지급일이자지급일이자지급일이자지급일</p>
+										<span class="date">2018.08.20</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<p class="txt"><span class="noitceNew">new</span>2 하나로가족등급 안내</p>
+										<span class="date">2018.08.20</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<p class="txt">3 만기도래상품만기도래상품만기도래상품안내</p>
+										<span class="date">2018.08.20</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- 스마트 Talk 리스트 순서 고정 영역 -->
+						
+						<!-- //2018-08-22 마크업추가 -->
+						
+						<div class="myMenuWrap">
+							<ul class="myMenu">
+								<li><a href="javascript:;" role="button">만기도래상품</a></li>
+								<li><a href="javascript:;" role="button">관심상품 <span class="ball">5</span></a></li>
+							</ul>
+						</div>
+						
+						<!-- 최근 본 금융상품 -->
+						<div class="myProductArea toggleWrap">
+							<div class="myPdWrap">
+								<div class="myPdTit">최근본상품 <span>30</span>개
+									<a href="javascript:;" class="myBtnMore" role="button">더보기</a>
+								</div>
+								
+								<a href="javascript:;" class="myBtnOpen toggleBtn" role="button"><span class="blind">상품상세보기</span></a>
+							</div>
+							<div class="toggleCont" style="display:block;">
+								<!-- 최근 본 금융상품 없을 시 -->
+								<!-- <div class="topConfirmArea confirmMsg type04 mb20">
+							        <p>최근 본 금융상품이 없습니다.</p>
+							    </div> -->
+							    <!--// 최근 본 금융상품 없을 시 -->
+								<div class="myProduct">
+									<div class="swiper-container myProductSwipe"> <!-- 2018-08-22 클래스 추가 -->
+										<ul class="swiper-wrapper">
+											<li class="swiper-slide" role="button">
+												<div class="myItemWrap">
+													<div class="bankBadge">대출</div>
+													<div class="myItemPd">NH모바일<br/>전세대출</div>
+													<div class="myItemTxt">농협은행</div>
+												</div>
+											</li>
+											<li class="swiper-slide" role="button">
+												<div class="myItemWrap">
+													<div class="bankBadge">예금</div>
+													<div class="myItemPd">NH모바일<br/>전세대출전세대출전세대출전세대출</div>
+													<div class="myItemTxt colorGreen">농&middot;축협</div>
+												</div>
+											</li>
+											<li class="swiper-slide" role="button">
+												<div class="myItemWrap">
+													<div class="bankBadge">보험</div>
+													<div class="myItemPd">NH모바일<br/>전세대출</div>
+													<div class="myItemTxt colorBlue">농협은행</div>
+												</div>
+											</li>
+											<li class="swiper-slide" role="button">
+												<div class="myItemWrap">
+													<div class="bankBadge">농&middot;축협11</div>
+													<div class="myItemPd">NH모바일<br/>전세대출</div>
+													<div class="myItemTxt colorBlue">농협은행</div>
+												</div>
+											</li>
+											<li class="swiper-slide" role="button">
+												<div class="myItemWrap">
+													<div class="bankBadge">농&middot;축협22</div>
+													<div class="myItemPd">NH모바일<br/>전세대출</div>
+													<div class="myItemTxt colorBlue">농협은행</div>
+												</div>
+											</li>
+										</ul>
+										<div class="swiper-pagination"></div>
+									</div>
+									<!-- 2018-08-22 스크립트소스 header로 이동  -->
+								</div>
+							</div>
+						</div>
+						<!-- 2018-08-21 텍스트 및 위치 변경 -->
+						<!-- 상품상담센터 -->
+						<div>
+							<p class="formTit mt20"><strong>상품상담센터</strong>
+								<span class="unit fr"><span class="linkGreen" role="button">농 ∙ 축협  확인하기</span></span><!--// 상태값 ::   농협은행 확인하기 : linkBlue, 농 ∙ 축협  확인하기 : linkGreen -->
+							</p><!--// 2018-10-10  문구 수정 및 class 추가 -->
+							
+							<ul class="myLinkList">
+								<li><a href="javascript:;" role="button">영업점상담상품내역</a></li>
+								<li><a href="javascript:;" role="button">대출약정서신청내역</a></li>
+								<li><a href="../../../market/contents/nhbank/pub_nhbank/my/SMNHMYK55100.html" role="button" class="kioskEffect">영업점방문예약내역 <span class="hand type01" style="margin-left:-54px"></span></a></li>
+								<li><a href="javascript:;" role="button">찾아오는상담서비스내역</a></li>
+								<li><a href="javascript:;" role="button">이메일문의내역</a></li>
+								<li><a href="javascript:;" role="button">전화상담예약내역</a></li>
+							</ul>
+						</div>
+						<!--// 상품상담센터 -->
+						
+						<!-- 스마트자산관리 -->
+						<div>
+							<p class="formTit mt20"><strong>스마트자산관리</strong></p>
+							<ul class="myLinkList">
+								<li><a href="javascript:;" role="button">설계이력조회(펀드)</a></li>
+								<li><a href="javascript:;" role="button">설계이력조회(IRP)</a></li>
+							</ul>
+						</div>
+						<!--// 스마트자산관리 -->
+						<!--// 2018-08-21 텍스트 및 위치 변경 -->
+						<!--// 최근 본 금융상품 -->
+						
+						<!-- 2018-08-22 마크업수정 -->
+						<div class="myBanner">
+							<div class="swiper-container myBannerSwipe">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a href="javascript:;"><img src="../../images/contents/my_banner01.png" alt="NH프로포즈 고객님을 위한 맞춤 서비스를 안내해드립니다."/></a>
+									</div>
+									<div class="swiper-slide">
+										<a href="javascript:;"><img src="../../images/contents/my_banner01.png" alt="NH프로포즈 고객님을 위한 맞춤 서비스를 안내해드립니다."/></a>
+									</div>
+									<div class="swiper-slide">
+										<a href="javascript:;"><img src="../../images/contents/my_banner01.png" alt="NH프로포즈 고객님을 위한 맞춤 서비스를 안내해드립니다."/></a>
+									</div>
+								</div>
+								<div class="swiper-pagination"></div>
+							</div>
+						</div>
+						<!-- //2018-08-22 마크업수정 -->
+					</div>
+					<!-- //컨텐츠 영역 -->
+
+					<!-- fixed button -->
+					<div class="popBtnWrap">
+						<a href="../util/UC110000.html" class="popClose" title="해당 창을 닫습니다."><img src="../../images/common/btn_popClose.png" alt="닫기" /></a>
+					</div>
+					<!-- //fixed button -->
+				</div>
+			</div>
+			
+			
+			
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div class="footer">
+			<!-- quick button -->
+			<!-- <div class="areaBtmQuick"> 
+				<span class="btnQuick"><a href="javascript:;">quick</a></span>
+				<span class="btnTop"><a href="javascript:;">Top</a></span>
+			</div> -->
+			<!-- //quick button -->
+		
+			<ul class="footMenu">
+				<li><a href="../util/UC110000.html">홈</a></li>
+				<li><a href="../bw/UC490000.html">마이NH</a></li>
+				<li><a href="../util/talk.html">상담톡</a></li>
+				<li><a href="javascript:;">고객센터</a></li>
+				<li><a href="javascript:;">인증/보안</a></li>
+			</ul>
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="NH Bank" />
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="no-index,follow">
+<meta name="title" content="">
+<meta name="author" content="">
+<meta name="content" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>:::NH통합스마트뱅킹 || 인증/보안:::</title>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/common_ui.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+			<a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+			<h1><a href="javascript:;">간편뱅킹 가입</a></h1>
+			<a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+			<a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+		</div>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div class="container">
+			<!-- STEP -->
+			<div class="stepArea">
+				<p class="stepTit">휴대폰 SMS 인증서비스</p>
+				<div class="stepInfo" role="img" aria-label="총 3단계중 2단계 입니다.">
+					<ul class="stepList">
+						<li class="off"><span>1</span></li>
+						<li class="active"><span>2</span></li>
+						<li><span>3</span></li>
+						<li><span>4</span></li>
+					</ul>
+				</div>
+			</div>
+			<!--// STEP -->
+        	
+        	<div class="guideListTop">
+		        <ul class="listDot">
+		            <li>약관 동의 및 본인인증을 위하여 휴대폰 정보 입력 후 인증번호 전송 버튼을 눌러주십시오.</li>
+					<li>동의약관을 읽어보시고 휴대폰 인증을 원하시면, ‘동의’ 버튼을 눌러주시기 바랍니다.</li>
+		        </ul>
+		    </div>
+		    
+		    
+		    <!--// 2018-09-18 삭제 약관 위치 이동  -->
+		    
+		    <div class="formWrap">
+		    	<ul>
+		    		<li>
+					    <strong class="formTit">통신사 선택</strong>
+					    <ul class="mobileSelct">
+					        <li>
+					            <span class="boxChk">
+					                <input type="radio" name="sample00" id="sample01" checked="checked">
+					                <label for="sample01">SKT</label>
+					            </span>
+					        </li>
+					        <li>
+					            <span class="boxChk active">
+					                <input type="radio" name="sample00" id="sample02">
+					                <label for="sample02">SKT(알뜰폰)</label>
+					            </span>
+					        </li>
+					        <li>
+					            <span class="boxChk">
+					                <input type="radio" name="sample00" id="sample03">
+					                <label for="sample03">KT(알뜰폰 포함)</label>
+					            </span>
+					        </li>
+					        <li>
+					            <span class="boxChk">
+					                <input type="radio" name="sample00" id="sample04">
+					                <label for="sample04">LG U+(알뜰폰 포함)</label>
+					            </span>
+					        </li>
+					    </ul>
+			    	</li>
+        			
+        			<!-- 2018-09-18 추가  -->
+        			<li>
+        				<strong class="formTit">약관 선택</strong>
+        				<div class="termsWrap mt0">
+					        <div class="termsList"> 
+					            <ul> 
+					                <li class="isBtn">
+					                    <div class="checkList">
+					                        <input type="checkbox" id="c1" name="" checked="checked">
+					                        <label for="c1">고유식별정보처리동의</label>
+					                        <a href="javascript:;" class="btnBodyTerms">내용보기</a>
+					                    </div>
+					                </li> 
+					                <li class="isBtn">
+					                    <div class="checkList">
+					                        <input type="checkbox" id="c2" name="" checked="checked">
+					                        <label for="c2">개인정보 제3자 제공 동의</label>
+					                        <a href="javascript:;" class="btnBodyTerms">내용보기</a>
+					                    </div>
+					                </li>   
+					                <li class="isBtn">
+					                    <div class="checkList">
+					                        <input type="checkbox" id="c3" name="" checked="checked">
+					                        <label for="c3">서비스 이용 약관동의</label>
+					                        <a href="javascript:;" class="btnBodyTerms">내용보기</a>
+					                    </div>
+					                </li>      
+					            </ul> 
+					        </div>
+					        <div class="checkList ml10">                    
+			                    <input type="checkbox" id="chk14" name="dd" checked="checked">
+			                    <label for="chk14">전체 동의</label>
+			                </div>                     
+					    </div>
+        			</li>
+		        	<!--// 2018-09-18 추가  -->
+		            <li>
+		            	<strong class="formTit">휴대폰번호</strong>
+		                <div class="telWrap">
+							<div class="stList telSel">
+								<a href="javascript:;" title="휴대폰번호 앞자리 선택 새창 열림">
+									<span class="selectValue">010</span>
+									<span class="selectBtn">버튼</span>
+								</a>
+								<select name="" title="휴대폰번호 앞자리 선택">
+									<option value=""></option>
+								</select>
+							</div>
+							<div class="inputDash">-</div>
+							<div class="inputB01"><input type="text" value="1234" id="" name="" maxlength="4" title="휴대폰번호 가운데 자리 선택"></div>
+							<div class="inputDash">-</div>
+							<div class="inputB01"><input type="text" value="5678" id="" name="" maxlength="4" title="휴대폰번호 마지막 자리 선택"></div>
+						</div>
+					    <div class="areaBodyBtnFull">
+							<a href="javascript:;" class="btnBodyLine">인증번호 전송</a>		
+						</div>
+						<p class="infoTxt">통신사 확인 후 본인명의가 아닌 경우에는 인증번호가 전송되지 않습니다.</p>
+		            </li>
+		            <li>
+		            	<strong class="formTit">인증번호</strong>
+		            	<div class="inputList">                    
+		                    <input type="tel" title="인증번호 입력" value="135790" >
+		                    <a href="javascript:;" title="Reset" class="btnReset">Reset</a>
+		                </div>
+		            </li>
+		        </ul>
+		    </div>
+		    
+	        <!-- fixed button -->       
+			<div class="areaBtnDefault">
+				<a href="javascript:;" class="btnPressDefault">취소</a>
+				<a href="UISECGUBUN006.html" class="btnPressPoint kioskEffect"><span class="hand type02"></span>확인</a>
+			</div>
+			<!--// fixed button -->
+			
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div class="footer">
+			<!-- quick button -->
+			<!-- <div class="areaBtmQuick"> 
+				<span class="btnQuick"><a href="javascript:;">quick</a></span>
+				<span class="btnTop"><a href="javascript:;">Top</a></span>
+			</div> -->
+			<!-- //quick button -->
+		
+			<ul class="footMenu">
+				<li><a href="../util/UC110000.html">홈</a></li>
+				<li><a href="../bw/UC490000.html">마이NH</a></li>
+				<li><a href="../util/talk.html">상담톡</a></li>
+				<li><a href="javascript:;">고객센터</a></li>
+				<li><a href="javascript:;">인증/보안</a></li>
+			</ul>
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

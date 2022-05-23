@@ -1,0 +1,320 @@
+@charset "utf-8";
+/* reset */
+/* html {font-size:10px;} */
+html,body {font-family:"NotoKR","맑은 고딕","돋움",dotum,sans-serif;color:#111;font-weight:normal;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;-webkit-tap-highlight-color:transparent;-webkit-user-select: none;-webkit-text-size-adjust: none; }
+body {font-size: 13px;}
+body,div,dl,dd,ul,ol,h1,h2,h3,h4,h5,h6,form,fieldset,legend,button,p,pre,blockquote,menu,figure,input {margin:0;padding:0;}
+header,footer,section,article,aside,nav,hgroup,details,menu,figure,figcaption {display:block;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,select,input,textarea,p,blockquote,th,td,menu,button,a,span,strong,label,header,footer,section,article,aside,nav,hgroup,details,figure,figcaption {word-break:break-word;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-ms-box-sizing:border-box;} /* 여백을 포함한 사이즈 설정*/ 
+h1,h2,h3,h4,h5,h6,input,select,textarea,button,option {color:inherit;font-family:"NotoKR","맑은 고딕","돋움",dotum,sans-serif;font-size:13px;font-weight:normal;} 
+pre,code,samp,kbd {font-family:inherit;} 
+h1,h2,h3,h4,h5,h6,strong,b,th {font-weight:bold;} 
+em,var,address {font-style:normal;} 
+ul,ol,li {list-style:none;} 
+
+legend,fieldset,button,img {border:0 none;} 
+input,select,textarea,button,label,strong,a,time {vertical-align:inherit;}
+input,select,textarea,button,option {font-family:inherit;font-weight:inherit;}
+input,select,textarea {appearance:none;-webkit-appearance:none;} 
+input[type="text"]::-webkit-search-cancel-button {appearance:none;-webkit-appearance:none;} 
+button,select,option {color:inherit;text-transform:none;} 
+textarea {resize:none;}
+caption,legend {text-indent:-5000px;font-size:0;line-height:0;width:0;height:0;overflow:hidden;} 
+table {table-layout:fixed;width:100%;border-collapse:collapse;border-spacing:0;} 
+button {background:none;text-align:left;cursor:pointer;overflow:visible;} 
+a {color: inherit}
+a,a:link,a:visited,a:active {text-decoration:none;} 
+
+/* 간격정의 */
+[class^="wrapTbl"] table + table,
+[class^="wrapTbl"] + [class^="wrapTbl"] {margin-top: 15px;} /* 테이블 wrap 내에 table 2개 이상 존재시 */
+[class^="wrapTbl"] .boxHeaderBlue,
+.topConfirmArea + .areaBodyBtnFull,
+.formWrap li .areaBodyBtnSelect{margin-top: 0;}
+
+* + .areaBodyBtnFull,
+* + .guideList,
+* + .areaPopBtnFull, 
+* + .areaBodyBtnIcon, 
+.stepArea + [class^="wrapTbl"],
+.stepArea + .imgWrap,
+[class^="tabL"] + [class^="wrapTbl"],
+[class^="wrapTbl"] + .totalWrap,
+[class^="wrapTbl"] + .selDetailList,
+[class^="wrapTbl"] table + .tblHeader,
+.guideListTop + [class^="wrapTbl"],
+.areaBodyBtnFull + .selDetailList,
+.areaBodyBtnFull + .guideListTop,
+.areaBodyBtnFull + .productWrap,
+.formWrap + .selDetailList,
+.totalWrap + [class^="wrapTbl"],
+.container > [class^="wrapTbl"]:first-child,
+.popCont > [class^="wrapTbl"]:first-child {margin-top: 20px;}
+
+.imgWrap + [class^="wrapTbl"] {margin-top: 10px;}
+
+.defTit + .areaBodyBtnSelect,
+.defTit + .termsWrap,
+.defSubTit + .areaBg,
+.areaBg > .formWrap,
+.formTit + .areaBtnType02,
+.defTit + .guideList,
+.defTit + .certificateWrap,
+.defSubTit + .areaBodyBtnSelect,
+.defSubTit + .defTxt {margin-top: 0;}
+
+.defTit + .formWrap,.defSubTit + .formWrap {margin-top: 0;}
+
+* + .defTxt {margin-top: 15px;}
+.defTit + .defTxt {margin-top: 0 !important;} 
+.defTxt + .defTxt {margin-top: 10px;}
+.defTxt + .listDot {margin-top: 7px;}
+
+[class^="tabL"] + .productWrap {margin-top: -1px;}
+
+/**************************************************
+		important 정의 
+**************************************************/ 
+#tongs2018 .dib{display: inline-block;}
+#tongs2018 .al {text-align: left !important}
+#tongs2018 .ac {text-align: center !important}
+#tongs2018 .ar {text-align: right !important}
+#tongs2018 .blind {width:1px !important;height:1px !important;font-size:1px !important;line-height:0 !important;color:transparent !important;opacity:0 !important;overflow: hidden !important;position: absolute !important;} /* 영역 숨김 정의 editby ys 2018.08.16*/ 
+
+#tongs2018 .pointColor {color:#3d9bff !important;} /* 입금(파랑) */
+#tongs2018 .pointColor2 {color:#f44336 !important;} /* 출금(빨강) */
+#tongs2018 .pointColor3 {color:#000 !important;} /* 검정 */
+#tongs2018 .pointColor4 {color:#3b5997 !important;} /* 남색 */
+#tongs2018 .pointColor5 {color:#f68b1f !important;} /* 오렌지 계좌번호 */
+#tongs2018 .pointColor6 {color:#3d9bff !important;} /* 하단알림용 두번째 강조컬러 */
+#tongs2018 .pointColor7 {color:#3d9bff !important;} /* 상단알림용 첫번째 강조컬러 퍼렁 */
+#tongs2018 .pointColor8 {color:#f68b1f !important;} /* 상단알림용 두번째 강조컬러 오렌지 */
+
+#tongs2018 .bdl {border-left: 1px solid #e5e5e5 !important}
+#tongs2018 .bdr {border-right: 1px solid #e5e5e5 !important}
+#tongs2018 .bdt {border-top: 1px solid #e5e5e5 !important}
+#tongs2018 .bdb {border-bottom: 1px solid #e5e5e5 !important}
+#tongs2018 .bdtNone {border-top: none !important}
+#tongs2018 .bdbNone {border-bottom: none !important}
+#tongs2018 .bdlNone {border-left: none !important}
+#tongs2018 .bdrNone {border-right: none !important}
+#tongs2018 .bdtPoint {border-top: 1px solid #999 !important}
+#tongs2018 .bdbPoint {border-bottom: 1px solid #999 !important}
+
+#tongs2018 .fl {float:left !important;}
+#tongs2018 .fr {float:right !important;}
+#tongs2018 .fn {float:none !important;}
+#tongs2018 .cl {clear:both;}
+#tongs2018 .clfix {overflow:hidden;}
+#tongs2018 .block {display: block !important;}
+#tongs2018 .inblock {display: inline-block !important;}
+#tongs2018 .blockNone {display: none !important;}
+#tongs2018 .underLine {text-decoration: underline !important}
+
+#tongs2018 .mg0 {margin: 0 !important;}
+#tongs2018 .mt0 {margin-top: 0 !important;}
+#tongs2018 .mt5 {margin-top: 5px !important;}
+#tongs2018 .mt10 {margin-top: 10px !important;}
+#tongs2018 .mt15 {margin-top: 15px !important;}
+#tongs2018 .mt20 {margin-top: 20px !important;}
+#tongs2018 .mt25 {margin-top: 25px !important;}
+#tongs2018 .mt30 {margin-top: 30px !important;}
+#tongs2018 .mt35 {margin-top: 35px !important;}
+#tongs2018 .mt41 {margin-top: 41px !important;}
+#tongs2018 .mt40 {margin-top: 40px !important;}
+#tongs2018 .mt45 {margin-top: 45px !important;}
+#tongs2018 .mt50 {margin-top: 50px !important;}
+
+#tongs2018 .mb0  {margin-bottom: 0 !important;}
+#tongs2018 .mb5  {margin-bottom: 5px !important;}
+#tongs2018 .mb10 {margin-bottom: 10px !important;}
+#tongs2018 .mb15 {margin-bottom: 15px !important;}
+#tongs2018 .mb20 {margin-bottom: 20px !important;}
+#tongs2018 .mb25 {margin-bottom: 25px !important;}
+#tongs2018 .mb30 {margin-bottom: 30px !important;}
+#tongs2018 .mb35 {margin-bottom: 35px !important;}
+#tongs2018 .mb40 {margin-bottom: 40px !important;}
+#tongs2018 .mb45 {margin-bottom: 45px !important;}
+#tongs2018 .mb50 {margin-bottom: 50px !important;}
+#tongs2018 .mlr-17 {margin-left: -17px !important;margin-right: -17px !important;}
+#tongs2018 .mlr17 {margin-left: 17px !important;margin-right: 17px !important;}
+#tongs2018 .mt-5 {margin-top: -5px !important;}
+
+
+#tongs2018 .ml5 {margin-left: 5px !important;}
+#tongs2018 .ml10 {margin-left: 10px !important;}
+
+#tongs2018 .pt0{padding-top:0 !important;}
+#tongs2018 .pb0{padding-bottom:0 !important;}
+
+#tongs2018 .pd17 {padding: 0 17px;}
+#tongs2018 .pt20 {padding-top:20px !important;}
+#tongs2018 .mb0 {margin-bottom: 0px !important;}
+
+#tongs2018 .pd0 {padding:0 !important;}
+#tongs2018 .pl0 {padding-left:0 !important;}
+#tongs2018 .pl5 {padding-left:5px !important}
+#tongs2018 .pl10 {padding-left:10px !important}
+#tongs2018 .pr5 {padding-right:5px !important}
+#tongs2018 .pr10 {padding-right:10px !important}
+
+#tongs2018 .ls005 {letter-spacing:-0.5px !important;}
+#tongs2018 .ls01 {letter-spacing:-1px !important;}
+#tongs2018 .ls015 {letter-spacing:-1.5px !important;}
+#tongs2018 .ls02 {letter-spacing:-2px !important;}
+
+#tongs2018 .vam {vertical-align: middle !important}
+#tongs2018 .vat {vertical-align: top !important}
+
+#tongs2018 .w120 {width:120px !important;}
+#tongs2018 .w100 {width:100px !important;}
+#tongs2018 .w60 {width:60px !important;}
+#tongs2018 .w30 {width:30px !important;}
+
+#tongs2018 .w25p {width:25% !important}
+#tongs2018 .w35p {width:35% !important}
+#tongs2018 .w40p {width:40% !important}
+
+
+/**************************************************
+	table 정의 
+**************************************************/
+#tongs2018 [class*="tblHea"] {}
+#tongs2018 [class*="tblHea"]:after {display:  block; content:''; clear: both;;}
+#tongs2018 [class*="tblHea"] .unit {float: right; margin-top: -20px; font-size:11px; color: #999;}
+#tongs2018 [class*="tblHea"] [class^="btn"] {position: relative; float: right; margin-top: -40px; height: 30px; line-height: 28px; font-size:13px; color: #111; font-weight: bold;}
+#tongs2018 [class*="tblHea"] .badgeDefault {position: relative; float: right; margin-top: -31px;}
+#tongs2018 [class^="wrapTbl"] table {width: 100%; border-top: 2px solid #808080}
+#tongs2018 [class^="wrapTbl"] th {font-weight: bold; text-align: left; background: #f8f8f8;}
+#tongs2018 [class^="wrapTbl"] td {text-align: left;background-color:#fff;}
+#tongs2018 [class^="wrapTbl"] th.sub {font-weight: bold; color: #666; background: none;}
+#tongs2018 [class^="wrapTbl"] th, #tongs2018 [class^="wrapTbl"] td {padding: 8px 3px; font-size:13px; border-bottom: 1px solid #dedede; border-left:1px solid #dedede}
+#tongs2018 [class^="wrapTbl"] th:first-child, #tongs2018 [class^="wrapTbl"] td:first-child {border-left: none}
+#tongs2018 [class^="wrapTbl"] th.al{text-align: left !important;}
+#tongs2018 [class^="wrapTbl"] tbody td {padding: 8px 3px;}
+#tongs2018 [class^="wrapTbl"] th a.btnAddon {margin-top:3px; padding:0 6px}
+#tongs2018 [class^="wrapTbl"] td > .formWrap {margin-top:0}
+
+/* 테이블 정렬 important */
+#tongs2018 .thLeft th {text-align:left !important;}
+#tongs2018 .thCenter th {text-align:center !important;}
+#tongs2018 .thright th {text-align:right !important;}
+#tongs2018 .tdLeft td {text-align:left !important;}
+#tongs2018 .tdCenter td {text-align:center !important;}
+#tongs2018 .tdCenter td.al {text-align:left !important;}
+#tongs2018 .tdCenter td.ar {text-align:right !important;}
+#tongs2018 .tdRight td {text-align:right !important;}
+
+#tongs2018 tr.active td, #tongs2018 .active th {color:#3d9bff !important; background: #f3faff !important;}
+#tongs2018 tr.active td.pointColor5 {color:#f68b1f !important;}
+#tongs2018 td.active {background: #f3faff !important;}
+
+#tongs2018 [class^="wrapTbl"] .btnFuncTip {margin-top:-5px;background-position:center center;}
+
+/**************************************************
+	title 정의 
+**************************************************/
+#tongs2018 .defTit {position:relative;margin: 20px 0 10px; font-size:14px; font-weight:bold; color: #3b5997;} /* h2 기본 섹션 타이틀 : 파랑 */
+#tongs2018 .defTit2 {position:relative;margin: 20px 0 15px; font-weight:bold; font-size:15px;} /* h2 기본 섹션 타이틀 : 파랑 */
+#tongs2018 .defTit2 + .defTit {margin-top:15px;}
+#tongs2018 .defSubTit {position:relative;margin: 12px 0 5px; font-size:13px; color: #111;font-weight:bold;} /* h3 */
+
+/* text 정의 */
+#tongs2018 .defTxt {line-height: 18px;color:#333;}
+#tongs2018 .defTxt02{font-size:13px;color:#666;text-indent:-14px;padding-left:14px}
+#tongs2018 .defTxt03{font-size:12px;color:#ababab;text-align:center}
+#tongs2018 .defTxtGry {color: #666;}
+#tongs2018 p.infoTxt {position: relative; margin-top: 7px; padding-left: 20px; font-size:11px; color: #666;}
+#tongs2018 p.infoTxt:before {position: absolute; top: 2px; left: 0; content:''; width: 14px; height: 14px; background: url(../images/common/ico_exclamation.png) no-repeat; background-size: cover; vertical-align: middle;}
+#tongs2018 p.infoTxt.inBtn:before {top: 5px;}
+#tongs2018 p.infoTxt.inBtn a{margin-left: 5px;}
+#tongs2018 ul.infoTxt {margin-top: 7px;}
+#tongs2018 ul.infoTxt li {position: relative; margin-top: 3px; padding-left: 20px; font-size:11px; color: #666;}
+#tongs2018 ul.infoTxt li:before {position: absolute; top: 2px; left: 0; content:''; width: 14px; height: 14px; background: url(../images/common/ico_exclamation.png) no-repeat; background-size: cover; vertical-align: middle;}
+
+/**************************************************
+	list 정의 
+**************************************************/
+#tongs2018 .listDash li {position: relative; padding-left: 10px; color:#666;}
+#tongs2018 .listDash li:before {position:absolute; top:0; left:0; content:'-'; }
+#tongs2018 .listStar li:before {display: inline-block; content:'*'; margin-right:3px; vertical-align: middle;}
+#tongs2018 .listDot > li {margin-top: 5px; padding-left: 8px; font-size:13px; color:#666; background: url(../images/common/ico_listdot.png) no-repeat 0 9px; background-size: 2px 2px;}
+#tongs2018 .listDot > li:first-child {margin-top: 0 !important;}
+#tongs2018 .listDot > li > .listDash {margin:3px 0 7px;}
+#tongs2018 .listNum > li > .listDot {margin:3px 0 7px;}
+#tongs2018 .listDot > li > .wrapTblDefault {margin-left:-8px;}
+#tongs2018 .listDot > ul > li {margin-top: 5px; padding-left: 8px; font-size:13px; color:#666; background: url(../images/common/ico_listdot.png) no-repeat 0 9px; background-size: 2px 2px;}
+#tongs2018 .listDot > ul > li:first-child {margin-top: 0 !important;}
+#tongs2018 .listDot > ul > .wrapTblDefault {margin-left:-8px;}
+#tongs2018 .listDot.f12 li{font-size:12px;}
+/* list 아이콘 빼야 하는 경우 사용 */
+#tongs2018 .listDot li.bgNone {background:none;padding-left:0;}
+#tongs2018 .listDash li.bgNone:before {display:none;padding-left:0;}
+
+#tongs2018 .listLine.bgNone {padding-left:0; border-left:0}
+
+#tongs2018 .listBlue {margin-top:10px; padding-left: 8px; font-size:13px; background: url(../images/contents/dot_chatTit.gif) no-repeat 0 7px; background-size: 4px 4px;}
+/**************************************************
+	게시판 정의 
+**************************************************/
+#tongs2018 .boardDetailTit{margin:0;padding: 17px 17px;background:#f8f8f8;overflow:hidden;}
+#tongs2018 img{width:100%;}
+#tongs2018 .boardDetailTit .tit{display:inline-block; font-size:14px;color:#111; margin-bottom:2px;}
+#tongs2018 .boardDetailTit .tit.new:after{display:inline-block; content:'새글'; text-indent:-9999px; vertical-align:-5px; margin-left:5px; width:11px; height:11px; background:url('../images/common/ico_board_new.png') no-repeat; background-size:100% 100%;}
+#tongs2018 .boardDetailTit .dateTime{font-size:11px; color:#666;}
+#tongs2018 .boardDetailCon {padding:20px 17px;font-size:13px;color:#111;}
+#tongs2018 .boardDetailCon .boardBgCon{display:table; width:100%; height:101px; background:url(../images/contents/couponBgCenter.jpg) repeat-x; background-size:1px 101px;}
+#tongs2018 .boardDetailCon .boardBgCon:before{content:""; display:table-cell; width:62px; height:100%; left:0; top:0; background:url(../images/contents/couponBgBefore.jpg) no-repeat; background-size:62px 101px;}
+#tongs2018 .boardDetailCon .boardBgCon:after{content:""; display:table-cell; width:7px; height:100%; right:0; top:0; background:url(../images/contents/couponBgAfter.jpg) no-repeat; background-size:7px 101px;}
+#tongs2018 .boardDetailCon .boardBgCon dl{display:table-cell; text-align:center; vertical-align:middle;}
+#tongs2018 .boardDetailCon .boardBgCon dl dd{margin-top:2px; font-weight:bold; color:#f68b1f;}
+
+#tongs2018 .navCtrl{color:#111; border:1px solid #dedede; margin:20px 0;}
+#tongs2018 .navCtrl .prevBox,.navCtrl .nextBox{overflow:hidden;}
+#tongs2018 .navCtrl .nextBox{border-bottom:1px solid #dedede;}
+#tongs2018 .navCtrl>div>span{display:inline-block;padding:13px 0; border-right:1px solid #dedede; background:#f8f8f8;float:left;width:20%;text-align:center}
+#tongs2018 .navCtrl>div>a{display:inline-block;padding:13px 10px; text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;float:left; width:80%;}
+
+#tongs2018 .navCtrl {margin:20px 17px;}
+
+/* 게시판 버튼 */
+#tongs2018 .boardBtn {display:table;width:100%;height:44px;padding:0 17px;}
+#tongs2018 .boardBtn > a {display:table-cell;width:50%;background-color:#444c63;color:#fff;text-align:center;font-size:13px;vertical-align:middle;}
+#tongs2018 .boardBtn > a.confirmBtn {background-color:#4885e0;}
+#tongs2018 .boardBtn > a.btnHeart {width:20%;background-color:#444c63;}
+#tongs2018 .boardBtn > a.btnHeart em {padding-left: 19px;background: url(../images/common/ico_heart.png) no-repeat left center;background-size: 13px 12px;}
+
+
+/* 모바일, tablet */ 
+
+
+/* PC */
+
+
+/* 신규 추가 */
+/**************************************************
+	상하단 알림박스 정의 
+**************************************************/
+#tongs2018 .guideList {padding: 15px; background: #f8f8f8; border-radius: 2px;}
+#tongs2018 .guideList .tArea {background-color:#f8f8f8; }
+#tongs2018 .guideTit {padding:0 0 0 20px; color: #333;font-weight: bold; background: url(../images/common/ico_bell.png) no-repeat 0 50%; background-size: 14px 14px; font-size:13px;}
+#tongs2018 .guideList .tArea + .listDot {margin-top: 7px;}
+#tongs2018 .guideList .listDot > li {margin-top: 7px; font-size:12px;}
+#tongs2018 .guideList .guideTopTit {color:#333;font-size:12px;}
+
+#tongs2018 .guideListTop {margin: 0 -17px; padding: 17px; background-color:#f3faff;}
+#tongs2018 .guideTopTit {margin-bottom:7px;color:#3b5997;font-size:13px;font-weight:bold;}
+#tongs2018 .guideTopTit .ico01 {padding-left:20px;background: url(../images/common/btn_talk1.png) no-repeat left 4px; background-size: 14px 13px;}
+#tongs2018 .listDot + .guideTopTit {margin-top:15px;}
+#tongs2018 .guideList .listDot > li,.guideListTop .listDot > li {margin-top: 7px; font-size:12.5px;}
+#tongs2018 .guideListTop .listDot.f12 > li {font-size:12px;}
+
+#tongs2018 .guideList.guideType2 {border:1px solid #dedede;}
+#tongs2018 .guideList.guideType2 .guideTit {color:#3b5997; background: url(../images/common/ico_guide2.png) no-repeat 0 50%; background-size: 14px 13px;}
+
+#tongs2018 .downTxt {border-top:1px dotted #ccc;text-align:center;width:100%;overflow: hidden;line-height: 50px;font-size: 12px;}
+
+#tongs2018 .tableBox {overflow:hidden;background:url(../images/common/ico_list_link.png) no-repeat center center;background-size:9px 16px;}
+#tongs2018 .tableBox .fl {float:left;width:45%;}
+#tongs2018 .tableBox .fr {float:right;width:45%;margin-top:0px;}
+

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="NH Bank" />
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="no-index,follow">
+<meta name="title" content="">
+<meta name="author" content="">
+<meta name="content" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>:::NH통합스마트뱅킹 || 조회:::</title>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/common_ui.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+<script>
+	$(document).ready(function() {
+		fullLayerPop();
+	});
+</script>
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+			<a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+			<h1><a href="javascript:;">순서변경</a></h1>
+			<a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+			<a href="javascript:;" class="btnNav"><span class="blind">전체메뉴</span></a>
+		</div>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div class="container">
+
+			<div class="popWrap fullLayerPop">
+				<div class="popInner">
+					<h1 class="al">계좌정보</h1>
+					<div class="popCont">
+						<div class="accountSelect">
+							<div class="selectArea">
+								<a href="javascript:;" role="button" aria-haspopup="true">전체계좌</a>
+								<a href="javascript:ShowHideClick('accountInput');" role="button">직접입력</a>
+							</div>
+							<div class="accountInput">
+								<span class="typeSrch">
+									<input type="text" placeholder="계좌번호를 입력해주세요." title="계좌번호 입력">
+									<a href="javascript:;" class="btnSrch"><span class="blind">검색</span></a>
+								</span>
+							</div>
+						</div>
+
+						<div class="accountHeader">
+							<h2 class="accTit">NH주거래우대통장</h2>
+							<span class="accNick2">경조사관리통장</span>
+							<div class="accPriceArea">
+								<span class="tit">잔액</span>
+								<span class="txt"> 
+									<span class="price">1,000,000</span><span class="wUnit">원</span>
+								</span>
+							</div>
+						</div>
+
+						<div class="wrapTblDefault">
+							<div class="tblHeader">
+								<h2 class="defTit">기본정보</h2>
+							</div>
+							<table cellpadding="0" cellspacing="0">
+								<caption>계좌 기본 정보</caption>
+								<colgroup>
+									<col style="width:33%">
+									<col style="width:auto">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">지급가능금액</th>
+										<td class="ar"><strong class="pointColor"><em>1,000,000</em><span class="wUnit">원</span></strong></td>
+									</tr>
+									<tr>
+										<th scope="row">통장개설일</th>
+										<td>2018/07/05</td>
+									</tr>
+									<tr>
+										<th scope="row">관리점</th>
+										<td>NH농협은행 종로1가지점</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<div class="tblHeader">
+								<h2 class="defTit">상세정보</h2>
+							</div>
+							<table cellpadding="0" cellspacing="0">
+								<caption>계좌 상세 정보</caption>
+								<colgroup>
+									<col style="width:40%">
+									<col style="width:auto">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">적용이율</th>
+										<td class="ar"><em>0.10</em><span class="wUnit">%</span></td>
+									</tr>
+									<tr>
+										<th scope="row">우대이율</th>
+										<td class="ar"><em>0.10</em><span class="wUnit">%</span></td>
+									</tr>
+									<tr>
+										<th scope="row">상세금리</th>
+										<td>
+											<ul class="listDot">
+												<li>기본금리 : 0.1<span class="wUnit">%</span></li>
+												<li>우대금리 : 0<span class="wUnit">%</span></li>
+												<li>적용금리 : 연 0.1<span class="wUnit">%</span></li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">사고유무</th>
+										<td>무</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="areaPopBtnFull">
+							<div class="inner">
+								<ul>
+									<li><a href="../bs/AI212000.html" class="btnPressDefault kioskEffect">거래내역 <span class="hand type01"></span></a></li>
+									<li><a href="../bt/AT321100.html" class="btnPressPoint kioskEffect">즉시이체 <span class="hand type06"></span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="popBtnWrap">
+						<a href="../util/UC110000.html" class="popClose kioskEffect" title="해당 창을 닫습니다."><img src="../../images/common/btn_popClose.png" alt="닫기"><span class="hand type01"></span></a>
+					</div>
+				</div>
+
+			</div>
+        </div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div class="footer">
+			<ul class="footMenu">
+				<li><a href="../util/UC110000.html">홈</a></li>
+				<li><a href="../bw/UC490000.html">마이NH</a></li>
+				<li><a href="../util/talk.html">상담톡</a></li>
+				<li><a href="javascript:;">고객센터</a></li>
+				<li><a href="javascript:;">인증/보안</a></li>
+			</ul>
+			<!-- quick button -->
+			<!-- <div class="areaBtmQuick"> 
+				<span class="btnQuick"><a href="javascript:;">quick</a></span>
+				<span class="btnTop"><a href="javascript:;">Top</a></span>
+			</div> -->
+			<!-- //quick button -->
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

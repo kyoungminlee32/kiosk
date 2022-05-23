@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="NH Bank" />
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="no-index,follow">
+<meta name="title" content="">
+<meta name="author" content="">
+<meta name="content" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>:::NH통합스마트뱅킹 || 통합메인 || 주계좌설정:::</title>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/common_ui.js"></script>
+<script type="text/javascript" src="../../js/swiper.min.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+<link type="text/css" rel="stylesheet" href="../../css/main.css" />
+<link type="text/css" rel="stylesheet" href="../../css/swiper.min.css">
+<style>
+.accCopyView {display:none;position:absolute;top:190px;left:50%;width:80%;height:30px;line-height:30px;background:#6a7688;text-align:center;color:#fff;font-size:14px;transform: translateX(-50%);z-index:99999}
+.value02 {margin-top:5px;}
+#pop01 .popBtnWrap .popBtn {position:static;}
+#pop01.centerLayer .popInner {top:50%;margin-top:-125px;}
+</style>
+<script>
+	$(document).ready(function(){
+		$(".mainTopSwiper .value02").hide();
+		$(".mainswitchToggle .switch input").click(function() {
+			
+			if (!$(this).is(":checked")) {
+				$(".mainTopSwiper .value01").hide();
+				$(".mainTopSwiper .value02").show();
+			} else {
+				$(".mainTopSwiper .value01").show();
+				$(".mainTopSwiper .value02").hide();
+			}
+		});
+
+        $(".mtopSwiper .swiper-slide").eq(0).attr("tabIndex",1);
+			var mainSwiper = new Swiper('.mtopSwiper',{
+				slidesPerView:'auto',
+				spaceBetween:30,
+                centeredSlides:true,
+                //loop:true,
+				initialSlide:0,
+				pagination:{
+					el:'.swiper-pagination',
+                    clickable:true,
+                    bulletElement : 'a'  /*접근성 스와이프 테스트*/
+                },
+                /*접근성 스와이프 테스트*/
+                on:{
+                    init:function(){
+                        $('.swiper-slide').attr('aria-hidden','true').attr('tabindex','0');
+                        $('.swiper-slide-active').attr('aria-hidden','false');
+                    }
+                },
+			});
+            /*접근성 스와이프 테스트*/
+            // mainSwiper.on('slideChangeTransitionEnd',function(){
+            //     $(".swiper-slide").attr('aria-hidden', true);
+            //     $(".swiper-slide.swiper-slide-active").attr('aria-hidden', false).blur().focus();
+            //     $('.appendMenu').hide();
+            // });
+            
+            /*2018-11-13 스크롤 하단으로 이동*/
+           $(".bottomMoreBtn").click(function(){
+        	   var height_1 = $('.mainTopSwiper').outerHeight(),
+        	   height_2 = $('.majorMenu').outerHeight(),
+        	   height_3 = $('.recentView').outerHeight(),
+        	   height_4 = $('.transSwiper').outerHeight(),
+        	   allHeight = height_1 + height_2 + height_3 + height_4;
+        	   $('body, html').animate({scrollTop:allHeight + 30}, 400);
+            	return false;
+            });
+        	
+        var transSwiper = new Swiper('.swiper-container.transSwiper' , {
+            slidesPerView:'auto',
+            spaceBetween:10,
+            /*접근성 스와이프 대응*/
+            navigation : {
+                nextEl : '.btn-transparent.swiper-button-next',
+                prevEl : '.btn-transparent.swiper-button-prev'
+            },
+            /*접근성 스와이프 대응*/
+            on : {
+                init : function(){
+                    $(".swiper-slide").attr('aria-hidden', true).attr('tabindex', 0);
+                    $(".swiper-slide.swiper-slide-active").attr('aria-hidden', false);
+					$(".swiper-slide.swiper-slide-active").attr('aria-hidden', false);
+                }
+            }
+        });
+
+
+        var recomSwiper = new Swiper('.swiper-container.recomSwiper' , {
+            slidesPerView:'auto',
+            centeredSlides:true,
+            spaceBetween:10,
+            //loop:true,
+            loopedSlides:8,
+            /*접근성*/
+            /*접근성 스와이프 대응*/
+             navigation : {
+                nextEl : '.btn-transparent.swiper-button-next',
+                prevEl : '.btn-transparent.swiper-button-prev'
+            },
+            /*접근성 스와이프 대응*/
+            on:{
+                    init:function(swiper){
+                        $('.swiper-slide').attr('aria-hidden','false');
+                        $('.swiper-slide-active').attr('aria-hidden','true');
+                    }
+                },
+        });
+
+         /*접근성 스와이프 테스트*/
+         recomSwiper.on('slideChangeTransitionEnd',function(){
+                $(".swiper-slide").attr('aria-hidden', true);
+                $(".swiper-slide.swiper-slide-active").attr('aria-hidden', false).blur().focus();
+            });
+
+		var mfootBannerswiper = new Swiper('.swiper-container.mfootBanner' , {
+            //loop:true,
+			pagination:{
+                el:'.swiper-pagination',
+                clickable:true,
+                bulletElement : 'a' 
+            },
+            /*접근성*/
+            on:{
+                    init:function(){
+                        $('.swiper-slide').attr('aria-hidden','true');
+                        $('.swiper-slide-active').attr('aria-hidden','false');
+                    }
+                },
+        });
+        
+        
+        /* 2018.08.16 웹접근성 스크립트 삭제*/
+        $(window).on('scroll',function(){
+            var scH = $(window).scrollTop() + (window.innerHeight /2);
+            var fixRecomH = $('.fixrecomProduct').offset().top;
+           if(scH > fixRecomH){
+            $('.fixrecomProduct').addClass('active');
+           }else{
+            $('.fixrecomProduct').removeClass('active');
+           }
+        });
+        
+        //추천서비스 2018.08.25
+        setInterval(function(){
+            $('.recomBtnBox').removeClass('active');
+            setTimeout(function(){
+                $('.recomBtnBox').addClass('active');         
+            },1200);
+        },3600);
+         //추천서비스 2018.08.25
+    });
+   
+	
+	fullLayerPop = function() {
+		scrollLock();
+		$(".fullLayerPop").show();
+        $('.mainWrap').find('.fullLayerPop').animate({"bottom":"0"},200);
+       
+	};
+
+	/*
+	popClose = function(e) {
+		$('.mainWrap').find('.fullLayerPop').animate({"bottom":"-100vh"},200);
+		setTimeout (function(){
+			$('.mainWrap').find('.fullLayerPop').hide();
+			} ,200);
+        scrollUnlock();
+    };
+	*/
+	
+</script>
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+			<a href="javascript:;" class="btnSearch" role="button"><span>검색</span></a>
+			<a href="UC810000.html" class="btnVociceSrch kioskEffect" role="button" tabindex="1"><span>음성검색</span><span class="hand type01"></span></a>
+			<h1><img src="../../images/common/nh_logo.png" alt="NH 스마트뱅킹"></h1>
+			<a href="javascript:;" class="btnAlim active" role="button" tabindex="0"><span>알림</span></a>
+			<a href="UC710000.html" class="btnNav" role="button" style="display:block"><span>메뉴</span></a>
+		</div>
+        <!-- //header -->		
+        
+		<!-- container -->
+		<div class="">
+            <div class="mainWrap">
+                <div class="mainTopSwiper">
+                    <div class="swiper-container mtopSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="swBox">
+                                    <div class="userInfo">
+                                        <div>
+                                            <a href="javascript:;" title="마이 NH">
+                                                <span class="userPic"><img src="../../images/main/img_user_sam.png" alt="고객아이콘"></span>
+                                            </a>
+                                            <p><span>김농협님,</span><br />좋은 사람들과<br />행복한 시간 되세요.</p>
+                                        </div>
+                                        <div class="topbtnsBox">
+                                            <a href="#"  class="monviewReset" role="button"><span class="blind">잔액갱신</span></a>
+                                            <a href="#" class="majorBtn" role="button"><span class="blind">주거래 설정</span></a>
+                                        </div>
+                                        <div class="userActlayer">
+                                            <div class="btnMoreWrap">
+                                                <a href="javascript:;" class="btnMore actsetBtn kioskEffect" style="border-radius: 50%"><span class="blind">계좌더보기</span><span class="hand type01"></span></a>
+                                                <div class="appendMenu">
+                                                    <dl>
+                                                        <dt><strong>계좌관리</strong></dt>
+                                                        <dd>
+                                                            <ul>
+                                                                <li><a href="../bj/MA1131000.html" class="kioskEffect">계좌별칭관리<span class="hand type01"></span></a></li>
+                                                                <li><a href="javascript:;" class="kioskEffect btnCopy">계좌번호복사<span class="hand type01"></span></a></li>
+                                                                <li><a href="kakao2.html" class="kioskEffect">카카오톡 전송<span class="hand type01"></span></a></li>
+                                                                <li><a href="../bs/AI213000.html" class="kioskEffect">계좌정보<span class="hand type01"></span></a></li>
+                                                            </ul>
+                                                        </dd>
+                                                        <dd>
+                                                            <a href="javascript:;"  class="appendClose" title="창닫기">
+                                                                <span class="blind">닫기</span>
+                                                            </a>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="userAccount">
+                                        <!-- 2018.08.16 감싸고 있는 a태그 삭제-->
+                                        <dl>
+                                            <dt><span class="bgtxtBoxYellow">경조사관리통장</span></dt>
+                                            <dd class="accoutnNum"><a href="javascript:;" title="계좌상세보기" role="button">123-123456-1234-112</a></dd><!--2018.08.16 a태그 추가 -->
+                                            <dd class="accountSum value01">12,700,000 <em class="unitWon">원</em></dd>
+											<dd class="value02"><a href="javascript:;" class="majorAccoutBtn majorbtnGray">잔액 미표시 중</a></dd>
+                                        </dl>
+                                        <a href="../bs/AI221000.html" title="새창으로 이동하기" class="allviewAccBtn kioskEffect" role="button">계좌더보기<span class="hand type01"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swBox">
+                                    <div class="userInfo">
+                                        <div>
+                                            <a href="javascript:;" title="마이 NH">
+                                                <span class="userPic"><img src="../../images/main/img_user_sam.png" alt="고객아이콘"></span>
+                                            </a>
+                                            <p><span>김농협님,</span><br />오늘은 사랑하는<br />사람과 함께 멋진 날~~</p>
+                                        </div>
+                                        <div class="topbtnsBox">
+                                            <a href="#"  class="monviewReset" role="button"><span class="blind">잔액갱신</span></a>
+                                            <a href="#" class="majorBtn" role="button"><span class="blind">주거래 설정</span></a>
+                                        </div>
+                                        <div class="userActlayer">
+                                            <div class="btnMoreWrap">
+                                                <a href="javascript:;" class="btnMore actsetBtn kioskEffect" style="border-radius: 50%"><span class="blind">계좌더보기</span><span class="hand type01"></span></a>
+                                                <div class="appendMenu">
+                                                    <dl>
+                                                        <dt><strong>계좌관리</strong></dt>
+                                                        <dd>
+                                                            <ul>
+                                                                <li><a href="../bj/MA1131000.html" class="kioskEffect">계좌별칭관리<span class="hand type01"></span></a></li>
+                                                                <li><a href="javascript:;" class="kioskEffect btnCopy">계좌번호복사<span class="hand type01"></span></a></li>
+                                                                <li><a href="kakao2.html" class="kioskEffect">카카오톡 전송<span class="hand type01"></span></a></li>
+                                                                <li><a href="../bs/AI213000.html" class="kioskEffect">계좌정보<span class="hand type01"></span></a></li>
+                                                            </ul>
+                                                        </dd>
+                                                        <dd>
+                                                            <a href="javascript:;"  class="appendClose" title="창닫기">
+                                                                <span class="blind">닫기</span>
+                                                            </a>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="userAccount">
+                                        <!-- 2018.08.16 감싸고 있는 a태그 삭제-->
+                                        <dl>
+                                            <dt><span class="bgtxtBoxYellow">농협메인</span></dt>
+                                            <dd class="accoutnNum"><a href="javascript:;" title="계좌상세보기" role="button">123-123456-1234-112</a></dd><!--2018.08.16 a태그 추가 -->
+                                            <dd class="accountSum value01">500,000,000 <em class="unitWon">원</em></dd>
+											<dd class="value02"><a href="javascript:;" class="majorAccoutBtn majorbtnGray">잔액 미표시 중</a></dd>
+                                        </dl>
+                                        <a href="../bs/AI221000.html" title="새창으로 이동하기" class="allviewAccBtn kioskEffect" role="button">계좌더보기<span class="hand type01"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swBox">
+                                    <div class="userInfo">
+                                        <div>
+                                            <a href="javascript:;" title="마이 NH">
+                                                <span class="userPic"><img src="../../images/main/img_user_sam.png" alt="고객아이콘"></span>
+                                            </a>
+                                            <p><span>김농협님,</span><br />오늘은 사랑하는<br />사람과 함께 멋진 날~~</p>
+                                        </div>
+                                        <div class="topbtnsBox">
+                                            <a href="#"  class="monviewReset" role="button"><span class="blind">잔액갱신</span></a>
+                                            <a href="#" class="majorBtn" role="button"><span class="blind">주거래 설정</span></a>
+                                        </div>
+                                        <div class="userActlayer">
+                                            <div class="btnMoreWrap">
+                                                <a href="javascript:;" class="btnMore actsetBtn kioskEffect" style="border-radius: 50%"><span class="blind">계좌더보기</span><span class="hand type01"></span></a>
+                                                <div class="appendMenu">
+                                                    <dl>
+                                                        <dt><strong>계좌관리</strong></dt>
+                                                        <dd>
+                                                            <ul>
+                                                                <li><a href="../bj/MA1131000.html" class="kioskEffect">계좌별칭관리<span class="hand type01"></span></a></li>
+                                                                <li><a href="javascript:;" class="kioskEffect btnCopy">계좌번호복사<span class="hand type01"></span></a></li>
+                                                                <li><a href="kakao2.html" class="kioskEffect">카카오톡 전송<span class="hand type01"></span></a></li>
+                                                                <li><a href="../bs/AI213000.html" class="kioskEffect">계좌정보<span class="hand type01"></span></a></li>
+                                                            </ul>
+                                                        </dd>
+                                                        <dd>
+                                                            <a href="javascript:;"  class="appendClose" title="창닫기">
+                                                                <span class="blind">닫기</span>
+                                                            </a>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="userAccount">
+                                        <!-- 2018.08.16 감싸고 있는 a태그 삭제-->
+                                        <dl>
+                                            <dt><span class="bgtxtBoxYellow">농협메인</span></dt>
+                                            <dd class="accoutnNum"><a href="javascript:;" title="계좌상세보기" role="button">123-123456-1234-112</a></dd><!--2018.08.16 a태그 추가 -->
+                                            <dd class="accountSum value01">800,000 <em class="unitWon">원</em></dd>
+											<dd class="value02"><a href="javascript:;" class="majorAccoutBtn majorbtnGray">잔액 미표시 중</a></dd>
+                                        </dl>
+                                        <a href="../bs/AI221000.html" title="새창으로 이동하기" class="allviewAccBtn kioskEffect" role="button">계좌더보기<span class="hand type01"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--주계좌가 없을 경우 -->
+                            <div class="swiper-slide">
+                                <div class="swBox">
+                                    <div class="mainAccoutSet">
+                                        <!--2018.10.29 수정 주계좌 설정 없을시 p 태그에 verTxt 넣어주세요-->
+                                        <p class="mainAccoutTxt">
+                                            빠르고 편리한 주계좌를<br> 설정해 보세요.
+                                        </p>
+                                        <a href="#" class="majorAccoutBtn">주계좌 설정</a>
+                                        <div class="mainswitchToggle kioskEffect" style="overflow:visible">
+                                            <span>잔액보기</span> 
+                                            <div class="toggleList">
+                                                <label class="switch">
+                                                    <input type="checkbox" title="checkBox" checked="checked">
+                                                    <span class="slider round boxText">설정</span>
+                                                </label>
+                                            </div>
+                                            <span class="hand type01" style="margin-top:-5.5px;"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--//주계좌가 없을 경우 -->                            
+                        </div>
+                        <div class="swiper-pagination">
+                        </div>
+                    </div>
+
+                </div>
+                <section>
+                    <h2 class="blind">주요메뉴</h2>
+                    <div class="dflex majorMenu" style="padding-bottom:10px;">
+                        <ul>
+                            <li><a href="../bs/AI212000.html" role="button" class="kioskEffect"><span>거래내역</span><span class="hand type01" style="margin-top:5.5px"></span></a></li>
+                            <li><a href="../bt/AT321100.html" class="kioskEffect" role="button"><span>이체</span><span class="hand type01" style="margin-top:5.5px"></span></a></li>
+                            <li><a href="../ba/AM621100.html" role="button" class="kioskEffect"><span>모바일ATM</span><span class="hand type01" style="margin-top:5.5px"></span></a></li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <!--2018.10.11 추가-->
+                    <div class="recentView">
+                        <h3 class="mhTit3" style="position:relative">최근이체내역<a href="javascript:;" class="btnResentTootip" title="다시이체 안내보기 툴팁" role="button">다시이체 안내</a> <!-- 2018-11-20 마크업수정 --> <!-- 2018-11-20 다시이체안내 마크업수정 --></h3>                        
+                    </div>
+                    <!--2018.10.11 추가-->
+                    <div class="swiper-container transSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide bgColor1" style="overflow:hidden;">
+                                <span class="bankName">국민</span>
+                                <dl>
+                                    <dt><span class="dateTime">2019.07.15</span>홍길동</dt>
+                                    <dd><strong>1,000,000</strong> <em>원</em></dd>
+                                </dl>
+                                <div class="againBtnWrap">
+                                    <a href="javascript:;" onclick="popCenter();return false;" class="againBtn kioskEffect" style="">다시<br>이체<span class="hand type04"></span></a>
+                                </div>                                
+                            </div>
+                             <div class="swiper-slide bgColor2">
+                                <div class="transDt">
+                                    <p>이체내역 더보기</p>
+                                    <div class="againBtnWrap">
+                                        <a href="#" role="button" class="tdetailBtn">더보기</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide bgColor2">
+                                <div class="transDt">
+                                    <p>이체를 하시면<br>추가 노출됩니다.</p>
+                                    <div class="againBtnWrap">
+                                        <a href="#" role="button" class="tdetmoreBtn">최근이체내역</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="btn-transparent swiper-button-next" href="javascript:;">다음</a>
+                        <a class="btn-transparent swiper-button-prev" href="javascript:;">이전</a>
+                    </div>
+                </section>
+				<!-- 2018-09-05 :: 카테고리에 따른 class명 수정 -->
+                <section class="mainMyMenu">
+                    <h3>나의 메뉴</h3>
+                    <ul class="myMenusetList">
+                        <li class="ico_set1"><a href="../bw/UC490000.html" class="kioskEffect"><span>마이NH</span><span class="hand type01" style="margin-top:10px"></span></a></li>
+                        <li class="ico_set51"><a href="../hl/HL100000.html" class="kioskEffect"><span>NH라운지</span><span class="hand type01" style="margin-top:10px"></span></a></li>
+                        <li class="ico_set11"><a href="#"><span>조회</span></a></li>
+                        <li class="ico_set52"><a href="#"><span>이벤트</span></a></li>
+                        <li class="ico_set19"><a href="#"><span>모바일OTP</span></a></li>
+                        <li class="ico_set26"><a href="#"><span>공과금</span></a></li><!--// 2018-10-19 모바일OTP실행 추가 -->
+                        <li class="ico_set34"><a href="#"><span>영업점 찾기</span></a></li>
+                        <li class="ico_set59"><a href="../util/UC170000.html" class="kioskEffect" title="홈화면 설정"><span>설정</span><span class="hand type01" style="margin-top:10px"></span></a></li><!--2018.08.07 title추가 -->
+                    </ul>
+					<!-- 나의메뉴별 class 명
+						ico_set1 -> 마이NH
+						ico_set2 -> 간편뱅킹
+						ico_set3 -> 키보드뱅킹
+						ico_set4 -> 모바일OTP
+						ico_set5 -> 운세
+						ico_set6 -> 자주사용하는 계좌관리
+						ico_set7 -> 자주사용하는 이체정보
+						ico_set8 -> 컬쳐홀릭
+						ico_set9 -> 농협이야기
+						ico_set10 -> 귀농귀촌(농축협)
+						ico_set11 -> 조회
+						ico_set12 -> 예금/신탁조회
+						ico_set13 -> 펀드계좌조회
+						ico_set14 -> 대출계좌조회
+						ico_set15 -> 외환계좌조회
+						ico_set16 -> 보험조회
+						ico_set17 -> 전계좌조회
+						ico_set18 -> 큰글거래내역조회
+						ico_set19 -> 모바일OTP 실행      2018-10-19 추가
+						ico_set21 -> 즉시이체
+						ico_set22 -> 큰글이체
+						ico_set23 -> 다계좌이체
+						ico_set24 -> 예약이체
+						ico_set25 -> 모바일ATM
+						ico_set26 -> 공과금
+						ico_set27 -> 지로납부
+						ico_set28 -> 지방세납부
+						ico_set29 -> 아파트관리비납부
+						ico_set20 -> 대출상환
+						ico_set31 -> 마이퇴직연금
+						ico_set32 -> 운용현황조회
+						ico_set33 -> 부담금운용지시
+						ico_set34 -> 영업점찾기
+						ico_set35 -> 영업점방문예약(은행)
+						ico_set36 -> 스마트상담센터(은행)
+						ico_set37 -> 스마트상담센터(농축협)
+						ico_set38 -> 스마트자산관리(은행)
+						ico_set41 -> 환율조회/계산기
+						ico_set42 -> 환전신청조회
+						ico_set43 -> 외화송금
+						ico_set44 -> NH무계좌해외송금
+						ico_set45 -> 웨스턴유니온Auto-Send
+						ico_set51 -> NH라운지
+						ico_set52 -> 이벤트
+						ico_set53 -> NH프로포즈(은행)
+						ico_set54 -> NH프로포즈(농축협)
+						ico_set55 -> NH카드
+						ico_set56 -> 은퇴설계
+						ico_set57 -> BEST금융상품(은행)
+						ico_set58 -> BEST금융상품(농축협)
+						ico_set59 -> 설정
+					//나의메뉴별 class 명 -->
+                    <a href="javascript:;" class="bottomMoreBtn">하단으로 이동</a> <!-- 2018-11-13 스크롤 하단으로 이동 -->
+                </section>
+				<!-- //2018-09-05 :: 카테고리에 따른 class명 수정 -->
+
+                <section class="fixrecomProduct">
+                    <h4 class=""><strong class="pointUser">김농협</strong>님을 위한<br>맞춤추천상품</h4>
+                    <div class="swiper-container recomSwiper">
+                        <div class="swiper-wrapper">
+							<div class="swiper-slide nhbank">
+                                <a href="../../../market/contents/nhbank/pub_nhbank/co/SMNHDE352000.html" class="kioskEffect">
+                                    <dl>
+                                        <dt>
+                                            <span class="imgActive"><img src="../../images/main/img_nhat_product02.jpg" alt="내맘N콕통장 상품 이미지"></span><!--2018.10.05 이미지 추가 영역-->
+                                            <span class="bgtxtBoxYellow">농협은행</span>
+                                        </dt>
+                                        <dd>NH직장인월복리적금</dd>
+                                        <dd class="pointUser">
+                                            <div>최고 연 <strong>2.76</strong>%<span class="productTerms">(12개월)</span></div>
+                                        </dd>
+                                    </dl>
+                                    <span class="hand type04" style="margin-top:-147px"></span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide nhbank">
+                                <dl>
+                                    <dt>
+                                        <span class="imgActive"><img src="../../images/main/img_nhbank_product01.jpg" alt="NH왈츠회전 예금 상품 이미지"></span><!--2018.10.05 이미지 추가 영역 이미지 명은 img_product01.jpg ~ img_product08.jpg 까지입니다. -->
+                                        <span class="bgtxtBoxYellow">농협은행</span>
+                                    </dt>
+                                    <dd>e금리우대예금</dd>
+                                    <dd class="pointUser">
+                                        <div>최고 연 <strong>2.35</strong>%<span class="productTerms">(12개월)</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="swiper-slide nhbank">
+                                <dl>
+                                    <dt>
+                                        <span class="imgActive"><img src="../../images/main/img_nhat_product02.jpg" alt="NH왈츠회전 예금 상품 이미지"></span><!--2018.10.05 이미지 추가 영역 이미지 명은 img_product01.jpg ~ img_product08.jpg 까지입니다. -->
+                                        <span class="bgtxtBoxYellow">농협은행</span>
+                                    </dt>
+                                    <dd>자유로정기예금</dd>
+                                    <dd class="pointUser">
+                                        <div>최고 연 <strong>1.9</strong>%<span class="productTerms">(12개월)</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            
+                            <div class="swiper-slide nhbank">
+                                <dl>
+                                    <dt>
+                                        <span class="imgActive"><img src="../../images/main/img_nhbank_product02.jpg" alt="NH직장인월복리적금 상품 이미지"></span><!--2018.10.05 이미지 추가 영역 그 이외의 이미지 랜덤은 img_product01 ~ 08 alt="상품 기본 이미지"-->
+                                        <span class="bgtxtBoxYellow">농협은행</span>
+                                    </dt>
+                                    <dd>법사랑플러스 적금</dd>
+                                    <dd class="pointUser">
+                                        <div>최고 연 <strong>2.68</strong>%<span class="productTerms">(12개월)</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <a class="btn-transparent swiper-button-next" href="javascript:;">다음</a>
+                        <a class="btn-transparent swiper-button-prev" href="javascript:;">이전</a>
+                    </div>
+                </section>
+                <div class="recomBtnBox">
+                    <a href="UC110000_1.html" class="recomBtn kioskEffect" title="추천 서비스 팝업열림">추천<br />서비스<span class="hand type04"></span></a>
+                </div>
+
+                <!-- 2018-08-22 [윤지현] 마크업수정 -->
+				<div class="swiper-container mfootBanner">
+                    <div class="swiper-wrapper">
+                    	<div class="swiper-slide">
+                    		<a href="javascript:;"><img src="../../images/kiosk/img_banner01.png" alt="" /></a>
+                    	</div>
+                    	<div class="swiper-slide">
+                    		<a href="javascript:;"><img src="../../images/kiosk/img_banner02.png" alt="" /></a>
+                    	</div>
+                    	<div class="swiper-slide">
+                    		<a href="javascript:;"><img src="../../images/kiosk/img_banner03.png" alt="" /></a>
+                    	</div>
+                    </div>
+					<div class="swiper-pagination"></div>
+                </div>
+				<!-- //2018-08-22 [윤지현] 마크업수정 -->
+
+                 <!-- 팝업시작 : full layer 팝업인 경우 fullLayerPop 클래스 및 함수 사용 -->
+	            <div class="popWrap fullLayerPop">
+                    <div class="popInner">
+                        <h1>추천서비스</h1>
+                        <div class="popCont">
+                            <section >
+                                <h3>NH라이프스토리</h3>
+                                 <!--2018.09.03 role="button" 추가 -->
+                                <div class="lifeStory">
+                                    <ul>
+                                        <li>
+                                            <a href="#" role="button"><span>오디오북</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" role="button"><span>컬쳐홀릭</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" role="button"><span>운세</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <section>
+                                <h3>스마트금융Life</h3>
+                                 <!--2018.09.03 role="button" 추가 -->
+                                <div class="smartLife">
+                                    <ul>
+                                        <li >
+                                            <a href="#" role="button">
+                                                <dl>
+                                                    <dt>하나로가족고객제도</dt>
+                                                    <dd>다양한 우대혜택으로 풍성하게</dd>
+                                                </dl>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" role="button">
+                                                <dl>
+                                                    <dt>모바일OTP</dt>
+                                                    <dd>들고다니는 OTP는 그만!</dd>
+                                                </dl>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" role="button">
+                                                <dl>
+                                                    <dt>스마트 자산관리</dt>
+                                                    <dd>다양한 우대혜택으로 풍성하게</dd>
+                                                </dl>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" role="button">
+                                                <dl>
+                                                    <dt>NH All100플랜</dt>
+                                                    <dd>내 삶의 힘, 100세 시대 은퇴 파트너</dd>
+                                                </dl>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <!--2018.09.03 role="button" 추가 -->
+                            <div class="popappArea">
+                                <ul class="quickApp">
+                                    <li>
+                                        <a href="javascript:;" class="ico_app01" role="button">올원뱅크</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="ico_app02" role="button">콕뱅크</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="ico_app03" role="button">NH농협카드</a>
+                                    </li>
+                                </ul>
+                            </div>   
+                        </div>
+                        <div class="popBtnWrap">
+                            <a href="javascript:;" onclick="popClose(this);return false;" class="popClose" title="해당 창을 닫습니다."><img src="../../images/main/btn_popClose_w.png" alt="닫기" /></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 팝업 끝 -->
+            </div>
+			
+			<!-- 2018-11-20 다시이체 안내 팝업 -->
+			<div class="popWrap centerLayer" id="pop01">
+                <div class="dim"></div>
+                <div class="popInner">                    
+                    <h1 class="ac"><img src="../../images/common/popTitle.png" alt="NH 스마트뱅킹"></h1>
+                    <div class="popCont">
+                        <div class="confirmMsg type02">
+                            <p>동일한 내용으로 다시 이체하시겠습니까?</p>
+                        </div>
+                    </div>
+            
+                    <div class="popBtnWrap" style="overflow:hidden">
+                        <div class="popBtn">
+                            <a href="javascript:;" class="" role="button">취소</a>
+                            <a href="AT321100.html" class="confirmBtn kioskEffect" role="button">확인<span class="hand type02"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //2018-11-20 다시이체 설명보기 팝업 -->            
+            
+        </div>
+        <div class="accCopyView">
+            <a href="kakao.html" class="kioskEffect">계좌번호가 복사되었습니다.</p><span class="hand type06" style="margin-top:-27.5px;"></span></a>
+        </div>
+        <!-- //container -->
+        
+        <!-- footer -->
+        <!--2018.09.03 role="button" 추가 -->
+		<div class="footer">
+			<!-- <ul class="footMenu">
+				<li><a href="../util/UC110000.html" role="button" class="kioskEffect">홈</a></li>
+				<li><a href="../bw/UC490000.html" role="button" class="kioskEffect">마이NH</a></li>
+				<li><a href="../util/AI_intro.html" role="button" class="kioskEffect">상담톡</a></li>
+				<li><a href="javascript:;" role="button">고객센터</a></li>
+				<li><a href="javascript:;" role="button">인증/보안</a></li>
+            </ul> -->
+            <ul class="footMenu">
+				<li><a href="../bw/UC490000.html" role="button" class="kioskEffect">마이NH <span class="hand type01"></span></a></li>
+				<li><a href="../../../market/contents/nhbank/pub_nhbank/co/SMNHCO200000.html" role="button" class="kioskEffect">금융상품몰 <span class="hand type01"></span></a></li>
+				<li><a href="../util/talk.html" role="button" class="kioskEffect">상담톡 <span class="hand type01"></span></a></li>
+				<li><a href="javascript:;" role="button">고객센터</a></li>
+				<li><a href="javascript:;" role="button">인증/보안</a></li>
+			</ul>
+		</div>
+		<!-- //footer -->
+	</div>
+    <!-- //wrapper -->
+<script>
+    $('.btnCopy').click(function(){
+        $('.accCopyView').show();
+    })
+</script>    
+</body>
+</html>

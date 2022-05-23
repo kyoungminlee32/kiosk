@@ -1,0 +1,209 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="NH Bank" />
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="no-index,follow">
+<meta name="title" content="">
+<meta name="author" content="">
+<meta name="content" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>개인_통합스마트뱅킹</title>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/common_ui.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/bigfont.css" />
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+			<a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+			<h1><a href="javascript:;">큰글이체</a></h1>
+			<a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+			<a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+		</div>
+		<!-- //header -->		
+
+		<!-- container -->
+		<div class="container">	
+			<!-- step -->
+			<div class="stepArea bigFontArea">
+				<p class="stepTit">추가정보 입력</p>
+				<div class="stepInfo" role="img" aria-label="총6계중 4단계 입니다.">
+					<ul class="stepList">
+						<li class="off"><span>1</span></li>
+						<li class="off"><span>2</span></li>
+						<li class="off"><span>3</span></li>
+						<li class="active"><span>4</span></li>
+                        <li><span>5</span></li>
+                        <li><span>6</span></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //step -->	
+			
+			<div class="formWrap bigFontWrap mt10">
+                <div class="selectBigForm ">
+                    <div class="stList roundboxBlue">
+                        <dl class="bigselAccount">
+                            <dt>받는계좌에 표기</dt><!--2018.09.20 텍스트 수정-->
+                            <dd class="mb0">
+                                <div class="inputList">
+                                    <input type="text" title="받는통장표시 입력" placeholder="김농협" />
+                                    <a href="javascript:;" title="Reset" class="btnReset">Reset</a>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl class="bigselAccount">
+                            <dt>내계좌에 표기 (선택)</dt><!--2018.09.20 텍스트 수정-->
+                            <dd>
+                                <div class="inputList">
+                                    <input type="text" title="내통장표시 입력" placeholder="최대 한글 10자" />
+                                    <a href="javascript:;" title="Reset" class="btnReset">Reset</a>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <!--지연이체일경우 이체메모 경조금 메시지 입력항목 출력 안됨-->
+                <div class="selectBigForm ">
+                    <div class="roundboxWhite">
+                        <dl class="bigselAccount">
+                            <dt>이체메모 (선택)</dt>
+                            <dd>
+                                <div class="inputList">
+                                    <input type="text" title="이체메모 입력" placeholder="최대 한글 20자" class="al" />
+                                    <a href="javascript:;" title="Reset" class="btnReset">Reset</a>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="selectBigForm ">
+                    <div class="stList roundboxWhite">
+                        <dl class="bigselAccount">
+                            <dt>경조금 메시지 (선택)</dt>
+                            <dd>
+                                <div class="stList">
+                                    <a href="javascript:;" title="계좌 선택 새창열림" onclick="slidePopOption();return false;" class="clickPopArea">
+                                        <span class="selectValue">선택하세요</span>
+                                        <span class="selectBtn">버튼</span>
+                                    </a>
+                                </div>
+                                <select name="" title="선택해주세요">
+                                    <option value=""></option>
+                                </select>
+                            </dd>
+                        </dl>
+                        <div class="guideListbigFont">
+                            <div class="transferCheck">
+                                <p class="icoLeftTxt">당행 이체 시 받으시는 분의 통장기록 또는 SMS/카카오톡 전송(알림)에서만 확인 가능</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+			
+            <div class="areaBtnDefault bigFontWrap" >
+                <a href="javascript:;" class="btnPressDefault">이전</a>
+				<a href="javascript:;" class="btnPressPoint">다음 </a> <!-- 비활성화시 disabled 추가 -->
+			</div>
+
+			<!-- popup) select slide -->
+			<div class="popWrap bankSetWrap popH01 slidePopOption">
+				<div class="dim"></div> <!-- 팝업 dim 처리 -->
+				<div class="dimCloseArea" onclick="popClose(this);return false;">터치 시 해당 창을 닫습니다.</div><!-- 2018-10-23 딤클릭영역 추가 -->
+                <div class="popInner">
+                    <h1 class="bankPopTit">입금계좌 선택</h1>
+                    <!-- 팝업컨텐츠 -->
+                    <div class="popCont">
+                        <div class="transfer">
+                            <!-- tab -->
+                            <div class="bigFontPoptab">
+                                <ul class="dflex"> 
+                                    <li><a href="javascript:;" class="active"><span>최근입금 계좌</span></a></li>
+                                    <li><a href="javascript:;"><span>자주사용하는 계좌</span></a></li>
+                                    <li ><a href="javascript:;"><span>내 계좌</span></a></li>
+                                </ul>
+                                <a href="javascript:;" class="arrRgt" style="display: none;"><span class="blind">다음</span></a>
+                            </div>
+                            <!-- // tab -->
+
+                            <div class="accList">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;" class="accSel" title="해당 계좌를 선택하고 창을 닫습니다.">
+                                            <span class="accName">
+                                                <span class="bankTit">SC제일은행</span> 홍길동
+                                            </span>
+                                            <span class="accNum">302-0799-91234-00</span>
+                                        </a>
+                                        <a href="javascript:;" onclick="popCenter();return false;" class="btnType02">삭제</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="accSel" title="해당 계좌를 선택하고 창을 닫습니다.">
+                                            <span class="accName">
+                                                <span class="bankTit">국민은행</span> 장은지
+                                            </span>
+                                            <span class="accNum">302-0799-91234-00</span>
+                                        </a>
+                                        <a href="javascript:;" class="btnType02">삭제</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="accSel" title="해당 계좌를 선택하고 창을 닫습니다.">
+                                            <span class="accName">
+                                                <span class="bankTit">우리은행</span> 임나라
+                                            </span>
+                                            <span class="accNum">302-0799-91234-00</span>
+                                        </a>
+                                        <a href="javascript:;" class="btnType02">삭제</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="topConfirmArea confirmMsg type04">
+                                <p>최근입금 내역이 없습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 팝업컨텐츠 -->
+                    <!-- 팝업 버튼영역  -->
+                    <div class="popBtnWrap">
+                        <a href="javascript:;" onclick="popClose(this);return false;" class="popClose" title="해당 창을 닫습니다."><img src="../../images/common/btn_popClose.png" alt="닫기"></a>
+                    </div>
+                    <!-- // 팝업 버튼영역 -->
+                </div>
+			</div>
+			<!-- //popup) select slide -->
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div class="footer">
+			<ul class="footMenu">
+				<li><a href="../util/UC110000.html">홈</a></li>
+				<li><a href="../bw/UC490000.html">마이NH</a></li>
+				<li><a href="../util/talk.html">상담톡</a></li>
+				<li><a href="javascript:;">고객센터</a></li>
+				<li><a href="javascript:;">인증/보안</a></li>
+			</ul>			
+			<!-- quick button -->
+			<!-- <div class="areaBtmQuick"> 
+				<span class="btnQuick"><a href="javascript:;">quick</a></span>
+				<span class="btnTop"><a href="javascript:;">Top</a></span>
+			</div> -->
+			<!-- //quick button -->
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

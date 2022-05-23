@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-title" content="NH Bank">
+	<meta http-equiv="imagetoolbar" content="no">
+	<meta name="robots" content="no-index,follow">
+	<meta name="title" content="">
+	<meta name="author" content="">
+	<meta name="content" content="">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<title>:::NH통합스마트뱅킹:::</title>
+<script type="text/javascript" src="../../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../../js/common_ui.js"></script>
+<script type="text/javascript" src="../../js/common_market_ui.js"></script>
+<link type="text/css" rel="stylesheet" href="../../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../../css/contents.css" />
+<link type="text/css" rel="stylesheet" href="../../css/contents_market.css" />
+</head>
+
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+			<a href="../../../../../contents/pub/util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+			<h1><a href="javascript:;">예금</a></h1>
+			<a href="javascript:;" class="btnChat"><span class="blind">쳇봇</span></a>
+			<a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+		</div>
+		<!-- //header -->
+
+		<!-- container -->
+		<div class="container">
+			<h2 class="defTit marTit">NH직장인월복리적금</h2>
+			<!-- STEP -->
+			<div class="stepArea">
+				<p class="stepTit">상품가입설계</p>
+				<div class="stepInfo" role="img" aria-label="총 3단계중 1단계 입니다.">
+					<ul class="stepList">
+						<li class="active"><span>1</span></li>
+						<li><span>2</span></li>
+						<li><span>3</span></li>
+					</ul>
+				</div>
+			</div>
+		    <!--// STEP -->
+			<div class="formWrap">
+				<ul>
+					<li>
+						<strong class="formTit">출금계좌번호</strong>
+						<div class="selectBtnForm selectAccount">
+							<div class="stList">
+								<a href="javascript:;" title="OOO 선택 새창열림" role="radiogroup">
+									<span class="selectValue">계좌를 선택해주세요</span>
+									<span class="selectBtn">버튼</span>
+								</a>
+								<select name="" title="선택해주세요">
+									<option value=""></option>
+								</select>
+							</div>
+							<a href="javascript:CrossShowHideClick('selectAccount','insertAccount');" class="btnAddon">직접입력</a>
+						</div>
+
+
+						<div class="selectBtnForm insertAccount" style="display: none;">
+							<div class="inputList">
+								<input type="text" title="계좌번호 입력" placeholder="계좌번호 입력">
+							</div>
+							<a href="javascript:CrossShowHideClick('insertAccount','selectAccount');" class="btnAddon">계좌선택</a>
+						</div>
+
+						<div class="infoTxtForm">
+							<div class="infoTxtPrice">
+								<p class="infoTxt">현재잔액</p>
+								<em class="priceTxt">783,250<span class="wUnit">원</span></em>
+							</div>
+							<a href="javascript:;" class="btnAddonPoint">조회</a>
+						</div>
+					</li>
+					<li>
+						<strong class="formTit">신규가입금액<span class="unit pointColor">(일만원)</span></strong>
+						<div class="inputList">
+							<input type="text" title="입금금액 입력" placeholder="1만원~1백만원">
+							<a href="javascript:;" title="Reset" class="btnReset">Reset</a>
+						</div>                
+						<div class="areaBtnPrice mt10">
+							<div class="inner">
+								<ul>
+									<li><a href="javascript:;">100만</a></li>
+									<li><a href="javascript:;">5만</a></li>
+									<li><a href="javascript:;">1만</a></li>
+									<li><a href="javascript:;" class="btnAddon">정정</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<!-- 2018.08.16 추가 -->
+				<!-- <ul>
+					<li>
+						<strong class="formTit">이자지급방식<a href="javascript:;" class="btnFuncTip" title="툴팁(도움말) 새창 열기"><span class="blind">툴팁</span></a></strong>
+						<div class="formArray array2">
+							<div class="radioList">
+								<input type="radio" id="ra001" name="dd">
+								<label for="ra001">
+									만기지급식</label>
+							</div>
+							<div class="radioList">
+								<input type="radio" id="ra002" name="dd">
+								<label for="ra002">
+									매월지급식</label>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<strong class="formTit">종별</strong>
+						<div class="formArray array2">
+							<div class="radioList">
+								<input type="radio" id="ra003" name="dd">
+								<label for="ra003">
+									만기일치형</label>
+							</div>
+							<div class="radioList">
+								<input type="radio" id="ra004" name="dd">
+								<label for="ra004">
+									만기자유형</label>
+							</div>
+						</div>
+					</li>
+				</ul> -->
+				<!--// 2018.08.16 추가 -->
+				
+				<ul>
+					<li>
+						<strong class="formTit">계약기간<span class="unit ">(개월)</span></strong>
+						<div class="inputList">                    
+							<input type="text" title="계약기간" placeholder="">
+							<a href="javascript:" title="Reset" class="btnReset">Reset</a>
+						</div>
+					</li>
+					<!-- <li>
+						<strong class="formTit">계약기간</strong>
+						<div class="multiForm type2">
+							<div class="unitInp">
+								<div class="inputList">                    
+									<input type="text" title="계약기간 개월">
+									<a href="javascript:;" title="Reset" class="btnReset">Reset</a>
+								</div>
+								<span class="unit">개월</span>
+							</div>
+							<div class="unitInp">
+								<div class="inputList">                    
+									<input type="text" title="계약기간 일">
+									<a href="javascript:;" title="Reset" class="btnReset">Reset</a>
+								</div>
+								<span class="unit">일</span>
+							</div>
+						</div>					
+					</li>
+					<li>
+						<strong class="formTit">회전기간<span class="unit ">(일)</span></strong>
+						<div class="inputList">                    
+							<input type="text" title="회전기간" placeholder="">
+							<a href="javascript:" title="Reset" class="btnReset">Reset</a>
+						</div>
+					</li> -->
+				</ul>
+				<ul>
+					<li>
+<!-- 11.13 추가 -->
+						<strong class="formTit">자동이체 여부</strong>
+<!--// 11.13 추가 -->
+						<div class="formArray array2">
+							<div class="radioList">
+								<input type="radio" id="ra11" name="dd">
+								<label for="ra11">
+									자동이체함</label>
+							</div>
+							<div class="radioList">
+								<input type="radio" id="ra22" name="dd">
+								<label for="ra22">
+									자동이체안함</label>
+							</div>
+						</div>
+					</li>
+					<!-- 자동이제 선택시 -->
+					<li>
+						<strong class="formTit">자동이체시작일 <a href="javascript:;" class="btnFuncTip" title="툴팁(도움말) 새창 열기"><span class="blind">툴팁</span></a></strong>
+						<div class="cal mt10">
+							<div class="inputList">
+								<input type="text" value="" title="날짜선택 입력" placeholder="날짜선택" readonly="readonly">
+								<a href="javascript:;" class="btnCalendar" title="날짜선택 새창열림"><span class="blind">날짜선택</span></a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<strong class="formTit">자동이체금액<span class="unit pointColor">(일만원)</span></strong>
+						<div class="inputList">
+							<input type="text" title="입금금액 입력" placeholder="1만원~1백만원">
+							<a href="javascript:;" title="Reset" class="btnReset">Reset</a>
+						</div>                
+						<div class="areaBtnPrice mt10">
+							<div class="inner">
+								<ul>
+									<li><a href="javascript:;">100만</a></li>
+									<li><a href="javascript:;">5만</a></li>
+									<li><a href="javascript:;">1만</a></li>
+									<li><a href="javascript:;" class="btnAddon">정정</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<!--// 자동이제 선택시 -->
+				</ul>
+<!-- 10.11 수정 -->
+				<ul>
+					<li>
+						<strong class="formTit">예금 잔액 통보(우편) 제외 신청</strong>
+						<div class="formArray array2">
+							<div class="radioList">
+								<input type="radio" id="ra211" name="d2d">
+								<label for="ra211">통보제외</label>
+							</div>
+							<div class="radioList">
+								<input type="radio" id="ra322" name="d2d">
+								<label for="ra322">통보</label>
+							</div>
+						</div>
+						<p class="infoTxt">금차 신청계좌의 기준잔액이 <span class="pointColor2">매월 말일 기준</span>으로 <span class="pointColor2">5억원 이상</span>인 경우 사고 예방을 위해 예금잔액이 <span class="pointColor2">우편(등기)발송</span> 됩니다.</p>
+					</li>			
+				</ul>
+<!--// 10.11 수정 -->	
+				<ul>
+					<li>
+						<div class="checkList">
+							<input type="checkbox" id="sample0003" name="">
+							<label for="sample0003">SMS만기안내 동의</label>	
+							<a href="javascript:;" class="btnFuncTip" title="툴팁(도움말) 새창 열기"><span class="blind">툴팁</span></a>
+						</div>
+<!-- 						<div class="checkList">
+							<input type="checkbox" id="sample023" name="">
+							<label for="sample023">5억원 이상 가입 시 SMS안내동의 </label>					
+						</div> -->
+						<a href="javascript:;" onclick="fullLayerPop();return false;" class="btnBodyLine mt20">고객정보변경</a>
+					</li>
+<!-- 					<li>
+						<strong class="formTit">만기자동해지</strong>
+						<div class="formArray array2">
+							<div class="radioList">
+								<input type="radio" id="ra111" name="dd">
+								<label for="ra111">
+									자동이체함만기시</label>
+							</div>
+						</div>
+					</li> -->
+				</ul>
+				<ul>
+					<li>
+						<strong class="formTit">예금 잔액 통보(우편) 신청</strong>
+						<div class="formArray array2">
+							<div class="radioList">
+								<input type="radio" id="ra121" name="d12d">
+								<label for="ra121">
+									신청함</label>
+							</div>
+							<div class="radioList">
+								<input type="radio" id="ra232" name="d12d">
+								<label for="ra232">
+									신청안함</label>
+							</div>
+						</div>
+						<p class="infoTxt">신청계좌의 기준잔액이 <span class="pointColor2">매월 말일 기준</span>으로 <span class="pointColor2">5억원</span> 이상인 경우 사고 예방을 위해 예금잔액이 <span class="pointColor2">우편(등기)발송</span> 됩니다.  </p>
+					</li>
+				</ul>
+
+				<ul>
+					<li>
+						<strong class="formTit">출금계좌비밀번호 </strong>
+						<input type="password" title="계좌 비밀번호 입력" placeholder="비밀번호 4자리" maxlength="4" class="sKey" readonly="readonly">
+						<div class="checkList">
+							<input type="checkbox" id="sample0002" name="">
+							<label for="sample0002">
+								출금계좌비밀번호로 신규계좌비밀번호 설정
+							</label>
+						</div>
+					</li>
+				</ul>
+				
+				<ul>
+					<li>
+						<!-- accordionMenu -->
+						<div class="accordionMenu type_de">
+							<ul class="dep1">
+								<li>
+									<a href="javascript:;">개설영업점 및 직원 (선택사항) </a>
+									<ul class="dep2">
+										<li>
+											<strong class="formTit">권유직원번호(선택사항)</strong>
+											<div class="inputBoth01 div7_3">
+												<div class="inputList inputB01">
+													<input type="text" title="직원찾기" id="" placeholder="직원번호 입력 또는 직원찾기 선택">
+												</div>
+												<div class="inputB02">
+													<a href="javascript:;" class="btnInput01">직원찾기</a>
+												</div>
+											</div>									
+										</li>
+										<li>
+											<strong class="formTit">개설 영업점(선택사항)</strong>
+											<div class="inputBoth01 div7_3">
+												<div class="inputList inputB01">
+													<input type="text" title="영업점 검색" id="" placeholder="영업점 검색">
+												</div>
+												<div class="inputB02">
+													<a href="javascript:;" class="btnInput01">영업점 검색</a>
+												</div>
+											</div>									
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<!--// accordionMenu -->
+					</li>
+				</ul>
+				
+			</div>
+			<!-- fixed button -->
+			<div class="areaBtnDefault">
+				<a href="javascript:;" class="btnPressDefault">취소</a>
+				<a href="SMNHDE321300.html" class="btnPressPoint kioskEffect">다음 <span class="hand type02"></span></a>
+				<!-- 비활성화시 disabled 추가 -->
+			</div>
+			<!-- //fixed button -->
+			<!-- popWrap -->
+			<div class="popWrap fullLayerPop" aria-hidden="true">
+				<div class="popInner">
+					<h1>고객정보변경</h1>
+					<div class="popCont">
+
+						<div class="formWrap">
+							<ul>
+								<li>
+									<div class="telWrap">
+										<div class="inputB01"><input type="text" id="" name="" maxlength="4" title="전화번호(연락처) 첫 자리 선택" readonly="readonly"></div>
+										<div class="inputDash">-</div>
+										<div class="inputB01"><input type="text" id="" name="" maxlength="4" title="전화번호(연락처) 가운데 자리 선택" readonly="readonly"></div>
+										<div class="inputDash">-</div>
+										<div class="inputB01"><input type="text" id="" name="" maxlength="4" title="전화번호(연락처) 마지막 자리 선택" readonly="readonly"></div>
+									</div>
+									<a href="javascript:;"  class="btnBodyLine mt20">휴대폰번호변경</a>
+								</li>
+							</ul>
+							<ul>
+								<li>보안매체</li>
+							</ul>
+						</div>
+					</div>
+					<div class="popBtnWrap">
+						<div class="popBtn">
+							<a href="javascript:;" onclick="popClose(this);return false;">취소</a>
+							<a href="javascript:;" class="confirmBtn">확인</a>
+						</div>
+						<a href="javascript:;" onclick="popClose(this);return false;" class="popClose" title="해당 창을 닫습니다."><img src="../../images/common/btn_popClose.png" alt="닫기"></a>
+					</div>
+				</div>
+			</div>
+			<!--// popWrap -->
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div class="footer">
+			<ul class="footMenu" style="display: block;">
+				<li><a href="../../../../../contents/pub/util/UC110000.html">홈</a></li>
+				<li><a href="../../../../../contents/pub/bw/UC490000.html">마이NH</a></li>
+				<li><a href="../../../../../contents/pub/util/talk.html">상담톡</a></li>
+				<li><a href="javascript:;">고객센터</a></li>
+				<li><a href="javascript:;">인증/보안</a></li>
+			</ul>
+			<!-- quick button -->
+			<div class="areaBtmQuick" style="bottom: 94px;"> 
+				<span class="btnQuick"><a href="javascript:;">quick</a></span>
+				<span class="btnTop" style="display: none; opacity: 0;"><a href="javascript:;">Top</a></span>
+			</div>
+			<!-- //quick button -->
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+
+</body>
+</html>

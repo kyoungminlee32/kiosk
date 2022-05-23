@@ -1,0 +1,320 @@
+﻿@charset "utf-8";
+
+/**************************************************
+@	 큰글꼴
+**************************************************/
+.wrapper{width:100% !important;}
+.bigFontWrap [class*="btnPress"]{font-size:20px;}
+.bigFontWrap .selectValue{font-size:20px;line-height:44px;font-weight:bold;}
+.stepArea.bigFontArea .stepTit{font-size:20px;letter-spacing:-0.04em;}
+.formWrap.bigFontWrap{margin-top:10px;}
+.bigpointColor{color:#084cd5 !important;}
+.bigpointColor1{color:#f44743 !important;}
+.bigpointColor2{color:#111 !important;}
+.bigpointColor3{color:#4885e0 !important;}
+.bigFontWrap [class*="roundbox"]{padding:15px 15px 0 15px;border-radius:7px;-webkit-border-radius:7px;box-sizing:border-box;-webkit-box-sizing:border-box;}
+
+.bigFontWrap .roundboxBlue{background-color:#deeeff;}
+.bigFontWrap .roundboxBlue .roundInner .inputList input[type="text"]{padding-right:0;}
+.bigFontWrap .areaBtnInner{text-align:center;padding:10px 0 10px 0;}
+
+.bigFontWrap .roundboxWhite{background-color:transparent;border:1px solid #ccc;overflow:hidden;}
+.bigFontWrap .roundboxWhite .bigdealDate{position:relative;}
+.bigFontWrap .bigdealDate .btnwithdInfo:after{content:'';display:block;width:100%;height:100%;background-color:#f8f8f8;position:absolute;top:0;left:0;border-radius:7px;z-index:-1}
+.bigFontWrap .roundboxWhite .guideListbigFont{background:transparent;margin-top:-2px;}
+.bigFontWrap .roundboxWhite.bodBline{border:1px solid #4885e0;margin-top:10px;padding:0;}
+.bigFontWrap .roundboxWhite.prNone .inputList input[type="text"]{padding-right:10px;letter-spacing: -0.08em;}
+.bigFontWrap .roundboxWhite.prNone .inputList input[type="text"]::-webkit-input-placeholder{font-size:18px;color:#666;}/*2018-10-24 [양미선] 이체정보 확인 플레이스 홀더 폰트사이즈및색깔 변경 */
+.bigFontWrap .roundboxWhite.prNone .bigWidthdraw dt{margin-top: 15px;}
+.bigFontWrap .roundboxWhite.prNone .bigWidthdraw dt:nth-of-type(1){margin-top: 0;}  
+.flexContainer{/*display:flex;display:-webkit-flex;flex-wrap:wrap;-webkit-flex-wrap:wrap;*/overflow:hidden;}
+.flexContainer li {width:50%;float:left;position: relative;max-height: 94px;}
+.flexContainer li a{position:relative;display:block;box-sizing:border-box;-webkit-box-sizing:border-box;padding:14px;height:100%;}
+.flexContainer li.active a{background-color:#deeeff;}
+.flexContainer li::before{content:'';width:1px;height:100%;background-color:#ccc;position:absolute;top:0;left:0%;z-index: 999;}
+.flexContainer li:nth-child(even)::before , .flexContainer li:first-child:before{background-color:transparent;} 
+
+.bigFontWrap .roundboxWhite .flexContainer li ~ li{border-top:1px solid #ccc;}
+.bigFontWrap .roundboxWhite .flexContainer li:first-child{width:100%;background-color:#f3faff;}
+.bigFontWrap .roundboxWhite .flexContainer li:first-child dl{background:url('../images/common/ico_big_counseler.png') no-repeat 96% center;background-size:44px auto;}
+.bigFontWrap .roundboxWhite .flexContainer dl {font-size:16px;}
+.bigFontWrap .roundboxWhite .flexContainer li:first-child dt{color:#111 !important;}
+.bigFontWrap .roundboxWhite .flexContainer dl dt{line-height:1.2;}
+.bigFontWrap .roundboxWhite .flexContainer dd{color:#3d9bff;}
+.bigFontWrap .roundboxWhite .flexContainer dd:before{content:'';display:inline-block;width:12px;height:12px;padding-left:5px;background-image:url('../images/common/ico_big_telphone.png');background-repeat:no-repeat;background-size:12px auto;}
+.bigFontWrap .roundboxWhite .flexContainer li:first-child dd:before{width:14px;height:14px;background-image:url('../images/common/ico_big_telphone1.png');background-size:14px auto;vertical-align:middle;}
+.bigFontWrap.guideList{background:transparent;padding:0}
+.bigFontWrap.guideList .tArea{background-color:transparent;}
+.guideListbigFont{margin:15px 0 15px 0}
+
+.bigFontWrap .formTit{margin-bottom:0;margin-top:0;}
+.selectBigForm .stList a.clickPopArea{border-radius:5px;-webkit-border-radius:5px;border:1px solid #3b5997;height:44px;}
+.bigFontWrap .selectBigForm dl:first-of-type{padding:0 0 12px 0}
+.bigFontWrap .selectBigForm dl {padding:12px 0;font-size:18px;}
+
+.bigFontWrap .selectBigForm + .areaBtnInner {padding: 0 0 15px 0;}
+.bigFontWrap .selectBigForm dl dt{margin-bottom:10px;line-height:1.1;font-size:18px;}
+.bigFontWrap .formTit{font-size:20px !important;line-height:1.1}
+/*2018-10-23 [양미선] 큰글 디자인 수정 변경*/
+.bigFontWrap .formTit .formTitbox{width: 100%;text-align: right;}
+.bigFontWrap .formTit .formTitbox span{line-height: 1.4;}
+/*2018-10-23 [양미선] 큰글 디자인 수정 변경 end*/
+
+
+.bigFontWrap .bigselAccount + .bigselAccount{border-top:1px solid #fff;}
+.bigFontWrap .bigselAccount dt + dd.formsubTit{margin-bottom:15px !important;}
+.bigFontWrap .bigselAccount + .bigWidthdraw , .btop{border-top:1px solid #fff;}
+.bigFontWrap .bigselAccount dt + dd{line-height:1.2;margin-bottom:7px;}
+.bigFontWrap .bigselAccount{position: relative;}
+.bigFontWrap .bigselAccount .posTop{position: absolute;top: 0;left: 70px;}
+/* .bigFontWrap .bigselAccount .posTop .pointWon{display: inline-block;color:#084cd5;} */
+.bigFontWrap .bigselAccount .posTop span{font-size:18px;white-space:pre;color:#084cd5;}/*2018-10-22 [양미선] 이체금액 색 변경*/
+.bigFontWrap .roundboxWhite .bigWidthdraw +  .bigWidthdraw{border-top:1px solid #ccc;}
+.bigFontWrap .formsubTit{font-size:18px;color:#444;}
+.bigFontWrap .bigWidthdraw dd{text-align:right;}
+.bigFontWrap .bigdealDate{position:relative;background-color:#f8f8f8;font-size:18px;height:45px;line-height:45px;margin:-15px -15px 0 -15px;padding:0 15px;border-radius:7px;}
+.bigFontWrap .bigdealDate + .bigselAccount{margin-top:15px;position:relative;}
+.bigFontWrap .bigdealDate + .bigselAccount:before{content:'';display:block;height:1px;width:100%;background-color:#ccc;position:absolute;top:-15px;left:-15px;padding:0 15px;}
+/* .bigFontWrap .bigdealDate .revTxt{position:absolute;top:0px;right:15px;} */
+.bigFontWrap .roundboxWhite .revTxtBox{overflow: hidden;margin:10px 0}
+.bigFontWrap .bigdealDate .btnwithdInfo{position:relative;display:block;width:100%;text-align:left;}
+.bigFontWrap .bigdealDate .btnwithdInfo:before{content:'';display:block;width:18px;height:10px;background-image:url('../images/common/ico_arr4_down.png');background-repeat:no-repeat;background-position:0 0;background-size:18px auto;position:absolute;top:45%;right:0px;}
+.bigFontWrap .bigdealDate .btnwithdInfo.active:before{background-image:url('../images/common/ico_arr4_up.png');}
+
+.bigFontWrap.defSubTit{font-size:20px;}
+.bigFontWrap + .guideList {background:transparent;padding:0;}
+.bigFontWrap .bigaccountList .bigselAccount ~ .bigselAccount{border-top:1px solid #ccc;}
+.bigFontWrap .openPanel{position:relative;}
+.bigFontWrap .openPanel:before{content:'';display:block;height:1px;width:100%;background:#ccc;position:absolute;top:-10px;left:-15px;padding-left:30px;}
+.bigFontWrap .bigaccountList  ~ .bigaccountList{margin-top:10px;}
+.bigFontWrap .bigaccountList .openPanel dl:first-of-type{margin-top:10px;}
+.bigFontWrap .bigaccountList .openPanel  dl dd{margin-bottom:0;}
+.bigFontWrap + .guideList .tArea{background-color:transparent;}
+.bigFontWrap .guideTit , .bigFontWrap .listDot, .bigFontWrap.guideList .listDot li {font-size:16px;line-height:1.2;}
+.bigFontWrap .guideTit {padding:0 0 0 22px;background:url(../images/common/ico_big_bell.png) no-repeat 0 2px;background-size:15px 15px;}
+.areaBtnDefault.bigFontWrap .btnPressPoint:after , 
+.areaBtnDefault.bigFontWrap .btnPressDefault:before{content:'';display:inline-block;width:10px;height:15px;background-repeat:no-repeat;background-position: 0 0px;background-size:10px 15px;}
+.areaBtnDefault.bigFontWrap .btnPressPoint:after{background-image:url('../images/common/ico_big_next.png');}
+.areaBtnDefault.bigFontWrap .btnPressDefault:before{background-image:url('../images/common/ico_big_prev.png');padding-left:8px;}
+.areaBtnDefault .btnPressDefault.w75{width:75%;}
+.btnPressDefault a{font-size:20px;}
+.btnPressDefault a:before{content:'';background:transparent;} 
+.bigFontWrap input[type="radio"], .bigFontWrap input[type="checkbox"]{background-color:transparent;}
+.bigFontWrap input[type="radio"] + label, .bigFontWrap input[type="checkbox"] + label{font-size:16px;}
+.dflex li{float:initial;}
+.bigFontWrap .selectBigForm {margin-top:6px;}
+.bigFontWrap a.btnType01{height:35px;line-height:33px;background:#e8ecef;border-radius:5px;font-size:16px;color:#444;font-weight:bold;}
+.bigFontWrap .areaBtnType02 ul li:last-child{width:initial;}
+.bigFontWrap .areaBtnType02 ul.dflex li a{display:inline-block;}
+.bigFontWrap .areaBtnType02 ul.dflex li.active a.btnType01{background:#4885e0;color:#fff;border:1px solid #4885e0;}
+.bigFontWrap .areaBtnType02 ul.dflex li.active a.btnType01:before{content:'선택됨';display:block;font-size: 1px;color:transparent;position: absolute;top: 0;left: 0;overflow: hidden;}
+.bigFontWrap .areaBtnType02.bigWhBtn a.btnType01{background-color:#fff !important;}
+.bigFontWrap .confirmMsg.type01{background:url('../images/common/bg_confirm01.png') no-repeat 50% 25px;background-size:50px 50px;}
+.bigFontWrap .bigFontConfirmArea{font-size:20px;color:#111;display:flex;justify-content:center;align-items:center;}
+.bigFontWrap .bigerrBox{display:flex;justify-content:center;align-items:center;align-self:stretch;min-height:350px;}
+.bigFontWrap .confirmMsg.type04{position:relative;background:none;}
+.bigFontWrap .confirmMsg.type04:before{content:'';width:50px;height:50px;position:absolute;top:0px;left:45%;background:url(../images/common/bg_big_confirm03.png) no-repeat 0 0px;background-size:50px 50px;}
+.bigFontWrap .confirmMsg.type04{padding-top:70px;height:114px;box-sizing:border-box;margin-top: 20px;}
+.bigFontWrap [class *="icoBox"]{overflow:hidden;float:right;font-size:18px;color:#3b5997;margin-top:-30px;}
+.bigFontWrap .icoBoxblue{color:#084cd5;}
+.bigFontWrap .icoBoxred{color:#f44743;}
+.bigFontWrap .icoBoxblack{color:#444;}
+.bigFontWrap .dirInputBox .selectBigForm{display:none;}
+.bigFontWrap .btnmoveBox{width:100%;border-top:1px solid #ccc;padding:12px 0 16px;} 
+.bigFontWrap .btnmoveDetail{display:block;font-size:18px;border:1px solid #ccc;border-radius:5px;line-height:35px;}
+.bigFontWrap .btnmoveDetail:after{content:'';display:inline-block;width:17px;height:17px;background:url('../images/common/arrow_quick_view.png') no-repeat center center;background-size:auto 17px;vertical-align:-2px;padding-left:5px;}
+.bigTblFontWrap .tfbgBlue td{background:#f3faff !important;}
+[class^="wrapTbl"].bigTblFontWrap  .tfbgBlue th{background:#f3faff !important;} 
+.selectBigForm .inputList .unit{position:absolute;right:36px;top:1px;font-size:20px;line-height: 1.2;}/*2018-10-23 [양미선] 큰글이체 입력 '원' 위치 수정 *//*2018-10-24 [양미선] 이체금액 입력 원 위치 수정*/
+.selectBigForm .roundInner .inputList .unit{top:5px;}
+.selectBigForm .btnReset{width:34px;height:36px;background:url('../images/common/btn_input_bigclose.png') no-repeat;background-size:34px auto;position:absolute;top:5px;right:2px;}
+.selectBigForm  .stList a.btnReset{border:none;display:none;}
+.selectBigForm .selectBtn {width:43px;height:43px;background:url('../images/common/big_select_arrow.png') no-repeat;background-size:43px auto;} 
+.selectBigForm .areaView{display:block;background:url('../images/common/arrow_quick_view.png') no-repeat right 33px;background-size:auto 17px;}
+.selectBigForm .areaView .bigselAccount dt{width:90%;}
+.mdSelectbox{padding-bottom:15px}
+.checkViewDate {overflow:hidden;width:100%;position:fixed;top:50px;left:0;background:#4885e0;color:#fff;height:45px;line-height:45px;font-size:16px;transform:translateY(-50px);-webkit-transform:translateY(-50px);opacity:0;z-index: 999;}/*2018-10-18 [양미선] z-index 추가 수정*/
+.checkViewDate.active{transition:all 0.2s;-webkit-transition:all 0.2s;transform:translateY(0);-webkit-transform:translateY(0);opacity:1;}
+.checkViewDate p{padding-left:15px;float:left;width:67%;border-right:1px solid #6d9de6;}
+.checkViewDate button{float:right;width:32%;text-align:center;font-size:16px;line-height:45px;outline:none;}
+
+.popWrap.bankSetWrap h1.bankPopTit {height:auto; padding: 11px 15px 10px 15px; line-height:1.5; text-align: center;}
+.popWrap.bankSetWrap .btnSetup {position: absolute; top:15px; right:38px; text-indent: -9999px; overflow: hidden;}
+.popWrap .bigFontaccount input[type="text"], .popWrap .bigFontaccount input[type="tel"]{font-size:16px;}
+.inputDirect{padding:12px 0;}
+.inputDirect .accName{display:block;margin-bottom:5px;}
+
+.bigFontaccount{font-size:16px;}
+.bigFontaccount .inputDirect .accName{font-size:16px;}
+.bigFontaccount .popCont .selectList li.active {position:relative;}/*2018-11-20[안형애] 공통 계좌선택 접근성 수정*/
+.bigFontaccount .popCont .selectList li.active a:after {content: '선택됨';background-color:#e9f5ff;width: 1px;height: 1px;font-size: 1px;color: transparent;position: absolute;top: 0;left: 0;overflow:hidden;}/*2018-11-20[안형애] 공통 계좌선택 접근성 수정*/
+.bigFontaccount .selectList > li .accSel > span{display:block;font-size:16px;}
+.bigFontaccount .selectList > li .accSel > .accName{color:#111;font-size:16px;}
+.bigFontaccount .selectList > li .accNum strong{color:#f68b1f;font-size:16px;}
+.bigFontaccount .selectList > li .accNum .accNick {font-size: 16px; color:#111}
+.bigFontaccount .selectList  .inputList input::-webkit-input-placeholder ,
+.bigFontWrap input[type="tel"]::-webkit-input-placeholder{font-size:20px;color:#666;font-weight:normal;} /*2018-10-23 [양미선] 큰글 공통 플레이스 홀더 수정*//*2018-10-24 [양미선] 플레이스 홀더 폰트 사이즈 수정*/
+.bigFontaccount .popBtnWrap .popBtn > a{font-size:16px;}
+.bigFontConfirmArea p{font-size:20px;}
+.popWrap .popInner .popCont .transfer{padding: 0 17px 17px;}
+.bigFontWrap [class^="wrapTbl"] th, [class^="wrapTbl"] td{font-size:16px;}
+.bigFontWrap .wrapTblDefault table td{text-align: right;}
+.bigFontWrap .wrapTblDefault.bigTblFontWrap{padding-bottom:10px;}
+.biglistMoreBtn{margin-top:15px;border-radius:5px;}
+.biglistMoreBtn a{display:block;height:35px;line-height:35px;border-radius:5px;background-color:#e8ecef;font-size:18px;font-weight:bold;text-align:center;}
+.biglistMoreBtn a:after{content:'';display:inline-block;width:15px;height:11px;margin-left:7px;background:url(../images/common/ico_arr_bigdown.png) no-repeat 0 0;background-size: 15px 9px;}
+.selectBigForm [class*="account"]{font-size:20px;line-height:1;}
+.selectBigForm .accountNum{padding:0 0 15px 0;margin-bottom:12px;font-size:20px;border-bottom:1px solid #ccc;line-height:1;}
+.selectBigForm .accountView{padding-bottom:10px;}
+.selectBigForm .accountView + .bigselAccount{padding:0;}
+.selectBigForm .inputList input[type="text"] , .bigFontWrap input[type="tel"]{padding:0px 54px 0px 5px;font-size:18px;text-align:left;border-radius: 5px; border: 1px solid #3b5997;height: auto;min-height:44px;line-height: 1.2em;box-sizing: border-box;font-family: initial;font-weight: normal;}/*2018-10-23 [양미선] 큰글이체 input 입력영역 위치 수정 *//*2018-10-24 [양미선] 수정 큰글뱅킹 이체 입력 위치 재수정*/
+.selectBigForm .inputList input[type="text"]:focus{border:1px solid #4285f4;}
+.selectBigForm .inputList input[type="text"].ac{padding-right:0;}
+
+/*2018-10-24 [양미선] 입력 폼 플레이스홀더*/
+.selectBigForm .bigselAccount .inputList input::-webkit-input-placeholder , 
+.selectBigForm .bigselAccount .inputList input::-webkit-input-placeholder {color:#666;font-size:20px;font-family: initial;font-weight: normal;}
+/*2018-10-24 [양미선] 플레이스홀더 end*//*2018-10-23 [양미선] 이체 금액 입력 플레이스 홀드 수정*/
+
+.selectBigForm .areaBtnType02 ul.dflex{/*display:flex;display:-webkit-flex;justify-content:space-between;-webkit-justify-content:space-between;*/display:table;width:100%;}
+.selectBigForm .areaBtnType02 .roundboxWhite ul.dflex li{/*flex:1;-webkit-box-flex:1;*/display:table-cell;width:50%;}
+.selectBigForm .roundboxWhite .areaBtnType02{margin-top:0;margin-bottom:15px;}
+/*2018-10-22 [양미선] 큰글뱅킹 디자인 수정 거래내역조회*/
+.selectBigForm .formType:first-child{margin-top:10px;padding-top:0;border-top:none;}
+.selectBigForm .formType {padding:10px 0 10px 0;}
+.selectBigForm .formType  + .formType{border-top:1px solid #bdd0e5;padding-bottom:0;}
+/*/*2018-10-22 [양미선] 큰글뱅킹 디자인 수정 end*/
+.selectBigForm .formType .formArray{margin-top:0px;}
+.selectBigForm .formType + .areaBtnInner{padding-top:15px;padding-bottom:0}
+.bginnerColor{background-color:#deeeff;margin:-40px -17px 10px -17px;}
+.bginnerColor .selectBigForm{padding:40px 17px 15px 17px;}
+.bginnerColor .selectBigForm .roundboxWhite{background:#fff;}
+
+.btnWhitebg {margin-top:8px;}
+.btnWhitebg .inner li a{background:#fff;border:1px solid #ccc;color:#444;font-size:16px;border-radius:5px;font-weight:bold;height:34px;line-height:32px;box-sizing:border-box;-webkit-box-sizing:border-box;}
+.btnWhitebg .inner li a.btnAddonPoint{border-radius:5px;}
+
+.transferCheck{font-size:16px;line-height:1;}
+.transferCheck:before{content:'';display:inline-block;width:15px;height:16px;background:url(../images/common/ico_big_exclamation.png) no-repeat;background-size:15px auto;padding-left:2px;vertical-align:-2px;}
+.transferCheck a{color: #3b5997; text-decoration: underline !important;} /* 2018-11-06 [윤지현] underline 속성 강제적용 */
+/* .transferCheck .tflimtedCheck:after{content:'';display:inline-block;width:8px;height:16px;background:url(../images/common/ico_big_blackarrow.png) no-repeat right 0;background-size:8px auto;padding-left:7px;vertical-align:-2px;} *//*2018-10-22 [양미선] 삭제*/
+.transferCheck .icoLeftTxt{margin-left:20px;margin-top:-18px;line-height:1.2;color:#444;}
+
+.snsShare{margin-top:20px;/*padding:0 30px;*/}
+.snsShare .dflex , .dflex{/*display: flex; display: -webkit-flex;justify-content:space-between;-webkit-justify-content:space-between;align-content:center;-webkit-align-content:center;display:table;width:100%;*/}
+.snsShare .dflex{display: table;width: 100%;}
+.snsShare ul li{display: table-cell;width: 33.3%;}
+.snsShare ul li a{display:block;font-size:16px;text-align:center;}
+.snsShare [class *="icosns"]:before{content: ''; display: block;width: 45px;height: 45px;background-repeat: no-repeat;background-image: url(../images/common/ico_big_sns.png); background-size: auto 45px;margin:0 auto;}
+.snsShare .icosns01:before{background-position:0px 0;margin-left:5px;margin:0 auto;}
+.snsShare .icosns02:before{background-position:-60px 0;}
+.snsShare .icosns03:before{background-position:-130px 0;}
+.areaBodyBtnSelect.dflex a:first-child{border-right:none;}
+
+.tabLv1.bigFontWrap li a{font-size:20px;}
+.tabLv1.bigFontWrap li a.active span:after{height:6px;}
+.bigFontWrap.areaBodyBtnSelect {margin-top:10px;}
+.bigFontWrap.areaBodyBtnSelect a{font-size:16px;line-height:45px;}
+.bigFontWrap .totalIcon:before{content:'';display:inline-block;width:22px;height:15px;background:url('../images/common/ico_big_total.png') no-repeat 0 0;background-size:22px auto;margin-right:7px;}
+.areaBtnInner .btnInView{padding:0 35px;line-height:45px;background-color:#3b5997;font-size:20px;color:#fff;border-radius:4px;text-align:center;}
+.directInputWrap {padding:15px 0;width:100%;box-sizing:border-box;display:none;}
+.bigFontWrap .btnDirInput{position:relative;display:inline-block;padding:0 35px 0 15px;font-size:16px;line-height:35px;color:#444;border-radius:5px;box-sizing:border-box;min-width:138px;text-align:left;background:#e8ecee;}
+.bigFontWrap .btnDirInput:before{content:'';display:block;width:25px;height:25px;position: absolute;top: 5px;right:5px;background:url('../images/common/ico_bigarrow_openclose.png') no-repeat;background-size:25px auto;background-position: 0 0;}
+.bigFontWrap .btnDirInput.active:before{background-position:0 bottom;}
+.bigFontWrap .areaBtnType02 .btnType01{background:#e8ecef;}
+.bigFontWrap .selectBigForm .calendarForm{margin-top:10px;}
+.bigFontWrap .selectBigForm .calendarForm + .areaBtnInner{padding-top:10px;padding-bottom:0;}
+.guideListbigFont + .areaBtnInner{padding-top:0;padding-bottom:0;}
+.bigFontWrap .cal .inputList .btnCalendar{height:45px;}
+.bigFontWrap  input[type="text"]:read-only{background:#fff;}
+.bigFontWrap .selectBigForm .inputList input[type="text"]{text-align:left;color:#111;font-size:20px;font-weight:normal;}/*2018-10-24 [양미선] 폰트 볼드 제거*/
+.bigTblFontWrap .defTit{font-size:20px;color:#111;}
+.bigTblFontWrap th, .bigTblFontWrap td , .calendarForm > .cal .inputList input{font-size:18px !important;}
+
+.bigTblFontWrap td .listDash li{color:#111;}
+
+.tabContent{margin-top:10px;}
+.tabContent .formWrap:not(:first-of-type){display:none;}
+.tabContent .bginnerColor .selectBigForm{margin-top:-70px;padding-top:65px;}
+.tabContent .bginnerColor .selectBigForm .stList , .tabContent .bginnerColor .selectBigForm .roundInner {margin-top:10px;}
+
+.popWrap.fullLayerPop .popInner .popCont{height:calc(100% - 40px);}
+.popInner.bigFontaccount .inputList .btnReset{width: 34px;height: 36px;background: url(../images/common/btn_input_bigclose.png) no-repeat;background-size: 34px auto;top:3px;right:0;}
+.bigFontaccount .inputList .btnReset.active{display:block !important;}
+.popInner.bigFontWrap{font-size:16px;}
+.popInner.bigFontWrap h1.bankPopTit{font-size:16px;}
+
+.popInner.bigFontWrap .accordionMenu{margin:0;}
+.popBtnWrap.bigFontWrap .confirmBtn , .popInner.bigFontWrap .accList ul > li .accNum strong{font-size:16px;}
+.popInner.bigFontWrap .accName ,
+.popInner.bigFontWrap .accList ul > li .accSel > span ,
+.popInner.bigFontWrap .amount em ,
+.popInner.bigFontWrap .accInfo .infoTit{font-size:17px;}
+.popInner.bigFontWrap .accList ul > li > a.btnType02 , .popInner.bigFontWrap .accList ul > li .accSel > span .badge{font-size: 13px;}
+
+.bigTblFontWrap .btnAddon{font-size:16px;height: 30px;line-height: 28px}
+
+/* 은행 선택 리스트 */
+.tabContWrap .tabCont {display: none;}
+.tabContWrap .tabCont:first-child {display: block;}
+
+/* .tabLv0{overflow:hidden}
+.tabLv1,.tabLv2 {margin: 0 -17px !important;}
+.tabLv1 ul {display:-webkit-box;display:-moz-box;display:-webkit-flex; display: flex; padding:0; width: 100%; table-layout: fixed; }
+.tabLv1 li {position: relative; text-align: center;border-bottom: 1px solid #dedede;}
+.tabLv1 li a {display: inline-block;margin-bottom: -1px; text-decoration: none; box-sizing:border-box;letter-spacing:-1px;}
+.tabLv1 li a span {display: flex; flex-direction: column; justify-content: center;height: 44px;}
+.tabLv1 li a.active span {position: relative; padding-left: 7px;padding-right: 7px;color:#4885df;}
+.tabLv1 li a.active span:after {position: absolute; bottom:0; left:0; content:''; width: 100%; height:2px; background: #4885e0;}
+
+.tabLv1.flick {position: relative;}
+.tabLv1.flick [class^="arr"] {position: absolute; top: 0; z-index:2; width: 20px; height: 44px;}
+.tabLv1.flick .arrLft {left: 0;}
+.tabLv1.flick .arrLft:after {position: absolute; top: 50%; left:50%; margin: -5px 0 0 -5px; content:''; border-right: 5px solid #ccc; border-top: 5px solid transparent; border-bottom: 5px solid transparent }
+.tabLv1.flick .arrRgt {right: 0}
+.tabLv1.flick .arrRgt:after {position: absolute; top: 50%; right:50%; margin: -5px -5px 0 0; content:''; border-left: 5px solid #ccc; border-top: 5px solid transparent; border-bottom: 5px solid transparent } */
+
+[class^="bankListW"] {margin-top: 9px;}
+[class^="bankListW"] ul:after {display: block; content:''; clear: both;}
+[class^="bankListW"] li {float: left; width: 50%;}
+[class^="bankListW"] li a {display: block; padding:11px 0; line-height: 25px;letter-spacing: -0.085em;}
+[class^="bankListW"] li a img {width:25px;height:25px;margin-right:6px;vertical-align:middle;}
+
+.bigFontBtnFull {margin-top:15px;margin-bottom: 20px;}/* 2018-10-22 [윤지현]  */
+.bigFontBtnFull ul{display:table;table-layout: fixed; width: 100%;}
+.bigFontBtnFull li{display:table-cell; padding: 0 2px;}
+.bigFontBtnFull li a{display:block;height:35px;padding:0 3px;border-radius:4px;line-height:35px;font-size:18px;text-align:center;background-color:#e8ecef;}/* 2018-10-22 윤지현] 큰글뱅킹 이체결과조회 상세페이지 하단 버튼 폰트사이즈 크게 수정 */
+.bigFontBtnFull li.active a{background-color:#4885e0;color:#fff;}
+
+.bigFontSevice dl.bigseviceList{display:table;width:100%;}
+.bigFontSevice li ~ li{border-top:1px solid #ccc;}
+
+.bigFontWrap .selectBigForm dl.bigseviceList{padding:13px 0;line-height:1;}
+.bigFontSevice dl.bigseviceList > dt{display:table-cell;width:80%;margin-bottom:0;vertical-align:middle;}
+.bigFontSevice dl.bigseviceList > dd{text-align:right;vertical-align:middle;display:table-cell;}
+.bigFontWrap .selectBigForm li:first-child dl.bigseviceList{padding-top:0;}
+
+.bigFontTitbox{margin:18px 0 8px;}
+.bigFontTitbox .formTit{margin-bottom:10px;}
+.bigFontTitbox .formsubTit{line-height:1.2;}
+
+.pointWon{font-weight:normal; color:#111;}
+.bbT{border-top:1px solid #fff !important;}
+.bigFontWrap .messageToggle .accordionMenu .dep1 > li > a{font-size:16px}
+
+/* 내계좌선택 */
+.accList ul > li {position:relative;padding:15px 17px;border-top:1px solid #dedede;}
+.accList ul > li:first-child {border-top:0;}
+.accList ul > li > a {display:block;}
+.accList ul > li > a.btnType02 {display: inline-block;position: absolute;top: 50%;right: 17px;margin-top: -15px;}
+.accList ul > li .accSel > span {display:block;margin-top:4px;}
+.accList ul > li .accSel > span:first-child {margin-top:0;}
+.accList ul > li .accName {color:#111;}
+.accList ul > li .accNum strong {color:#f68b1f;}
+.accList ul > li .accName + .inputBoth01 {margin-top:10px;}
+.accList .areaBodyBtnFull {margin-top:10px;}
+
+@media screen and (max-width:320px){
+	.flexContainer li:nth-child(6).active a{height:95px;}
+
+}

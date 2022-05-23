@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="NH Bank" />
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="no-index,follow">
+<meta name="title" content="">
+<meta name="author" content="">
+<meta name="content" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>:::NH통합스마트뱅킹 || 계좌관리:::</title>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/common_ui.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+            <a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+            <h1><a href="javascript:;">계좌(통장)비밀번호 변경</a></h1>
+            <a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+            <a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+        </div>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div class="container">
+            <div class="formWrap">
+                <ul>
+                    <li>
+                        <strong class="formTit">계좌번호 선택</strong>
+                        <div class="selectBtnForm selectAccount" style="display: block;">
+                            <div class="stList">
+                                <a href="javascript:;" title="계좌번호 선택 새창열림">
+                                    <span class="selectValue">계좌를 선택해주세요</span>
+                                    <span class="selectBtn">버튼</span>
+                                </a>
+                                <select name="" title="선택해주세요">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <a href="javascript:CrossShowHideClick('selectAccount','insertAccount');" class="btnAddon">직접입력</a>
+                        </div>
+                        <div class="selectBtnForm insertAccount" style="display: none;">
+                            <div class="inputList">
+                                <input type="text" title="계좌번호 입력" placeholder="- 없이 입력해주세요" />
+                            </div>
+                            <a href="javascript:CrossShowHideClick('insertAccount','selectAccount');" class="btnAddon">계좌선택</a>
+                        </div>
+                    </li>
+                    <li>
+                        <strong class="formTit">변경 전 비밀번호</strong>
+                        <div class="inputList">
+                            <input type="password" maxlength="4" title="변경 전 비밀번호 입력" placeholder="숫자4자리를 입력해주세요" />
+                            <a href="javascript:;" title="Reset" class="btnReset">Reset</a>
+                        </div>
+                    </li>
+                    <li>
+                        <strong class="formTit">변경 할 비밀번호</strong>
+                        <div class="inputList">
+                            <input type="password" maxlength="4" title="변경 할 비밀번호 입력" placeholder="숫자4자리를 입력해주세요" />
+                            <a href="javascript:;" title="Reset" class="btnReset">Reset</a>
+                        </div>
+                    </li>
+                    <li>
+                        <strong class="formTit">변경 할 비밀번호 확인</strong>
+                        <div class="inputList">
+                            <input type="password" maxlength="4" title="변경 할 비밀번호 입력" placeholder="숫자4자리를 입력해주세요" />
+                            <a href="javascript:;" title="Reset" class="btnReset">Reset</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="guideList">
+                <div class="tArea"><p class="guideTit">서비스 이용시간</p></div>
+                <ul class="listDot">
+                    <li>평일: 01 : 30 ~ 24 : 00</li>
+                    <li>토요일 : 01 : 30 ~ 24 : 00</li>
+                    <li class="pointColor6">일요일/공휴일 이용불가</li>
+                </ul>
+            </div>
+
+            <div class="areaBtnDefault">
+                <a href="MA1162000.html" class="btnPressPoint kioskEffect">확인<span class="hand type02"></span></a>
+            </div>
+
+
+
+
+        </div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div class="footer">
+			<ul class="footMenu">
+				<li><a href="../util/UC110000.html">홈</a></li>
+				<li><a href="../bw/UC490000.html">마이NH</a></li>
+				<li><a href="../util/talk.html">상담톡</a></li>
+				<li><a href="javascript:;">고객센터</a></li>
+				<li><a href="javascript:;">인증/보안</a></li>
+			</ul>
+			<!-- quick button -->
+			<!-- <div class="areaBtmQuick"> 
+				<span class="btnQuick"><a href="javascript:;">quick</a></span>
+				<span class="btnTop"><a href="javascript:;">Top</a></span>
+			</div> -->
+			<!-- //quick button -->
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="NH Bank" />
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="no-index,follow">
+<meta name="title" content="">
+<meta name="author" content="">
+<meta name="content" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>:::NH통합스마트뱅킹 || 조회:::</title>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/common_ui.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+			<a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+			<h1><a href="javascript:;">예금/신탁계좌 거래내역</a></h1>
+			<a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+			<a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+		</div>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div class="container">
+
+			<div class="accountSelect">
+				<div class="selectArea">
+					<a href="javascript:;" onclick="slidePopOption();return false;">전체계좌</a><!--// 20180608 팝업열기 추가 및 class 삭제 -->
+					<a href="javascript:ShowHideClick('accountInput');">직접입력</a>
+				</div>
+				<div class="accountInput">
+					<!-- <input type="text" placeholder="계좌번호를 입력해주세요." title="계좌번호 입력"> -->
+					<span class="typeSrch">
+						<input type="text" placeholder="계좌번호를 입력해주세요." title="계좌번호 입력">
+						<a href="javascript:;" class="btnSrch"><span class="blind">검색</span></a>
+					</span>										
+				</div>				
+			</div>
+
+			<div class="accountHeader">
+				<h2 class="accTit">하나로증권통장</h2>
+				<span class="accNick2">계좌별칭</span>
+				<div class="accPriceArea">
+					<span class="tit">잔액</span>
+					<span class="txt"> 
+						<span class="price">610,420</span><span class="wUnit">원</span>
+					</span>
+				</div>
+			</div>
+
+			<div class="areaBtnPrice mt10">
+				<div class="inner">
+					<ul>
+						<li><a href="javascript:;">당일</a></li>
+						<li><a href="javascript:;">1개월</a></li>
+						<li><a href="javascript:;">3개월</a></li>
+						<li><a href="javascript:;">6개월</a></li>
+						<li><a href="javascript:;">1년</a></li>
+						<li class="w60"><a href="javascript:;" class="btnAddon" title="새창으로 열림">보기옵션</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- 2018-08-09 통합스마트뱅킹 수정사항 : select 추가 -->
+			<div class="stList mt10">
+				<a href="javascript:;" title="거래내역 정렬 선택 새창열림">
+					<span class="selectValue">거래일자순</span>
+					<span class="selectBtn">버튼</span>
+				</a>
+				<select name="" title="선택해주세요">
+					<option value=""></option>
+				</select>
+			</div>
+			<!-- // 2018-08-09 통합스마트뱅킹 수정사항 end -->
+
+			<div class="srchInfo">
+				<ul>
+					<li>2018.07.04 ~ 2018.07.04</li>
+					<li>입·출금</li>
+					<li>최근거래순</li>
+				</ul>
+			</div>
+
+			<div class="srchResult">
+				<ul>
+					<li>
+						<div class="dateTit">2018.07.04 13:03:12</div>
+						<div class="resultDetail">
+							<span class="resultTit">5월 급여</span>
+							<span class="resultAmount pointColor"><span class="resultState">입금</span> <em>1,000,000,000,000</em><span class="wUnit">원</span></span>
+							<span class="amntTotal">잔액 <em>1,000,000,000,000</em><span class="wUnit">원</span></span>
+						</div>
+					</li>
+					<li>
+						<div class="dateTit">2018.07.04 13:03:12</span></div>
+						<div class="resultDetail">
+							<span class="resultTit">5월 급여</span>
+							<span class="resultAmount pointColor"><span class="resultState">입금</span> <em>1,000,000,000,000</em><span class="wUnit">원</span></span>
+							<span class="amntTotal">잔액 <em>1,000,000,000,000</em><span class="wUnit">원</span></span>
+						</div>
+					</li>
+					<li>
+						<div class="dateTit">2018.07.04 13:03:12</div>
+						<div class="resultDetail">
+							<span class="resultTit">엄청 비싼 소고기를 먹었습니다!</span>
+							<span class="resultAmount pointColor2"><span class="resultState">출금</span> <em>1,000,000,000,000</em><span class="wUnit">원</span></span>
+							<span class="amntTotal">잔액 <em>1,000,000,000,000</em><span class="wUnit">원</span></span>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<!-- <div class="listMoreBtn">
+				<a href="javascript:;" title="항목 더보기">더보기</a>
+			</div>
+
+
+			<!-- 2018-08-06 통합스마트뱅킹 수정사항 : 위로 버튼 추가 -->
+			<div class="areaBodyBtnFull">
+				<div class="inner">
+					<ul>
+						<li class="listMoreBtn"><a href="javascript:;">더보기</a></li>
+						<li><a href="javascript:;">위로</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- // 2018-08-06 통합스마트뱅킹 수정사항 end -->
+
+			<!-- 거래내역이 없을 경우 노출 -->
+			<div class="topConfirmArea confirmMsg type04">
+				<p>조회된 거래내역이 없습니다.</p>
+			</div>
+			<!-- 거래내역이 없을 경우 노출 -->
+
+			<!-- CASE1) 보통예금 -->
+			<div class="areaBtnDefault">
+				<a href="javascript:;" class="btnShare" title="새창으로 열림"><span class="blind">이메일전송</span></a>
+				<a href="javascript:;" class="btnPressDefault">계좌정보</a>
+				<a href="javascript:;" class="btnPressPoint">즉시이체</a>
+			</div>
+			<!-- // CASE1 -->
+
+			<!-- CASE2) 매직트리 / ASSET글로벌통장 -->
+			<div class="areaBtnDefault">
+				<a href="javascript:;" class="btnShare" title="새창으로 열림"><span class="blind">이메일전송</span></a>
+				<a href="javascript:;" class="btnPressDefault">계좌정보</a>
+			</div>
+			<!-- // CASE2 -->
+
+			<!-- CASE3) 정기예금/정기예탁금 / 연금형신탁 / 공익신탁 -->
+			<div class="areaBtnDefault">
+				<a href="javascript:;" class="btnPressDefault">계좌정보</a>
+			</div>
+			<!-- // CASE3 -->
+
+			<!-- CASE4) 청약저축 / (자유적립/정기)적금 / NH해봄적금 / 퇴직연금신탁 / 일임형 ISA / 신탁형ISA-->
+			<div class="areaBtnDefault">
+				<a href="javascript:;" class="btnShare" onclick="popCenter();return false;"><span class="blind">공유하기</span></a>
+				<a href="javascript:;" class="btnPressDefault">계좌정보</a>
+				<a href="javascript:;" class="btnPressPoint">즉시이체</a>
+			</div>
+			<!-- // CASE4 -->
+
+        </div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div class="footer">
+			<ul class="footMenu">
+				<li><a href="../util/UC110000.html">홈</a></li>
+				<li><a href="../bw/UC490000.html">마이NH</a></li>
+				<li><a href="../util/talk.html">상담톡</a></li>
+				<li><a href="javascript:;">고객센터</a></li>
+				<li><a href="javascript:;">인증/보안</a></li>
+			</ul>
+			<!-- quick button -->
+			<!-- <div class="areaBtmQuick"> 
+				<span class="btnQuick"><a href="javascript:;">quick</a></span>
+				<span class="btnTop"><a href="javascript:;">Top</a></span>
+			</div> -->
+			<!-- //quick button -->
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="NH Bank" />
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="no-index,follow">
+<meta name="title" content="">
+<meta name="author" content="">
+<meta name="content" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>:::NH통합스마트뱅킹:::</title>
+<script type="text/javascript" src="../../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../../js/common_ui.js"></script>
+<script type="text/javascript" src="../../js/common_market_ui.js"></script>
+<link type="text/css" rel="stylesheet" href="../../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../../css/contents.css" />
+<link type="text/css" rel="stylesheet" href="../../css/contents_market.css" />
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+			<a href="../../../../../contents/pub/util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+			<h1><a href="javascript:;">영업점방문예약</a></h1>
+			<a href="javascript:;" class="btnChat"><span class="blind">쳇봇</span></a>
+			<a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+		</div>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div class="container">
+			<!-- <h2 class="defTit marTit">영업점방문예약</h2> -->
+			<div class="guideListTop bdt">
+				<ul class="listDot">
+					<li>금융상품상담과 관련한 영업점 방문예약을 신청하실 수 있습니다. </li>
+					<li>고객님의 연락처는 방문확인을 위해 활용될 수 있으므로, 연락처가 올바르지 않을 경우 고객정보의 연락처를 변경하여 주시기 바랍니다.</li>
+					<li>영업점 방문예약 신청은 1영업일부터 14일이내로 가능합니다. </li>
+					<li>영업점 상담을 원하시는 상품 선택시 보다 원활한 상담이 가능하십니다. </li>
+					<li>상담예약일까지 방문을 하지 않으신 경우는 번거로우시더라도 방문예약을 재 신청해 주시기 바랍니다.</li>
+					<li>본 서비스는 일부 특수영업점(기업금융 지점 등)에서는 이용하실 수 없습니다.</li>
+				</ul>
+			</div>
+				<div class="formWrap">
+					<ul>
+						<li>
+							<strong class="formTit">이름</strong>
+							<div class="inputList">
+								<input type="text" title="이름" value="김농협" readonly="readonly">
+							</div>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<strong class="formTit">연락처</strong>
+							<div class="telWrap">
+								<div class="stList telSel">
+									<a href="javascript:;" title="전화번호(연락처) 앞자리 선택 새창 열림">
+										<span class="selectValue">010</span>
+										<span class="selectBtn">버튼</span>
+									</a>
+									<select name="" title="전화번호(연락처) 앞자리 선택">
+										<option value=""></option>
+									</select>
+								</div>
+								<div class="inputDash">-</div>
+								<div class="inputB01"><input type="text" id="" name="" maxlength="4" title="전화번호(연락처) 가운데 자리 선택" value="1234"></div>
+								<div class="inputDash">-</div>
+								<div class="inputB01"><input type="text" id="" name="" maxlength="4" title="전화번호(연락처) 마지막 자리 선택" value="5678"></div>
+							</div>						
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<strong class="formTit">방문영업점</strong>
+							<div class="inputBoth01 div7_3">
+								<div class="inputList inputB01">
+									<input type="text" title="방문영업점 입력" value="구로지점">
+								</div>
+								<div class="inputB02">
+									<a href="javascript:;" class="btnInput01">영업점찾기</a>
+								</div>
+							</div>
+							<p class="infoTxt">주거래영업점의  정보를 확인하고 싶으시거나 ,  다른 영업점을  방문하고  싶으실때,  주거래지점이 등록되어 있지 않은  고객은  영업점찾기   버튼을 선택해 주세요.</p>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<div class="inputBoth01 div7_3">
+								<div class="inputList inputB01">
+									<strong class="fsz12">고객님이 위 영업점에서 최근 상담한 상품이 <span class="pointColor5 fsz14">1</span>개 등록되어있습니다. </strong>
+								</div>
+								<div class="inputB02">
+									<a href="javascript:;" class="btnInput01">바로가기</a>
+								</div>
+							</div>							
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<strong class="formTit">방문예약일</strong>
+							<div class="calendarForm">
+								<div class="cal">
+									<div class="inputList">
+										<input type="text" value="날짜" title="날짜선택" placeholder="날짜" readonly="readonly">
+										<a href="javascript:;" class="btnCalendar" title="날짜선택 새창열림"><span class="blind">날짜선택</span></a>
+									</div>
+								</div>
+								<span class="symbol">-</span>
+<!-- 10.02 수정 -->
+								<div class="cal">
+									<div class="stList">
+										<a href="javascript:;" title="시간선택" role="radiogroup" readonly="readonly">
+											<span class="selectValue">오전 9시</span>
+											<span class="selectBtn">버튼</span>
+										</a>
+										<select name="" title="시간선택">
+											<option value=""></option>
+										</select>
+									</div>
+<!--// 10.02 수정 -->
+<!-- 									<div class="inputList">
+										<input type="text" value="오전 9시" title="시간선택" placeholder="시간" readonly="readonly">
+										<a href="javascript:;" class="btnTime" title="날짜선택 새창열림"><span class="blind">시간선택</span></a>
+									</div> -->
+								</div>
+							</div>
+							<div class="guideList">
+								<div class="tArea"><p class="guideTit">알아두세요</p></div>
+								<ul class="listDot">
+									<li>영업점 방문가능시간 평일 오전 9:00 ~ 오후 4:00)</li>
+									<li>점심시간(12:00~13:00) 및 마감시간은 혼잡하오니, 가급적 해당시간을 피해서 방문하시면 친절히 상담 드리겠습니다.</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+<!-- 					<ul>
+						<li>
+							<strong class="formTit">상담구분</strong>
+							<div class="formArray">
+								<div class="radioList">                    
+									<input type="radio" id="ra1" name="ra">
+									<label for="ra1">상품</label>
+								</div>
+								<div class="radioList">                    
+									<input type="radio" id="ra2" name="ra">
+									<label for="ra2">은퇴설계(All100플랜)</label>
+								</div>
+							</div>
+							<div class="radioList">                    
+								<input type="radio" id="ra3" name="ra">
+								<label for="ra3">스마트자산관리(스마트핌)</label>
+							</div>
+						</li>
+					</ul> -->
+					<ul>
+						<li>
+							<strong class="formTit">상품선택</strong>
+							<div class="inputBoth01 div7_3">
+								<div class="inputList inputB01">
+									<div class="stList">
+										<a href="javascript:;" title="상품선택 선택 새창열림">
+											<span class="selectValue">예금</span>
+											<span class="selectBtn">버튼</span>
+										</a>
+										<select name="" title="예금">
+											<option value=""></option>
+										</select>
+									</div>
+								</div>
+								<div class="inputB02">
+									<a href="javascript:;" class="btnInput01">상품찾기</a>
+								</div>
+							</div>
+							<p>상담 상품명: <span class="pointColor">NH직장인전용예금</span></p>
+						</li>
+					</ul>
+				</div>
+<!-- 				<div class="guideList">
+					<div class="tArea"><p class="guideTit">알아두세요</p></div>
+					<ul class="listDot">
+						<li>상품구분은 필수 입력사항입니다. </li>
+						<li>특정상품의 상담을 희망하시는 경우에만 상품명을 선택 또는 입력해 주세요. </li>
+					</ul>
+				</div> -->
+			<!-- fixed button -->
+			<div class="areaBtnDefault">
+				<a href="javascript:;" class="btnPressDefault">취소</a>
+				<a href="SMNHSCI14000.html" class="btnPressPoint kioskEffect">신청 <span class="hand type02"></span></a>
+				<!-- 비활성화시 disabled 추가 -->
+			</div>
+			<!--// fixed button -->
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div class="footer">
+			<ul class="footMenu">
+				<li><a href="../../../../../contents/pub/util/UC110000.html">홈</a></li>
+				<li><a href="../../../../../contents/pub/bw/UC490000.html">마이NH</a></li>
+				<li><a href="../../../../../contents/pub/util/talk.html">상담톡</a></li>
+				<li><a href="javascript:;">고객센터</a></li>
+				<li><a href="javascript:;">인증/보안</a></li>
+			</ul>
+			<!-- quick button -->
+			<!-- <div class="areaBtmQuick"> 
+				<span class="btnQuick"><a href="javascript:;">quick</a></span>
+				<span class="btnTop"><a href="javascript:;">Top</a></span>
+			</div> -->
+			<!-- //quick button -->
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+	<!-- popup -->
+
+	<!-- //popup -->
+</body>
+</html>

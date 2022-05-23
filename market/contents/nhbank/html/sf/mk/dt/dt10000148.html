@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="NH Bank" />
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="no-index,follow">
+<meta name="title" content="">
+<meta name="author" content="">
+<meta name="content" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>:::NH통합스마트뱅킹:::</title>
+<link type="text/css" rel="stylesheet" href="../../../../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../../../../css/contents.css" />
+<link type="text/css" rel="stylesheet" href="../../../../css/contents_market.css" /><!-- 금상몰 공통/컨텐츠 css -->
+</head>
+<body>
+
+
+<dl class="prodGuideList">
+	<dt>가입서류</dt>
+	<dd>
+		<p>실명확인증표- 주민등록증, 운전면허증, 외국인등록증, 외국국적동포국내거소신고증 등</p>
+		<p class="mt5">※ 가족이 대리가입 시 가족관계 확인서류 및 대리인 실명확인증표 (미성년자 가입 시 법정대리인 확인서류 포함)</p>
+	</dd>
+	<dt>이자지급방식</dt>
+	<dd>
+		<ul class="listDot">
+			<li>해지 시 원금과 이자 일괄지급, 단리식</li>
+			<li>중도해지이율은 별도로 정하지 않으며 가입기간별 약정금리를 적용합니다. (정부고시금리 : 국토교통부 <a href="http://www.molit.go.kr" target="_blank" title="새창열기">http://www.molit.go.kr</a>)</li>		
+		</ul>
+	</dd>
+	<dt>청약</dt>
+	<dd>
+		<p class="defSubTit">국민주택 청약순위</p>
+		<ul class="listDot">
+			<li>국민주택 청약 1순위 요건은 입주자모집공고일 기준으로 다음과 같으며, 입금 시 분할입금여부를 반드시 확인하시기 바랍니다.
+				<ul>
+					<li>투기과열지구 또는 청약과열지역 : 가입 후 24개월이 경과하고 월납입금 24회 이상 납입한 분</li>
+					<li>수도권 : 가입 후 12개월이 경과하고 월납입금 12회 이상 납입한 분(단, 지자체별 24개월 및 24회까지 연장가능)</li>
+					<li>수도권 외 : 가입 후 6개월이 경과하고 월납입금 6회 이상 납입한 분(단, 지자체별 12개월 및 12회까지 연장가능)</li>
+					<li>위축지역 : 가입 후 1개월 경과한 분</li>
+				</ul>
+			</li>
+		</ul>
+
+		<p class="defSubTit">[국민주택 청약 시 유의사항]</p>
+		<ul class="listDot">
+			<li>국민주택 월납입금 납입 시 1회 납입금액은 10만원만 인정되고, 그 이상의 금액은 예치금으로 처리됩니다.</li>
+			<li>월납입금을 연체한 계좌는 「주택공급에 관한 규칙」에 따라 <strong style="text-decoration: underline;">납입인정일 및 순위 발생일이 지연</strong>될 수 있으며, 순차 횟수를 초과하여 선납한 회차 및 금액은 인정하지 않습니다. </li>
+			<li><strong style="text-decoration: underline;">선납은 24회차</strong>까지 가능하지만 <strong style="text-decoration: underline;">청약순위는 해당 회차가 인정되는 일자(납입인정일)에 도달하여야</strong> 발생합니다.</li>
+			<li>만 19세 이전 납입인정회차가 24회를 초과하는 경우 금액이 많은 순으로 최대 24회까지 인정합니다.</li>
+			<li>청약대상주택의 1순위제한과 재당첨제한 등의 청약제한사항은 「주택공급에 관한 규칙」 등 관련법령에서 정한 바에 따릅니다.</li>
+		</ul>
+
+		<p class="defSubTit">[민영주택 청약 예치기준금액]<span class="tar">(단위: 만원)</span></p>
+		<div class="wrapTblDefault">
+			<table cellpadding="0" cellspacing="0" class="tdCenter thCenter">
+				<caption>[민영주택 청약 예치기준금액]</caption>
+				<colgroup>
+					<col style="width:auto;">
+					<col style="width:25%;">
+					<col style="width:25%;">
+					<col style="width:25%;">
+				</colgroup>
+				<thead>
+					<tr>
+						<th rowspan="2">전용면적</th>
+						<th colspan="3">거주지역</th>
+					</tr>
+					<tr>
+						<th>서울/ 부산</th>
+						<th>기타광역시</th>
+						<th>기타시군</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>85㎡ 이하</td>
+						<td>300</td>
+						<td>250</td>
+						<td>200</td>
+					</tr>
+					<tr>
+						<td>102㎡ 이하</td>
+						<td>600</td>
+						<td>400</td>
+						<td>300</td>
+					</tr>
+					<tr>
+						<td>135㎡ 이하</td>
+						<td>1,000</td>
+						<td>700</td>
+						<td>400</td>
+					</tr>
+					<tr>
+						<td>모든면적</td>
+						<td>1,500</td>
+						<td>1,000</td>
+						<td>500</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<p class="defSubTit">[민영주택 청약 시 유의사항]</p>
+		<ul class="listDot">
+			<li>만 19세 이전 입금분은 납입금액 전액을 인정하되 청약통장 가입기간은 최대 2년까지만 인정합니다.</li>
+			<li>청약대상주택의 1순위제한과 재당첨제한 등의 청약제한사항은 「주택공급에 관한 규칙」 등 관련법령에서 정한 바에 따릅니다.</li>
+		</ul>
+	</dd>
+	<dt>소득공제</dt>
+	<dd>
+		<ul class="listDot">
+			<li><strong>대상:</strong> 과세기간의 총급여액이 7천만원 이하인 근로소득이 있는 거주자(일용근로자 제외)로서 과세연도 중 주택을 소유하지 않은 세대의 세대주</li>
+			<li><strong>한도:</strong> 연간 불입금액(연 240 만원 한도)의 40% (최대 96 만원)</li>
+			<li><strong>등록방법:</strong> 소득공제를 적용받으려는 과세기간의 다음연도 2월 말까지 인근 영업점 방문하셔서 창구에 비치된 ‘무주택확인서’ 작성 및 제출</li>
+			<li><strong>추징:</strong> 소득공제를 받은 자가 85㎡를 초과하는 주택에 당첨되어 계좌를 해지하는 경우 또는 가입일로부터 5년 이내 계좌를 해지(85㎡이하 당첨해지, 특별해지 제외)하는 경우, 소득공제 적용 과세기간 이후에 납입한 금액(연 240만원한도) 누계액의 6% (지방소득세별도)추징<br>※ 세법 등 관련법령 개정 시 변동될 수 있음</li>
+			<li><strong>제한사항:</strong> ‘18.1.1.부터 시행한 조세특례제한법에 의거 2019년 12월 31일까지 납입분에 한하여 소득공제 가능</li>
+		</ul>
+	</dd>
+</dl>
+
+</body>
+</html>

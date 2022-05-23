@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="NH Bank" />
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="no-index,follow">
+<meta name="title" content="">
+<meta name="author" content="">
+<meta name="content" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>:::NH통합스마트뱅킹 || 인증/보안:::</title>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/common_ui.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+<script>
+	$(window).ready(function(){
+		fullLayerPop();
+	});
+</script>
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+			<a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+			<h1><a href="javascript:;">간편뱅킹 가입</a></h1>
+			<a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+			<a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+		</div>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div class="container">
+			
+			<!-- full popup -->
+			<div class="popWrap fullLayerPop">
+				<div class="popInner">
+					<h1>전화(ARS)인증</h1>
+					<div class="popCont">						
+						<!-- case1 -->
+						<h2 class="defSubTit">등록된 전화번호</h2>
+						<div class="formWrap">
+							<ul>
+								<li>
+									<div class="checkList">
+										<input type="radio" id="sample0001" name="sample0001" />
+										<label for="sample0001">
+											스마트폰 지정서비스<br />01012345678
+										</label>
+									</div>
+									
+								</li>
+							</ul>
+							<p class="infoTxt">등록된 전화번호란? 전자금융사기예방서비스 가입시에 등록된 전화번호입니다.</p>
+						</div>
+
+						<!-- case2 -->
+						<!-- <h2 class="defSubTit">등록된 전화번호</h2>
+						<div class="formWrap">
+							<ul>		
+								<li>
+									<div class="checkList">
+										<input type="radio" id="sample0002" name="sample0002" />
+										<label for="sample0002">
+											스마트폰 지정서비스<br />01012345678
+										</label>
+									</div>
+								</li>
+								<li>
+									<div class="checkList">
+										<input type="radio" id="sample0003" name="sample0002" />
+										<label for="sample0003">
+											앱인증<br />01012345678
+										</label>
+									</div>									
+								</li>
+							</ul>
+							<p class="infoTxt">등록된 전화번호란? 전자금융사기예방서비스 가입시에 등록된 전화번호입니다.</p>
+						</div> -->
+						
+						<!-- 인증번호 -->
+						<div class="authWrap">
+							<dl>
+								<dt>인증번호</dt>
+								<dd class="authNum">
+									<span>1</span>
+									<span>2</span>
+								</dd>
+							</dl>
+							<!-- <p class="timeLimit">2:29</p> 2018-10-11 마크업삭제 -->
+						</div>
+						<!-- // 인증번호 -->
+
+						<!-- 2018-10-11 마크업추가 -->
+						<div class="authTime">
+							남은시간 <span>4 : 41</span>
+						</div>
+						<!-- //2018-10-11 마크업추가 -->
+						
+						<p class="infoTxt">ARS 음성안내를 듣고 전화기에 위 인증번호를 입력하여 주시기 바랍니다.</p>					
+							
+						
+						<div class="areaBodyBtnFull">
+							<div class="inner">
+								<ul>
+									<li><a href="javascript:;">전화번호승인요청</a></li>
+									<li><a href="javascript:;">결과확인</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<p class="defTxt ac ls005">인증이 <strong class="pointColor">완료</strong>되었습니다.<br />하단의 확인 버튼을 터치 후 거래를 계속하시기 바랍니다.</p>
+						
+						<div class="guideList">
+							<div class="tArea"><p class="guideTit">알아두세요</p></div>
+							<ul class="listDot">
+								<li>전화 ARS인증을 위하여 고객님이 등록한 전화번호를 선택하시기 바랍니다.</li>
+								<li>전화번호 선택 후 ‘전화번호 승인요청’을 클릭하시기 바랍니다.</li>
+								<li>승인완료되면 ‘결과확인’을 클릭하시기 바랍니다.</li>
+								<li>일시적으로 통신사 사정 및 통화불능의 경우 전화가 오지 않을 수 있습니다. 전화가 오지 않을 경우 다시 시도하여 주시기 바랍니다.</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="popBtnWrap">
+						<div class="popBtn">
+							<a href="javascript:;" onclick="popClose(this);return false;">취소</a>
+							<a href="AC142400.html" class="confirmBtn kioskEffect">확인<span class="hand type02"></span></a>
+						</div>
+						<a href="AC142200.html" class="popClose kioskEffect" title="해당 창을 닫습니다."><img src="../../images/common/btn_popClose.png" alt="닫기" /><span class="hand type01"></span></a>
+					</div>
+				</div>
+			</div>
+			<!-- //full popup -->	
+			
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div class="footer">
+			<!-- quick button -->
+			<!-- <div class="areaBtmQuick"> 
+				<span class="btnQuick"><a href="javascript:;">quick</a></span>
+				<span class="btnTop"><a href="javascript:;">Top</a></span>
+			</div> -->
+			<!-- //quick button -->
+		
+			<ul class="footMenu">
+				<li><a href="../util/UC110000.html">홈</a></li>
+				<li><a href="../bw/UC490000.html">마이NH</a></li>
+				<li><a href="../util/talk.html">상담톡</a></li>
+				<li><a href="javascript:;">고객센터</a></li>
+				<li><a href="javascript:;">인증/보안</a></li>
+			</ul>
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

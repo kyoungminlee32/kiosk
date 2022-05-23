@@ -1,0 +1,198 @@
+
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="NH Bank" />
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="robots" content="no-index,follow">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="content" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>:::NH통합스마트뱅킹 퍼블리싱 || 이체:::</title>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+	<script>
+		$(function() {
+			$(".nhBtn01").click(function() {
+				//$(".kakaoTextArea").addClass("active").animate({bottom:"1305px"}, 300);
+				$(".kakaoTextArea").addClass("active2").animate({bottom:"743px"}, 300);
+				$(".keypadWrap").addClass("active2").slideDown(300);
+				$(".nhBtn01 span").removeClass("hand");
+			});
+			
+			$("#view01").fadeIn();
+			setTimeout(function(){
+				$("#view02").fadeIn();
+			}, 1500);
+			setTimeout(function(){
+				$("#view02").fadeIn(700, function() {
+					$(".nhBtn01 span").addClass("hand");
+				});
+			}, 1000);
+			$("#btn00").click(function() {
+				$(".kakaoTextArea").addClass("active2").animate({bottom:"0px"}, 300);
+				$(".keypadWrap").slideUp(300, function() {
+					
+					//$(".kakaoTextArea").removeClass("active2").addClass("active").animate({bottom:"1305px"}, 300);
+					$(".kakaoTextArea").hide();
+					$(".keypadWrap").removeClass("active2").addClass("active").slideDown(300);
+					$(".keypad00").hide();
+					$(".keypad01").fadeIn('fast');
+					
+				});
+				
+			});
+			$("#btn01").click(function() {
+				$(".keypad01").hide();
+				$(".keypad02").fadeIn('fast');
+			});
+			$("#btn02").click(function() {
+				$(".keypad02").hide();
+				$(".keypad03").fadeIn('fast');
+			});
+			$("#btn03").click(function() {
+				$(".keypad03").hide();
+				$(".keypad04").fadeIn('fast');
+			});
+			$("#btn04").click(function() {
+				$(".keypad04").hide();
+				$(".keypad05").fadeIn('fast');
+			});
+			$("#btn05").click(function() {
+				$(".keypad05").hide();
+				$(".keypad06").fadeIn('fast');
+			});
+			$("#btn05").click(function() {
+				$(".keypad05").hide();
+				$(".keypad06").fadeIn('fast');
+			});
+			$("#btn07").click(function() {
+				$(".keypad06").hide();
+				$(".keypad07").fadeIn('fast');
+			});
+			$("#btn08").click(function() {
+				$(".keypad07").hide();
+				$(".keypad08").fadeIn('fast', function() {
+					$(".kakao .head .kioskEffect span").addClass("hand");
+				});
+			});
+		});
+	</script>
+    
+    <link type="text/css" rel="stylesheet" href="../../css/common.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+	<style>
+		html {zoom:1;}
+		.kakao {width:1080px;height:1920px;background:url('../../images/kiosk/bg_kakao.png') no-repeat 0 0;background-size:100% 100%;}
+		.kakao .head {position:relative;width:100%;height:247px;padding-top:72px;line-height:180px;}
+		.kakao .head h1 {font-size:48px;text-align:center;}
+		.kakao .head a {display:inline-block;position:absolute;top:95px;right:55px;width:64px;height:54px;}
+		.kakao .cont {height:calc(100% - 247px - 146px);}
+		.kakao .kakaoTextArea {height:146px;background-color:#fff;display:table;width:100%;}
+		.kakao .kakaoTextArea .nhBtn01, .kakao .kakaoTextArea .text, .kakao .kakaoTextArea .nhBtn02 {display:table-cell;vertical-align:middle;}
+		.kakao .kakaoTextArea .nhBtn01 {width:121px;text-align:center;}
+		.kakao .kakaoTextArea .nhBtn02 {width:146px;}
+		.kakao .kakaoTextArea img {vertical-align:middle;}
+		.kakao .kakaoTextArea .text {font-size:34px;padding-left:20px;}
+		
+		.kakao .keyboardWrap {padding:40px 0;}
+		.kakao .keyboardWrap .keyboardTxt + .keyboardTxt {margin-top:40px;}
+		.kakao .keyboardWrap .keyboardTxt img {vertical-align:middle;max-width:100%;}
+
+		.kakao .kakaoTextArea.active {position:absolute;left:0;width:100%;}
+		.kakao .kakaoTextArea.active2 {position:absolute;left:0;width:100%;}
+		.kakao .keypadWrap {height:0;width:100%;}
+		.kakao .keypadWrap img {vertical-align:middle;}
+		.kakao .keypadWrap.active {height:1305px;position:absolute;bottom:0;left:0px;}
+		.kakao .keypadWrap.active2 {height:743px;position:absolute;bottom:0;left:0px;}
+		.kakao .keypadWrap a {display:block;position:absolute;z-index:1;}
+		.kakao .keypadWrap #btn00 {width:113px;height:157px;bottom:20px;right:148px;}
+		.kakao .keypadWrap #btn01 {width:1080px;height:742px;bottom:0;left:0;}
+		.kakao .keypadWrap #btn02 {width:271px;height:73px;bottom:786px;right:62px;}
+		.kakao .keypadWrap #btn03 {width:961px;height:271px;bottom:850px;right:62px;}
+		.kakao .keypadWrap #btn04 {width:159px;height:122px;bottom:1184px;right:0;}
+		.kakao .keypadWrap #btn05 {width:466px;height:121px;bottom:44px;right:62px;}
+		.kakao .keypadWrap #btn06 {width:466px;height:121px;bottom:44px;right:62px;}
+		.kakao .keypadWrap #btn07 {width:159px;height:122px;bottom:1184px;left:0;}
+		.kakao .keypadWrap #btn08 {width:360px;height:271px;bottom:774px;left:62px;}
+	</style>
+</head>
+
+
+<body>
+<!-- 시연용 데스크탑 모드 -->
+<div class="kakao">
+	<div class="head">
+		<h1>키보드뱅킹</h1>
+		<a href="desktop.html" class="kioskEffect"><img src="../../images/kiosk/btn_exit.png" alt="메인으로 돌아가기" /> <span class="type04" style="margin-top:-40px"></span></a>
+	</div>
+
+	<!-- 컨텐츠 영역 -->
+	<div class="cont keyboardWrap">
+		<div class="keyboardTxt" id="view01" style="display:none;">
+			<img src="../../images/kiosk/img_keyText01.png" alt="" />
+		</div>
+		<div class="keyboardTxt" id="view02" style="display:none;">
+			<img src="../../images/kiosk/img_keyText02.png" alt="" />
+		</div>
+	</div>
+	<!-- // 컨텐츠 영역 -->
+
+	<div class="kakaoTextArea">
+		<!-- <a href="javascript:;" class="nhBtn01 kioskEffect"><img src="../../images/kiosk/btn_kakao01.png" alt=""> <span class="type04"></span></a>
+		<div class="text"></div>
+		<a href="javascript:;" class="nhBtn02"><img src="../../images/kiosk/btn_kakao02.png" alt=""> </a> -->
+		<a href="javascript:;" class="nhBtn01 kioskEffect"><img src="../../images/kiosk/img_keyInput.png" alt="" /> <span class="type04"></span></a>
+	</div>
+
+	<div class="keypadWrap" style="display:none;">
+		<div class="keypad00" style="">
+			<img src="../../images/kiosk/img_keypad00.png" alt="" />
+			<a href="javascript:;" class="kioskEffect" id="btn00"><span class="hand type04"></span></a>
+		</div>
+		<div class="keypad01" style="display:none">
+			<img src="../../images/kiosk/img_keypad01.png" alt="" />
+			<a href="javascript:;" class="kioskEffect" id="btn01"><span class="hand type04"></span></a>
+		</div>
+		<div class="keypad02" style="display:none">
+			<img src="../../images/kiosk/img_keypad02.png" alt="" />
+			<a href="javascript:;" class="kioskEffect" id="btn02"><span class="hand type04"></span></a>
+		</div>
+		<div class="keypad03" style="display:none">
+			<img src="../../images/kiosk/img_keypad03.png" alt="" />
+			<a href="javascript:;" class="kioskEffect" id="btn03"><span class="hand type04"></span></a>
+		</div>
+		<div class="keypad04" style="display:none">
+			<img src="../../images/kiosk/img_keypad04.png" alt="" />
+			<a href="javascript:;" class="kioskEffect" id="btn04"><span class="hand type04"></span></a>
+		</div>
+		<div class="keypad05" style="display:none">
+			<img src="../../images/kiosk/img_keypad05.png" alt="" />
+			<a href="javascript:;" class="kioskEffect" id="btn05"><span class="hand type02"></span></a>
+		</div>
+		<div class="keypad06" style="display:none">
+			<img src="../../images/kiosk/img_keypad06.png" alt="" />
+			<a href="desktop.html" class="kioskEffect" id="btn06"><span class="hand type02"></span></a>
+			<a href="javascript:;" class="kioskEffect" id="btn07"><span class="hand type04"></span></a>
+		</div>
+		<div class="keypad07" style="display:none">
+			<img src="../../images/kiosk/img_keypad07.png" alt="" />
+			<a href="javascript:;" class="kioskEffect" id="btn08"><span class="hand type04"></span></a>
+		</div>
+		<div class="keypad08" style="display:none">
+			<img src="../../images/kiosk/img_keypad08.png" alt="" />
+		</div>
+	</div>
+
+</div>
+<!-- // 시연용 데스크탑 모드 -->
+<script type="text/javascript" src="../../js/common_ui.js"></script>
+
+</body>
+</html>

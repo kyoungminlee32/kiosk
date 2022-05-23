@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="wistrongh=device-wistrongh, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="NH Bank" />
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="no-index,follow">
+<meta name="title" content="">
+<meta name="author" content="">
+<meta name="content" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>:::NH통합스마트뱅킹 || 이체:::</title>
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/common_ui.js"></script>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+<link type="text/css" rel="stylesheet" href="../../css/swiper.min.css" />
+
+<script>
+	$(document).ready(function() {
+		bankSet();
+	});
+</script>
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+			<a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+			<h1><a href="javascript:;">즉시이체</a></h1>
+			<a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+			<a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+		</div>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div class="container">
+			<!-- 출금계좌 변경 팝업 시작 -->
+			<div class="popWrap bankSetWrap popH02"><!-- 2018-10-04 클래스변경 -->
+				<div class="dim"></div> <!-- 팝업 dim 처리 -->
+				<div class="dimCloseArea" onclick="popClose(this);return false;">터치 시 해당 창을 닫습니다.</div><!-- 2018-10-23 딤클릭영역 추가 -->
+				<div class="popInner">
+					<h1 class="bankPopTit">입금계좌 선택
+						<a href="javascript:;" class="bntSearch">자주사용하는 계좌 검색</a>
+                        <a href="javascript:;" class="btnSetup">관리</a>
+                    </h1>
+					<!-- 팝업컨텐츠 -->
+					<div class="popCont">
+						<div class="transfer">
+							<!-- tab -->
+							<div class="tabLv0 tabLv1">
+								<a href="javascript:;" class="arrLft" style="display: none;"><span class="blind">이전</span></a>
+								<ul class="swiper-wrapper">
+									<li class="swiper-slide"><a href="javascript:;"><span>최근입금 계좌</span></a></li>
+									<li class="swiper-slide"><a href="javascript:;" class="active"><span>자주사용 계좌</span></a></li><!-- //2018-09-04 : 텍스트 수정 -->
+									<li class="swiper-slide"><a href="javascript:;"><span>내 계좌</span></a></li>
+								</ul>
+								<a href="javascript:;" class="arrRgt" style="display: none;"><span class="blind">다음</span></a>
+							</div>
+							<!-- // tab -->
+							
+							<div class="accList">
+								<h2 class="blind">자주사용 계좌 목록</h2><!-- 접근성 수정 -->
+								<ul>
+									<li>
+										<a href="javascript:;" class="accSel" title="해당 계좌를 선택하고 창을 닫습니다.">
+											<span class="accName">
+                                                <span class="badge color3">동창회 회비</span>홍길동
+                                            </span>
+											<span class="accNum">국민 <strong>302-0799-91234-00</strong></span> <!-- 2018-07-19 은행명추가 -->											
+                                        </a>
+                                    </li>
+                                    <li>
+										<a href="javascript:;" class="accSel" title="해당 계좌를 선택하고 창을 닫습니다.">
+											<span class="accName">
+                                                <span class="badge color3">동창회 회비</span>장은지
+                                            </span>
+											<span class="accNum">국민 <strong>302-0799-91234-00</strong></span> <!-- 2018-07-19 은행명추가 -->											
+                                        </a>
+									</li>
+                                    <li>
+										<a href="javascript:;" class="accSel" title="해당 계좌를 선택하고 창을 닫습니다.">
+											<span class="accName">
+                                                <span class="badge color3">기타</span>임나라
+                                            </span>
+											<span class="accNum">국민 <strong>302-0799-91234-00</strong></span> <!-- 2018-07-19 은행명추가 -->											
+                                        </a>
+									</li>
+								</ul>
+                            </div> 
+
+							<!-- 2018-10-08 더보기 버튼 추가 -->
+							<div class="listMoreBtn mt10">
+								<a href="javascript:;" title="항목 더보기">더보기</a>
+							</div>
+							<!-- //2018-10-08 더보기 버튼 추가 -->
+						</div>
+					</div>
+					<!-- 팝업컨텐츠 -->
+
+					<!-- 팝업 버튼영역  -->
+					<div class="popBtnWrap">
+                        <!-- 자주사용하는 이체목록이 없을 경우 노출 -->
+						<div class="popBtn">
+                            <a href="javascript:;" class="confirmBtn" onclick="popClose(this);return false;">자주사용하는 계좌등록</a>
+                        </div>
+                        <!-- //자주사용하는 이체목록이 없을 경우 노출 -->
+						<a href="javascript:;" onclick="popClose(this);return false;" class="popClose" title="해당 창을 닫습니다."><img src="../../images/common/btn_popClose.png" alt="닫기"></a>
+					</div>
+					<!-- // 팝업 버튼영역 -->
+				</div>
+
+			</div>
+            <!-- // 출금계좌 변경 팝업 끝 -->
+            
+            <!-- 팝업시작 : 계좌삭제 -->
+            <!-- <div class="popWrap centerLayer">
+                <div class="dim"></div>
+                <div class="popInner">
+                    <h1 class="ac"><img src="../../images/common/popTitle.png" alt="NH 스마트뱅킹"></h1>
+                    <div class="popCont">
+                        <div class="confirmMsg type02">
+                            <p>해당 최근 입금계좌를 삭제하시겠습니까?</p>        
+                        </div>
+                    </div>
+        
+                    <div class="popBtnWrap">
+                        <div class="popBtn">
+                            <a href="javascript:;" onclick="popClose(this);return false;">취소</a>
+                            <a href="javascript:;" class="confirmBtn" onclick="popClose(this);return false;">확인</a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- // 팝업 끝 -->
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div class="footer">
+			<!-- quick button -->
+			<!-- <div class="areaBtmQuick"> 
+				<span class="btnQuick"><a href="javascript:;">quick</a></span>
+				<span class="btnTop"><a href="javascript:;">Top</a></span>
+			</div> -->
+			<!-- //quick button -->
+		
+			<ul class="footMenu">
+				<li><a href="../util/UC110000.html">홈</a></li>
+				<li><a href="../bw/UC490000.html">마이NH</a></li>
+				<li><a href="../util/talk.html">상담톡</a></li>
+				<li><a href="javascript:;">고객센터</a></li>
+				<li><a href="javascript:;">인증/보안</a></li>
+			</ul>
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+</body>
+</html>

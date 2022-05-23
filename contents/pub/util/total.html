@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="ko" class="w100p">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="NH Bank" />
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="robots" content="no-index,follow">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="content" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>:::NH통합스마트뱅킹 퍼블리싱 || 상담톡:::</title>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../js/common_ui.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/common.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/swiper.min.css" />
+	<script>
+		$(document).ready(function() {
+			$("#text01").fadeIn('fast');
+			setTimeout(function(){
+				$("#text02").fadeIn('fast');
+				$("#text02-1").fadeIn('fast');
+				
+			}, 1000);
+			setTimeout(function(){
+				$("#text02-2").fadeIn('fast', function() {
+					$(".chatArea").slideDown(500, function() {
+						//$(".luckyMenuSel").show();
+						$("#menu01").fadeIn(700);
+					});
+				});
+			}, 2000);
+			
+			$("#menu01 .kioskEffect").on("click", function() {
+				$("#menu01").hide();
+				$("#menu02").fadeIn();
+			});
+
+			$("#menu02 .kioskEffect").on("click", function() {
+				$("#menu02").hide();
+				$("#menu03").fadeIn();
+			});
+
+			$("#menu03 .kioskEffect").on("click", function() {
+				$(".chatArea").slideUp('fast', function() {
+					$(".menuType01, .chatWrap").hide();
+					$("#text03").fadeIn('fast');
+					setTimeout(function(){
+						$("#text04").fadeIn('fast', function() {
+							$(".chatArea").slideDown(700, function() {
+								$(".luckyChatSelType02").show();
+							});
+						});
+					}, 1000);
+				});
+			});
+
+			$("#menu04 input[type='radio'], #menu04 label").on("click", function() {
+				$("#menu04").hide();
+				$("#menu05").fadeIn();
+			});
+
+			$("#menu05 input[type='radio'], #menu05 label").on("click", function() {
+				$(".chatArea").slideUp('fast', function(){
+					$(".luckyChatSelType02").hide();
+					$("#text05").fadeIn();
+					scrollDown();
+
+					setTimeout(function(){
+						$("#text06").fadeIn();
+						scrollDown();
+					}, 1500);
+
+					setTimeout(function(){
+						$("#text07").fadeIn();
+						scrollDown();
+					}, 3000);
+
+					setTimeout(function(){
+						$("#text08").fadeIn();
+						$("#text08-1").fadeIn();
+						scrollDown();
+					}, 5000);
+
+					setTimeout(function(){
+						$("#text08-2").fadeIn();
+						scrollDown();
+					}, 7000);
+
+					setTimeout(function(){
+						$("#text08-3").fadeIn();
+						scrollDown();
+					}, 8500);
+				});
+			});
+
+			$(".luckyBoxImg").on("click", function() {
+				setTimeout(function(){
+					$("#result").fadeIn();
+					scrollDown();
+				}, 3000);
+			});
+
+			$(".luckyPopClose").on("click", function() {
+				$(".luckyResult .kioskEffect span").removeClass("hand");
+				setTimeout(function(){
+					$("#text09").fadeIn(1000, function() {
+						$(".chatArea").slideDown(700, function() {
+							$(".chatWrap").fadeIn();
+							scrollDown();
+							$(".chatBtnType01 li .start").addClass("kioskEffect").append('<span class="hand type01"></span>');
+						});
+					});
+					scrollDown();
+				}, 1000);
+			});
+			
+		});
+
+		var scrollDown = function() {
+			scrollHeight = $(".chatCont").height();
+			$(".lucky .chatBotWrap").scrollTop(scrollHeight);
+		}
+	</script>
+
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header -->
+    <div class="header">
+        <a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+        <h1><a href="javascript:;">운세</a></h1>
+        <a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+        <a href="javascript:;" class="btnNav"><span class="blind">전체메뉴</span></a>
+    </div>
+    <!-- //header -->
+
+    <!-- container -->
+	<div class="container lucky">
+		<!-- 운세 -->
+		<div class="chatBotWrap">
+			<!-- 운세컨텐츠 -->
+			<div class="chatCont">
+
+				<div class="bot" style="display:none" id="text01">
+					<span class="profile"><img src="../../images/contents/img_luckyProfile.png" alt="상담톡">럭키마스터</span>
+					<div class="dialogueWrap">
+						<div class="dialogue">
+							<div class="chatTxt">
+								<p>안녕하세요. 저는 럭키마스터예요.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bot" style="display:none" id="text02">
+					<span class="profile"><img src="../../images/contents/img_luckyProfile.png" alt="상담톡">럭키마스터</span>
+					<div class="dialogueWrap">
+						<div class="dialogue" style="display:none" id="text02-1">
+							<div class="chatTxt">
+								<p>고객님! <br />어떤 일로 럭키마스터를 찾아오셨나요?</p>
+							</div>
+						</div><br />
+						<div class="dialogue mt10" style="display:none" id="text02-2">
+							<div class="chatTxt">
+								<p>아래 그림에서 궁금한 걸 선택해봐요.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="user" style="display:none" id="text03">
+					<div class="dialogueWrap">
+						<div class="dialogue">
+							<div class="chatTxt">
+								<p>2019 신토정비결은 어떤가요?</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="bot" style="display:none" id="text04">
+					<span class="profile"><img src="../../images/contents/img_luckyProfile.png" alt="상담톡">럭키마스터</span>
+					<div class="dialogueWrap">
+						<div class="dialogue">
+							<div class="chatTxt">
+								<p>고객님의 성별과 생년월일을 알려주세요.<br />양력인지 음력인지도 알려줘요.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="user" style="display:none" id="text05">
+					<div class="dialogueWrap">
+						<div class="dialogue">
+							<div class="chatTxt">
+								<p>YYYY년 MM월 DD일생. 양력입니다.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="bot" style="display:none" id="text06">
+					<span class="profile"><img src="../../images/contents/img_luckyProfile.png" alt="상담톡">럭키마스터</span>
+					<div class="dialogueWrap">
+						<div class="dialogue">
+							<div class="chatTxt">
+								<p>OK! 고객님의 사주정보를 확인했어요.</p>
+							</div>
+						</div>
+						<div class="dialogueResult">
+							<div class="luckyContWrap">
+								<div class="luckyCont01">
+									<h2>사주정보</h2>
+									<ul class="listDot">
+										<li><strong>김농협</strong> (남, 36세)</li>
+										<li><strong>양</strong> : 1980.12.31 / <strong>음</strong> : 1980.11.15</li>
+										<li><strong>未</strong> (00:00~01:00)시</li>
+									</ul>
+									<table cellpadding="0" cellspacing="0">
+										<caption>테이블 제목 정보 입력</caption>
+										<!-- <colgroup>
+											<col style="width:33%">
+											<col style="width:33%">
+											<col style="width:33%">
+											<col style="width:auto">
+										</colgroup> -->
+										<tbody>
+											<tr>
+												<th scope="col">년</th>
+												<th scope="col">월</th>
+												<th scope="col">일</th>
+												<th scope="col">시</th>
+											</tr>
+											<tr>
+												<td>陽 <strong class="luckyPointC">水</strong> 土</td>
+												<td>陽 <strong class="luckyPointC">金</strong> 土</td>
+												<td>陽 <strong class="luckyPointC">火</strong> 土</td>
+												<td>陽 <strong class="luckyPointC">地</strong> 土</td>
+											</tr>
+											<tr>
+												<th scope="col">木</th>
+												<th scope="col">火</th>
+												<th scope="col">土</th>
+												<th scope="col">金</th>
+											</tr>
+											<tr>
+												<td>10</td>
+												<td>10</td>
+												<td>10</td>
+												<td>30</td>
+											</tr>
+											<tr>
+												<th scope="col">水</th>
+												<th scope="col" colspan="3">일주/강약</th>
+											</tr>
+											<tr>
+												<td>39</td>
+												<td colspan="3">32 : 118 / 신약</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="user" style="display:none" id="text07">
+					<div class="dialogueWrap">
+						<div class="dialogue">
+							<div class="chatTxt">
+								<p>궁금해요. 결과를 알려주세요!</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="bot" style="display:none" id="text08">
+					<span class="profile"><img src="../../images/contents/img_luckyProfile.png" alt="상담톡">럭키마스터</span>
+					<div class="dialogueWrap">
+						<div class="dialogue" style="display:none" id="text08-1">
+							<div class="chatTxt">
+								<p>좋아요! 자~ 이제 결과를 알려드릴게요.</p>
+							</div>
+						</div><br />
+						<div class="dialogue mt10" style="display:none" id="text08-2">
+							<div class="chatTxt">
+								<p>궁금하시죠?<br /> 행운을 가득 담은 럭키박스를 받으세요!</p>
+							</div>
+						</div>
+					</div>
+					<div class="luckyBoxImg" style="display:none;" id="text08-3">
+						<!-- <img src="../../images/contents/lucky_box.png" alt="" /> -->
+						<img src="../../images/contents/lucky_box.gif" alt="" />
+					</div>
+
+					<!-- 박스 이미지 변환 -->
+					<script>
+						$(".luckyBoxImg").on("click", function() {
+							var luckyBox_img = $(this).find("img"),
+								luckyBox_imgSrc = $(this).find("img").attr("src");
+
+							luckyBox_img.attr("src", luckyBox_imgSrc.replace("box.gif", "box_open.gif"));
+						});
+					</script>
+					<!-- // 박스 이미지 변환 end -->
+				</div>
+
+				<div class="luckyResult" style="display:none" id="result">
+					<a href="javascript:PopShowController('luckyPop');" title="전통운세 팝업열림" class="kioskEffect">김농협 님의 전통운세<span class="hand type05"></span></a>
+				</div>
+
+				<div class="bot" style="display:none" id="text09">
+					<span class="profile"><img src="../../images/contents/img_luckyProfile.png" alt="상담톡">럭키마스터</span>
+					<div class="dialogueWrap">
+						<div class="dialogue">
+							<div class="chatTxt">
+								<p>어떠세요? 궁금한 건 해결이 되었나요? </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 운세컨텐츠 end -->
+
+			<!-- 전통운세 팝업 -->
+			<div class="luckyPop luckyPop01">
+				<div class="dim" style="display: block;"></div>
+				<div class="luckyPopWrap ">
+					<h1 class="luckyTitle">꿈해몽</h1>
+					<ul class="luckyPopList">
+						<li class="toggleWrap">
+							<a href="javascript:;" class="luckyBtn" title="열림">YYYY 전체운의 흐름도</a>
+							<div class="luckyPopCont">
+								분주하고 몸이 고단하며 변화가 많은 해입니다. 용이 조화를 부리는 해이니 길게 승천하면
+								크게 좋은 일이지만 도처에 암운이 있으니 쉽게 얻지는 못할 것입니다.
+							</div>
+						</li>
+						<li class="toggleWrap">
+							<a href="javascript:;" class="luckyBtn" title="열림">YYYY 운세키워드</a>
+							<div class="luckyPopCont">
+								분주하고 몸이 고단하며 변화가 많은 해입니다. 용이 조화를 부리는 해이니 길게 승천하면
+								크게 좋은 일이지만 도처에 암운이 있으니 쉽게 얻지는 못할 것입니다.
+							</div>
+						</li>
+						<li class="toggleWrap">
+							<a href="javascript:;" class="luckyBtn" title="열림">YYYY 운세 총론</a>
+							<div class="luckyPopCont">
+								분주하고 몸이 고단하며 변화가 많은 해입니다. 용이 조화를 부리는 해이니 길게 승천하면
+								크게 좋은 일이지만 도처에 암운이 있으니 쉽게 얻지는 못할 것입니다.
+							</div>
+						</li>
+						<li class="toggleWrap">
+							<a href="javascript:;" class="luckyBtn" title="열림">재물운</a>
+							<div class="luckyPopCont">
+								분주하고 몸이 고단하며 변화가 많은 해입니다. 용이 조화를 부리는 해이니 길게 승천하면
+								크게 좋은 일이지만 도처에 암운이 있으니 쉽게 얻지는 못할 것입니다.
+							</div>
+						</li>
+						<li class="toggleWrap">
+							<a href="javascript:;" class="luckyBtn" title="열림">직장/사업운</a>
+							<div class="luckyPopCont">
+								분주하고 몸이 고단하며 변화가 많은 해입니다. 용이 조화를 부리는 해이니 길게 승천하면
+								크게 좋은 일이지만 도처에 암운이 있으니 쉽게 얻지는 못할 것입니다.
+							</div>
+						</li>
+						<li class="toggleWrap">
+							<a href="javascript:;" class="luckyBtn" title="열림">승진/시험/관운</a>
+							<div class="luckyPopCont">
+								분주하고 몸이 고단하며 변화가 많은 해입니다. 용이 조화를 부리는 해이니 길게 승천하면
+								크게 좋은 일이지만 도처에 암운이 있으니 쉽게 얻지는 못할 것입니다.
+							</div>
+						</li>
+						<li class="toggleWrap">
+							<a href="javascript:;" class="luckyBtn" title="열림">이성관계(기혼/미혼)</a>
+							<div class="luckyPopCont">
+								분주하고 몸이 고단하며 변화가 많은 해입니다. 용이 조화를 부리는 해이니 길게 승천하면
+								크게 좋은 일이지만 도처에 암운이 있으니 쉽게 얻지는 못할 것입니다.
+							</div>
+						</li>
+						<li class="toggleWrap">
+							<a href="javascript:;" class="luckyBtn" title="열림">행운지수 및 운세 활용조언</a>
+							<div class="luckyPopCont">
+								분주하고 몸이 고단하며 변화가 많은 해입니다. 용이 조화를 부리는 해이니 길게 승천하면
+								크게 좋은 일이지만 도처에 암운이 있으니 쉽게 얻지는 못할 것입니다.
+							</div>
+						</li>
+						<li class="toggleWrap">
+							<a href="javascript:;" class="luckyBtn" title="열림">사주 캘린더</a>
+							<div class="luckyPopCont">
+								분주하고 몸이 고단하며 변화가 많은 해입니다. 용이 조화를 부리는 해이니 길게 승천하면
+								크게 좋은 일이지만 도처에 암운이 있으니 쉽게 얻지는 못할 것입니다.
+							</div>
+						</li>
+					</ul>
+					<a href="javascript:PopCloseController('luckyPop')" class="luckyPopClose kioskEffect">닫기 <span class="hand type03"></span></a>
+				</div>
+			</div>
+			<!-- //전통운세 팝업 -->
+		</div>
+		<!-- // 운세 end -->
+
+		<!-- 운세 하단 -->
+		<div class="chatArea" style="display:none">
+			<!-- 메뉴 선택 -->
+			<!-- 1depth -->
+			<div class="luckyMenuSel menuType01">
+				<ul id="menu01" style="display:none">
+					<li class="menu01"><a href="javscript:;" class="kioskEffect">운세 <span class="hand type04"></span></a></li>
+					<li class="menu02"><a href="javscript:;">행운의로또</a></li>
+					<li class="menu03"><a href="javscript:;">꿈해몽</a></li>
+					<li class="menu04"><a href="javscript:;">심리테스트</a></li>
+				</ul>
+				<ul id="menu02" style="display:none">
+					<li class="menu01"><a href="javscript:;" class="kioskEffect">일년 <span class="hand type04"></span></a></li>
+					<li class="menu02"><a href="javscript:;">일상</a></li>
+					<li class="menu03"><a href="javscript:;">재물</a></li>
+					<li class="menu04"><a href="javscript:;">사랑</a></li>
+				</ul>
+				<ul id="menu03" style="display:none">
+					<li class="menu01"><a href="javscript:;">전통운세</a></li>
+					<li class="menu02"><a href="javscript:;" class="kioskEffect">신토정비결 <span class="hand type04"></span></a></li>
+				</ul>
+			</div>
+
+			<!-- 대화 성별 선택 -->
+			<div class="luckyChatSel luckyChatSelType02" style="display:none">
+				<div class="luckyRadio" id="menu04">
+					<div class="radioList kioskEffect">
+						<input type="radio" id="r1" name="rr" />
+						<label for="r1">남자</label>
+						<span class="hand type05"></span>
+					</div>
+					<div class="radioList">
+						<input type="radio" id="r2" name="rr" />
+						<label for="r2">여자</label>
+					</div>
+				</div>
+
+				<div class="luckyRadio" id="menu05" style="display:none">
+					<div class="radioList">
+						<input type="text" title="생년월일을 입력해주세요." placeholder="19861001" />
+					</div>
+					<div class="radioList kioskEffect">
+						<input type="radio" id="r1" name="rrr" />
+						<label for="r1">양력</label>
+						<span class="hand type05"></span>
+					</div>
+					<div class="radioList">
+						<input type="radio" id="r2" name="rrr" />
+						<label for="r2">음력</label>
+					</div>
+				</div>
+				<a href="javascript:;" class="luckySelClose">대화창 닫기</a>
+			</div>
+			<!-- // 대화 성별 선택 -->
+
+			<!-- 대화 생년월일 선택 -->
+			<!-- <div class="luckyChatSel luckyChatSelType02" style="display:none">
+				
+				<a href="javascript:;" class="luckySelClose">대화창 닫기</a>
+			</div> -->
+			<!-- // 대화 생년월일 선택 -->
+
+			<!-- 운세 footer 영역 -->
+			<div class="chatWrap">
+				<div class="chatWrapInner">
+					<a href="javascript:;" class="btnLuckyMenu">운세 전체메뉴 보기</a>
+					
+					<!-- 운세 기본메뉴 -->
+					<div class="baseMenu">
+						<ul class="chatBtnType01">
+							<li><a href="UC110000.html" class="start" onclick="baseMenu($(this));">처음으로</a></li>
+							<li><a href="javasript:;" class="infoChange" onclick="baseMenu($(this));">사주정보 변경</a></li>
+							<li><a href="javasript:;" class="end" onclick="baseMenu($(this));">그만하기</a></li>
+						</ul>
+					</div>
+					<!-- // 운세 기본메뉴 end -->
+				</div>
+
+			</div>
+			<!-- 운세 footer 영역 end -->
+		</div>
+		<!-- // 운세 하단 end -->
+	</div>
+	<!-- //container -->
+
+</div>
+<!-- //wrapper -->
+<script type="text/javascript" src="../../js/swiper.min.js"></script>
+</body>
+</html>

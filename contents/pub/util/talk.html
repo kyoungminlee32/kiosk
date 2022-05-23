@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="NH Bank" />
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="robots" content="no-index,follow">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="content" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>:::NH통합스마트뱅킹 퍼블리싱 || 상담톡:::</title>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../js/common_ui.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+	<script>
+		$(document).ready(function() {
+			$("#text01, #text01-1").fadeIn();
+			scrollDown();
+			setTimeout(function(){
+				$("#text01-2").fadeIn('fast');
+				scrollDown();
+			}, 1000);
+			setTimeout(function(){
+				$("#text02").fadeIn('fast');
+				scrollDown();
+				ChatSwiperController();
+				$(".btnVoice.kioskEffect .type07").addClass("hand");
+			}, 2000);
+
+			$(".voiceChat .chatBtnType01 .kioskEffect").on("click", function() {
+				$(".voiceChat .voice01").slideUp(200, function() {
+					$(".voiceChat").hide();
+					$("#text04").fadeIn();
+					scrollDown();
+					$(".btnVoice.kioskEffect .type07").removeClass("hand");
+
+					setTimeout(function(){
+						$("#text05").fadeIn();
+						scrollDown();
+					}, 1000);
+					setTimeout(function(){
+						$("#text06, #text06-1").fadeIn();
+						scrollDown();
+					}, 2000);
+					setTimeout(function(){
+						$("#text06-2, #text06-3").fadeIn();
+						ChatSwiperController();
+						scrollDown();
+					}, 3000);
+				});
+			});
+
+
+			$("#btn02").on("click", function() {
+
+
+				$("#text07").fadeIn();
+				scrollDown();
+				setTimeout(function() {
+					$("#btn02 .type07").removeClass("hand");
+					$(".passwordWrap").show();
+					$(".password").slideDown(300);
+				}, 1000);
+			});
+
+			$("#pwdConfirm").on("click", function() {
+				$(".password").slideUp(300, function() {
+					$(".passwordWrap").hide();
+
+					setTimeout(function() {
+						$("#text08").fadeIn();
+						scrollDown();
+					}, 1000);
+
+					setTimeout(function() {
+						$("#text09").fadeIn();
+						scrollDown();
+						$("#text09-1").fadeIn();
+						scrollDown();
+					}, 3000);
+					setTimeout(function() {
+						$("#text09-2").fadeIn();
+						scrollDown();
+					}, 4000);
+					
+				});
+			});
+
+			$(".chatBtnType02 .kioskEffect").on("click", function() {
+				$(".chatBtnType02 .kioskEffect .type07").removeClass("hand");
+				$("#text10").fadeIn();
+				$("#text10-1").fadeIn();
+				scrollDown();
+				setTimeout(function() {
+					$("#text10-2").fadeIn();
+					scrollDown("#text1002");
+				}, 1500);
+			});
+
+			$("#btn").on("click", function() {
+				$("#btn .type07").removeClass("hand");
+				$("#text11").fadeIn();
+				scrollDown();
+
+				setTimeout(function() {
+					$("#text12").fadeIn();
+					$("#text12-1").fadeIn();
+					scrollDown();
+				}, 1500);
+
+				setTimeout(function() {
+					$("#text12-2").fadeIn();
+					ChatSwiperController();
+					scrollDown();
+				}, 2500);
+
+				
+			});
+
+		});
+
+		var scrollDown = function() {
+			scrollHeight = $(document).height();
+			$(".chatCont").scrollTop(scrollHeight);
+		}
+	</script>
+</head>
+<body>
+
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header -->
+    <div class="header">
+        <a href="javascript:;" class="btnBack"><span class="blind">이전화면으로</span></a>
+        <h1><a href="javascript:;">상담톡</a></h1>
+        <a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+        <a href="javascript:;" class="btnNav"><span class="blind">전체메뉴</span></a>
+    </div>
+    <!-- //header -->
+
+    <!-- container -->
+	<div class="container">
+		
+		<!-- chatbot 시작 -->
+        <div class="chatBotWrap">
+			<div class="chatHead">
+				<span class="chatGuide"><a href="javascript:;">상담톡 도움말</a></span>
+				<h1><img src="../../images/contents/tit_chatbot.png" alt="NH BOT" /></h1>
+				<span class="chatCs"><a href="javascript:;">고객센터 전화연결</a></span>
+			</div>
+
+			<!-- chatbot 컨텐츠 시작 -->
+			<div class="chatCont">
+				<div class="chatDate"><span>2019년 7월 17일 수요일</span></div>
+				<div class="bot" id="text01" style="display:none;">
+					<span class="profile"><img src="../../images/contents/img_chatbot.png" alt="상담톡"></span>
+					<div class="dialogueWrap">
+						<div class="dialogueCont" id="text01-1" style="display:none;">
+							<div class="dialogue">
+								<div class="chatTxt">
+									<p>김농협 고객님, 안녕하세요.</p>
+									<p>NH농협의 인공지능 상담톡입니다.</p>
+								</div>
+								<span class="time">오후 02:05</span>
+							</div>
+						</div>
+						
+						<div class="dialogueCont" id="text01-2" style="display:none;">
+							<div class="dialogue">
+								<div class="chatTxt">
+									<p>무엇을 도와드릴까요?</p>
+								</div>
+								<span class="time">오후 02:05</span>
+							</div>
+						</div>
+					</div>
+				
+					<div class="dialogueWrap" id="text02" style="display:none;">
+						<div class="dialogueResult">
+							<div class="chatListDefault">
+								<div class="chatSwipe swiper-container">
+									<ul class="chatSwipeWrap swiper-wrapper">
+										<li class="swiper-slide">
+											<h2>조회/이체</h2>
+											<p class="chatMenu01">계좌정보와 거래내역을<br /> 알려드리며, '자주쓰는이체'로<br /> 바로 이체하실 수 있습니다.</p>
+											<ul class="chatSwipeBtn">
+												<li><a href="javascript:;">조회하기</a></li>
+												<li class="active"><a href="javascript:;">이체하기</a></li>
+											</ul>
+										</li>
+										<li class="swiper-slide">
+											<h2>상품추천</h2>
+											<p class="chatMenu02">고객님께 '꼭' 맞는 상품을<br /> 추천드립니다.</p>
+											<ul class="chatSwipeBtn">
+												<li><a href="javascript:;">상품 추천 받기</a></li>
+											</ul>
+										</li>
+										<li class="swiper-slide">
+											<h2>질의응답</h2>
+											<p class="chatMenu03">금융과 관련된 궁금하신 것을<br /> 물어보시면 답변을 드립니다.</p>
+											<ul class="chatSwipeBtn">
+												<li><a href="javascript:;">무엇이든 물어보기</a></li>
+											</ul>
+										</li>
+										<li class="swiper-slide">
+											<h2>환율조회</h2>
+											<p class="chatMenu04">다양한 국가의 환율 정보를<br /> 바로 보여드립니다.</p>
+											<ul class="chatSwipeBtn">
+												<li><a href="javascript:;">환율정보 보기</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="bot" id="text02" id="text03" style="display:none;">
+					<span class="profile"><img src="../../images/contents/img_chatbot.png" alt="상담톡"></span>
+					<div class="dialogueWrap">
+						<div class="dialogue">
+							<div class="chatTxt">
+								<p class="chatImgWrap"><img src="../../images/contents/ico_chatMenu.png" alt="상담톡 전체메뉴 이미지" /> <span>전체메뉴 버튼을 누르시면,<br /> 언제든 메뉴를 보실 수 있습니다.</span></p>
+							</div>
+							<span class="time">오후 02:05</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="user" id="text04" style="display:none;">
+					<div class="dialogueWrap">
+						<div class="dialogue">
+							<div class="chatTxt">
+								<p>이체해줘</p>
+							</div>
+							<span class="time">오후 02:05</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="bot" id="text05" style="display:none;">
+					<span class="profile"><img src="../../images/contents/img_chatbot.png" alt="상담톡"></span>
+					<div class="dialogueWrap">
+						<div class="dialogue">
+							<div class="chatTxt">
+								<p>이체 서비스를 진행하겠습니다.</p><br />
+								<p>상담톡 이체는 간편뱅킹으로 로그인 후에<br /> '자주사용하는 이체'에 등록된 정보만 이체가 가능합니다.</p>
+							</div>
+							<span class="time">오후 02:05</span>
+						</div>
+					</div>
+				</div>
+				
+				<div class="bot" id="text06" style="display:none;">
+					<span class="profile"><img src="../../images/contents/img_chatbot.png" alt="상담톡"></span>
+					<div class="dialogueWrap">
+						<div class="dialogue" id="text06-1" style="display:none;">
+							<div class="chatTxt">
+								<p>고객님의 자주사용하는 이체목록입니다.</p>
+							</div>
+							<span class="time">오후 02:05</span>
+						</div>
+
+						<div class="dialogueResult" id="text06-2" style="display:none;">
+							<div class="chatList06">
+								<div class="chatSwipe swiper-container">
+									<ul class="chatSwipeWrap swiper-wrapper">
+										<li class="swiper-slide">
+											<div class="chatSwipeCont">
+												<h2><span class="chatTxtIcon">첫번째</span> 아파트 관리비</h2>
+												<ul class="detailList">
+													<li>
+														<span class="tit">입금은행</span>
+														<span>국민은행</span>
+													</li>
+													<li>
+														<span class="tit">입금계좌</span>
+														<span>123-1234-1234-12</span>
+													</li>
+													<li>
+														<span class="tit">받으시는분</span>
+														<span>김농협</span>
+													</li>
+													<li>
+														<span class="tit">입금액</span>
+														<strong class="pointColor"><em>77,200</em><span class="wUnit">원</span></strong>
+													</li>
+												</ul>
+												<ul class="chatSwipeBtn">
+													<li class="active"><a href="javascript:;" class="kioskEffect" id="btn02">즉시이체 <span class="hand type07"></span></a></li>
+												</ul>
+												<ul class="chatSwipeBtn">
+													<li><a href="javascript:;">금액변경후 이체</a></li>
+												</ul>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="chatSwipeCont">
+												<h2><span class="chatTxtIcon">두번째</span> 가족여행계</h2>
+												<ul class="detailList">
+													<li>
+														<span class="tit">입금은행</span>
+														<span>우리은행</span>
+													</li>
+													<li>
+														<span class="tit">입금계좌</span>
+														<span>123-1234-1234-12</span>
+													</li>
+													<li>
+														<span class="tit">받으시는분</span>
+														<span>김농협</span>
+													</li>
+													<li>
+														<span class="tit">입금액</span>
+														<strong class="pointColor"><em>77,200</em><span class="wUnit">원</span></strong>
+													</li>
+												</ul>
+												<ul class="chatSwipeBtn">
+													<li class="active"><a href="javascript:;">즉시이체</a></li>
+												</ul>
+												<ul class="chatSwipeBtn">
+													<li><a href="javascript:;">금액변경후 이체</a></li>
+												</ul>
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="chatSwipeCont">
+												<h2><span class="chatTxtIcon">세번째</span> 남편 용돈</h2>
+												<ul class="detailList">
+													<li>
+														<span class="tit">입금은행</span>
+														<span>신한은행</span>
+													</li>
+													<li>
+														<span class="tit">입금계좌</span>
+														<span>123-1234-1234-12</span>
+													</li>
+													<li>
+														<span class="tit">받으시는분</span>
+														<span>김농협</span>
+													</li>
+													<li>
+														<span class="tit">입금액</span>
+														<strong class="pointColor"><em>77,200</em><span class="wUnit">원</span></strong>
+													</li>
+												</ul>
+												<ul class="chatSwipeBtn">
+													<li class="active"><a href="javascript:;">즉시이체</a></li>
+												</ul>
+												<ul class="chatSwipeBtn">
+													<li><a href="javascript:;">금액변경후 이체</a></li>
+												</ul>
+											</div>
+										</li>
+										<li class="swiper-slide moreList">
+											<div class="chatSwipeCont">
+												<h2 class="ac">더보기</h2>
+												<p class="moreListTxt">상담톡에서는 ‘자주사용하는 이체’를<br /> 10개까지 제공합니다.<br />  ‘자주사용하는 이체’ 전체목록을<br /> 확인하기 위해서는<br /> 스마트뱅킹으로 이동해야 합니다.</p>
+												<ul class="chatSwipeBtn">
+													<li class="active"><a href="javascript:;">스마트뱅킹으로 이동</a></li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="chatBtnType01 mt10" id="text06-3" style="display:none;">
+							<a href="../bj/MA1101100.html" class="kioskEffect">자주 사용하는 이체 등록 <span class="hand type07"></span></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="bot" id="text07" style="display:none;">
+					<span class="profile"><img src="../../images/contents/img_chatbot.png" alt="상담톡"></span>
+					<div class="dialogueWrap">
+						<div class="dialogue">
+							<div class="chatTxt">
+								<p>즉시이체를 진행합니다.</p>
+								<p>잠시 후 계좌비밀번호 입력창이 열리면<br />계좌비밀번호를 입력해 주시기 바랍니다.</p>
+							</div>
+							<span class="time">오후 02:05</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="user" id="text08" style="display:none;">
+					<div class="dialogueWrap">
+						<div class="dialogue">
+							<div class="chatTxt">
+								<p>계좌비밀번호</p>
+								<p>●●●●</p>
+							</div>
+							<span class="time">오후 02:05</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="bot" id="text09" style="display:none;">
+					<span class="profile"><img src="../../images/contents/img_chatbot.png" alt="상담톡"></span>
+					<div class="dialogueWrap">
+						<div class="dialogue" id="text09-1" style="display:none;">
+							<div class="chatTxt">
+								<p>입금정보를 확인해주신 후  ‘즉시이체’ 버튼을 누르시면 입금이 완료됩니다.</p>
+							</div>
+							<span class="time">오후 02:05</span>
+						</div>
+
+						<div class="dialogueResult" id="text09-2" style="display:none;">
+							<!-- 이체정보 시작 -->
+							<div class="chatList03">
+								<div class="chatSrchResult">
+									<h2>이체정보</h2>
+									<table class="chatListTable">
+										<colgroup>
+											<col style="width:30%">
+											<col style="width:70%">
+										</colgroup>
+										<caption>이체정보 테이블입니다. (수신자명, 출금계좌, 수취인, 입금은행, 입금계좌, 수수료, 입금금액으로 구성되어있습니다.)</caption>
+										<tbody>
+											<tr>
+												<th scope="row">수신자명</th>
+												<td>아파트관리비(김농협)</td>
+											</tr>
+											<tr>
+												<th scope="row">입금은행</th>
+												<td>국민은행</td>
+											</tr>
+											<tr>
+												<th scope="row">입금계좌</th>
+												<td class="pointColor5">123-1234-1234-12</td>
+											</tr>
+											<tr>
+												<th scope="row">입금금액</th>
+												<td class="ar"><em class="pointColor">77,200</em><span class="wUnit">원</span></td>
+											</tr>
+											<tr>
+												<th scope="row">출금계좌</th>
+												<td class="">123-456-789-09</td>
+											</tr>
+											<tr>
+												<th scope="row">수수료</th>
+												<td class="ar"><em>500</em><span class="wUnit">원</span></td>
+											</tr>
+											
+										</tbody>
+									</table>
+								</div>
+								<ul class="chatBtnType02">
+									<li><a href="javascript:;" class="active kioskEffect">즉시이체 <span class="hand type07"></span></a></li>
+									<li class="w40p"><a href="javascript:;">금액변경후 이체</a></li>
+									<li><a href="javascript:;">이체취소</a></li>
+								</ul>
+							</div>
+							<!-- // 거래내역조회 끝 -->
+						</div>
+					</div>
+				</div>
+
+				<div class="bot mt20" id="text10" style="display:none;">   
+					<span class="profile"><img src="../../images/contents/img_chatbot.png" alt="상담톡"></span>
+					<div class="dialogueWrap">
+						<div class="dialogue" id="text10-1">
+							<div class="chatTxt">
+								<p>즉시이체가 완료되었습니다. </p>
+								<p>이체조회결과 버튼을 누르시면 이체 결과와 공유버튼을 확인하실 수 있습니다. </p>
+							</div>
+							<span class="time">오후 02:05</span>
+						</div>
+						<div class="chatBtnType01 mt10" id="text10-2">
+							<a href="javascript:;" class="active">이체결과보기</a>
+							<a href="javascript:;" class="kioskEffect" id="btn">적금상품추천 <span class="hand type07"></span></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="user" id="text11" style="display:none;">
+					<div class="dialogueWrap">
+						<div class="dialogue">
+							<div class="chatTxt">
+								<p>적금 추천해줘.</p>
+							</div>
+							<span class="time">오후 02:05</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="bot" id="text12" style="display:none;">
+					<span class="profile"><img src="../../images/contents/img_chatbot.png" alt="상담톡"></span>
+					<div class="dialogueWrap">
+
+						<div class="dialogue" id="text12-1" style="display:none;">
+							<div class="chatTxt">
+								<p>고객님을 위한 목돈 모으기 상품을 추천해드리겠습니다.</p>
+							</div>
+							<span class="time">오후 02:05</span>
+						</div>
+
+						<div class="dialogueResult" id="text12-2" style="display:none;">
+							<div class="chatList01">
+								<div class="chatSwipe swiper-container swiper-container-horizontal">
+									<ul class="chatSwipeWrap swiper-wrapper">
+										<li class="swiper-slide swiper-slide-active">
+											<div class="chatSwipeCont chatProduct">
+												<h2>NH직장인월복리적금</h2>
+												<strong class="prodTit mt10"><span class="badge color1">은행</span></strong>
+												<p class="chatProductDetail">월복리로 금리를 받을 수 있는 직장인재테크 상품</p>
+												<p class="chatProductRate">최저 1.84% ~ 최고 <strong>1.84%</strong> (12개월)</p>
+												<ul class="chatSwipeBtn">
+													<li><a href="../../../market/contents/nhbank/pub_nhbank/co/SMNHDE352000.html" class="kioskEffect">자세히보기 <span class="hand type07"></span></a></li>
+												</ul>
+											</div>
+										</li>
+										<li class="swiper-slide swiper-slide-active">
+											<div class="chatSwipeCont chatProduct">
+												<h2>법사랑플러스적금</h2>
+												<strong class="prodTit mt10"><span class="badge color1">은행</span></strong>
+												<p class="chatProductDetail">사회전반으로 법질서 실천을 확대해 나가는 공익상품</p>
+												<p class="chatProductRate">최저 1.96% ~ 최고 <strong>2.66%</strong> (12개월)</p>
+												<ul class="chatSwipeBtn">
+													<li><a href="javascript:;">자세히보기</a></li>
+												</ul>
+											</div>
+										</li>
+										<li class="swiper-slide swiper-slide-active">
+											<div class="chatSwipeCont chatProduct">
+												<h2>채움적금</h2>
+												<strong class="prodTit mt10"><span class="badge color1">은행</span></strong>
+												<p class="chatProductDetail">시장실세금이를 반영한 자유적립식 예금</p>
+												<p class="chatProductRate">최저 1.96% ~ 최고 <strong>2.06%</strong> (12개월)</p>
+												<ul class="chatSwipeBtn">
+													<li><a href="javascript:;">자세히보기</a></li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+								<div class="chatBtnType01 mt10">
+									<a href="javascript:;">처음으로</a>
+									<a href="javascript:;" class="active">조회/이체</a>
+									<a href="javascript:;">메뉴검색</a>
+									<a href="javascript:;" class="disabled">환율정보</a>
+									<a href="javascript:;">질의응답</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+			<!-- // chatbot 컨텐츠 끝 -->
+
+			<!-- chatbot 입력영역 -->
+			<div class="chatArea">
+				<!-- chatbot 메뉴 -->
+				<div class="chatMenuWrap">
+					<a href="javascript:;" title="새창으로 열림" class="btnChatM">상담톡 메뉴 보기</a>
+					<div class="chatMenu swiper-container">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide"><a href="javascript:;">#조회</a></li>
+							<li class="swiper-slide"><a href="javascript:;">#이체</a></li>
+							<li class="swiper-slide"><a href="javascript:;">#상품추천</a></li>
+							<li class="swiper-slide"><a href="javascript:;">#질의응답</a></li>
+							<li class="swiper-slide"><a href="javascript:;">#예금/신탁계좌</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- // chatbot 메뉴 end -->
+
+				<!-- 채팅입력 영역 -->
+				<div class="chatWrap">
+					<!-- 텍스트 채팅 -->
+					<div class="txtChat">
+						<input type="text" title="텍스트 채팅 입력" placeholder="텍스트를 입력해주세요." />
+						<a href="javascript:btnChatVoice('voice01');" class="btnVoice kioskEffect">음성채팅으로 전환하기 <span class="type07" style="margin-left:-16.5px;"></span></a>
+						<a href="javascript:;" class="btnSend">텍스트채팅으로 전환하기</a>
+					</div>
+					<!-- // 텍스트 채팅 -->
+
+					<!-- 보이스 채팅 -->
+					<div class="voiceChat">
+						<div class="dim"></div>
+						<!-- 인식중 -->
+						<div class="voice01">
+							<dl>
+								<dt>듣고있어요. 말해주세요.</dt>
+								<!-- <dd>"계좌 조회해줘"</dd> -->
+
+								<!-- 예시 -->
+								<dd class="example">
+									<p>아래 예시처럼 이용할 수 있습니다.</p>
+									<div class="chatBtnType01">
+										<!-- <div><a href="javascript:;">"김농협 계좌로 5만원 이체해줘."</a></div> -->
+										<a href="javascript:;">조회해줘</a>
+										<a href="javascript:;" class="kioskEffect">이체해줘 <span class="hand type07"></span></a>
+									</div>
+								</dd>
+								<!-- // 예시 end -->
+							</dl>
+						</div>
+						<!-- // 인식중 end -->
+					</div>
+					<!-- // 보이스 채팅 -->
+
+				</div>
+				<!-- 채팅입력 영역 end -->
+
+				<!-- 비밀번호 보안키패드 -->
+				<div class="passwordWrap" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:1201;">
+					<div class="dim"></div>
+					<div class="password" style="display:none;position:absolute;bottom:0;left:0;width:100%;height:calc(100% / 2);background-color:#fff;z-index:1200;text-align:center;">
+						<img src="../../images/kiosk/password.png" alt="" style="max-width:100%;vertical-align:middle;" />
+						<a href="javascript:;" class="kioskEffect" id="pwdConfirm" style="width:140px;height:58px;position:absolute;bottom:0px;right:0;"><span class="hand type02"></span></a>
+					</div>
+				</div>
+			</div>
+			<!-- // chatbot 입력영역 end -->
+
+			<a href="../util/UC110000.html" class="popClose" title="상담톡과의 채팅을 종료하고 기존화면으로 이동합니다.">
+				<img src="../../images/common/btn_popClose.png" alt="상담톡 종료하기">
+			</a>
+		</div>
+		<!-- // chatbot 끝 -->
+
+	</div>
+	<!-- //container -->
+
+    <!-- footer -->
+    <div class="footer">
+        <!-- quick button -->
+        <!-- <div class="areaBtmQuick">
+            <span class="btnQuick"><a href="javascript:;">quick</a></span>
+            <span class="btnTop"><a href="javascript:;">Top</a></span>
+        </div> -->
+        <!-- //quick button -->
+        <ul class="footMenu">
+            <li><a href="../util/UC110000.html">홈</a></li>
+			<li><a href="../bw/UC490000.html">마이NH</a></li>
+			<li><a href="../util/talk.html">상담톡</a></li>
+            <li><a href="javascript:;">고객센터</a></li>
+            <li><a href="javascript:;">인증/보안</a></li>
+        </ul>
+    </div>
+    <!-- //footer -->
+</div>
+<!-- //wrapper -->
+<script type="text/javascript" src="../../js/swiper.min.js"></script>
+<script>
+	//ChatSwiperController();
+
+/*
+	var mySwiper = new Swiper('.chatSwipe' , {
+		slidesPerView: 'auto',
+		spaceBetween : 10
+	});
+	*/
+
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+/* 2018-07-31 NEW STYLE */
+.useGuide-logo {
+	width:calc(100% - 30px);
+	min-height:56px;
+	margin:20px auto 0;
+	padding:10px 15px 10px 50px;
+	box-sizing:border-box;
+	border:1px solid #919191;
+	border-radius:3px;
+	background:url(../img/common/icon_logo_use.png) no-repeat 0 0;
+}
+.useGuide-logo span {font-weight:bold;}
+
+.areaTerms * {
+	font-family:'맑은고딕';
+	font-size:12px;
+	color:#000;
+	letter-spacing:-1px;
+}
+.areaTerms .txt-c {}
+	.tit_type1.ctit,
+	.areaTerms .ctit {
+		font-family:'맑은고딕';
+		font-size:18px;
+		text-align:center;
+		line-height:20px;
+		letter-spacing:-2px;
+		word-spacing:-2px;
+	}
+	.areaTerms .txt-a + .listOneOrder {padding:10px 0 0;}
+		.areaTerms .txt-b .tit {display:block;padding:20px 0 0;font-weight:normal;font-size:15px;text-align:center;}
+	.areaTerms .txt-vers {margin:10px 0 0;text-align:right;}
+	.areaTerms .txt-em {display:block;margin:0 0 0 8px;font-style:oblique;font-size:11px;text-indent:-8px;}
+	.areaTerms .stit {margin:20px 0 0 16px;text-indent:-16px;font-weight:bold;font-size:15px;}
+	.areaTerms li {font-size:12px;line-height:20px;}
+	.areaTerms .listOneOrder {}
+		.areaTerms .listOneOrder > li {margin:0 0 0 15px;text-indent:-15px;}
+	.areaTerms .listTwoOrder {margin:0;padding:10px 0;}
+		.areaTerms .listTwoOrder > li {margin:0 0 0 10px;text-indent:-10px;}
+
+.areaTerms_vs1 * {
+	font-family:'맑은고딕';
+	font-size:12px;
+	color:#000;
+	letter-spacing:-1px;
+}
+.areaTerms_vs1 .txt-c {}
+	.tit_type1.ctit,
+	.areaTerms_vs1 .ctit {
+		font-family:'맑은고딕';
+		font-size:18px;
+		text-align:center;
+		line-height:20px;
+		letter-spacing:-2px;
+		word-spacing:-2px;
+	}
+	.areaTerms_vs1 .txt-a + .listOneOrder {padding:10px 0 0;}
+		.areaTerms_vs1 .txt-b .tit {display:block;padding:20px 0 0;font-weight:normal;font-size:15px;text-align:center;}
+	.areaTerms_vs1 .txt-vers {margin:10px 0 0;text-align:right;}
+	.areaTerms_vs1 .txt-em {display:block;margin:0 0 0 8px;font-style:oblique;font-size:11px;text-indent:-8px;}
+	.areaTerms_vs1 .stit {margin:20px 0 0 16px;text-indent:-16px;font-weight:bold;font-size:12px;}
+	.areaTerms_vs1 li {font-size:12px;line-height:20px;}
+	.areaTerms_vs1 .listOneOrder {}
+		.areaTerms_vs1 .listOneOrder > li {margin:0 0 0 15px;text-indent:-15px;font-size:15px;}
+		.areaTerms_vs1 .txt-a strong,
+		.areaTerms_vs1 .listOneOrder > li strong,
+		.areaTerms_vs1 .listTwoOrder > li strong {font-size:15px;}
+	.areaTerms_vs1 .listTwoOrder {margin:0;padding:10px 0;}
+		.areaTerms_vs1 .listTwoOrder > li {margin:0 0 0 10px;text-indent:-10px;font-size:15px;}
+.areaTerms_vs1 .font12 {font-size:12px !important;}
+.areaTerms_vs1 .font15 {font-size:15px !important;}
+.areaTerms_vs1 .font-type {font-size:10px !important;vertical-align:top;position:relative;top:-5px;}
+		

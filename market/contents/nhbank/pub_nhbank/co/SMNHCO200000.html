@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="NH Bank" />
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="robots" content="no-index,follow">
+<meta name="title" content="">
+<meta name="author" content="">
+<meta name="content" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>:::NH통합스마트뱅킹 || 보험상품리스트:::</title>
+<script type="text/javascript" src="../../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../../js/common_ui.js"></script>
+<script type="text/javascript" src="../../../js/swiper.min.js"></script>
+<script type="text/javascript" src="../../js/common_market_ui.js"></script>
+<link type="text/css" rel="stylesheet" href="../../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../../css/contents.css" />
+<link type="text/css" rel="stylesheet" href="../../../css/swiper.min.css" />
+<link type="text/css" rel="stylesheet" href="../../css/contents_market.css" />
+<link type="text/css" rel="stylesheet" href="../../css/main_market.css" />
+<script>
+     $(document).ready(function(){
+        var swiper = new Swiper('.swiper-container.topmainSwiper' , {
+            slidesPerView:'auto',
+            spaceBetween:15,
+            centeredSlides:true,
+            loop:true,
+            initialSlide:0,
+            pagination:{
+                el:'.swiper-pagination-wrap .paging-list-wrap',
+                clickable:true,
+                bulletElement : 'a' /*접근성 스와이프 테스트*/
+            },
+
+            /*접근성 스와이프 대응*/
+            navigation : {
+                nextEl : '.btn-transparent.swiper-button-next',
+                prevEl : '.btn-transparent.swiper-button-prev'
+            },
+
+            /*접근성 스와이프 대응*/
+            autoplay:{
+                delay:3000,
+            disableOnInteraction:false,
+            },   
+            /*접근성*/
+            on:{
+                init:function(){
+                    /* 2018-11-27 접근성 추가 */
+                    $('.topmainSwiper .swiper-slid7e').attr('aria-hidden','true');
+                    $('.topmainSwiper .swiper-slide-active').attr('aria-hidden','false');
+                }
+            }
+        });
+
+	
+        /* 접근성 추가 */
+        swiper.on("slideChangeTransitionEnd", function(){
+            $(".topmainSwiper .swiper-slide").attr('aria-hidden', true);
+            $(".topmainSwiper .swiper-slide.swiper-slide-active").attr('aria-hidden', false).find('a').blur().focus();
+            // if($('.swiper-pagination-bullet-active')){
+            //    $('.swiper-pagination-wrap').find('.stopbtn').addClass('start').removeClass('stop').text('START');
+            //     swiper.autoplay.stop();
+            // }else{
+            //     $('.swiper-pagination-wrap').find('.stopbtn').removeClass('start').text('STOP');
+            //     swiper.autoplay.start();
+            // }
+        });
+        /* 접근성 추가 */
+
+        if($('.swiper-pagination-bullet').length == 1){
+            swiper.destroy();
+            $('.swiper-pagination').hide();
+        }
+
+		$(".paging-list-wrap .swiper-pagination-bullet").on("click",function(){
+			$('.swiper-pagination-wrap').find('.stopbtn').addClass('start').removeClass('stop').text('START');
+                 swiper.autoplay.stop();
+				 $(".paging-list-wrap .swiper-pagination-bullet").attr("title","");
+				 $(this).attr("title","선택됨");
+
+		});
+  
+        $('.stopbtn').on('click',function(){
+            if($(this).hasClass('stop')){
+                $(this).addClass('start').removeClass('stop').text('START');
+                swiper.autoplay.stop();
+            }else{
+                $(this).addClass('stop').removeClass('start').text('STOP');
+                swiper.autoplay.start();
+            }  
+        });
+
+    
+		function setTicker(){
+			/* 2018-11-27 접근성 추가 */
+			$('.ticker').find('.showList').attr('aria-hidden',false);
+			$('.ticker').find('.showList').siblings().attr('aria-hidden',true);
+			/* 2018-11-27 접근성 추가 */
+			rollTicker = setInterval(function(){
+			
+				var newItem = $('.ticker').find('li').eq(0).clone().removeClass('showList');
+				newItem.insertAfter($('.ticker > li:last-child'));
+				
+				var newItem2 = $('.ticker').find('li').eq(1).addClass('showList').html();
+				$('.showList').html(newItem2)
+				
+				$('.ticker').find('li').eq(1).remove();
+				/* 2018-11-27 접근성 추가 */
+				$('.ticker').find('.showList').siblings().attr('aria-hidden',true);
+				/* 2018-11-27 접근성 추가 */
+				if($('.showList').find('.dflex').hasClass('inqBest')){
+					$('.realTop').find('.tit').text('조회BEST').attr('tabindex',0);
+					$('.realTop').find('.tit').css('background-color','#3d9bff');
+				}
+				else if($('.showList').find('.dflex').hasClass('selBest')){
+					$('.realTop').find('.tit').text('판매BEST');
+					$('.realTop').find('.tit').css('background-color','#4885e0');
+				}
+			 },3000)
+
+		}
+		setTicker();
+
+		$('.keywordMore').off('click').on('click',function(){
+			$(this).toggleClass('active').attr('aria-expanded',false);
+			$('.ticker').toggleClass('active');
+			/* 접근성 추가 */
+			// $(this).siblings().find('ol > li').eq(1).find('span.tit').focus().attr('tabindex','-1').css('border','1px solid red');
+            // $(this).siblings().find('ol>li:not(:showList)').attr('aria-hidden','false');
+            // $('.showList').attr('aria-hidden','true');
+			/* 접근성 추가 */
+			if($('.ticker').hasClass('active')){
+				clearInterval(rollTicker)
+			}
+			else{
+				setTicker();
+			}
+			if($(this).hasClass('active')){
+				$(this).attr('aria-expanded',true);
+			}
+			else {
+				$(this).attr('aria-expanded',false);
+			}
+			
+		});
+		
+	 });  
+
+       $(function(){
+             var $slider = $('.swiper-wrapper');
+             var SetTabIndex = function(){
+                 var $currentSlide = $slider.find('.swiper-slide-active');
+                 $slider.attr('tabindex','-1').attr('aira-hidden','true');
+                 $currentSlide.attr('tabindex','0').attr('aira-hidden','hidden');
+				}
+             $slider.on('init',function(e,swiper){
+                 SetTabIndex();
+             });
+             $slider.on('afterChange',function(e,swiper,currentSlide){
+                 SetTabIndex();
+             });
+     });  
+</script>
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div class="header">
+			<a href="../../../../../contents/pub/util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+			<h1><a href="javascript:;">금융상품몰</a></h1>
+			<a href="javascript:;" class="btnChat"><span class="blind">쳇봇</span></a>
+			<a href="javascript:;" class="btnNav"><span class="blind">전체메뉴</span></a>
+		</div>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div class="">
+			<div class="nhbankMainWrap">
+                <div class="topSwiper">
+                    <!--2018.10.08 마크업 수정-->
+                    <div class="swiper-container topmainSwiper">
+                        <h1 class=""><strong class="pointerColor">김농협</strong>님만을 위한 NH추천상품</h1>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="swiperBox pt20 pr15">
+                                    <div class="productInfo">
+                                        <a href="SMNHDE352000.html" class="kioskEffect">
+										<dl>
+                                            <dt><strong>NH직장인월복리적금</strong></dt>
+                                            <dd class="pcolor1">이자에 이자가 붙어 더 크게 적립되는 상품</dd>
+                                            <dd class="productTxt">최저 1.96% ~ <span>최고 연<strong> 2.76</strong>%</span></dd>
+                                            <dd class="monthTxt">(12개월)</dd>
+                                        </dl>
+										<span class="hand type04"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+							
+							<div class="swiper-slide">
+                                <div class="swiperBox">
+                                    <div class="productInfo">
+                                        <a href="javascript:;">
+                                        <dl>
+                                            <dt><strong>자유로정기예금</strong></dt>
+                                            <dd class="pcolor1">통장하나로 자유롭게 거래할 수 있는 맞춤식 정기예금</dd>
+                                            <dd class="productTxt">최저 1.9% ~ <span>최고 <strong>1.9</strong>%</span></dd>
+                                            <dd class="monthTxt">(12개월)</dd>
+                                        </dl>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+							<div class="swiper-slide">
+                                <div class="swiperBox">
+                                    <a href="javascript:;">
+                                        <div class="productInfo">
+                                            <dl>
+                                                <dt><strong>e금리우대예금</strong></dt>
+                                                <dd class="pcolor1">온라인 전용 농협은행 대표 예금</dd>
+                                                <dd class="productTxt">최저 1.95% ~ <span>최고 <strong>2.35</strong>%</span></dd>
+                                                <dd class="monthTxt">(12개월)</dd>
+                                            </dl>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+							
+						</div>
+						<!-- 2018-11-27 구조변경 -->
+						<div class="swiper-pagination-wrap">
+							<div class="paging-list-wrap"></div>
+							<a href="javascript:;" role="button" class="stopbtn stop">STOP</a>
+						</div>
+						<!-- //2018-11-27 구조변경 -->
+						<!-- 2018-12-03 이전/다음 버튼 추가 -->
+						<a class="btn-transparent swiper-button-next" href="javascript:;">다음</a>
+                        <a class="btn-transparent swiper-button-prev" href="javascript:;">이전</a>
+						<!-- 2018-12-03 이전/다음 버튼 추가 -->
+                    </div>
+                </div>
+                <div class="realWordArea">
+                    <div class="viewBox active">
+                        <div class="openPanel">
+                            <div class="realTop">
+                                <span class="tit">판매BEST</span>
+                            </div>
+                            <ol class="ticker">
+                                <li class="showList">
+                                    <a href="javascript:;">
+                                        <div class="dflex selBest">
+											<span class="tit">판매BEST</span>
+                                            <span class="titN"><em>1</em><span class="sortType1">예금</span></span>
+                                            <strong>NH직장인월복리적금</strong>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="dflex selBest">
+											<span class="tit">판매BEST</span>
+                                            <span class="titN"><em>2</em><span class="sortType1">예금</span></span>
+                                            <strong>평생우대적금</strong>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a  href="javascript:;">
+                                        <div class="dflex selBest">
+											<span class="tit">판매BEST</span>
+                                            <span class="titN"><em>3</em><span class="sortType1">예금</span></span>
+                                            <strong>우대학생적금</strong>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="dflex selBest">
+											<span class="tit">판매BEST</span>
+                                            <span class="titN"><em>1</em><span class="sortType2">펀드</span></span>
+                                            <strong>NH-Amundi코리아2 베레버리지증권 투자신탁[주식-파생형]ClassCe</strong>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;"></a>
+                                        <div class="dflex selBest">
+											<span class="tit">판매BEST</span>
+                                            <span class="titN"><em>2</em><span class="sortType2">펀드</span></span>
+                                            <strong>카서스 하베스트 적립식증권 투자 신탁1호(주식)K1 Class</strong>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;"></a>
+                                        <div class="dflex">
+                                            <span class="titN"><em>3</em><span class="sortType2">펀드</span></span>
+                                            <strong>NH-Amundi 개인신종 MMF1호 ClassC</strong>
+                                        </div>
+                                    </a>
+                                </li>
+								<li>
+                                    <a href="javascript:;">
+                                        <div class="dflex inqBest">
+                                        <span class="tit">조회BEST</span>
+                                            <span class="titN"><em>1</em><span class="sortType3">대출</span></span>
+                                            <strong>NH직장인월복리적금</strong>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="dflex inqBest">
+											<span class="tit">조회BEST</span>
+                                            <span class="titN"><em>2</em><span class="sortType3">대출</span></span>
+                                            <strong>평생우대적금</strong>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="dflex inqBest">
+											<span class="tit">조회BEST</span>
+                                            <span class="titN"><em>3</em><span class="sortType3">대출</span></span>
+                                            <strong>우대학생적금</strong>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ol>
+                        </div>
+						<!--
+                        <div class="openPanel">
+                            <div class="realTop ">
+                                <span class="tit bgLb">조회BEST</span>
+                            </div>
+                            <ol class="ticker">
+                                
+                            </ol>
+                        </div>
+						-->
+                    </div>
+                    <a href="javascript:;" title="순위 더보기" role="button" class="keywordMore" aria-expanded="false">더보기</a>
+                </div>
+                <div class="pointMenu">
+                    <ul>
+                        <li class="ico_m1"><a href="#" role="button"><span>예금</span></a></li>
+                        <li class="ico_m2"><a href="#" role="button"><span>펀드</span></a></li>
+                        <li class="ico_m3"><a href="#" role="button"><span>대출</span></a></li>
+                        <li class="ico_m4"><a href="#" role="button"><span>외환</span></a></li>
+                        <li class="ico_m5"><a href="#" role="button"><span>퇴직연금</span></a></li>
+                        <li class="ico_m6"><a href="#" role="button"><span>신탁/ISA</span></a></li>
+                        <li class="ico_m7"><a href="#" role="button"><span>보험</span></a></li>
+                        <li class="ico_m8"><a href="#" role="button"><span>All100플랜</span></a></li>
+                    </ul>
+                </div> 
+                <div class="bannerArea">
+                    <a href="#"><img src="../../images/main/img_quick_banner.png" alt="고객님을 위한 맞춤형 자산관리 솔루션 스마트 자산관리" title="스마트 자산관리"></a>
+                </div>
+                <div class="counselArea">
+                    <ul>
+                        <li class="ico1"><a href="#" role="button">채팅상담</a></li>
+                        <li class="ico2"><a href="#" role="button">이메일상담</a></li>
+                        <li class="ico3"><a href="#" role="button">전화상담</a></li>
+                    </ul>
+                </div>
+                <div class="nhsquickArea">
+                    <a href="#" title="나만의 맞춤상품 찾기 바로가기" role="button">나만의 맞춤상품 찾기</a>
+                </div>
+            </div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div class="footer">
+			<ul class="footMenu">
+				<li><a href="../../../../../contents/pub/util/UC110000.html">홈</a></li>
+				<li><a href="../../../../../contents/pub/bw/UC490000.html">마이NH</a></li>
+				<li><a href="../../../../../contents/pub/util/talk.html">상담톡</a></li>
+				<li><a href="javascript:;">고객센터</a></li>
+				<li><a href="javascript:;">인증/보안</a></li>
+			</ul>
+			<!-- quick button -->
+			<!-- <div class="areaBtmQuick"> 
+				<span class="btnQuick"><a href="javascript:;">quick</a></span>
+				<span class="btnTop"><a href="javascript:;">Top</a></span>
+			</div> -->
+			<!-- //quick button -->
+		</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrapper -->
+	<script>
+		$(function(){
+			
+		})
+	</script>
+</body>
+</html>

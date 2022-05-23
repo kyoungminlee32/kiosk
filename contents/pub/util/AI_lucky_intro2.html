@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ko" class="w100p">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="NH Bank" />
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="robots" content="no-index,follow">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="content" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>:::NH통합스마트뱅킹 퍼블리싱 || 운세</title>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../js/common_ui.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/common.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/contents.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/swiper.min.css" />
+
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- header -->
+    <div class="header">
+        <a href="../util/UC110000.html" class="btnBack" role="button"><span>이전</span></a>
+        <h1><a href="javascript:;">운세</a></h1>
+        <a href="javascript:;" class="btnChat"><span class="blind">상담톡</span></a>
+        <a href="javascript:;" class="btnNav" role="button"><span>메뉴</span></a>
+    </div>
+    <!-- //header -->
+
+    <!-- container -->
+	<div class="container lucky">
+		<!-- 운세 -->
+		<div class="chatBotWrap">
+			<!-- 운세컨텐츠 -->
+			<div class="chatCont">
+				
+				<div class="bot">
+					<span class="profile"><img src="../../images/contents/img_luckyProfile.png" alt="상담톡">럭키마스터</span>
+					<div class="dialogueWrap">
+						<div class="dialogue">
+							<div class="chatTxt">
+								<p>안녕하세요. 저는 럭키마스터에요.</p>
+							</div>
+						</div>
+						<div class="dialogue">
+							<div class="chatTxt">
+								<p>제가 뭐라고 부르면 될까요?</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="user">
+					<div class="dialogueWrap">
+						<div class="dialogue">
+							<div class="chatTxt">
+								<p>네, 김농협 이라고 불러주세요.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="bot">
+					<span class="profile"><img src="../../images/contents/img_luckyProfile.png" alt="상담톡">럭키마스터</span>
+					<div class="dialogueWrap">
+						<div class="dialogue">
+							<div class="chatTxt">
+								<p>특별히 제가 행운의 기운을 드리고 싶어요. </p>
+								<p>김농협 님! 받으세요!</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- // 운세컨텐츠 end -->
+		</div>
+		<!-- // 운세 end -->
+
+		<!-- 운세 하단 -->
+		<div class="chatArea">
+			<!-- 대화 선택형 버튼 -->
+			<div class="luckyChatSel" style="display:none">
+				<div class="chatMenu luckyMenu swiper-container">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide"><a href="javascript:;">네, 다른 운세도 궁금해 지네요</a></li>
+						<li class="swiper-slide"><a href="javascript:;">이제 그만 볼게요</a></li>
+					</ul>
+				</div>
+				<a href="javascript:;" class="luckySelClose">대화창 닫기</a>
+			</div>
+			<!-- // 대화 선택형 버튼 end -->
+
+			<!-- 대화 이름입력 -->
+			<div class="luckyChatSel luckyChatSelType02" style="display:none">
+				<div class="luckyInput">
+					<input type="text" title="이름을 입력해주세요." /> 이라고 불러줘요.
+				</div>
+				<a href="javascript:;" class="luckySelClose">대화창 닫기</a>
+			</div>
+			<!-- // 대화 이름입력 -->
+
+			<!-- 대화 성별 선택 -->
+			<div class="luckyChatSel luckyChatSelType02" style="display:none">
+				<div class="luckyRadio">
+					<div class="radioList">
+						<input type="radio" id="r1" name="rr" checked="checked"  />
+						<label for="r1">남자</label>
+					</div>
+					<div class="radioList">
+						<input type="radio" id="r2" name="rr" />
+						<label for="r2">여자</label>
+					</div>
+				</div>
+				<a href="javascript:;" class="luckySelClose">대화창 닫기</a>
+			</div>
+			<!-- // 대화 성별 선택 -->
+
+
+			<!-- 대화 생년월일 선택 -->
+			<div class="luckyChatSel luckyChatSelType02" style="display:none">
+				<div class="luckyRadio">
+					<div class="radioList">
+						<input type="text" title="생년월일을 입력해주세요." placeholder="YYYYMMDD" />
+					</div>
+					<div class="radioList">
+						<input type="radio" id="r1" name="rrr" checked="checked" />
+						<label for="r1">양력</label>
+					</div>
+					<div class="radioList">
+						<input type="radio" id="r2" name="rrr" />
+						<label for="r2">음력</label>
+					</div>
+				</div>
+				<a href="javascript:;" class="luckySelClose">대화창 닫기</a>
+			</div>
+			<!-- // 대화 생년월일 선택 -->
+
+			<!-- 대화 개인정보동의 입력 -->
+			<div class="luckyChatSel" style="display:none">
+					<span class="agreeTxt">개인정보 이용동의 (필수)</span>
+					<a href="javascript:;" class="agreeBtn ml10">동의합니다.</a>
+				<a href="javascript:;" class="luckySelClose">대화창 닫기</a>
+			</div>
+			<!-- // 대화 개인정보동의 입력 -->
+			
+			<!-- 메뉴 선택 -->
+			<div class="luckyMenuSel menuType01" style="display:block;">
+				<ul>
+					<li class="menu01"><a href="javscript:;">운세</a></li>
+					<li class="menu02"><a href="javscript:;">행운의로또</a></li>
+					<li class="menu03"><a href="javscript:;">꿈해몽</a></li>
+					<li class="menu04"><a href="javscript:;">심리테스트</a></li>
+				</ul>
+			</div>
+			<div class="luckyMenuSel menuType01" style="display:block">
+				<ul>
+					<li class="menu05"><a href="javscript:;">일년</a></li>
+					<li class="menu06"><a href="javscript:;">일상</a></li>
+					<li class="menu07"><a href="javscript:;">재물</a></li>
+					<li class="menu08"><a href="javscript:;">사랑</a></li>
+				</ul>
+			</div>
+			<div class="luckyMenuSel menuType03" style="display:block">
+				<ul>
+					<li class="menu01"><a href="javscript:;">나의 성격</a></li>
+					<li class="menu02"><a href="javscript:;">애정 심리</a></li>
+					<li class="menu03"><a href="javscript:;">나의 기질</a></li>
+				</ul>
+			</div>
+			<div class="luckyMenuSel menuType02" style="display:block">
+				<ul>
+					<li class="menu03"><a href="javscript:;">내사랑반쪽</a></li>
+					<li class="menu04"><a href="javscript:;">프리미엄궁합</a></li>
+				</ul>
+			</div>
+			<div class="luckyMenuSel menuType02" style="display:block">
+				<ul>
+					<li class="menu01"><a href="javscript:;">전통운세</a></li>
+					<li class="menu02"><a href="javscript:;">신토정비결</a></li>
+				</ul>
+			</div>
+			
+
+			<!-- // 메뉴 선택 end -->
+
+			<!-- 운세 footer 영역 -->
+			<div class="chatWrap" style="display:block">
+				<div class="chatWrapInner">
+					<a href="javascript:;" class="btnLuckyMenu" onclick="luckyAllMenu();">운세 전체메뉴 보기</a>
+					
+					<!-- 운세 기본메뉴 -->
+					<div class="baseMenu">
+						<ul class="chatBtnType01">
+							<li><a href="javasript:;" class="start" onclick="baseMenu($(this));">처음으로</a></li>
+							<li><a href="javasript:;" class="infoChange" onclick="baseMenu($(this));">사주정보 변경</a></li>
+							<li><a href="javasript:;" class="end" onclick="baseMenu($(this));">그만하기</a></li>
+						</ul>
+					</div>
+					<!-- // 운세 기본메뉴 end -->
+				</div>
+			</div>
+			<!-- 운세 footer 영역 end -->
+
+		</div>
+		<!-- // 운세 하단 end -->
+		<script type="text/javascript" src="../../js/swiper.min.js"></script>
+		<script type="text/javascript">
+			LuckyMenuSwipeController();
+		</script>
+	</div>
+	<!-- //container -->
+
+</div>
+<!-- //wrapper -->
+</body>
+</html>
